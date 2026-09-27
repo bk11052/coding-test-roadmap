@@ -56,10 +56,10 @@ async function flush(){
   if (!docRef) return;
   if (saving) { pending = true; return; }
   saving = true;
-  try { await docRef.set(JSON.parse(JSON.stringify(S))); setSync('기록은 Claude 계정에 저장됩니다. 다른 기기에서도 이어집니다.'); }
+  try { await docRef.set(JSON.parse(JSON.stringify(S))); setSync('기록: Claude 계정'); }
   catch(e) {
-    if (['invalid_argument','revoked','not_granted'].includes(e && e.code)) { docRef = null; setSync('기록은 이 브라우저에 저장됩니다.'); }
-    else setSync('계정 저장에 잠시 실패했습니다. 다음 변경 때 다시 저장합니다.');
+    if (['invalid_argument','revoked','not_granted'].includes(e && e.code)) { docRef = null; setSync('기록: 이 브라우저'); }
+    else setSync('기록: 저장 실패, 다시 시도 예정');
   }
   saving = false;
   if (pending) { pending = false; flush(); }
@@ -133,7 +133,13 @@ function refreshRows(key){
 }
 
 // ---------- router ----------
-let curWeek = null;
+let curWeek = null, curView = 'today';
+const VIEW_NAME = {today:'오늘', plan:'커리큘럼', companies:'기업별 정보', resources:'자료'};
+function renderCrumb(){
+  const parts = ['코딩테스트 로드맵', VIEW_NAME[curView]];
+  if (curView === 'plan' && curWeek && !filterOn()) { const w = WEEKS.find(w => w.n === curWeek); parts.push(`${pad(w.n)}주 · ${w.t}`); }
+  $('#crumb').innerHTML = parts.map((p, i) => i === parts.length - 1 ? `<b>${esc(p)}</b>` : `<span>${esc(p)}</span>`).join('<span class="sep">›</span>');
+}
 function firstOpenWeek(){ const w = WEEKS.find(w => coreKeys(w.n).some(k => !isDone(k))); return w ? w.n : 16; }
 function route(){
   const h = location.hash.replace('#', '') || 'today';
@@ -141,8 +147,10 @@ function route(){
   if (m) { view = 'plan'; curWeek = Math.min(16, Math.max(1, Number(m[1]))); }
   if (!['today','plan','companies','resources'].includes(view)) view = 'today';
   document.querySelectorAll('.view').forEach(v => v.hidden = v.id !== 'v-' + view);
-  document.querySelectorAll('.tabs a').forEach(a => a.setAttribute('aria-current', a.dataset.view === view ? 'page' : 'false'));
+  document.querySelectorAll('.act a').forEach(a => a.setAttribute('aria-current', a.dataset.view === view ? 'page' : 'false'));
+  curView = view;
   if (view === 'plan') { if (!curWeek) curWeek = firstOpenWeek(); renderSide(); renderDetail(); }
+  renderCrumb();
   window.scrollTo(0, 0);
 }
 window.addEventListener('hashchange', route);
@@ -196,7 +204,7 @@ function pickNext(exclude, budget){
 function renderSide(){
   let html = '', last = -1;
   WEEKS.forEach(w => {
-    if (w.ph !== last) { if (last >= 0) html += '</div>'; html += `<div><h3>${PHASES[w.ph]}</h3>`; last = w.ph; }
+    if (w.ph !== last) { if (last >= 0) html += '</div>'; html += `<div><div class="grp eyebrow">${PHASES[w.ph]}</div>`; last = w.ph; }
     const ks = coreKeys(w.n), d = ks.filter(isDone).length, pri = coSel().some(c => PRIORITY[c].includes(w.n));
     html += `<button type="button" class="wk${ks.length && d === ks.length ? ' complete' : ''}" data-week="${w.n}" aria-current="${w.n === curWeek}"><span class="n">${pad(w.n)}</span><span>${esc(w.t)}${pri ? '<span class="pri" title="지원 회사 우선 주차"></span>' : ''}</span><span class="c">${d}/${ks.length}</span></button>`;
   });
@@ -224,13 +232,13 @@ function renderDetail(){
       const ks = hits.filter(k => PROBS[k].w.n === w.n); if (!ks.length) return;
       html += `<div class="set"><div class="set-h"><a class="t" href="#w${w.n}">${pad(w.n)}주 · ${esc(w.t)}</a></div><ul class="list">${ks.map(k => rowHtml(PROBS[k].x)).join('')}</ul></div>`;
     });
-    $('#detail').innerHTML = `<div class="detail">${html}</div>`;
-    return;
+    $('#detail').innerHTML = `<div class="pane" style="padding:0">${html}</div>`;
+    renderCrumb(); return;
   }
   const w = WEEKS.find(w => w.n === curWeek), ks = coreKeys(w.n), d = ks.filter(isDone).length;
   const mins = ks.reduce((a, k) => a + PROBS[k].min, 0);
   const pri = coSel().filter(c => PRIORITY[c].includes(w.n));
-  let html = `<div class="dhead"><span class="small muted">${PHASES[w.ph]}</span><h2 style="font-size:24px">${pad(w.n)}주 · ${esc(w.t)}</h2>
+  let html = `<div class="dhead"><span class="eyebrow">${PHASES[w.ph]}</span><h1>${pad(w.n)}주 · ${esc(w.t)}</h1>
     <div class="dmeta"><span>${d} / ${ks.length}문제 완료</span><span>약 ${fmtH(mins)}</span>${pri.length ? `<span style="color:var(--accent)">${pri.map(c => CO_NAME[c]).join('·')} 우선</span>` : ''}</div>
     <div class="bar"><i style="width:${ks.length ? d / ks.length * 100 : 0}%"></i></div></div>
     <dl class="info">
@@ -255,8 +263,26 @@ function renderDetail(){
   });
   const prev = w.n > 1 ? `<a href="#w${w.n - 1}">← ${pad(w.n - 1)}주</a>` : '<span></span>';
   const next = w.n < 16 ? `<a href="#w${w.n + 1}">${pad(w.n + 1)}주 →</a>` : '<span></span>';
-  html += `<div style="display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:16px">${prev}${next}</div>`;
-  $('#detail').innerHTML = `<div class="detail">${html}</div>`;
+  html += `<div class="pager">${prev}${next}</div>`;
+  $('#detail').innerHTML = `<div class="pane" style="padding:0">${html}</div>`;
+  renderCrumb();
+}
+
+// ---------- code highlight ----------
+const FLOW = /<span class="hljs-keyword">(if|elif|else|for|while|return|import|from|continue|break|in|try|except|raise|with|yield|pass|not|and|or|is)<\/span>/g;
+function hl(line){
+  if (!line) return ' ';
+  try { if (window.hljs) return window.hljs.highlight(line, {language:'python', ignoreIllegals:true}).value.replace(FLOW, '<span class="hljs-keyword flow">$1</span>'); } catch(e) {}
+  return esc(line);
+}
+
+// ---------- theme ----------
+const THEMES = ['system', 'light', 'dark'], THEME_NAME = {system:'테마: 시스템', light:'테마: 라이트', dark:'테마: 다크'};
+let theme = 'system';
+try { theme = localStorage.getItem('cote-theme') || 'system'; } catch(e) {}
+function renderTheme(){
+  if (theme === 'system') document.documentElement.removeAttribute('data-theme'); else document.documentElement.setAttribute('data-theme', theme);
+  $('#themeBtn').textContent = THEME_NAME[theme];
 }
 
 // ---------- companies & resources (static) ----------
@@ -272,7 +298,8 @@ function renderStatic(){
   $('#typeTable').innerHTML = `<thead><tr>${cols.map(c => `<th>${esc(c.replace(' (SK·한화·LG 등)', ''))}</th>`).join('')}</tr></thead><tbody>` +
     INFO.type_frequency.map(r => `<tr><td>${esc(r[0])}</td>${r.slice(1).map(v => { const d = dot(v); return `<td class="${d !== null ? 'dots' : 'small ink2'}">${d !== null ? d : esc(v)}</td>`; }).join('')}</tr>`).join('') + '</tbody>';
   $('#toolTable').innerHTML = '<thead><tr><th>이름</th><th>쓰는 곳</th></tr></thead><tbody>' + INFO.tools.map(t => `<tr><td><a href="${t.url}" target="_blank" rel="noopener">${esc(t.name)}</a></td><td class="ink2">${esc(t.use)}</td></tr>`).join('') + '</tbody>';
-  $('#tpls').innerHTML = INFO.templates_python.map(t => `<details class="code"><summary>${esc(t.name.replace(/^\d+\.\s*/, ''))}</summary><pre><code>${esc(t.code)}</code></pre></details>`).join('');
+  const FILES = ['grid_bfs.py', 'combination.py', 'rotate.py', 'param_search.py', 'dijkstra.py', 'union_find.py', 'prefix_sum.py', 'starter.py'];
+  $('#tpls').innerHTML = INFO.templates_python.map((t, i) => `<div class="file"><div class="file-tab"><span class="fn">${FILES[i] || 'code.py'}</span><span class="desc">${esc(t.name.replace(/^\d+\.\s*/, ''))}</span><button type="button" class="copy" data-copy="${i}">복사</button></div><pre class="code"><code>${t.code.split('\n').map(l => `<span class="l">${hl(l)}</span>`).join('')}</code></pre></div>`).join('');
   $('#vidTable').innerHTML = '<thead><tr><th>영상</th><th>추천</th><th>내용</th></tr></thead><tbody>' + INFO.verified_videos.map(v => `<tr><td><a href="${v.url}" target="_blank" rel="noopener">${esc(v.title)}</a><span class="sub">${esc(v.channel)}</span></td><td>${esc(v.verdict)}</td><td class="ink2">${esc(v.notes)}</td></tr>`).join('') + '</tbody>';
   $('#dropList').innerHTML = INFO.dropped_claims.map(x => `<li>${esc(x)}</li>`).join('');
   $('#srcList').innerHTML = INFO.sources.map(s => `<li><a href="${s.url}" target="_blank" rel="noopener">${esc(s.title)}</a></li>`).join('');
@@ -281,7 +308,12 @@ function renderStatic(){
 // ---------- refresh ----------
 function refresh(){
   const all = WEEKS.flatMap(w => coreKeys(w.n)), done = all.filter(isDone).length;
-  $('#topProg').innerHTML = `<b>${done}</b> / ${all.length}문제`;
+  $('#stProg').textContent = `✓ ${done} / ${all.length}문제`;
+  const left = S.settings.exam ? daysBetween(today(), S.settings.exam) : null;
+  $('#stDday').textContent = left === null ? '시험일 미정' : left > 0 ? `D-${left}` : left === 0 ? 'D-day' : '시험일 지남';
+  const due = Object.keys(S.review).filter(k => S.review[k].due <= today()).length;
+  $('#stReview').textContent = `복습 ${due}`; $('#stReview').hidden = !due;
+  renderTheme();
   renderToday();
   if (!$('#v-plan').hidden) renderSide();
 }
@@ -322,13 +354,14 @@ let tick = null;
 const findSet = id => { const [n, i] = id.split('-').map(Number); return SETS[n][i]; };
 const elapsed = () => { const t = S.timer; return t ? (t.paused || Date.now()) - t.start - t.pausedTotal : 0; };
 function showTimer(){
-  if (!S.timer) { $('#timer').hidden = true; clearInterval(tick); return; }
-  $('#timer').hidden = false; $('#tmSet').textContent = S.timer.set;
+  if (!S.timer) { $('#stTimer').hidden = true; $('#tmPanel').hidden = true; clearInterval(tick); return; }
+  $('#stTimer').hidden = false; $('#tmSet').textContent = S.timer.set;
   $('#tmPause').textContent = S.timer.paused ? '다시 시작' : '일시정지';
   const draw = () => {
     const left = S.timer.min * 60000 - elapsed(), a = Math.abs(left);
-    $('#tmClock').textContent = `${left < 0 ? '+' : ''}${Math.floor(a / 3600000)}:${pad(Math.floor(a % 3600000 / 60000))}:${pad(Math.floor(a % 60000 / 1000))}`;
-    $('#tmClock').classList.toggle('over', left < 0);
+    const clock = `${left < 0 ? '+' : ''}${Math.floor(a / 3600000)}:${pad(Math.floor(a % 3600000 / 60000))}:${pad(Math.floor(a % 60000 / 1000))}`;
+    $('#tmClock').textContent = clock; $('#tmClock').classList.toggle('over', left < 0);
+    $('#stTimer').innerHTML = `모의고사 <span class="clock${left < 0 ? ' over' : ''}">${clock}</span>${S.timer.paused ? ' (정지)' : ''}`;
     $('#tmState').textContent = left < 0 ? '시간 초과' : S.timer.paused ? '일시정지 중' : '';
   };
   draw(); clearInterval(tick); tick = setInterval(draw, 1000);
@@ -399,10 +432,13 @@ document.addEventListener('click', e => {
   else if (t.dataset.unfold) { unfolded.add(t.dataset.unfold); renderDetail(); }
   else if (t.dataset.hint) askHint(t.dataset.key, t.dataset.hint);
   else if (t.dataset.stop) aiCtl[t.dataset.stop]?.abort();
-  else if (t.dataset.mock) { if (S.timer) return toast('진행 중인 모의고사를 먼저 끝내 주세요.'); const s = findSet(t.dataset.mock); S.timer = {id: s.id, set: s.title.replace('모의고사 · ', ''), min: s.min, start: Date.now(), paused: null, pausedTotal: 0}; persist(); showTimer(); }
+  else if (t.dataset.mock) { if (S.timer) return toast('진행 중인 모의고사를 먼저 끝내 주세요.'); const s = findSet(t.dataset.mock); S.timer = {id: s.id, set: s.title.replace('모의고사 · ', ''), min: s.min, start: Date.now(), paused: null, pausedTotal: 0}; persist(); showTimer(); $('#tmPanel').hidden = false; }
   else if (t.id === 'tmPause') { const x = S.timer; if (x.paused) { x.pausedTotal += Date.now() - x.paused; x.paused = null; } else x.paused = Date.now(); persist(); showTimer(); }
   else if (t.id === 'tmEnd') { if (!endArmed) { endArmed = true; t.textContent = '한 번 더 누르면 기록'; setTimeout(() => { endArmed = false; t.textContent = '끝내고 기록'; }, 4000); return; } endArmed = false; t.textContent = '끝내고 기록'; endMock(true); }
   else if (t.id === 'tmCancel') endMock(false);
+  else if (t.id === 'stTimer') $('#tmPanel').hidden = !$('#tmPanel').hidden;
+  else if (t.id === 'themeBtn') { theme = THEMES[(THEMES.indexOf(theme) + 1) % 3]; try { localStorage.setItem('cote-theme', theme); } catch(e) {} renderTheme(); }
+  else if (t.dataset.copy !== undefined) { const code = INFO.templates_python[Number(t.dataset.copy)].code; navigator.clipboard?.writeText(code).then(() => { t.textContent = '복사됨'; setTimeout(() => t.textContent = '복사', 1500); }, () => toast('복사하지 못했습니다. 코드를 직접 선택해 주세요.')); }
   else if (t.id === 'fClear') { $('#fText').value = ''; $('#fStatus').value = ''; renderDetail(); }
   else if (t.id === 'coachBtn') askCoach();
   else if (t.id === 'moreToday') { S.plan.keys = S.plan.keys.concat(pickNext(S.plan.keys, (Number(S.settings.hours) || 2) * 60)); persist(); refresh(); }
@@ -428,7 +464,7 @@ renderStatic(); refresh(); route(); showTimer();
       const snap = await docRef.get();
       if (snap.exists) { S = mergeState(snap.data(), S); try { localStorage.setItem('cote-state-v2', JSON.stringify(S)); } catch(e) {} }
       else if (Object.keys(S.status).length || Object.keys(S.notes).length) flush();
-      setSync('기록은 Claude 계정에 저장됩니다. 다른 기기에서도 이어집니다.');
+      setSync('기록: Claude 계정');
     } catch(e) { docRef = null; }
   }
   refresh(); renderDetail(); showTimer();

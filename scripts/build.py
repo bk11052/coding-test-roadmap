@@ -188,7 +188,7 @@ fragment = page.replace("__WEEKS__", json.dumps(weeks_raw, ensure_ascii=False)).
 build = ROOT / "build"
 build.mkdir(exist_ok=True)
 (build / "artifact.html").write_text(fragment)
-split = fragment.index('<header class="top">')
+split = fragment.index('<div class="shell">')
 index = ("<!doctype html>\n<html lang=\"ko\">\n<head>\n<meta charset=\"utf-8\">\n"
          "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n"
          "<meta name=\"description\" content=\"국내 대기업 신입 개발자 코딩테스트를 16주 동안 준비하는 계획과 기록 도구\">\n"
