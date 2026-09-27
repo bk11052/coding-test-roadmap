@@ -204,6 +204,11 @@
    "use": "무료 강의. 커리큘럼 강의 링크. 글 속 문제집은 백준 기반이라 현재 채점 불가"
   },
   {
+   "name": "바킹독 강의 Python 풀이",
+   "url": "https://github.com/hanXen/basic-algo-lecture-python",
+   "use": "바킹독 강의 0x02~0x11강의 예제와 연습 문제를 Python으로 푼 코드 (강의 작성자가 소개한 저장소)"
+  },
+  {
    "name": "이코테 2021 (Python)",
    "url": "https://github.com/ndb796/python-for-coding-test",
    "use": "나동빈 《이것이 취업을 위한 코딩 테스트다》 소스코드와 강의"

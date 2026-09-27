@@ -3,6 +3,7 @@
 Usage: python3 scripts/build.py
 """
 import json
+import re
 import pathlib
 from urllib.parse import quote
 
@@ -146,8 +147,12 @@ for w in weeks:
         A(f"**{'개념 강의' if study else '참고 링크'}**" + (" — 먼저 보고 아래 문제를 푸세요." if study else "") + "\n")
         for l in w["lectures"]:
             A(f"- [{l['title']}]({l['url']}) ({lec_tag(l['url'])})")
-        if study and any("blog.encrypted.gg" in l["url"] for l in w["lectures"]):
-            A("- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.")
+        baek = [l for l in w["lectures"] if "blog.encrypted.gg" in l["url"]]
+        if study and baek:
+            has_py = any(re.search(r"0x([0-9A-Fa-f]{2})", l["title"]) and int(re.search(r"0x([0-9A-Fa-f]{2})", l["title"]).group(1), 16) <= 0x11 for l in baek)
+            A("- 바킹독 강의의 예제 코드는 C++입니다."
+              + (" Python으로 보려면 같은 예제를 Python으로 푼 [풀이 모음](https://github.com/hanXen/basic-algo-lecture-python)을 참고하세요." if has_py else "")
+              + " 강의 끝의 연습 문제는 백준 문제라 지금은 채점이 안 되니 건너뜁니다.")
         A("")
     A(f"**배울 것** {w['learn']}\n")
     if w["common_mistakes"]:

@@ -83,7 +83,7 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 - [이코테 2021 (Python, 나동빈) 재생목록](https://www.youtube.com/playlist?list=PLRx0vPvlEmdAghTr5mXQxGpHjWqSz0dgC) (나동빈 · 영상 · Python)
 - [바킹독 0x01 기초 코드 작성 요령 I](https://blog.encrypted.gg/922) (바킹독 · 글과 영상 · C++)
 - [0x02 기초 코드 작성 요령 II](https://blog.encrypted.gg/923) (바킹독 · 글과 영상 · C++)
-- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
+- 바킹독 강의의 예제 코드는 C++입니다. Python으로 보려면 같은 예제를 Python으로 푼 [풀이 모음](https://github.com/hanXen/basic-algo-lecture-python)을 참고하세요. 강의 끝의 연습 문제는 백준 문제라 지금은 채점이 안 되니 건너뜁니다.
 
 **배울 것** 문자열 슬라이싱·split·join, 정렬 key, 리스트/딕셔너리 컴프리헨션, 날짜·시간 문자열 다루기
 
@@ -127,7 +127,7 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 - [0x06 큐](https://blog.encrypted.gg/934) (바킹독 · 글과 영상 · C++)
 - [0x07 덱](https://blog.encrypted.gg/935) (바킹독 · 글과 영상 · C++)
 - [0x08 스택의 활용](https://blog.encrypted.gg/936) (바킹독 · 글과 영상 · C++)
-- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
+- 바킹독 강의의 예제 코드는 C++입니다. Python으로 보려면 같은 예제를 Python으로 푼 [풀이 모음](https://github.com/hanXen/basic-algo-lecture-python)을 참고하세요. 강의 끝의 연습 문제는 백준 문제라 지금은 채점이 안 되니 건너뜁니다.
 
 **배울 것** deque로 큐 구현, 괄호 짝 검사, 단조 스택(뒤에 있는 큰 수), 큐 시뮬레이션
 
@@ -170,7 +170,7 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 - [0x15 해시](https://blog.encrypted.gg/1009) (바킹독 · 글과 영상 · C++)
 - [0x0E 정렬 I](https://blog.encrypted.gg/955) (바킹독 · 글과 영상 · C++)
 - [0x0F 정렬 II](https://blog.encrypted.gg/966) (바킹독 · 글과 영상 · C++)
-- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
+- 바킹독 강의의 예제 코드는 C++입니다. Python으로 보려면 같은 예제를 Python으로 푼 [풀이 모음](https://github.com/hanXen/basic-algo-lecture-python)을 참고하세요. 강의 끝의 연습 문제는 백준 문제라 지금은 채점이 안 되니 건너뜁니다.
 
 **배울 것** dict·Counter·defaultdict, set 연산, 정렬 key에 튜플과 음수 쓰기, 커스텀 비교
 
@@ -216,7 +216,7 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 - [0x0B 재귀](https://blog.encrypted.gg/943) (바킹독 · 글과 영상 · C++)
 - [0x0C 백트래킹](https://blog.encrypted.gg/945) (바킹독 · 글과 영상 · C++)
-- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
+- 바킹독 강의의 예제 코드는 C++입니다. Python으로 보려면 같은 예제를 Python으로 푼 [풀이 모음](https://github.com/hanXen/basic-algo-lecture-python)을 참고하세요. 강의 끝의 연습 문제는 백준 문제라 지금은 채점이 안 되니 건너뜁니다.
 
 **배울 것** itertools permutations/combinations/product, 재귀로 직접 구현(넣기→재귀→빼기), 가지치기
 
@@ -258,7 +258,7 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 - [0x09 BFS](https://blog.encrypted.gg/941) (바킹독 · 글과 영상 · C++)
 - [0x0A DFS](https://blog.encrypted.gg/942) (바킹독 · 글과 영상 · C++)
-- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
+- 바킹독 강의의 예제 코드는 C++입니다. Python으로 보려면 같은 예제를 Python으로 푼 [풀이 모음](https://github.com/hanXen/basic-algo-lecture-python)을 참고하세요. 강의 끝의 연습 문제는 백준 문제라 지금은 채점이 안 되니 건너뜁니다.
 
 **배울 것** 방향 배열 dy/dx, 범위 체크, 방문 처리는 큐에 넣을 때, 거리 배열 -1 초기화, 여러 시작점 동시 BFS
 
@@ -300,7 +300,7 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 - [0x09 BFS 후반부 (벽 부수기 유형)](https://blog.encrypted.gg/941) (바킹독 · 글과 영상 · C++)
 - [최백준 특강 (다리 K개 미로)](https://youtu.be/iVfgiqM4has) (유튜브 영상)
-- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
+- 바킹독 강의의 예제 코드는 C++입니다. Python으로 보려면 같은 예제를 Python으로 푼 [풀이 모음](https://github.com/hanXen/basic-algo-lecture-python)을 참고하세요. 강의 끝의 연습 문제는 백준 문제라 지금은 채점이 안 되니 건너뜁니다.
 
 **배울 것** visited[r][c][k] 설계, 방향을 상태로 넣기, 0-1 BFS, 좌표 2배 확대(아이템 줍기)
 
@@ -340,7 +340,7 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 - [0x0D 시뮬레이션](https://blog.encrypted.gg/948) (바킹독 · 글과 영상 · C++)
 - [큰돌의터전 삼성 기출 분석](https://youtu.be/w9dyVCvFCkw) (유튜브 영상)
-- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
+- 바킹독 강의의 예제 코드는 C++입니다. Python으로 보려면 같은 예제를 Python으로 푼 [풀이 모음](https://github.com/hanXen/basic-algo-lecture-python)을 참고하세요. 강의 끝의 연습 문제는 백준 문제라 지금은 채점이 안 되니 건너뜁니다.
 
 **배울 것** 90도 회전 b[j][n-1-i]=a[i][j], 동시 처리는 임시 배열, 상태 변수 먼저 정의, 단계마다 출력해 확인
 
@@ -422,7 +422,7 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 - [0x11 그리디](https://blog.encrypted.gg/975) (바킹독 · 글과 영상 · C++)
 - [0x13 이분탐색](https://blog.encrypted.gg/985) (바킹독 · 글과 영상 · C++)
 - [0x14 투 포인터](https://blog.encrypted.gg/1004) (바킹독 · 글과 영상 · C++)
-- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
+- 바킹독 강의의 예제 코드는 C++입니다. Python으로 보려면 같은 예제를 Python으로 푼 [풀이 모음](https://github.com/hanXen/basic-algo-lecture-python)을 참고하세요. 강의 끝의 연습 문제는 백준 문제라 지금은 채점이 안 되니 건너뜁니다.
 
 **배울 것** 정렬 후 그리디, bisect, 매개변수 탐색, 슬라이딩 윈도우, 1차원·2차원 누적합(차분 배열)
 
@@ -466,7 +466,7 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 **개념 강의** — 먼저 보고 아래 문제를 푸세요.
 
 - [0x10 다이나믹 프로그래밍](https://blog.encrypted.gg/974) (바킹독 · 글과 영상 · C++)
-- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
+- 바킹독 강의의 예제 코드는 C++입니다. Python으로 보려면 같은 예제를 Python으로 푼 [풀이 모음](https://github.com/hanXen/basic-algo-lecture-python)을 참고하세요. 강의 끝의 연습 문제는 백준 문제라 지금은 채점이 안 되니 건너뜁니다.
 
 **배울 것** 테이블 정의 → 점화식 → 초기값 순서. 배낭, LIS, 격자 경로, 원형 배열 처리
 
@@ -512,7 +512,7 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 - [0x19 트리](https://blog.encrypted.gg/1019) (바킹독 · 글과 영상 · C++)
 - [0x1D 다익스트라](https://blog.encrypted.gg/1037) (바킹독 · 글과 영상 · C++)
 - [부록 D Union-Find](https://blog.encrypted.gg/1097) (바킹독 · 글과 영상 · C++)
-- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
+- 바킹독 강의의 예제 코드는 C++입니다. 강의 끝의 연습 문제는 백준 문제라 지금은 채점이 안 되니 건너뜁니다.
 
 **배울 것** heapq, 다익스트라(거리 비교로 오래된 항목 건너뛰기), 플로이드, Union-Find 경로 압축, 크루스칼
 
@@ -555,7 +555,7 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 - [부록 A 문자열 기초](https://blog.encrypted.gg/1081) (바킹독 · 글과 영상 · C++)
 - [프로그래머스 SQL 고득점 Kit](https://school.programmers.co.kr/learn/challenges?tab=sql_practice_kit) (프로그래머스 문제 모음)
-- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
+- 바킹독 강의의 예제 코드는 C++입니다. 강의 끝의 연습 문제는 백준 문제라 지금은 채점이 안 되니 건너뜁니다.
 
 **배울 것** 시간 문자열 → 분 변환, 정규식, 진법 변환, 집합 연산. SQL은 GROUP BY·HAVING, JOIN, 서브쿼리, 날짜 함수, 재귀 CTE
 
@@ -1039,6 +1039,7 @@ import heapq, bisect
 | [프로그래머스](https://school.programmers.co.kr/learn/challenges) | 카카오·네이버·SK·한화 실제 시험 플랫폼. 카카오 기출, 고득점 Kit, SQL Kit, PCCP 기출 |
 | [코드트리](https://www.codetree.ai/ko/frequent-problems) | 삼성 SW역량테스트 기출 복원, HSAT 기출 |
 | [바킹독 실전 알고리즘](https://github.com/encrypted-def/basic-algo-lecture) | 무료 강의. 커리큘럼 강의 링크. 글 속 문제집은 백준 기반이라 현재 채점 불가 |
+| [바킹독 강의 Python 풀이](https://github.com/hanXen/basic-algo-lecture-python) | 바킹독 강의 0x02~0x11강의 예제와 연습 문제를 Python으로 푼 코드 (강의 작성자가 소개한 저장소) |
 | [이코테 2021 (Python)](https://github.com/ndb796/python-for-coding-test) | 나동빈 《이것이 취업을 위한 코딩 테스트다》 소스코드와 강의 |
 | [SW Expert Academy](https://swexpertacademy.com) | 삼성 상시 역량테스트 A형(2문제·3시간), B형(1문제·4시간, Python 불가) |
 | [Softeer](https://softeer.ai) | 현대차그룹 HSAT 인증 (2년간 코테 면제) |

@@ -225,11 +225,22 @@ function lecTag(u){
   if (u.includes('frequent-problems')) return '코드트리 기출 목록';
   return '접수 페이지';
 }
+const PY_REPO = 'https://github.com/hanXen/basic-algo-lecture-python';
 function lectureHtml(w){
   const study = w.n <= 12;
   const links = w.lec.map(l => `<a href="${l.u}" target="_blank" rel="noopener">${esc(l.t)}</a> <span class="small muted">${lecTag(l.u)}</span>`).join('<br>');
-  const baek = w.lec.some(l => l.u.includes('blog.encrypted.gg'));
-  const note = study ? `<p class="small muted" style="margin-top:4px">먼저 보고 아래 문제를 푸세요.${baek ? ' 바킹독 강의는 C++ 코드라 Python은 <a href="https://blog.encrypted.gg/1106" target="_blank" rel="noopener">파이썬·자바 코드</a>를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.' : ''}</p>` : '';
+  const baek = w.lec.filter(l => l.u.includes('blog.encrypted.gg'));
+  const hasPy = baek.some(l => { const m = l.t.match(/0x([0-9A-F]{2})/i); return m && parseInt(m[1], 16) <= 0x11; });
+  let note = '';
+  if (study) {
+    note = '먼저 보고 아래 문제를 푸세요.';
+    if (baek.length) {
+      note += ' 바킹독 강의의 예제 코드는 C++입니다.';
+      if (hasPy) note += ` Python으로 보려면 같은 예제를 Python으로 푼 <a href="${PY_REPO}" target="_blank" rel="noopener">풀이 모음</a>을 참고하세요.`;
+      note += ' 강의 끝의 연습 문제는 백준 문제라 지금은 채점이 안 되니 건너뜁니다.';
+    }
+    note = `<p class="small muted" style="margin-top:4px">${note}</p>`;
+  }
   return `<dt>${study ? '개념 강의' : '참고 링크'}</dt><dd>${links}${note}</dd>`;
 }
 
