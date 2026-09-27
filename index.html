@@ -597,7 +597,7 @@ function route(){
   curView = view;
   if (view === 'plan') { if (!curWeek) curWeek = firstOpenWeek(); renderSide(); renderDetail(); }
   renderCrumb();
-  track('/' + (view === 'plan' && curWeek && location.hash.startsWith('#w') ? 'w' + pad(curWeek) : view), VIEW_NAME[view] + (view === 'plan' && location.hash.startsWith('#w') ? ` ${pad(curWeek)}주` : ''));
+  track(location.pathname + '#' + (view === 'plan' && curWeek && location.hash.startsWith('#w') ? 'w' + curWeek : view), VIEW_NAME[view] + (view === 'plan' && location.hash.startsWith('#w') ? ` ${pad(curWeek)}주` : ''));
   window.scrollTo(0, 0);
 }
 window.addEventListener('hashchange', route);
