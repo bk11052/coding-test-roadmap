@@ -251,6 +251,7 @@ index = ("<!doctype html>\n<html lang=\"ko\">\n<head>\n<meta charset=\"utf-8\">\
          "<meta property=\"og:description\" content=\"국내 대기업 신입 개발자 코딩테스트를 16주 동안 준비하는 계획과 기록 도구\">\n"
          f"<meta property=\"og:image\" content=\"{SITE}/og.png\">\n<meta property=\"og:image:width\" content=\"1200\">\n<meta property=\"og:image:height\" content=\"630\">\n"
          "<meta name=\"twitter:card\" content=\"summary_large_image\">\n"
+         "<script data-goatcounter=\"https://coding-test-roadmap.goatcounter.com/count\" data-goatcounter-settings='{\"no_onload\": true}' async src=\"https://gc.zgo.at/count.js\"></script>\n"
          + fragment[:split] + "</head>\n<body>\n" + fragment[split:] + "\n</body>\n</html>\n")
 (ROOT / "index.html").write_text(index)
 

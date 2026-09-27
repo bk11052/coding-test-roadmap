@@ -17,6 +17,16 @@ const fmtH = m => { m = Math.round(m); const h = Math.floor(m/60), r = m % 60; r
 const url = x => x.s === 'P' ? `https://school.programmers.co.kr/learn/courses/30/lessons/${x.id}` : `https://www.codetree.ai/ko/frequent-problems/${x.s === 'C' ? 'samsung-sw' : 'hsat'}/problems/${x.id}/description`;
 const est = (x, sql) => x.s === 'C' ? 150 : x.s === 'H' ? 60 : sql ? (x.lv === 'LV3' ? 20 : 30) : (LVMIN[x.lv] || 40);
 
+// ---------- anonymous usage stats (GoatCounter, GitHub Pages only) ----------
+// Sends only counters (page name or event name). Never sends problem lists, notes or dates.
+const gcQueue = [];
+function track(path, title, event){
+  const send = () => { try { window.goatcounter.count({path, title: title || path, event: !!event}); } catch(e) {} };
+  if (window.goatcounter && window.goatcounter.count) send(); else if (gcQueue.length < 50) gcQueue.push(send);
+}
+window.addEventListener('load', () => { const s = document.querySelector('script[data-goatcounter]'); const go = () => { while (gcQueue.length) gcQueue.shift()(); }; if (window.goatcounter && window.goatcounter.count) go(); else if (s) s.addEventListener('load', go); });
+const MILESTONES = [10, 30, 50, 100, 149];
+
 // ---------- index ----------
 const PROBS = {}, SETS = {};
 WEEKS.forEach(w => {
@@ -36,7 +46,7 @@ WEEKS.forEach(w => {
 });
 
 // ---------- state ----------
-const blank = () => ({v:2, status:{}, notes:{}, review:{}, settings:{co:[], exam:'', hours:2}, log:{}, mocks:[], timer:null, plan:null});
+const blank = () => ({v:2, status:{}, notes:{}, review:{}, settings:{co:[], exam:'', hours:2}, log:{}, mocks:[], timer:null, plan:null, milestones:[]});
 function loadLocal(){
   try {
     const raw = localStorage.getItem('cote-state-v2');
@@ -79,7 +89,13 @@ const coreKeys = n => SETS[n].filter(s => s.kind !== 'more' && relevant(s.co)).f
 function setStatus(key, st){
   const prev = S.status[key];
   if (st) S.status[key] = st; else delete S.status[key];
-  if (st && !prev) S.log[today()] = (S.log[today()] || 0) + 1;
+  if (st && !prev) {
+    S.log[today()] = (S.log[today()] || 0) + 1;
+    if (st !== 'fail') track('solved-w' + pad(PROBS[key].w.n), `${pad(PROBS[key].w.n)}주 문제 체크`, true);
+    const n = Object.values(S.status).filter(s => s !== 'fail').length;
+    S.milestones = S.milestones || [];
+    for (const m of MILESTONES) if (n >= m && !S.milestones.includes(m)) { S.milestones.push(m); track('milestone-' + m, `${m}문제 달성`, true); }
+  }
   if ((st === 'hint' || st === 'fail') && !S.review[key]) S.review[key] = {step:0, due:addDays(today(), 1)};
   persist(); refreshRows(key); refresh();
 }
@@ -151,6 +167,7 @@ function route(){
   curView = view;
   if (view === 'plan') { if (!curWeek) curWeek = firstOpenWeek(); renderSide(); renderDetail(); }
   renderCrumb();
+  track('/' + (view === 'plan' && curWeek && location.hash.startsWith('#w') ? 'w' + pad(curWeek) : view), VIEW_NAME[view] + (view === 'plan' && location.hash.startsWith('#w') ? ` ${pad(curWeek)}주` : ''));
   window.scrollTo(0, 0);
 }
 window.addEventListener('hashchange', route);
@@ -433,6 +450,7 @@ function endMock(save){
     const ks = findSet(t.id).items.map(x => x.s + x.id);
     S.mocks.push({set: t.set, date: today(), minutes: Math.round(elapsed() / 60000), solved: ks.filter(isDone).length, total: ks.length});
     S.mocks = S.mocks.slice(-100);
+    track('mock-finish', '모의고사 완료', true);
     toast(`기록했습니다: ${ks.filter(isDone).length}/${ks.length}문제, ${fmtH(elapsed() / 60000)}`);
   }
   S.timer = null; persist(); showTimer(); renderDetail();
@@ -455,7 +473,7 @@ async function importFile(input){
   const f = input.files && input.files[0]; if (!f) return;
   try {
     const obj = JSON.parse(await f.text()); if (!obj || typeof obj.status !== 'object') throw 0;
-    S = mergeState(obj, S); persist(); refresh(); renderDetail(); showTimer();
+    S = mergeState(obj, S); persist(); refresh(); renderDetail(); showTimer(); track('import', '기록 가져오기', true);
     $('#ioMsg').textContent = `기록을 가져왔습니다. 푼 문제 ${Object.values(S.status).filter(s => s !== 'fail').length}개.`;
   } catch(e) { $('#ioMsg').textContent = '이 파일은 읽을 수 없습니다. 이 페이지에서 내보낸 파일인지 확인하세요.'; }
   input.value = '';
@@ -466,13 +484,13 @@ document.addEventListener('change', e => {
   const t = e.target;
   if (t.matches('li.row > input[type=checkbox]')) { const k = t.closest('li.row').dataset.key; setStatus(k, t.checked ? (S.status[k] === 'hint' ? 'hint' : 'solved') : null); }
   else if (t.matches('.panel input[type=radio]')) setStatus(t.closest('li.row').dataset.key, t.value || null);
-  else if (t.matches('#coChips input')) { S.settings.co = [...document.querySelectorAll('#coChips input:checked')].map(i => i.value); unfolded.clear(); S.plan = null; persist(); refresh(); }
-  else if (t.id === 'examDate') { S.settings.exam = t.value; persist(); refresh(); }
+  else if (t.matches('#coChips input')) { S.settings.co = [...document.querySelectorAll('#coChips input:checked')].map(i => i.value); unfolded.clear(); S.plan = null; persist(); refresh(); if (t.checked) track('company-' + t.value, `지원 회사: ${CO_NAME[t.value]}`, true); }
+  else if (t.id === 'examDate') { S.settings.exam = t.value; persist(); refresh(); if (t.value) track('exam-date-set', '시험 날짜 설정', true); }
   else if (t.id === 'hoursDay') { S.settings.hours = Math.min(12, Math.max(0.5, Number(t.value) || 2)); S.plan = null; persist(); refresh(); }
   else if (t.id === 'fStatus') renderDetail();
   else if (t.id === 'wkSelect') location.hash = 'w' + t.value;
   else if (t.id === 'importFile') importFile(t);
-  else if (t.matches('.langsw input')) { lang = t.value; try { localStorage.setItem('cote-lang', lang); } catch(e) {} renderCode(); }
+  else if (t.matches('.langsw input')) { lang = t.value; try { localStorage.setItem('cote-lang', lang); } catch(e) {} renderCode(); track('lang-' + lang, `코드 언어: ${lang}`, true); }
 });
 let noteTimer = null, searchTimer = null;
 document.addEventListener('input', e => {
@@ -492,7 +510,7 @@ document.addEventListener('click', e => {
   else if (t.dataset.unfold) { unfolded.add(t.dataset.unfold); renderDetail(); }
   else if (t.dataset.hint) askHint(t.dataset.key, t.dataset.hint);
   else if (t.dataset.stop) aiCtl[t.dataset.stop]?.abort();
-  else if (t.dataset.mock) { if (S.timer) return toast('진행 중인 모의고사를 먼저 끝내 주세요.'); const s = findSet(t.dataset.mock); S.timer = {id: s.id, set: s.title.replace('모의고사 · ', ''), min: s.min, start: Date.now(), paused: null, pausedTotal: 0}; persist(); showTimer(); $('#tmPanel').hidden = false; }
+  else if (t.dataset.mock) { if (S.timer) return toast('진행 중인 모의고사를 먼저 끝내 주세요.'); const s = findSet(t.dataset.mock); S.timer = {id: s.id, set: s.title.replace('모의고사 · ', ''), min: s.min, start: Date.now(), paused: null, pausedTotal: 0}; persist(); showTimer(); $('#tmPanel').hidden = false; track('mock-start', '모의고사 시작', true); }
   else if (t.id === 'tmPause') { const x = S.timer; if (x.paused) { x.pausedTotal += Date.now() - x.paused; x.paused = null; } else x.paused = Date.now(); persist(); showTimer(); }
   else if (t.id === 'tmEnd') { if (!endArmed) { endArmed = true; t.textContent = '한 번 더 누르면 기록'; setTimeout(() => { endArmed = false; t.textContent = '끝내고 기록'; }, 4000); return; } endArmed = false; t.textContent = '끝내고 기록'; endMock(true); }
   else if (t.id === 'tmCancel') endMock(false);
@@ -503,10 +521,10 @@ document.addEventListener('click', e => {
   else if (t.id === 'coachBtn') askCoach();
   else if (t.id === 'moreToday') { S.plan.keys = S.plan.keys.concat(pickNext(S.plan.keys, (Number(S.settings.hours) || 2) * 60)); persist(); refresh(); }
   else if (t.id === 'coachStop') coachCtl?.abort();
-  else if (t.id === 'exportBtn') exportState();
+  else if (t.id === 'exportBtn') { exportState(); track('export', '기록 내보내기', true); }
   else if (t.id === 'resetBtn') {
     if (!t.dataset.armed) { t.dataset.armed = '1'; t.textContent = '한 번 더 누르면 모두 지워집니다'; setTimeout(() => { delete t.dataset.armed; t.textContent = '기록 초기화'; }, 4000); return; }
-    const {co, exam, hours} = S.settings; S = blank(); Object.assign(S.settings, {co, exam, hours});
+    const {co, exam, hours} = S.settings, ms = S.milestones || []; S = blank(); Object.assign(S.settings, {co, exam, hours}); S.milestones = ms;
     delete t.dataset.armed; t.textContent = '기록 초기화'; openPanels.clear(); persist(); refresh(); renderDetail(); showTimer();
   }
 });
@@ -515,6 +533,7 @@ document.addEventListener('click', e => {
 renderStatic(); refresh(); route(); showTimer();
 (async () => {
   if (!window.claude || !window.claude.use) return;
+  $('#privacyNote').textContent = 'claude.ai에서 열면 진행 기록은 Claude 계정의 본인 전용 공간에 저장되고, 사용 통계는 수집하지 않습니다.';
   const [db, user, sample] = await Promise.all(['db', 'user', 'sample'].map(n => window.claude.use(n).catch(() => null)));
   if (sample) { sampleFn = sample; $('#coachBox').hidden = false; }
   const uid = user ? await user.id() : null;
