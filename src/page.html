@@ -1,0 +1,322 @@
+<title>코딩테스트 로드맵</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --bg:#ffffff; --sub:#f6f7f9; --ink:#191f28; --ink2:#4e5968; --muted:#8b95a1; --line:#e5e8eb; --line2:#f2f4f6;
+  --accent:#1b64da; --accent-bg:#edf3fd; --done:#0a8f5b; --warn:#b76e00; --bad:#d23c3c; --on-accent:#ffffff;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --bg:#121417; --sub:#1a1d21; --ink:#eceef1; --ink2:#b6bcc4; --muted:#7f8893; --line:#2b3036; --line2:#202328;
+  --accent:#6fa3ff; --accent-bg:#1c2a44; --done:#3ccf8e; --warn:#f0a73a; --bad:#ff7070; --on-accent:#0d1117;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#121417; --sub:#1a1d21; --ink:#eceef1; --ink2:#b6bcc4; --muted:#7f8893; --line:#2b3036; --line2:#202328;
+  --accent:#6fa3ff; --accent-bg:#1c2a44; --done:#3ccf8e; --warn:#f0a73a; --bad:#ff7070; --on-accent:#0d1117;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;font-size:15px;line-height:1.6;letter-spacing:-.005em;font-variant-numeric:tabular-nums}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,p{margin:0}
+h1{font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.3}
+h2{font-size:18px;font-weight:700;letter-spacing:-.01em;line-height:1.4}
+h3{font-size:15px;font-weight:600}
+ul{margin:0;padding-left:1.2em}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.muted{color:var(--muted)}
+.ink2{color:var(--ink2)}
+.small{font-size:13px}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.top-in{max-width:1160px;margin:0 auto;padding-inline:20px;display:flex;align-items:center;gap:24px;height:56px}
+.brand{font-weight:700;font-size:16px;white-space:nowrap}
+.tabs{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{padding:8px 12px;border-radius:8px;color:var(--ink2);white-space:nowrap;font-weight:500;font-size:14.5px}
+.tabs a:hover{background:var(--sub);text-decoration:none}
+.tabs a[aria-current="page"]{color:var(--ink);background:var(--sub);font-weight:600}
+.top-prog{font-size:13px;color:var(--muted);white-space:nowrap}
+.top-prog b{color:var(--ink);font-weight:600}
+
+main{max-width:1160px;margin:0 auto;padding-inline:20px;padding-block:32px 120px}
+.view{display:grid;grid-template-columns:minmax(0,1fr);gap:40px}
+.view>*,.detail>*,.plan>*{min-width:0}
+.head{display:grid;gap:6px}
+.lead{color:var(--ink2);max-width:68ch}
+
+/* today */
+.setup{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.setup .lbl{font-size:13px;color:var(--muted);margin-right:8px}
+.cos{display:inline-flex;flex-wrap:wrap;gap:6px}
+.cos label{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border:1px solid var(--line);border-radius:999px;font-size:13.5px;cursor:pointer;user-select:none}
+.cos label:has(input:checked){border-color:var(--ink);background:var(--ink);color:var(--bg)}
+.cos input{position:absolute;opacity:0;width:1px;height:1px}
+.cos label:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+.inp{border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:6px 10px;font-size:14px}
+.inp.num{width:64px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:12px}
+.stat{padding:18px 20px;display:grid;gap:4px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0}
+.stat .k{font-size:13px;color:var(--muted)}
+.stat .v{font-size:24px;font-weight:700;letter-spacing:-.02em}
+.stat .s{font-size:12.5px;color:var(--muted)}
+.pace{color:var(--ink2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.block{display:grid;gap:12px;align-content:start}
+.block-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.list{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.list>li{border-bottom:1px solid var(--line2)}
+.empty{padding:16px 0;color:var(--muted);font-size:14px}
+.cur{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:18px 20px;background:var(--sub);border-radius:12px}
+.cur .t{font-weight:600}
+.util{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font-size:13px;color:var(--muted);padding-top:12px;border-top:1px solid var(--line)}
+
+/* buttons */
+.btn{border:0;background:var(--ink);color:var(--bg);border-radius:8px;padding:8px 14px;font-size:14px;font-weight:600;cursor:pointer}
+.btn:hover{opacity:.88}
+.btn:disabled{opacity:.4;cursor:default}
+.btn.sm{padding:4px 10px;font-size:12.5px;border-radius:6px}
+.btn.line{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.lnk{border:0;background:none;padding:0;color:var(--ink2);font-size:13px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line)}
+.lnk:hover{color:var(--ink)}
+.filebtn{position:relative}
+.filebtn input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}
+
+/* problem row */
+.row{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:10px;align-items:center;padding:11px 0}
+.row input[type=checkbox]{width:17px;height:17px;margin:0;accent-color:var(--ink);cursor:pointer}
+.row .name{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;min-width:0}
+.row .name a{color:var(--ink);font-weight:500}
+.row .name a:hover{color:var(--accent);text-decoration:none}
+.row.is-done .name a{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
+.row .src{font-size:12px;color:var(--muted)}
+.row .right{display:flex;align-items:center;gap:12px;font-size:12.5px;color:var(--muted);white-space:nowrap}
+.st-solved{color:var(--done)} .st-hint{color:var(--warn)} .st-fail{color:var(--bad)}
+.memo-mark{color:var(--warn)}
+.row .more{border:1px solid var(--line);background:none;border-radius:6px;padding:2px 9px;font-size:12px;color:var(--ink2);cursor:pointer}
+.row .more[aria-expanded="true"]{border-color:var(--ink);color:var(--ink)}
+.panel{grid-column:2/-1;display:grid;gap:12px;padding:14px 16px;margin-top:4px;background:var(--sub);border-radius:10px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg);flex-wrap:wrap}
+.seg label{padding:6px 12px;font-size:13px;cursor:pointer;border-left:1px solid var(--line)}
+.seg label:first-child{border-left:0}
+.seg input{position:absolute;opacity:0;width:1px;height:1px}
+.seg label:has(input:checked){background:var(--ink);color:var(--bg)}
+.seg label:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:-2px}
+textarea{width:100%;border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:8px 10px;font-size:14px;resize:vertical}
+.fld{display:grid;gap:4px}
+.fld>span{font-size:12.5px;color:var(--muted)}
+.ai-out{white-space:pre-wrap;font-size:14px;line-height:1.7;padding:12px 14px;border-left:2px solid var(--accent);background:var(--bg);border-radius:0 8px 8px 0}
+.ai-btns{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+
+/* curriculum */
+.plan{display:grid;grid-template-columns:268px minmax(0,1fr);gap:40px;align-items:start}
+.side{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow:auto;display:grid;gap:18px;padding-right:4px}
+.side h3{font-size:12.5px;color:var(--muted);font-weight:500;margin-bottom:4px}
+.wk{display:grid;grid-template-columns:24px 1fr auto;gap:8px;align-items:center;padding:7px 10px;border-radius:8px;color:var(--ink2);font-size:14px;cursor:pointer;border:0;background:none;text-align:left;width:100%}
+.wk:hover{background:var(--sub)}
+.wk[aria-current="true"]{background:var(--sub);color:var(--ink);font-weight:600}
+.wk .n{font-size:12px;color:var(--muted);font-weight:500}
+.wk .c{font-size:12px;color:var(--muted);font-weight:400}
+.wk.complete .c{color:var(--done)}
+.wk .pri{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-left:6px;vertical-align:2px}
+.wk-select{display:none}
+.searchbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.searchbar input[type=search]{flex:1 1 240px;min-width:0}
+.detail{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+.dhead{display:grid;gap:8px}
+.dmeta{display:flex;flex-wrap:wrap;gap:4px 16px;color:var(--muted);font-size:13.5px}
+.bar{height:4px;background:var(--line2);border-radius:2px;overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--ink);width:0}
+.info{display:grid;grid-template-columns:96px 1fr;gap:10px 16px;font-size:14px}
+.info dt{color:var(--muted)}
+.info dd{margin:0}
+.info ul{padding-left:1.1em;display:grid;gap:2px}
+.set{display:grid;gap:4px}
+.set-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;padding-bottom:6px}
+.set-h .t{font-weight:600}
+.set-h .m{font-size:13px;color:var(--muted)}
+.set.off .list{display:none}
+.noti{font-size:13px;color:var(--muted)}
+
+/* companies & resources */
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th{text-align:left;font-weight:500;color:var(--muted);font-size:12.5px;padding:8px 12px 8px 0;border-bottom:1px solid var(--line);white-space:nowrap}
+.tbl td{padding:12px 12px 12px 0;border-bottom:1px solid var(--line2);vertical-align:top}
+.tbl td:first-child{font-weight:600;white-space:nowrap}
+.tbl .sub{display:block;font-weight:400;font-size:12.5px;color:var(--muted)}
+.scroll{overflow-x:auto}
+.dots{letter-spacing:2px;color:var(--ink);white-space:nowrap}
+.dots .o{color:var(--line)}
+.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.cols3 ul,.plain{padding-left:1.1em;display:grid;gap:4px;font-size:14px;color:var(--ink2)}
+details.code{border-top:1px solid var(--line2)}
+details.code summary{cursor:pointer;padding:12px 0;font-weight:500;list-style:none;display:flex;justify-content:space-between}
+details.code summary::-webkit-details-marker{display:none}
+details.code summary::after{content:"+";color:var(--muted)}
+details.code[open] summary::after{content:"−"}
+pre{margin:0 0 14px;background:var(--sub);border-radius:8px;padding:14px 16px;font-size:12.5px;line-height:1.6;overflow-x:auto}
+.foot{font-size:13px;color:var(--muted);display:grid;gap:4px;border-top:1px solid var(--line);padding-top:20px}
+
+/* timer */
+.timer{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--ink);color:var(--bg);padding:12px 20px calc(12px + env(safe-area-inset-bottom,0px))}
+.timer-in{max-width:1160px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between}
+.timer .clock{font-size:26px;font-weight:700;letter-spacing:-.01em}
+.timer .clock.over{color:#ff8a8a}
+.timer .set{font-size:13px;opacity:.75}
+.timer .btn{background:var(--bg);color:var(--ink)}
+.timer .lnk{color:var(--bg);opacity:.75}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:90px;z-index:21;background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:8px;font-size:14px}
+
+@media (max-width:860px){
+  .plan{grid-template-columns:minmax(0,1fr);gap:20px}
+  .side{display:none}
+  .wk-select{display:block;width:100%}
+  .two{grid-template-columns:1fr;gap:32px}
+  .cols3{grid-template-columns:1fr;gap:24px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat:nth-child(3){border-left:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:560px){
+  .top-in{gap:12px}
+  .brand{display:none}
+  main{padding-top:24px}
+  h1{font-size:22px}
+  .info{grid-template-columns:1fr;gap:2px 0}
+  .info dd{margin-bottom:10px}
+  .row .right .lv{display:none}
+}
+</style>
+
+<header class="top"><div class="top-in">
+  <a class="brand" href="#today" style="color:var(--ink);text-decoration:none">코딩테스트 로드맵</a>
+  <nav class="tabs" aria-label="메뉴">
+    <a href="#today" data-view="today">오늘</a>
+    <a href="#plan" data-view="plan">커리큘럼</a>
+    <a href="#companies" data-view="companies">기업별 정보</a>
+    <a href="#resources" data-view="resources">자료</a>
+  </nav>
+  <span class="top-prog" id="topProg"></span>
+</div></header>
+
+<main>
+  <!-- 오늘 -->
+  <section class="view" id="v-today" aria-labelledby="h-today">
+    <div class="head">
+      <h1 id="h-today">오늘</h1>
+      <p class="lead">국내 대기업 신입 개발자 코딩테스트를 16주 동안 준비하는 계획입니다. 지원할 회사와 시험 날짜를 정하면 하루에 풀 문제를 골라 줍니다.</p>
+    </div>
+    <div class="setup">
+      <div><span class="lbl">지원 회사</span><span class="cos" id="coChips">
+        <label><input type="checkbox" value="samsung">삼성</label>
+        <label><input type="checkbox" value="kakao">카카오</label>
+        <label><input type="checkbox" value="pg">네이버·SK·LG·한화 등</label>
+        <label><input type="checkbox" value="hyundai">현대차그룹</label>
+      </span></div>
+      <label><span class="lbl">시험 날짜</span><input class="inp" type="date" id="examDate"></label>
+      <label><span class="lbl">하루</span><input class="inp num" type="number" id="hoursDay" min="0.5" max="12" step="0.5" value="2"> <span class="small ink2">시간</span></label>
+    </div>
+    <div class="stats" id="stats"></div>
+    <p class="pace" id="pace"></p>
+    <div class="cur" id="curWeek"></div>
+    <div class="two">
+      <div class="block"><div class="block-h"><h2>오늘 풀 문제</h2><span class="small muted" id="todayMeta"></span></div><ul class="list" id="todayList"></ul></div>
+      <div class="block"><div class="block-h"><h2>복습</h2><span class="small muted">해설을 봤거나 못 푼 문제를 1·3·7·14일 뒤에 다시 풉니다</span></div><ul class="list" id="reviewList"></ul></div>
+    </div>
+    <div class="block" id="coachBox" hidden>
+      <div class="block-h"><h2>이번 주 조언</h2><span class="small muted">Claude가 진행 기록을 보고 답합니다</span></div>
+      <div class="ai-btns"><button type="button" class="btn line sm" id="coachBtn">조언 받기</button><button type="button" class="lnk" id="coachStop" hidden>중지</button></div>
+      <div class="ai-out" id="coachOut" hidden></div>
+    </div>
+    <div class="util">
+      <span id="syncState">기록은 이 브라우저에 저장됩니다.</span>
+      <button type="button" class="lnk" id="exportBtn">기록 내보내기</button>
+      <label class="lnk filebtn">기록 가져오기<input type="file" id="importFile" accept=".json,application/json"></label>
+      <button type="button" class="lnk" id="resetBtn">기록 초기화</button>
+      <span id="ioMsg"></span>
+    </div>
+  </section>
+
+  <!-- 커리큘럼 -->
+  <section class="view" id="v-plan" aria-labelledby="h-plan" hidden>
+    <div class="head">
+      <h1 id="h-plan">커리큘럼</h1>
+      <p class="lead">한 주에 한 가지 유형을 공부합니다. 강의를 보고 필수 문제를 모두 푼 뒤 통과 기준을 만족하면 다음 주로 넘어가세요. 한 문제에 30분을 고민해도 방향이 안 보이면 해설을 보고, 다음 날 다시 풉니다.</p>
+    </div>
+    <div class="plan">
+      <aside class="side" id="side" aria-label="주차 목록"></aside>
+      <div class="detail">
+        <select class="inp wk-select" id="wkSelect" aria-label="주차 선택"></select>
+        <div class="searchbar" role="search">
+          <input class="inp" type="search" id="fText" placeholder="문제 이름이나 주제로 찾기" aria-label="문제 검색">
+          <select class="inp" id="fStatus" aria-label="상태"><option value="">모든 문제</option><option value="todo">안 푼 문제</option><option value="done">푼 문제</option><option value="review">복습 예정</option><option value="memo">메모 있음</option></select>
+          <button type="button" class="lnk" id="fClear" hidden>검색 지우기</button>
+        </div>
+        <div id="detail"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 기업별 정보 -->
+  <section class="view" id="v-companies" aria-labelledby="h-co" hidden>
+    <div class="head">
+      <h1 id="h-co">기업별 정보</h1>
+      <p class="lead">최근 응시 후기와 기업 공개 자료를 모았습니다. 형식은 해마다 바뀌니 지원 전에 채용 공고를 꼭 확인하세요.</p>
+    </div>
+    <div class="block"><h2>시험 형식</h2><div class="scroll"><table class="tbl" id="coTable"></table></div></div>
+    <div class="block"><h2>자주 나오는 유형</h2><p class="small muted">●●● 매우 자주 · ●● 자주 · ● 가끔 · 빈칸은 거의 안 나옴</p><div class="scroll"><table class="tbl" id="typeTable"></table></div></div>
+    <div class="cols3">
+      <div class="block"><h2>코딩테스트 면제</h2><ul class="plain">
+        <li>삼성 SW역량테스트 A형 이상 (SW Expert Academy 상시 시험)</li>
+        <li>현대차그룹 HSAT 인증: 2년 동안 현대차·기아·모비스·오토에버 등 SW 코테 면제</li>
+        <li>프로그래머스 PCCP LV.2 이상: 교보생명, 현대캐피탈 등</li></ul></div>
+      <div class="block"><h2>시험장에서</h2><ul class="plain">
+        <li>시작 10분은 전체 문제를 읽고 푸는 순서를 정합니다</li>
+        <li>입력 크기로 쓸 수 있는 시간복잡도를 먼저 적어 둡니다</li>
+        <li>30분 넘게 막히면 다음 문제로 넘어갑니다</li>
+        <li>정답이 안 떠오르면 완전탐색으로 부분 점수라도 받습니다</li>
+        <li>제출 전 입력의 최솟값·최댓값으로 확인합니다</li></ul></div>
+      <div class="block"><h2>입력 크기와 시간복잡도</h2><ul class="plain">
+        <li>N ≤ 10: O(N!) 순열</li><li>N ≤ 20: O(2ᴺ) 부분집합</li><li>N ≤ 500: O(N³)</li><li>N ≤ 5,000: O(N²)</li><li>N ≤ 10⁶: O(N log N)</li><li>그 이상: O(N)</li>
+        <li class="muted">1초에 약 10⁸번 연산 기준. Python은 5~10배 느립니다</li></ul></div>
+    </div>
+    <p class="noti">AI 도구는 네이버·카카오를 비롯한 대부분의 기업에서 시험 중 사용이 금지됩니다. 컬리·무신사 등 일부 기업만 AI 활용형 과제를 도입했습니다.</p>
+  </section>
+
+  <!-- 자료 -->
+  <section class="view" id="v-resources" aria-labelledby="h-res" hidden>
+    <div class="head">
+      <h1 id="h-res">자료</h1>
+      <p class="lead">공부에 쓰는 사이트와 강의, 외워 둘 코드, 참고 영상입니다.</p>
+    </div>
+    <div class="block"><h2>공부 도구</h2><div class="scroll"><table class="tbl" id="toolTable"></table></div></div>
+    <div class="block"><h2>외워 둘 코드 (Python)</h2><p class="small muted">16주차에 보지 않고 쓸 수 있는지 확인합니다.</p><div id="tpls"></div></div>
+    <div class="block"><h2>참고 영상</h2><div class="scroll"><table class="tbl" id="vidTable"></table></div></div>
+    <div class="block"><h2>주의할 정보</h2><p class="small muted">인터넷에 흔하지만 틀렸거나 오래된 정보입니다.</p><ul class="plain" id="dropList"></ul></div>
+    <div class="block"><h2>출처</h2><ul class="plain" id="srcList"></ul></div>
+    <div class="foot">
+      <span>백준(BOJ)은 2026년 4월 28일 서비스를 종료해 채점이 되지 않습니다. 그래서 모든 문제를 프로그래머스와 코드트리에서 골랐습니다.</span>
+      <span>문제 링크는 2026년 9월 26일에 확인했습니다. 문제 저작권은 각 사이트에 있습니다.</span>
+      <span>AI·스크립트용 파일: <a href="llms.txt">llms.txt</a> · <a href="README.md">README.md</a> · <a href="curriculum.json">curriculum.json</a> · <a href="https://github.com/bk11052/coding-test-roadmap">GitHub</a></span>
+    </div>
+  </section>
+</main>
+
+<div class="timer" id="timer" hidden role="region" aria-label="모의고사 타이머"><div class="timer-in">
+  <div><div class="set" id="tmSet"></div><div class="clock" id="tmClock">0:00:00</div></div>
+  <div class="ai-btns"><span class="set" id="tmState"></span><button type="button" class="btn sm" id="tmPause">일시정지</button><button type="button" class="btn sm" id="tmEnd">끝내고 기록</button><button type="button" class="lnk" id="tmCancel">기록 없이 닫기</button></div>
+</div></div>
+<p class="toast" id="toast" hidden></p>
+
+<script>
+const WEEKS = __WEEKS__;
+const INFO = __STATIC__;
+__APP__
+</script>

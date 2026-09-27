@@ -3,1087 +3,767 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>대기업 코테 로드맵</title>
-<meta name="description" content="국내 대기업(삼성·카카오·네이버·현대차그룹·SK·LG·한화) 코딩테스트 형식, 출제 유형, 문제 179개 16주 커리큘럼, 복습 일정·오답 노트·모의고사 타이머를 담은 학습 대시보드">
-<meta property="og:title" content="대기업 코테 로드맵">
-<meta property="og:description" content="국내 대기업 신입 SW 코딩테스트를 16주 안에 준비하는 커리큘럼과 대시보드">
-<link rel="alternate" type="text/markdown" href="README.md" title="전체 내용 (Markdown)">
-<link rel="alternate" type="application/json" href="curriculum.json" title="커리큘럼 데이터 (JSON)">
-<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap">
+<meta name="description" content="국내 대기업 신입 개발자 코딩테스트를 16주 동안 준비하는 계획과 기록 도구">
+<link rel="alternate" type="text/markdown" href="README.md">
+<title>코딩테스트 로드맵</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 :root{
-  --bg:#f3f5f8; --surface:#ffffff; --ink:#15203a; --muted:#5d677d; --line:#dfe4ec; --soft:#eaeef4;
-  --accent:#2f5bea; --accent-soft:#e3e9fd; --amber:#b7730f; --amber-soft:#fbf0dc;
-  --on-accent:#ffffff; --good:#1d7f55; --good-soft:#dcf1e6; --bad:#b4323c; --bad-soft:#f8e1e3; --mid:#6a53c9; --mid-soft:#ebe6fa;
+  --bg:#ffffff; --sub:#f6f7f9; --ink:#191f28; --ink2:#4e5968; --muted:#8b95a1; --line:#e5e8eb; --line2:#f2f4f6;
+  --accent:#1b64da; --accent-bg:#edf3fd; --done:#0a8f5b; --warn:#b76e00; --bad:#d23c3c; --on-accent:#ffffff;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   color-scheme:dark;
-  --bg:#0f1524; --surface:#172035; --ink:#e7ecf6; --muted:#9aa5bc; --line:#2a3550; --soft:#1e2842;
-  --accent:#7b9cff; --accent-soft:#1f2c55; --amber:#e6a64a; --amber-soft:#3a2c14;
-  --on-accent:#0f1524; --good:#4cc890; --good-soft:#143427; --bad:#f07780; --bad-soft:#3d1c21; --mid:#a996ff; --mid-soft:#2a2350;
+  --bg:#121417; --sub:#1a1d21; --ink:#eceef1; --ink2:#b6bcc4; --muted:#7f8893; --line:#2b3036; --line2:#202328;
+  --accent:#6fa3ff; --accent-bg:#1c2a44; --done:#3ccf8e; --warn:#f0a73a; --bad:#ff7070; --on-accent:#0d1117;
 }}
 :root[data-theme="dark"]{
   color-scheme:dark;
-  --bg:#0f1524; --surface:#172035; --ink:#e7ecf6; --muted:#9aa5bc; --line:#2a3550; --soft:#1e2842;
-  --accent:#7b9cff; --accent-soft:#1f2c55; --amber:#e6a64a; --amber-soft:#3a2c14;
-  --on-accent:#0f1524; --good:#4cc890; --good-soft:#143427; --bad:#f07780; --bad-soft:#3d1c21; --mid:#a996ff; --mid-soft:#2a2350;
+  --bg:#121417; --sub:#1a1d21; --ink:#eceef1; --ink2:#b6bcc4; --muted:#7f8893; --line:#2b3036; --line2:#202328;
+  --accent:#6fa3ff; --accent-bg:#1c2a44; --done:#3ccf8e; --warn:#f0a73a; --bad:#ff7070; --on-accent:#0d1117;
 }
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:"Noto Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo",sans-serif;font-size:15px;line-height:1.65}
-.wrap{max-width:1120px;margin:0 auto;padding-inline:20px;padding-block:36px 90px;display:grid;gap:40px}
-h1,h2,h3{margin:0;line-height:1.3;text-wrap:balance}
-h1{font-size:32px;font-weight:900;letter-spacing:-.02em}
-h2{font-size:22px;font-weight:900;letter-spacing:-.01em}
-h3{font-size:16px;font-weight:700}
-p{margin:0}
-ul{margin:0;padding-left:1.1em}
-li{margin-block:2px}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;font-size:15px;line-height:1.6;letter-spacing:-.005em;font-variant-numeric:tabular-nums}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
-.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+h1,h2,h3,p{margin:0}
+h1{font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.3}
+h2{font-size:18px;font-weight:700;letter-spacing:-.01em;line-height:1.4}
+h3{font-size:15px;font-weight:600}
+ul{margin:0;padding-left:1.2em}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 .muted{color:var(--muted)}
+.ink2{color:var(--ink2)}
 .small{font-size:13px}
-.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
-.sec{display:grid;gap:16px;scroll-margin-top:64px}
-.sec-head{display:grid;gap:6px}
-.lead{color:var(--muted);max-width:72ch}
-nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);margin-inline:-20px;padding:10px 20px;display:flex;gap:6px;overflow-x:auto}
-nav.toc a{white-space:nowrap;font-size:13px;padding:5px 11px;border-radius:999px;color:var(--ink);border:1px solid var(--line);background:var(--surface)}
-nav.toc a:hover{border-color:var(--accent);text-decoration:none}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:grid;gap:12px;align-content:start;min-width:0}
-.grid{display:grid;gap:14px}
-.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-.pill{display:inline-block;font-size:11.5px;font-weight:500;padding:2px 9px;border-radius:999px;white-space:nowrap;line-height:1.6}
-.p-good{background:var(--good-soft);color:var(--good)}
-.p-bad{background:var(--bad-soft);color:var(--bad)}
-.p-amber{background:var(--amber-soft);color:var(--amber)}
-.p-acc{background:var(--accent-soft);color:var(--accent)}
-.p-mid{background:var(--mid-soft);color:var(--mid)}
-.p-soft{background:var(--soft);color:var(--muted)}
-.key{display:grid;gap:10px}
-.key .k{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start}
-.key .n{font-family:"JetBrains Mono",monospace;font-weight:600;color:var(--accent);font-size:14px;padding-top:1px}
-.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
-table{border-collapse:collapse;width:100%;font-size:14px}
-th,td{text-align:left;vertical-align:top;padding:11px 14px;border-bottom:1px solid var(--line)}
-th{background:var(--soft);font-size:12px;color:var(--muted);font-weight:500;white-space:nowrap}
-tr:last-child td{border-bottom:0}
-td.co{font-weight:700;white-space:nowrap}
-td.mono{min-width:150px;font-size:13px}
-tbody td:nth-child(2){min-width:96px}
-td .sub{display:block;font-size:12px;color:var(--muted);font-weight:400}
-.heat td.h{text-align:center;font-size:12px;white-space:nowrap}
-.lv3{background:color-mix(in srgb,var(--accent) 55%,var(--surface));color:#fff;font-weight:600}
-.lv2{background:color-mix(in srgb,var(--accent) 28%,var(--surface))}
-.lv1{background:color-mix(in srgb,var(--accent) 10%,var(--surface))}
-.lv0{color:var(--muted)}
-.vid{display:grid;gap:10px}
-.vid .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap}
-.vid h3 a{color:var(--ink)}
-.vid .ch{font-size:13px;color:var(--muted)}
-.vid dl{margin:0;display:grid;gap:8px}
-.vid dt{font-size:12px;color:var(--muted);font-weight:500}
-.vid dd{margin:0;font-size:14px}
-.score{display:flex;gap:3px}
-.score i{width:18px;height:6px;border-radius:2px;background:var(--line);display:block}
-.score i.on{background:var(--accent)}
-.phase{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:18px 0;border-top:1px solid var(--line)}
-.phase:first-of-type{border-top:0;padding-top:4px}
-.phase .when{display:grid;gap:4px;align-content:start}
-.phase .when b{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--accent)}
-.phase .body{display:grid;gap:10px}
-.weeks{display:grid;gap:8px}
-.wk{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
-.wk input{margin-top:5px;width:16px;height:16px;accent-color:var(--accent)}
-.wk label{cursor:pointer;display:grid;gap:3px}
-.wk .t{font-weight:700;font-size:14px}
-.wk .d{font-size:13px;color:var(--muted)}
-.wk .pr{font-size:12.5px}
-.wk.done{opacity:.6}
-.wk.done .t{text-decoration:line-through}
-.progress{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted)}
-.bar{flex:1;height:8px;background:var(--soft);border-radius:4px;overflow:hidden;max-width:360px}
-.bar div{height:100%;background:var(--accent);width:0;transition:width .3s}
-.tool{display:grid;gap:8px}
-.tool .head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
-.tool .for{font-size:13px;color:var(--muted)}
-.drop{display:grid;grid-template-columns:auto 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
-.drop:first-child{border-top:0;padding-top:0}
-.check li{list-style:none;position:relative;padding-left:22px}
-.check li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border:1.5px solid var(--accent);border-radius:3px}
-.check{padding-left:0}
-code{font-family:"JetBrains Mono",monospace;font-size:.9em;background:var(--soft);padding:1px 5px;border-radius:4px}
-.src{columns:2 320px;gap:24px;font-size:13px;padding-left:1.1em}
-.src li{break-inside:avoid;margin-bottom:4px}
-.notice{display:flex;gap:10px;align-items:flex-start;background:var(--bad-soft);border-radius:10px;padding:12px 14px;font-size:14px;max-width:880px}
-.notice .pill{background:var(--surface)}
-.legend-row{color:var(--muted);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.linkbtn{font:inherit;font-size:12px;background:none;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:3px 10px;cursor:pointer}
-.linkbtn:hover{color:var(--ink);border-color:var(--muted)}
-.weeklist{display:grid;gap:10px}
-.phase-h{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
-.phase-h:first-child{margin-top:0}
-.phase-h .mono{font-weight:600;color:var(--accent)}
-.week{padding:0;gap:0}
-.week summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:14px 18px}
-.week summary::-webkit-details-marker{display:none}
-.week summary::after{content:"";width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin-left:4px;grid-column:4}
-.week[open] summary::after{transform:rotate(-135deg)}
-.week summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:12px}
-.wn{font-size:13px;color:var(--accent);font-weight:600}
-.wt{font-weight:700}
-.wprog{font-size:12px;color:var(--muted)}
-.week.complete .wprog{color:var(--good);font-weight:600}
-.week.complete .wt::after{content:" · 완료";color:var(--good);font-weight:500;font-size:13px}
-.wbody{display:grid;gap:14px;padding:4px 18px 18px;border-top:1px solid var(--line);padding-top:14px}
-.lec{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:baseline;font-size:14px}
-.dot-sep{color:var(--muted)}
-.plabel{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.02em;margin-right:6px}
-.learn{color:var(--ink)}
-.learn b{color:var(--muted);font-weight:700;margin-right:6px}
-.pcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
-.plist{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--bg);display:grid;gap:6px;align-content:start}
-.plist.mock{border-color:color-mix(in srgb,var(--good) 45%,var(--line))}
-.plist.mock .plabel{color:var(--good)}
-.plist.more{border-style:dashed}
-.plist ul{list-style:none;padding:0;margin:0;display:grid;gap:4px}
-.prob{display:grid;grid-template-columns:auto auto 1fr auto;gap:8px;align-items:center;font-size:14px}
-.prob input{width:16px;height:16px;accent-color:var(--accent);margin:0}
-.prob .srcp{font-size:10.5px;padding:0 6px}
-.prob .lv{font-size:11.5px;color:var(--muted);font-family:"JetBrains Mono",monospace;white-space:nowrap}
-.prob input:checked ~ a{color:var(--muted);text-decoration:line-through}
-.gate{font-size:14px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-pre{margin:0;overflow-x:auto;background:var(--soft);border-radius:8px;padding:12px 14px;font-size:12.5px;line-height:1.55}
-pre code{background:none;padding:0;font-size:inherit}
-[hidden]{display:none!important}
-.today{gap:14px;border-color:color-mix(in srgb,var(--accent) 35%,var(--line))}
-.today-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:flex-start}
-.kpis{display:flex;flex-wrap:wrap;gap:8px}
-.kpi{display:grid;gap:0;padding:6px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);min-width:84px}
-.kpi .k{font-size:11.5px;color:var(--muted)}
-.kpi .v{font-size:18px;font-weight:600}
-.settings{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end}
-fieldset{border:0;margin:0;padding:0;display:grid;gap:6px}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-.chips label{display:inline-flex;align-items:center;gap:6px;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:4px 12px;cursor:pointer;background:var(--bg)}
-.chips label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
-.chips input{accent-color:var(--accent);margin:0}
-.field{display:grid;gap:4px}
-input[type=date],textarea{font:inherit;font-size:14px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
-textarea{width:100%;resize:vertical;font-size:13.5px}
-input[type=date]:focus-visible,textarea:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.pace{margin:0}
-.todo-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
-.mini{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px}
-.mini .rv{display:inline-flex;gap:6px;margin-left:auto}
-.btn{font:inherit;font-size:13px;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);border-radius:8px;padding:6px 12px;cursor:pointer}
-.btn:hover{filter:brightness(1.08)}
-.btn:disabled{opacity:.5;cursor:default}
-.btn.sm{font-size:12px;padding:3px 10px;border-radius:6px}
-.btn.ghost{background:transparent;color:var(--accent)}
-.coach{display:grid;gap:10px;border-top:1px solid var(--line);padding-top:12px}
-.coach-head{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.ai-out{white-space:pre-wrap;font-size:14px;line-height:1.7;background:var(--soft);border-radius:8px;padding:12px 14px}
-.prob{grid-template-columns:auto auto 1fr auto !important;row-gap:6px}
-.prob .meta{display:inline-flex;align-items:center;gap:6px}
-.prob .st{display:inline-flex;gap:4px;align-items:center}
-.prob .st .pill{font-size:10.5px;padding:0 7px}
-.memo-dot{width:7px;height:7px;border-radius:50%;background:var(--amber);display:inline-block}
-.rowbtn{font:inherit;font-size:11.5px;background:none;border:1px solid var(--line);color:var(--muted);border-radius:6px;padding:1px 8px;cursor:pointer}
-.rowbtn[aria-expanded="true"]{border-color:var(--accent);color:var(--accent)}
-.panel{grid-column:1/-1;display:grid;gap:10px;padding:12px;margin-block:2px 8px;border-radius:8px;background:var(--surface);border:1px solid var(--line)}
-.radios{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px}
-.radios label{display:inline-flex;gap:5px;align-items:center;cursor:pointer}
-.radios input{accent-color:var(--accent)}
-.ai{display:grid;gap:8px}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.top-in{max-width:1160px;margin:0 auto;padding-inline:20px;display:flex;align-items:center;gap:24px;height:56px}
+.brand{font-weight:700;font-size:16px;white-space:nowrap}
+.tabs{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{padding:8px 12px;border-radius:8px;color:var(--ink2);white-space:nowrap;font-weight:500;font-size:14.5px}
+.tabs a:hover{background:var(--sub);text-decoration:none}
+.tabs a[aria-current="page"]{color:var(--ink);background:var(--sub);font-weight:600}
+.top-prog{font-size:13px;color:var(--muted);white-space:nowrap}
+.top-prog b{color:var(--ink);font-weight:600}
+
+main{max-width:1160px;margin:0 auto;padding-inline:20px;padding-block:32px 120px}
+.view{display:grid;grid-template-columns:minmax(0,1fr);gap:40px}
+.view>*,.detail>*,.plan>*{min-width:0}
+.head{display:grid;gap:6px}
+.lead{color:var(--ink2);max-width:68ch}
+
+/* today */
+.setup{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.setup .lbl{font-size:13px;color:var(--muted);margin-right:8px}
+.cos{display:inline-flex;flex-wrap:wrap;gap:6px}
+.cos label{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border:1px solid var(--line);border-radius:999px;font-size:13.5px;cursor:pointer;user-select:none}
+.cos label:has(input:checked){border-color:var(--ink);background:var(--ink);color:var(--bg)}
+.cos input{position:absolute;opacity:0;width:1px;height:1px}
+.cos label:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+.inp{border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:6px 10px;font-size:14px}
+.inp.num{width:64px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:12px}
+.stat{padding:18px 20px;display:grid;gap:4px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0}
+.stat .k{font-size:13px;color:var(--muted)}
+.stat .v{font-size:24px;font-weight:700;letter-spacing:-.02em}
+.stat .s{font-size:12.5px;color:var(--muted)}
+.pace{color:var(--ink2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.block{display:grid;gap:12px;align-content:start}
+.block-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.list{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.list>li{border-bottom:1px solid var(--line2)}
+.empty{padding:16px 0;color:var(--muted);font-size:14px}
+.cur{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:18px 20px;background:var(--sub);border-radius:12px}
+.cur .t{font-weight:600}
+.util{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font-size:13px;color:var(--muted);padding-top:12px;border-top:1px solid var(--line)}
+
+/* buttons */
+.btn{border:0;background:var(--ink);color:var(--bg);border-radius:8px;padding:8px 14px;font-size:14px;font-weight:600;cursor:pointer}
+.btn:hover{opacity:.88}
+.btn:disabled{opacity:.4;cursor:default}
+.btn.sm{padding:4px 10px;font-size:12.5px;border-radius:6px}
+.btn.line{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.lnk{border:0;background:none;padding:0;color:var(--ink2);font-size:13px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line)}
+.lnk:hover{color:var(--ink)}
+.filebtn{position:relative}
+.filebtn input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}
+
+/* problem row */
+.row{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:10px;align-items:center;padding:11px 0}
+.row input[type=checkbox]{width:17px;height:17px;margin:0;accent-color:var(--ink);cursor:pointer}
+.row .name{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;min-width:0}
+.row .name a{color:var(--ink);font-weight:500}
+.row .name a:hover{color:var(--accent);text-decoration:none}
+.row.is-done .name a{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
+.row .src{font-size:12px;color:var(--muted)}
+.row .right{display:flex;align-items:center;gap:12px;font-size:12.5px;color:var(--muted);white-space:nowrap}
+.st-solved{color:var(--done)} .st-hint{color:var(--warn)} .st-fail{color:var(--bad)}
+.memo-mark{color:var(--warn)}
+.row .more{border:1px solid var(--line);background:none;border-radius:6px;padding:2px 9px;font-size:12px;color:var(--ink2);cursor:pointer}
+.row .more[aria-expanded="true"]{border-color:var(--ink);color:var(--ink)}
+.panel{grid-column:2/-1;display:grid;gap:12px;padding:14px 16px;margin-top:4px;background:var(--sub);border-radius:10px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg);flex-wrap:wrap}
+.seg label{padding:6px 12px;font-size:13px;cursor:pointer;border-left:1px solid var(--line)}
+.seg label:first-child{border-left:0}
+.seg input{position:absolute;opacity:0;width:1px;height:1px}
+.seg label:has(input:checked){background:var(--ink);color:var(--bg)}
+.seg label:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:-2px}
+textarea{width:100%;border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:8px 10px;font-size:14px;resize:vertical}
+.fld{display:grid;gap:4px}
+.fld>span{font-size:12.5px;color:var(--muted)}
+.ai-out{white-space:pre-wrap;font-size:14px;line-height:1.7;padding:12px 14px;border-left:2px solid var(--accent);background:var(--bg);border-radius:0 8px 8px 0}
 .ai-btns{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.plist.off{opacity:.7}
-.cotags{font-weight:500;color:var(--muted);font-size:11px;margin-left:4px}
-.pri{font-size:10.5px;padding:0 7px;vertical-align:1px;margin-left:4px}
-.mockbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-td.notecell{white-space:pre-wrap;max-width:420px;min-width:200px;font-size:13px}
-.timerbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:space-between;align-items:center;padding:10px 20px calc(10px + env(safe-area-inset-bottom,0px));background:var(--surface);border-top:2px solid var(--accent);box-shadow:0 -6px 20px rgba(0,0,0,.12)}
-.tm-info{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
-.tm-clock{font-size:24px;font-weight:600}
-.tm-clock.over{color:var(--bad)}
-.tm-set{color:var(--muted)}
-.tm-btns{display:flex;gap:8px;align-items:center}
-.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;z-index:21;background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:8px}
-.pit{background:var(--amber-soft);border-radius:8px;padding:10px 14px;display:grid;gap:4px}
-.pit .plabel{color:var(--amber)}
-.pit ul{margin:0;padding-left:1.1em;font-size:13.5px;display:grid;gap:2px}
-.whrs{white-space:nowrap}
-.mini .lv{font-size:11.5px;color:var(--muted);font-family:"JetBrains Mono",monospace}
-.week summary{grid-template-columns:auto 1fr auto auto !important}
-.week summary::after{grid-column:5 !important}
-.hours{display:inline-flex;align-items:center;gap:6px;font-size:14px}
-.hours input,.filterbar select,.filterbar input{font:inherit;font-size:14px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
-.hours input{width:72px}
-.io{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.filebtn{position:relative;overflow:hidden;display:inline-block}
-.filebtn input{position:absolute;inset:0;opacity:0;cursor:pointer}
-.filebtn:focus-within{outline:2px solid var(--accent);outline-offset:2px}
-.filterbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;position:sticky;top:calc(env(safe-area-inset-top,0px) + 50px);z-index:4;background:var(--bg);padding-block:8px}
-.filterbar input[type=search]{flex:1 1 260px;min-width:0}
-footer{font-size:12px;color:var(--muted)}
-input:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-@media (max-width:560px){h1{font-size:25px}.phase{grid-template-columns:1fr;gap:8px}.card{padding:16px}}
-@media (prefers-reduced-motion:reduce){.bar div{transition:none}}
+
+/* curriculum */
+.plan{display:grid;grid-template-columns:268px minmax(0,1fr);gap:40px;align-items:start}
+.side{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow:auto;display:grid;gap:18px;padding-right:4px}
+.side h3{font-size:12.5px;color:var(--muted);font-weight:500;margin-bottom:4px}
+.wk{display:grid;grid-template-columns:24px 1fr auto;gap:8px;align-items:center;padding:7px 10px;border-radius:8px;color:var(--ink2);font-size:14px;cursor:pointer;border:0;background:none;text-align:left;width:100%}
+.wk:hover{background:var(--sub)}
+.wk[aria-current="true"]{background:var(--sub);color:var(--ink);font-weight:600}
+.wk .n{font-size:12px;color:var(--muted);font-weight:500}
+.wk .c{font-size:12px;color:var(--muted);font-weight:400}
+.wk.complete .c{color:var(--done)}
+.wk .pri{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-left:6px;vertical-align:2px}
+.wk-select{display:none}
+.searchbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.searchbar input[type=search]{flex:1 1 240px;min-width:0}
+.detail{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+.dhead{display:grid;gap:8px}
+.dmeta{display:flex;flex-wrap:wrap;gap:4px 16px;color:var(--muted);font-size:13.5px}
+.bar{height:4px;background:var(--line2);border-radius:2px;overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--ink);width:0}
+.info{display:grid;grid-template-columns:96px 1fr;gap:10px 16px;font-size:14px}
+.info dt{color:var(--muted)}
+.info dd{margin:0}
+.info ul{padding-left:1.1em;display:grid;gap:2px}
+.set{display:grid;gap:4px}
+.set-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;padding-bottom:6px}
+.set-h .t{font-weight:600}
+.set-h .m{font-size:13px;color:var(--muted)}
+.set.off .list{display:none}
+.noti{font-size:13px;color:var(--muted)}
+
+/* companies & resources */
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th{text-align:left;font-weight:500;color:var(--muted);font-size:12.5px;padding:8px 12px 8px 0;border-bottom:1px solid var(--line);white-space:nowrap}
+.tbl td{padding:12px 12px 12px 0;border-bottom:1px solid var(--line2);vertical-align:top}
+.tbl td:first-child{font-weight:600;white-space:nowrap}
+.tbl .sub{display:block;font-weight:400;font-size:12.5px;color:var(--muted)}
+.scroll{overflow-x:auto}
+.dots{letter-spacing:2px;color:var(--ink);white-space:nowrap}
+.dots .o{color:var(--line)}
+.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.cols3 ul,.plain{padding-left:1.1em;display:grid;gap:4px;font-size:14px;color:var(--ink2)}
+details.code{border-top:1px solid var(--line2)}
+details.code summary{cursor:pointer;padding:12px 0;font-weight:500;list-style:none;display:flex;justify-content:space-between}
+details.code summary::-webkit-details-marker{display:none}
+details.code summary::after{content:"+";color:var(--muted)}
+details.code[open] summary::after{content:"−"}
+pre{margin:0 0 14px;background:var(--sub);border-radius:8px;padding:14px 16px;font-size:12.5px;line-height:1.6;overflow-x:auto}
+.foot{font-size:13px;color:var(--muted);display:grid;gap:4px;border-top:1px solid var(--line);padding-top:20px}
+
+/* timer */
+.timer{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--ink);color:var(--bg);padding:12px 20px calc(12px + env(safe-area-inset-bottom,0px))}
+.timer-in{max-width:1160px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between}
+.timer .clock{font-size:26px;font-weight:700;letter-spacing:-.01em}
+.timer .clock.over{color:#ff8a8a}
+.timer .set{font-size:13px;opacity:.75}
+.timer .btn{background:var(--bg);color:var(--ink)}
+.timer .lnk{color:var(--bg);opacity:.75}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:90px;z-index:21;background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:8px;font-size:14px}
+
+@media (max-width:860px){
+  .plan{grid-template-columns:minmax(0,1fr);gap:20px}
+  .side{display:none}
+  .wk-select{display:block;width:100%}
+  .two{grid-template-columns:1fr;gap:32px}
+  .cols3{grid-template-columns:1fr;gap:24px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat:nth-child(3){border-left:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:560px){
+  .top-in{gap:12px}
+  .brand{display:none}
+  main{padding-top:24px}
+  h1{font-size:22px}
+  .info{grid-template-columns:1fr;gap:2px 0}
+  .info dd{margin-bottom:10px}
+  .row .right .lv{display:none}
+}
 </style>
 
 </head>
 <body>
-<div class="wrap">
-  <header class="sec" style="gap:10px">
-    <div class="eyebrow">2026.09 기준 · 신입 SW 개발 직군</div>
-    <h1>대기업 코테 로드맵</h1>
-    <p class="lead">이 페이지 하나로 준비할 수 있게 만들었습니다. 삼성·카카오·네이버·현대차그룹·SK·LG·한화 등 국내 대기업 코딩테스트의 형식, 출제 유형, 준비 순서와 도구를 한곳에 모았습니다. 채용 후기와 공식 자료를 교차 확인했고, 근거가 약하거나 오래된 정보는 따로 표시하거나 뺐습니다.</p>
-  </header>
-
-  <nav class="toc" aria-label="목차">
-    <a href="#summary">핵심 요약</a><a href="#companies">기업별 형식</a><a href="#types">출제 유형</a><a href="#videos">영상 검증</a><a href="#curriculum">커리큘럼</a><a href="#notes">오답 노트</a><a href="#templates">템플릿</a><a href="#tools">도구</a><a href="#exam">시험장 전략</a><a href="#dropped">걸러낸 정보</a><a href="#sources">출처</a>
+<header class="top"><div class="top-in">
+  <a class="brand" href="#today" style="color:var(--ink);text-decoration:none">코딩테스트 로드맵</a>
+  <nav class="tabs" aria-label="메뉴">
+    <a href="#today" data-view="today">오늘</a>
+    <a href="#plan" data-view="plan">커리큘럼</a>
+    <a href="#companies" data-view="companies">기업별 정보</a>
+    <a href="#resources" data-view="resources">자료</a>
   </nav>
+  <span class="top-prog" id="topProg"></span>
+</div></header>
 
-  <section class="sec" id="summary">
-    <div class="sec-head"><h2>핵심 요약</h2></div>
-    <div class="grid g2">
-      <div class="card key">
-        <div class="k"><span class="n">1</span><div><b>구현·시뮬레이션과 BFS/DFS가 모든 회사의 공통 뼈대입니다.</b> 삼성은 이 두 가지가 거의 전부이고, 카카오·네이버도 절반 이상이 문자열 처리와 구현입니다.</div></div>
-        <div class="k"><span class="n">2</span><div><b>목표 수준은 백준 골드 4~3.</b> 삼성 A형·카카오 중반부·네이버 최고 난이도 문제가 대체로 이 구간입니다. 카카오 6~7번은 골드 상위라 합격에 꼭 필요하지는 않습니다.</div></div>
-        <div class="k"><span class="n">3</span><div><b>다 풀 필요는 없습니다.</b> 카카오 1차는 7문제 중 3~4솔로 합격한 후기가 있고, HSAT는 2문제 중 2문제를 맞혀야 인증입니다. 회사별 합격선을 알고 시간을 배분하세요.</div></div>
-      </div>
-      <div class="card key">
-        <div class="k"><span class="n">4</span><div><b>연습은 프로그래머스와 코드트리로 합니다.</b> 백준은 2026년 4월 28일 서비스를 종료해 지금은 채점이 되지 않습니다. 카카오·네이버·SK·한화는 프로그래머스, 삼성은 코드트리·SWEA, 현대차그룹은 Softeer·코드트리 HSAT 기출로 연습하세요.</div></div>
-        <div class="k"><span class="n">5</span><div><b>인증으로 코테를 면제받을 수 있습니다.</b> 삼성 SW역량테스트 A형, 현대차그룹 HSAT(2년 유효), 프로그래머스 PCCP(일부 기업 LV.2 이상 면제)가 대표적입니다.</div></div>
-        <div class="k"><span class="n">6</span><div><b>AI 도구는 대부분 금지입니다.</b> 네이버·카카오 등 대부분은 AI 사용을 금지하고 웹캠 감독을 늘리는 추세입니다. 컬리·무신사처럼 AI 활용형 과제를 도입한 곳은 아직 소수입니다.</div></div>
-      </div>
+<main>
+  <!-- 오늘 -->
+  <section class="view" id="v-today" aria-labelledby="h-today">
+    <div class="head">
+      <h1 id="h-today">오늘</h1>
+      <p class="lead">국내 대기업 신입 개발자 코딩테스트를 16주 동안 준비하는 계획입니다. 지원할 회사와 시험 날짜를 정하면 하루에 풀 문제를 골라 줍니다.</p>
+    </div>
+    <div class="setup">
+      <div><span class="lbl">지원 회사</span><span class="cos" id="coChips">
+        <label><input type="checkbox" value="samsung">삼성</label>
+        <label><input type="checkbox" value="kakao">카카오</label>
+        <label><input type="checkbox" value="pg">네이버·SK·LG·한화 등</label>
+        <label><input type="checkbox" value="hyundai">현대차그룹</label>
+      </span></div>
+      <label><span class="lbl">시험 날짜</span><input class="inp" type="date" id="examDate"></label>
+      <label><span class="lbl">하루</span><input class="inp num" type="number" id="hoursDay" min="0.5" max="12" step="0.5" value="2"> <span class="small ink2">시간</span></label>
+    </div>
+    <div class="stats" id="stats"></div>
+    <p class="pace" id="pace"></p>
+    <div class="cur" id="curWeek"></div>
+    <div class="two">
+      <div class="block"><div class="block-h"><h2>오늘 풀 문제</h2><span class="small muted" id="todayMeta"></span></div><ul class="list" id="todayList"></ul></div>
+      <div class="block"><div class="block-h"><h2>복습</h2><span class="small muted">해설을 봤거나 못 푼 문제를 1·3·7·14일 뒤에 다시 풉니다</span></div><ul class="list" id="reviewList"></ul></div>
+    </div>
+    <div class="block" id="coachBox" hidden>
+      <div class="block-h"><h2>이번 주 조언</h2><span class="small muted">Claude가 진행 기록을 보고 답합니다</span></div>
+      <div class="ai-btns"><button type="button" class="btn line sm" id="coachBtn">조언 받기</button><button type="button" class="lnk" id="coachStop" hidden>중지</button></div>
+      <div class="ai-out" id="coachOut" hidden></div>
+    </div>
+    <div class="util">
+      <span id="syncState">기록은 이 브라우저에 저장됩니다.</span>
+      <button type="button" class="lnk" id="exportBtn">기록 내보내기</button>
+      <label class="lnk filebtn">기록 가져오기<input type="file" id="importFile" accept=".json,application/json"></label>
+      <button type="button" class="lnk" id="resetBtn">기록 초기화</button>
+      <span id="ioMsg"></span>
     </div>
   </section>
 
-  <section class="sec" id="companies">
-    <div class="sec-head"><h2>기업별 시험 형식</h2>
-      <p class="lead">최근 후기 기준입니다. 해마다 바뀌므로 지원 전에 반드시 채용 공고를 확인하세요. <span class="pill p-good">확인</span> 여러 출처 일치 · <span class="pill p-amber">후기 1건</span> 단일 후기 · <span class="pill p-soft">정보 부족</span> 최신 자료 없음</p></div>
-    <div class="tablewrap"><table>
-      <thead><tr><th>기업</th><th>플랫폼</th><th>구성 · 시간</th><th>난이도 · 유형</th><th>특이사항</th><th>신뢰도</th></tr></thead>
-      <tbody>
-        <tr><td class="co">삼성전자<span class="sub">DX·DS SW 직군</span></td><td>자체 시험장 (오프라인)</td><td class="mono">2문제 · 4시간</td><td>1번 복잡한 구현/시뮬레이션, 2번 큰 입력 대비 효율적 탐색. 격자, 회전, 확산, BFS/DFS, 백트래킹</td><td>Java·C++·Python. PyCharm·VS Code 제공, 소지품 제출. SWEA 상시 A형(2문제·3시간)과 형식이 비슷함</td><td><span class="pill p-good">확인</span></td></tr>
-        <tr><td class="co">카카오<span class="sub">신입크루 공채</span></td><td>프로그래머스</td><td class="mono">1차 7문제 · 5시간<br>2차 알고리즘 5 + CS 12 · 4.5시간</td><td>1~2번 브론즈, 3~5번 실버~골드, 6~7번 골드 상위. 문자열, 구현, 트리, 그래프. 2차는 백트래킹, 이분탐색, 그리디, 누적합</td><td>1차 3솔로 합격한 후기 있음. 2차는 영상 감독. 2025년부터 점수 비공개, 인터넷 검색 제한</td><td><span class="pill p-good">확인</span></td></tr>
-        <tr><td class="co">네이버<span class="sub">팀네이버 공채</span></td><td>프로그래머스</td><td class="mono">알고리즘 3 + SQL 1 · 약 2시간<br>+ CS 약 20문항</td><td>실버 상위~골드 4. 한 문제에 여러 알고리즘과 아이디어를 섞어 냄</td><td>C/C++/Java/JS/Python/Swift/Kotlin. CS 객관식이 함께 나옴</td><td><span class="pill p-good">확인</span></td></tr>
-        <tr><td class="co">현대차그룹<span class="sub">현대차·기아·모비스·오토에버</span></td><td>Softeer</td><td class="mono">HSAT 정기 인증 2문제</td><td>실버~골드. 기초 알고리즘과 구현 위주</td><td>2문제를 모두 맞히면 인증서 발급, 2년 동안 6개 계열사 SW 코테 면제. 오토에버 공채는 3문제·3시간에 2솔 합격 후기 있음</td><td><span class="pill p-good">확인</span></td></tr>
-        <tr><td class="co">한화시스템<span class="sub">ICT 부문</span></td><td>프로그래머스</td><td class="mono">알고리즘 3 + SQL 1 · 2시간</td><td>해시 구현(실버 5), 수학(실버 2), 부분 문자열(골드 4~5), SQL LV2~3</td><td>1차 면접에서 지정된 코테 1문제의 풀이를 발표함</td><td><span class="pill p-amber">후기 1건</span></td></tr>
-        <tr><td class="co">LG CNS</td><td>구름 (이전 프로그래머스)</td><td class="mono">3문제</td><td>프로그래머스 LV2 수준에서 최근 골드 4~3으로 상승. 다익스트라, DP 출제</td><td>2025년 한 차수는 코테 대신 인성 검사를 봤다는 후기가 있음. 차수마다 확인 필요</td><td><span class="pill p-amber">후기 1건</span></td></tr>
-        <tr><td class="co">토스</td><td>자체</td><td class="mono">5문제 · 4시간</td><td>구현, 자료구조 중심</td><td>테스트케이스 일부만 맞아도 부분 점수</td><td><span class="pill p-amber">후기 1건</span></td></tr>
-        <tr><td class="co">라인</td><td>프로그래머스</td><td class="mono">3문제 · 2시간</td><td>브론즈~골드 5</td><td>신입 공채 빈도가 낮음</td><td><span class="pill p-amber">후기 1건</span></td></tr>
-        <tr><td class="co">SK 계열<span class="sub">하이닉스·텔레콤·AX 등</span></td><td>계열사별 상이</td><td class="mono">—</td><td>프로그래머스 기반 알고리즘 코테가 일반적</td><td>하이닉스 IT 직무는 코테로 선발. 2025년 이후 문제 수·시간 공개 후기는 찾지 못함</td><td><span class="pill p-soft">정보 부족</span></td></tr>
-        <tr><td class="co">대한항공 · 포스코DX · 롯데이노베이트 등</td><td>공고별 상이</td><td class="mono">—</td><td>대체로 프로그래머스·구름 기반 실버~골드 하위</td><td>공개 후기가 적습니다. 프로그래머스 LV2 안정권이면 대부분 대응 가능하다고 판단</td><td><span class="pill p-soft">정보 부족</span></td></tr>
-      </tbody>
-    </table></div>
-  </section>
-
-  <section class="sec" id="types">
-    <div class="sec-head"><h2>무엇이 나오나</h2>
-      <p class="lead">후기, 기출 해설, 검증한 영상 내용을 종합한 출제 빈도입니다. 진할수록 자주 나옵니다. 정량 통계가 아니라 여러 자료를 모은 정성 평가입니다.</p></div>
-    <div class="tablewrap"><table class="heat">
-      <thead><tr><th>유형</th><th>삼성</th><th>카카오</th><th>네이버</th><th>현대차 HSAT</th><th>프로그래머스형 (SK·한화·LG 등)</th><th>대표 문제</th></tr></thead>
-      <tbody>
-        <tr><td><b>구현 · 시뮬레이션</b><span class="sub muted small">격자 이동, 회전, 동시 확산</span></td><td class="h lv3">매우 자주</td><td class="h lv3">매우 자주</td><td class="h lv2">자주</td><td class="h lv3">매우 자주</td><td class="h lv2">자주</td><td class="small">코드트리 나무박멸, 예술성 · 프로그래머스 프렌즈4블록</td></tr>
-        <tr><td><b>BFS · DFS</b><span class="sub muted small">연결 요소, 최단 거리, 상태 BFS</span></td><td class="h lv3">매우 자주</td><td class="h lv2">자주</td><td class="h lv2">자주</td><td class="h lv2">자주</td><td class="h lv2">자주</td><td class="small">게임 맵 최단거리, 경주로 건설 · 코드트리 바이러스 실험</td></tr>
-        <tr><td><b>완전탐색 · 백트래킹</b><span class="sub muted small">순열·조합, 가지치기</span></td><td class="h lv3">매우 자주</td><td class="h lv2">자주</td><td class="h lv1">가끔</td><td class="h lv2">자주</td><td class="h lv1">가끔</td><td class="small">피로도, 양궁대회, N-Queen</td></tr>
-        <tr><td><b>문자열 · 파싱 · 해시</b></td><td class="h lv1">가끔</td><td class="h lv3">매우 자주</td><td class="h lv2">자주</td><td class="h lv1">가끔</td><td class="h lv3">매우 자주</td><td class="small">신고 결과 받기, 오픈채팅방, 주차 요금 계산</td></tr>
-        <tr><td><b>정렬 · 그리디</b></td><td class="h lv1">가끔</td><td class="h lv2">자주</td><td class="h lv2">자주</td><td class="h lv2">자주</td><td class="h lv2">자주</td><td class="small">단속카메라, 요격 시스템</td></tr>
-        <tr><td><b>이분탐색 · 투포인터 · 누적합</b></td><td class="h lv1">가끔</td><td class="h lv2">자주</td><td class="h lv2">자주</td><td class="h lv1">가끔</td><td class="h lv2">자주</td><td class="small">입국심사, 보석 쇼핑, 파괴되지 않은 건물</td></tr>
-        <tr><td><b>DP</b></td><td class="h lv1">가끔</td><td class="h lv2">자주</td><td class="h lv2">자주</td><td class="h lv1">가끔</td><td class="h lv2">자주</td><td class="small">정수 삼각형, 등굣길, 코딩 테스트 공부</td></tr>
-        <tr><td><b>다익스트라 · 최단 경로</b></td><td class="h lv1">가끔</td><td class="h lv2">자주</td><td class="h lv1">가끔</td><td class="h lv1">가끔</td><td class="h lv1">가끔</td><td class="small">배달, 합승 택시 요금, 등산코스 정하기</td></tr>
-        <tr><td><b>우선순위 큐 · 스케줄링</b></td><td class="h lv1">가끔</td><td class="h lv2">자주</td><td class="h lv1">가끔</td><td class="h lv1">가끔</td><td class="h lv1">가끔</td><td class="small">프로그래머스 디스크 컨트롤러</td></tr>
-        <tr><td><b>트리 · Union-Find</b></td><td class="h lv0">드묾</td><td class="h lv2">자주</td><td class="h lv1">가끔</td><td class="h lv0">드묾</td><td class="h lv1">가끔</td><td class="small">섬 연결하기, 호텔 방 배정, 길 찾기 게임</td></tr>
-        <tr><td><b>SQL</b></td><td class="h lv0">없음</td><td class="h lv0">없음</td><td class="h lv2">1문제</td><td class="h lv0">없음</td><td class="h lv2">1문제 (한화·금융권)</td><td class="small">프로그래머스 SQL 고득점 Kit</td></tr>
-        <tr><td><b>CS 객관식</b></td><td class="h lv0">없음</td><td class="h lv2">2차에 12문항</td><td class="h lv2">약 20문항</td><td class="h lv0">없음</td><td class="h lv0">드묾</td><td class="small">운영체제, 네트워크, 자료구조, 시간복잡도</td></tr>
-      </tbody>
-    </table></div>
-    <div class="grid g3">
-      <div class="card"><h3>제약 조건으로 풀이를 거르기</h3><p class="small">C++·Java 기준 1초에 약 10<sup>8</sup>번 연산이 한계입니다. Python은 그보다 5~10배 느리다고 보세요.</p>
-        <table class="small"><thead><tr><th>N 최대</th><th>허용 복잡도</th></tr></thead><tbody>
-          <tr><td class="mono">≤ 10</td><td>O(N!) 순열 완전탐색</td></tr>
-          <tr><td class="mono">≤ 20</td><td>O(2<sup>N</sup>) 부분집합, 비트마스크</td></tr>
-          <tr><td class="mono">≤ 500</td><td>O(N³)</td></tr>
-          <tr><td class="mono">≤ 5,000</td><td>O(N²)</td></tr>
-          <tr><td class="mono">≤ 10⁵ ~ 10⁶</td><td>O(N log N) 정렬, 이분탐색, 힙</td></tr>
-          <tr><td class="mono">≥ 10⁷</td><td>O(N) 또는 O(log N)</td></tr>
-        </tbody></table></div>
-      <div class="card"><h3>삼성형 구현 체크포인트</h3><ul class="small">
-        <li>상태 변수를 먼저 정리합니다. 위치, 방향, 남은 횟수 등</li>
-        <li>지문의 처리 순서를 번호 매겨 적고, 그 순서대로 함수를 나눕니다</li>
-        <li>"동시에"라는 말이 나오면 임시 배열에 모아 한 번에 반영합니다</li>
-        <li>방향 배열 <code>dy, dx</code>와 범위 체크는 외워 둡니다</li>
-        <li>90도 회전: <code>b[j][n-1-i] = a[i][j]</code></li>
-        <li>반례는 입력 범위의 양 끝값으로 먼저 시험합니다</li></ul></div>
-      <div class="card"><h3>카카오·네이버형 체크포인트</h3><ul class="small">
-        <li>문자열 split, 정규식, 시간 문자열 변환을 손에 익힙니다</li>
-        <li>해시맵으로 집계하고, 정렬 기준을 여러 개 쓰는 연습을 합니다</li>
-        <li>정확성과 효율성 채점이 따로 있으면, 효율성이 안 되더라도 정확성 점수부터 챙깁니다</li>
-        <li>앞 번호일수록 쉬운 경향이 있으니 앞 번호부터 순서대로 풀되, 막히면 넘어갑니다</li>
-        <li>SQL은 GROUP BY, JOIN, 서브쿼리, 날짜 함수까지</li></ul></div>
+  <!-- 커리큘럼 -->
+  <section class="view" id="v-plan" aria-labelledby="h-plan" hidden>
+    <div class="head">
+      <h1 id="h-plan">커리큘럼</h1>
+      <p class="lead">한 주에 한 가지 유형을 공부합니다. 강의를 보고 필수 문제를 모두 푼 뒤 통과 기준을 만족하면 다음 주로 넘어가세요. 한 문제에 30분을 고민해도 방향이 안 보이면 해설을 보고, 다음 날 다시 풉니다.</p>
     </div>
-  </section>
-
-  <section class="sec" id="videos">
-    <div class="sec-head"><h2>보내주신 영상 검증</h2>
-      <p class="lead">다섯 영상 모두 자막 전체를 읽고 내용을 확인했습니다. 광고가 들어간 영상이 3개, 강의 판매로 끝나는 영상이 2개입니다. 광고를 빼면 기술 내용에는 큰 오류가 없습니다. 추천 시청 순서대로 정리했습니다.</p></div>
-    <div class="grid g2">
-      <article class="card vid">
-        <div class="top"><div><h3><a href="https://youtu.be/iWJUA78Fb8c" target="_blank" rel="noopener">2026년 코딩테스트 준비, 딱 정해드립니다</a></h3><div class="ch">개발남노씨 · 12분</div></div><span class="pill p-good">먼저 보기</span></div>
-        <div class="score" aria-label="유용도 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
-        <dl><dt>핵심 내용</dt><dd>우선순위를 1순위(구현, 완전탐색, BFS/DFS와 기초 자료구조)와 2순위(DP, 다익스트라)로 나눕니다. 입력 크기로 복잡도를 거르는 법(10⁸ ≈ 1초)과 30분 고민 후 해설을 보고 패턴을 익히는 공부법을 알려 줍니다.</dd>
-        <dt>검증</dt><dd>우선순위와 복잡도 기준은 정확하고 여러 자료와 일치합니다. 다만 "1순위만 확실히 하면 대부분 통과"는 과장입니다. 카카오·네이버는 이분탐색, 누적합, 문자열 처리도 자주 나옵니다. 마지막은 유료 강의 홍보입니다.</dd></dl>
-      </article>
-      <article class="card vid">
-        <div class="top"><div><h3><a href="https://youtu.be/w9dyVCvFCkw" target="_blank" rel="noopener">2026 삼성전자 코딩테스트 기출 분석</a></h3><div class="ch">큰돌의터전 · 22분</div></div><span class="pill p-good">삼성 지원자 필수</span></div>
-        <div class="score" aria-label="유용도 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
-        <dl><dt>핵심 내용</dt><dd>삼성 빈출은 구현, 완전탐색, BFS, DFS입니다. 배열 회전 공식, dy/dx 4·8방향 탐색, 동시 확산은 임시 배열로 처리, 조합·순열 재귀(push, 재귀, pop), BFS 최단 거리 배열, 끝값 반례 점검을 다룹니다.</dd>
-        <dt>검증</dt><dd>백준 삼성 기출 문제집, 합격 후기와 잘 맞습니다. 예시 코드는 C++ 기준이라 Python은 <code>itertools</code>로 대체하면 됩니다. "BFS는 최단 거리 배열만 만들면 끝"은 단순화한 말이고, 상태가 늘어나는 문제에는 적용되지 않습니다.</dd></dl>
-      </article>
-      <article class="card vid">
-        <div class="top"><div><h3><a href="https://youtu.be/iVfgiqM4has" target="_blank" rel="noopener">백준의 코딩테스트 벼락치기 · 2025 대기업 코테 풀이 특강</a></h3><div class="ch">취업정보회사 제로베이스 · 16분 · 출연 최백준(백준 운영자)</div></div><span class="pill p-acc">중급 이후</span></div>
-        <div class="score" aria-label="유용도 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
-        <dl><dt>핵심 내용</dt><dd>물류창고(도착 시각순 정렬 후 후보 집합을 관리하는 시뮬레이션)와, 벽에 다리를 K번 놓을 수 있는 미로 문제를 풉니다. 두 번째 문제에서 방문 배열을 (행, 열, 다리 사용 횟수)로 확장하는 상태 BFS 설명이 이 영상의 핵심입니다.</dd>
-        <dt>검증</dt><dd>상태 BFS 설명은 정확하고, 카카오·삼성 상위 문제에 그대로 쓰입니다. 자막의 "DFS"는 BFS를 잘못 받아 적은 것입니다. 제목과 달리 실제 기출이 아니라 제로베이스가 만든 유사 문제입니다. 첫 문제는 매번 후보 전체를 훑어서 최악 O(N²)입니다. N=10⁵이면 실제 시험에서는 시간 초과가 날 수 있으니 주의하세요.</dd></dl>
-      </article>
-      <article class="card vid">
-        <div class="top"><div><h3><a href="https://youtu.be/x0j8M4_-wT0" target="_blank" rel="noopener">코딩테스트 벼락치기 · 2026 필수 코테 3문제</a></h3><div class="ch">취업정보회사 제로베이스 · 24분 · 출연 최백준</div></div><span class="pill p-acc">입문~중급</span></div>
-        <div class="score" aria-label="유용도 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
-        <dl><dt>핵심 내용</dt><dd>최댓값·최솟값, 타겟 하나나 벽 하나를 없앤 뒤 BFS 하기(N=40이라 N⁴ ≈ 256만으로 완전탐색 가능), 원형 배열에서 한 명을 뺀 점수 최댓값을 풉니다.</dd>
-        <dt>검증</dt><dd>제약 조건으로 "다 해 봐도 되는지"를 계산하는 사고 과정과, 출력을 찍어 BFS 버그를 찾는 디버깅 시연이 유익합니다. 문제 난이도는 실버 수준입니다. 제목의 "벼락치기"와 달리 이 영상만으로 준비가 되지는 않습니다.</dd></dl>
-      </article>
-      <article class="card vid">
-        <div class="top"><div><h3><a href="https://youtu.be/jDjs1NsCPo4" target="_blank" rel="noopener">독학으로 코딩 테스트를 준비한다면</a></h3><div class="ch">개발자 강민철 · 7분</div></div><span class="pill p-soft">입문자만</span></div>
-        <div class="score" aria-label="유용도 2/5"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
-        <dl><dt>핵심 내용</dt><dd>입출력, 문자열 내장 함수, 기초 자료구조, 시간복잡도, 빈출 알고리즘 목록 순서로 공부하라는 개괄입니다. 알고리즘은 외우기보다 다양한 상황에서 쓰이는 예를 익히라고 합니다.</dd>
-        <dt>검증</dt><dd>내용은 맞지만 일반론입니다. 후반은 엘리스 유료 광고입니다. "한 문제에 1~2시간 고민"은 취업 준비 기준으로는 길다고 판단합니다. 남노씨가 말한 30분, 길어야 45분을 권합니다.</dd></dl>
-      </article>
-      <div class="card" style="background:var(--soft)">
-        <h3>영상 활용법</h3>
-        <ul class="small">
-          <li><b>방향 잡기:</b> 남노씨 → 큰돌 순서로 보세요. 합쳐서 35분이면 전체 그림이 잡힙니다</li>
-          <li><b>중급 이후:</b> 최백준 특강 2편은 BFS까지 공부한 뒤에 보세요. 영상을 멈추고 먼저 풀어 본 다음 풀이를 비교해야 효과가 있습니다</li>
-          <li><b>입문자만:</b> 강민철 영상은 이미 기초가 있다면 건너뛰어도 됩니다</li>
-          <li>광고 속 강의(코테 0→1, 엘리스, 제로베이스)는 사지 않아도 아래 무료 자료로 같은 범위를 다룰 수 있습니다</li>
-        </ul>
+    <div class="plan">
+      <aside class="side" id="side" aria-label="주차 목록"></aside>
+      <div class="detail">
+        <select class="inp wk-select" id="wkSelect" aria-label="주차 선택"></select>
+        <div class="searchbar" role="search">
+          <input class="inp" type="search" id="fText" placeholder="문제 이름이나 주제로 찾기" aria-label="문제 검색">
+          <select class="inp" id="fStatus" aria-label="상태"><option value="">모든 문제</option><option value="todo">안 푼 문제</option><option value="done">푼 문제</option><option value="review">복습 예정</option><option value="memo">메모 있음</option></select>
+          <button type="button" class="lnk" id="fClear" hidden>검색 지우기</button>
+        </div>
+        <div id="detail"></div>
       </div>
     </div>
   </section>
 
-  <section class="sec" id="curriculum">
-    <div class="sec-head"><h2>16주 커리큘럼</h2>
-      <p class="lead">주차마다 강의를 먼저 보고, <b>필수</b> 문제를 모두 푼 다음 <b>통과 기준</b>을 만족하면 다음 주로 넘어갑니다. <b>도전</b> 문제는 여유가 있을 때 풉니다. 문제 이름을 누르면 프로그래머스나 코드트리의 해당 문제로 이동합니다. 링크는 모두 2026년 9월 26일에 열리는 것을 확인했습니다.</p>
-      <div class="notice"><span class="pill p-bad">중요</span><span>백준(BOJ)은 2026년 4월 28일 서비스를 종료했고, 지금은 채점이 되지 않습니다. 그래서 이 커리큘럼은 지금 채점할 수 있는 <b>프로그래머스</b>와 <b>코드트리</b> 문제로만 구성했습니다. 강의는 바킹독 블로그 글을 쓰되, 글 속 백준 문제 대신 아래 문제를 푸세요.</span></div>
-      <div class="progress"><span>전체 진행</span><div class="bar"><div id="pbar"></div></div><span class="mono" id="ptext">0 / 0</span><button type="button" class="linkbtn" id="resetBtn">기록 초기화</button></div>
-      <p class="small muted" id="resetMsg" hidden>한 번 더 누르면 체크, 메모, 복습 일정, 모의고사 기록이 모두 지워집니다.</p>
-      <div class="card today" id="today">
-        <div class="today-top">
-          <div><h3>오늘 할 일</h3><p class="small muted" id="syncState">진행 기록을 이 브라우저에 저장하고 있습니다.</p></div>
-          <div class="kpis" id="kpis"></div>
-        </div>
-        <div class="settings">
-          <fieldset><legend class="plabel">지원 회사 (복수 선택)</legend>
-            <div class="chips" id="coChips">
-              <label><input type="checkbox" value="samsung" id="co-samsung"> 삼성</label>
-              <label><input type="checkbox" value="kakao" id="co-kakao"> 카카오</label>
-              <label><input type="checkbox" value="pg" id="co-pg"> 네이버·SK·한화·LG 등</label>
-              <label><input type="checkbox" value="hyundai" id="co-hyundai"> 현대차그룹</label>
-            </div></fieldset>
-          <label class="field"><span class="plabel">시험(또는 목표) 날짜</span><input type="date" id="examDate"></label>
-          <label class="field"><span class="plabel">하루 공부 시간</span><span class="hours"><input type="number" id="hoursDay" min="0.5" max="12" step="0.5" value="2"> 시간</span></label>
-        </div>
-        <p class="pace small" id="pace"></p>
-        <div class="todo-cols">
-          <div class="plist"><div class="plabel">오늘 풀 문제</div><ul id="todayList"></ul></div>
-          <div class="plist"><div class="plabel">오늘 복습할 문제</div><ul id="reviewList"></ul></div>
-        </div>
-        <div class="io small"><button type="button" class="linkbtn" id="exportBtn">기록 내보내기</button><label class="linkbtn filebtn">기록 가져오기<input type="file" id="importFile" accept=".json,application/json"></label><span class="muted" id="ioMsg">다른 브라우저나 기기로 기록을 옮길 때 씁니다.</span></div>
-        <div class="coach" id="coachBox" hidden>
-          <div class="coach-head"><button type="button" class="btn" id="coachBtn">AI 코치에게 이번 주 조언 받기</button><button type="button" class="linkbtn" id="coachStop" hidden>중지</button><span class="small muted">진행 기록을 바탕으로 답합니다. 내 Claude 사용량을 씁니다.</span></div>
-          <div class="ai-out" id="coachOut" hidden></div>
-        </div>
-      </div>
-
+  <!-- 기업별 정보 -->
+  <section class="view" id="v-companies" aria-labelledby="h-co" hidden>
+    <div class="head">
+      <h1 id="h-co">기업별 정보</h1>
+      <p class="lead">최근 응시 후기와 기업 공개 자료를 모았습니다. 형식은 해마다 바뀌니 지원 전에 채용 공고를 꼭 확인하세요.</p>
     </div>
-    <div class="legend-row small"><span class="pill p-acc">P</span> 프로그래머스 · <span class="pill p-amber">C</span> 코드트리 삼성 기출 · <span class="pill p-mid">H</span> 코드트리 HSAT 기출 · 체크하면 "혼자 풂", 오른쪽 <b>기록</b> 버튼에서 상태·메모 (claude.ai에서 열면 AI 힌트도)</div>
-    <div class="filterbar" role="search">
-      <input type="search" id="fText" placeholder="문제 이름이나 주제 검색 (예: BFS, 카카오, 택배)" aria-label="문제 검색">
-      <select id="fStatus" aria-label="상태 필터"><option value="">모든 상태</option><option value="todo">안 푼 문제</option><option value="done">푼 문제</option><option value="review">복습 예정</option><option value="memo">메모 있음</option></select>
-      <select id="fSrc" aria-label="플랫폼 필터"><option value="">모든 플랫폼</option><option value="P">프로그래머스</option><option value="C">코드트리 삼성 기출</option><option value="H">코드트리 HSAT 기출</option></select>
-      <span class="small muted" id="fCount"></span><button type="button" class="linkbtn" id="fClear" hidden>필터 지우기</button>
+    <div class="block"><h2>시험 형식</h2><div class="scroll"><table class="tbl" id="coTable"></table></div></div>
+    <div class="block"><h2>자주 나오는 유형</h2><p class="small muted">●●● 매우 자주 · ●● 자주 · ● 가끔 · 빈칸은 거의 안 나옴</p><div class="scroll"><table class="tbl" id="typeTable"></table></div></div>
+    <div class="cols3">
+      <div class="block"><h2>코딩테스트 면제</h2><ul class="plain">
+        <li>삼성 SW역량테스트 A형 이상 (SW Expert Academy 상시 시험)</li>
+        <li>현대차그룹 HSAT 인증: 2년 동안 현대차·기아·모비스·오토에버 등 SW 코테 면제</li>
+        <li>프로그래머스 PCCP LV.2 이상: 교보생명, 현대캐피탈 등</li></ul></div>
+      <div class="block"><h2>시험장에서</h2><ul class="plain">
+        <li>시작 10분은 전체 문제를 읽고 푸는 순서를 정합니다</li>
+        <li>입력 크기로 쓸 수 있는 시간복잡도를 먼저 적어 둡니다</li>
+        <li>30분 넘게 막히면 다음 문제로 넘어갑니다</li>
+        <li>정답이 안 떠오르면 완전탐색으로 부분 점수라도 받습니다</li>
+        <li>제출 전 입력의 최솟값·최댓값으로 확인합니다</li></ul></div>
+      <div class="block"><h2>입력 크기와 시간복잡도</h2><ul class="plain">
+        <li>N ≤ 10: O(N!) 순열</li><li>N ≤ 20: O(2ᴺ) 부분집합</li><li>N ≤ 500: O(N³)</li><li>N ≤ 5,000: O(N²)</li><li>N ≤ 10⁶: O(N log N)</li><li>그 이상: O(N)</li>
+        <li class="muted">1초에 약 10⁸번 연산 기준. Python은 5~10배 느립니다</li></ul></div>
     </div>
-    <div id="weeks" class="weeklist"></div>
-    <div class="grid g3">
-      <div class="card"><h3>매일 공부 루틴 (2~3시간)</h3><ul class="small">
-        <li>강의 30분 → 필수 문제 2개 → 전날 틀린 문제 1개 다시 풀기</li>
-        <li>30분 고민해도 방향이 안 잡히면 해설을 보고, 다음 날 해설 없이 다시 풉니다</li>
-        <li>맞힌 문제도 프로그래머스 "다른 사람의 풀이"를 한 개 읽습니다</li>
-        <li>오답 노트에는 "왜 틀렸나"를 한 줄로 적습니다. 예: 범위 체크 누락, 동시 처리 순서</li></ul></div>
-      <div class="card"><h3>시간이 4주뿐이라면</h3><ul class="small">
-        <li>1주: 4·5주차 필수 문제 (백트래킹, BFS/DFS)</li>
-        <li>2주: 7·8주차 필수 문제 (구현·시뮬레이션)</li>
-        <li>3주: 13주차 중 지원 회사 기출만</li>
-        <li>4주: 14·16주차 모의고사 중 지원 회사 세트</li>
-        <li>DP·그래프 심화는 과감히 건너뜁니다</li></ul></div>
-      <div class="card"><h3>언어 선택</h3><ul class="small">
-        <li><b>Python:</b> 구현이 빠르고 문자열 처리가 편해 카카오·네이버형에 유리합니다. 삼성 SW역량테스트 B형(Pro)은 Python 응시가 불가합니다</li>
-        <li><b>C++ / Java:</b> 속도가 안정적이고 삼성 B형 이상을 노린다면 필수입니다</li>
-        <li>바킹독 강의는 C++이지만 <a href="https://blog.encrypted.gg/1106" target="_blank" rel="noopener">파이썬·자바 코드</a>가 추가됐습니다. Python이라면 <a href="https://github.com/ndb796/python-for-coding-test" target="_blank" rel="noopener">이코테 소스코드</a>도 함께 보세요</li></ul></div>
-    </div>
+    <p class="noti">AI 도구는 네이버·카카오를 비롯한 대부분의 기업에서 시험 중 사용이 금지됩니다. 컬리·무신사 등 일부 기업만 AI 활용형 과제를 도입했습니다.</p>
   </section>
 
-  <section class="sec" id="notes">
-    <div class="sec-head"><h2>오답 노트</h2><p class="lead">"해설 보고 풂", "못 풂"으로 표시했거나 메모를 남긴 문제가 모입니다. 복습 날짜가 된 문제는 "오늘 할 일"에도 나타납니다.</p></div>
-    <div class="tablewrap"><table><thead><tr><th>문제</th><th>상태</th><th>다음 복습</th><th>메모</th></tr></thead><tbody id="notesBody"></tbody></table></div>
-  </section>
-
-  <section class="sec" id="templates">
-    <div class="sec-head"><h2>핵심 템플릿 7종</h2><p class="lead">16주차 점검 대상입니다. Python 기준입니다. 보지 않고 5분 안에 쓸 수 있을 때까지 반복하세요.</p></div>
-    <div class="grid g2">
-      <div class="card"><h3>1. 격자 BFS 최단 거리</h3><pre><code>from collections import deque
-def bfs(sr, sc, grid):
-    n, m = len(grid), len(grid[0])
-    dist = [[-1]*m for _ in range(n)]
-    dist[sr][sc] = 0
-    q = deque([(sr, sc)])
-    while q:
-        r, c = q.popleft()
-        for dr, dc in ((-1,0),(1,0),(0,-1),(0,1)):
-            nr, nc = r+dr, c+dc
-            if 0 &lt;= nr &lt; n and 0 &lt;= nc &lt; m \
-               and grid[nr][nc] != '#' and dist[nr][nc] == -1:
-                dist[nr][nc] = dist[r][c] + 1
-                q.append((nr, nc))
-    return dist</code></pre></div>
-      <div class="card"><h3>2. 조합 백트래킹 (넣기 → 재귀 → 빼기)</h3><pre><code>def comb(start, picked):
-    if len(picked) == k:
-        answers.append(picked[:])
-        return
-    for i in range(start, n):
-        picked.append(arr[i])
-        comb(i + 1, picked)
-        picked.pop()
-# 순열이면 used 배열로 모든 i를 돌고,
-# 간단하면 itertools.combinations / permutations</code></pre></div>
-      <div class="card"><h3>3. 격자 회전 · 동시 갱신</h3><pre><code># 시계 방향 90도: b[j][n-1-i] = a[i][j]
-def rotate(a):
-    n = len(a)
-    return [[a[n-1-j][i] for j in range(n)] for i in range(n)]
-# 파이썬 한 줄: list(map(list, zip(*a[::-1])))
-
-# "동시에" 퍼진다 → 새 배열에 모았다가 한 번에 교체
-nxt = [row[:] for row in board]
-# ... board를 읽고 nxt에 쓰기 ...
-board = nxt</code></pre></div>
-      <div class="card"><h3>4. 매개변수 탐색 (이분탐색)</h3><pre><code>def ok(x):          # x로 조건을 만족하는가?
-    ...
-lo, hi = 0, 10**18
-while lo &lt; hi:          # 조건을 만족하는 최솟값
-    mid = (lo + hi) // 2
-    if ok(mid): hi = mid
-    else: lo = mid + 1
-answer = lo</code></pre></div>
-      <div class="card"><h3>5. 다익스트라</h3><pre><code>import heapq
-def dijkstra(start, adj, n):
-    INF = float('inf')
-    dist = [INF] * n
-    dist[start] = 0
-    pq = [(0, start)]
-    while pq:
-        d, u = heapq.heappop(pq)
-        if d &gt; dist[u]: continue     # 오래된 항목
-        for v, w in adj[u]:
-            if d + w &lt; dist[v]:
-                dist[v] = d + w
-                heapq.heappush(pq, (dist[v], v))
-    return dist</code></pre></div>
-      <div class="card"><h3>6. Union-Find</h3><pre><code>parent = list(range(n))
-def find(x):
-    while parent[x] != x:
-        parent[x] = parent[parent[x]]   # 경로 압축
-        x = parent[x]
-    return x
-def union(a, b):
-    a, b = find(a), find(b)
-    if a == b: return False
-    parent[b] = a
-    return True</code></pre></div>
-      <div class="card"><h3>7. 누적합 · 2차원 차분 배열</h3><pre><code># 1차원 구간합
-pre = [0]
-for x in arr: pre.append(pre[-1] + x)
-# arr[l..r] 합 = pre[r+1] - pre[l]
-
-# 2차원 구간에 +v를 한꺼번에 (파괴되지 않은 건물)
-d[r1][c1] += v; d[r1][c2+1] -= v
-d[r2+1][c1] -= v; d[r2+1][c2+1] += v
-# 행 방향, 열 방향으로 한 번씩 누적하면 완성</code></pre></div>
-      <div class="card"><h3>시작 코드 (Python 공통)</h3><pre><code>import sys
-input = sys.stdin.readline          # 입력이 많을 때
-sys.setrecursionlimit(10**6)        # 깊은 재귀 DFS
-from collections import deque, defaultdict, Counter
-from itertools import permutations, combinations, product
-import heapq, bisect</code></pre></div>
+  <!-- 자료 -->
+  <section class="view" id="v-resources" aria-labelledby="h-res" hidden>
+    <div class="head">
+      <h1 id="h-res">자료</h1>
+      <p class="lead">공부에 쓰는 사이트와 강의, 외워 둘 코드, 참고 영상입니다.</p>
+    </div>
+    <div class="block"><h2>공부 도구</h2><div class="scroll"><table class="tbl" id="toolTable"></table></div></div>
+    <div class="block"><h2>외워 둘 코드 (Python)</h2><p class="small muted">16주차에 보지 않고 쓸 수 있는지 확인합니다.</p><div id="tpls"></div></div>
+    <div class="block"><h2>참고 영상</h2><div class="scroll"><table class="tbl" id="vidTable"></table></div></div>
+    <div class="block"><h2>주의할 정보</h2><p class="small muted">인터넷에 흔하지만 틀렸거나 오래된 정보입니다.</p><ul class="plain" id="dropList"></ul></div>
+    <div class="block"><h2>출처</h2><ul class="plain" id="srcList"></ul></div>
+    <div class="foot">
+      <span>백준(BOJ)은 2026년 4월 28일 서비스를 종료해 채점이 되지 않습니다. 그래서 모든 문제를 프로그래머스와 코드트리에서 골랐습니다.</span>
+      <span>문제 링크는 2026년 9월 26일에 확인했습니다. 문제 저작권은 각 사이트에 있습니다.</span>
+      <span>AI·스크립트용 파일: <a href="llms.txt">llms.txt</a> · <a href="README.md">README.md</a> · <a href="curriculum.json">curriculum.json</a> · <a href="https://github.com/bk11052/coding-test-roadmap">GitHub</a></span>
     </div>
   </section>
+</main>
 
-  <section class="sec" id="tools">
-    <div class="sec-head"><h2>도구와 자료</h2><p class="lead">모두 무료로 시작할 수 있습니다. 표시가 없으면 무료입니다.</p></div>
-    <div class="grid g3">
-      <div class="card tool"><div class="head"><h3>백준 BOJ</h3><span class="pill p-bad">서비스 종료</span></div><p class="for">2026년 4월 28일 서비스를 종료했습니다. 지금은 "채점 서비스 준비 중" 화면만 나오고 문제 페이지도 열리지 않습니다. 제로베이스가 인수해 재개를 예고했지만 일정은 나오지 않았습니다. 재개되더라도 이 커리큘럼은 그대로 쓸 수 있습니다.</p></div>
-      <div class="card tool"><div class="head"><h3><a href="https://school.programmers.co.kr/learn/challenges" target="_blank" rel="noopener">프로그래머스</a></h3><span class="pill p-good">주력</span></div><p class="for">카카오·네이버·SK·한화 등 실제 시험 플랫폼입니다. 함수 채점 방식에 익숙해지세요. 카카오 기출, 고득점 Kit, SQL Kit이 있습니다.</p></div>
-      <div class="card tool"><div class="head"><h3><a href="https://github.com/encrypted-def/basic-algo-lecture" target="_blank" rel="noopener">바킹독 실전 알고리즘</a></h3><span class="pill p-acc">강의</span></div><p class="for">코테 범위를 빠짐없이 다루는 무료 강의입니다. 커리큘럼의 "강의" 링크가 이 블로그 글입니다. 글 속 문제집은 백준 기반이라 지금은 채점이 안 되니, 커리큘럼의 프로그래머스·코드트리 문제로 대신 푸세요.</p></div>
-      <div class="card tool"><div class="head"><h3><a href="https://www.codetree.ai" target="_blank" rel="noopener">코드트리</a></h3><span class="pill p-amber">삼성 · 일부 유료</span></div><p class="for">삼성 SW역량테스트 기출을 복원한 문제가 가장 많습니다. 공채 시즌에는 무료 특강 기간이 있습니다. 블로그 글은 홍보 목적이 섞여 있습니다.</p></div>
-      <div class="card tool"><div class="head"><h3><a href="https://swexpertacademy.com" target="_blank" rel="noopener">SW Expert Academy</a></h3><span class="pill p-amber">삼성 인증</span></div><p class="for">삼성 공식 플랫폼입니다. 상시 SW역량테스트 A형(2문제·3시간), B형(1문제·4시간, Python 불가)을 볼 수 있습니다. 입력 형식이 삼성 시험과 같습니다.</p></div>
-      <div class="card tool"><div class="head"><h3><a href="https://softeer.ai" target="_blank" rel="noopener">Softeer</a></h3><span class="pill p-amber">현대차그룹</span></div><p class="for">HSAT 정기 인증 시험과 연습 문제가 있습니다. 인증을 받으면 현대차·기아·모비스·오토에버 등 SW 코테가 2년간 면제됩니다.</p></div>
-      <div class="card tool"><div class="head"><h3><a href="https://certi.programmers.co.kr/about/pccp" target="_blank" rel="noopener">PCCP 인증</a></h3><span class="pill p-soft">유료 5만 원</span></div><p class="for">4문제·120분, 웹캠 감독입니다. 교보생명·현대캐피탈 등은 LV.2 이상이면 코테를 면제합니다. 실전 연습을 겸해 한 번 볼 만합니다.</p></div>
-      <div class="card tool"><div class="head"><h3>《이것이 취업을 위한 코딩 테스트다》</h3><span class="pill p-soft">책 · 유료</span></div><p class="for">나동빈 저. 유형별 이론과 삼성·카카오 기출 해설이 한 권에 있습니다. 강의 대신 책 한 권으로 공부하고 싶다면 이 책을 고르세요. 저자 유튜브에 무료 강의도 있습니다.</p></div>
-    </div>
-    <div class="card"><h3>환경 준비</h3><ul class="small">
-      <li>삼성 시험장은 PyCharm·VS Code가 제공된다는 후기가 있습니다. 평소 로컬 IDE로 디버거를 쓰는 연습을 하세요</li>
-      <li>프로그래머스형은 브라우저 편집기에서 풀므로, 자동완성 없이 쓰는 연습도 해 두세요</li>
-      <li>풀이를 GitHub에 올려 두면 복습과 면접 자료로 쓸 수 있습니다</li>
-      <li>연습할 때 AI 자동완성은 끄세요. 실제 시험에서는 쓸 수 없습니다</li></ul></div>
-  </section>
+<div class="timer" id="timer" hidden role="region" aria-label="모의고사 타이머"><div class="timer-in">
+  <div><div class="set" id="tmSet"></div><div class="clock" id="tmClock">0:00:00</div></div>
+  <div class="ai-btns"><span class="set" id="tmState"></span><button type="button" class="btn sm" id="tmPause">일시정지</button><button type="button" class="btn sm" id="tmEnd">끝내고 기록</button><button type="button" class="lnk" id="tmCancel">기록 없이 닫기</button></div>
+</div></div>
+<p class="toast" id="toast" hidden></p>
 
-  <section class="sec" id="exam">
-    <div class="sec-head"><h2>시험장 전략</h2></div>
-    <div class="grid g3">
-      <div class="card"><h3>시작 10분</h3><ul class="check small">
-        <li>모든 문제를 훑고 쉬운 순서를 정합니다</li>
-        <li>입력 범위를 보고 허용 복잡도를 적어 둡니다</li>
-        <li>지문 속 처리 순서와 예외 조건에 번호를 매깁니다</li></ul></div>
-      <div class="card"><h3>푸는 동안</h3><ul class="check small">
-        <li>한 문제에 계획보다 30분 넘게 막히면 다음 문제로 넘어갑니다</li>
-        <li>정확한 풀이가 안 떠오르면 완전탐색으로 부분 점수를 먼저 챙깁니다</li>
-        <li>시뮬레이션은 단계마다 중간 상태를 출력해 확인합니다</li></ul></div>
-      <div class="card"><h3>제출 전</h3><ul class="check small">
-        <li>입력 범위의 최솟값·최댓값, 빈 입력, 전부 같은 값으로 확인합니다</li>
-        <li>디버그 출력과 불필요한 import를 지웁니다</li>
-        <li>정수 오버플로(C++·Java)와 재귀 깊이(Python <code>setrecursionlimit</code>)를 점검합니다</li></ul></div>
-    </div>
-  </section>
-
-  <section class="sec" id="dropped">
-    <div class="sec-head"><h2>걸러낸 정보</h2><p class="lead">조사하면서 틀렸거나, 오래됐거나, 근거가 약하다고 판단해 대시보드에 넣지 않았거나 수정한 내용입니다.</p></div>
-    <div class="card">
-      <div class="drop"><span class="pill p-bad">과장</span><div class="small"><b>"1순위(구현·BFS/DFS)만 하면 대부분 통과"</b> (남노씨 영상). 삼성·HSAT에는 대체로 맞지만, 카카오 2차와 네이버는 이분탐색·그리디·누적합·SQL이 나옵니다.</div></div>
-      <div class="drop"><span class="pill p-bad">오래됨</span><div class="small"><b>"카카오 코테는 인터넷 검색 가능, 점수 공개"</b>. 2024년 이전 후기의 내용입니다. 2025년부터 검색 제한과 점수 비공개로 바뀌었고, 2차는 영상 감독을 합니다.</div></div>
-      <div class="drop"><span class="pill p-bad">모순</span><div class="small"><b>"네이버 코테 40분 내외"</b>. 검색 요약에만 나온 수치이고, 실제 후기(3+SQL 1문제, 약 2시간)와 맞지 않아 뺐습니다.</div></div>
-      <div class="drop"><span class="pill p-amber">과장</span><div class="small"><b>"벼락치기 3문제", "10년치 패턴만 알면 된다"</b>. 제로베이스 영상 제목과 코드트리 블로그의 홍보 문구입니다. 영상 내용은 쓸 만하지만 단기간 준비가 가능하다는 근거는 없습니다.</div></div>
-      <div class="drop"><span class="pill p-amber">검증 불가</span><div class="small"><b>"삼성은 제출 시간도 평가 요소"</b>. 단일 후기에만 있고 공식 근거가 없어 뺐습니다.</div></div>
-      <div class="drop"><span class="pill p-amber">검증 불가</span><div class="small"><b>"AI 허용 기업 34%, 프롬프트 제출 29%" 같은 비율</b>. 해외 플랫폼 설문을 기사가 다시 인용한 수치로, 국내 대기업과는 맞지 않아 뺐습니다. 국내는 "대부분 금지, 일부 AI 활용형 도입"으로만 정리했습니다.</div></div>
-      <div class="drop"><span class="pill p-soft">판단</span><div class="small"><b>"한 문제당 1~2시간 고민"</b> (강민철 영상). 대회 준비라면 모를까, 취업 준비 기준으로는 30~45분 후 해설을 보고 다음 날 다시 푸는 쪽이 효율적이라고 판단했습니다.</div></div>
-      <div class="drop"><span class="pill p-bad">종료</span><div class="small"><b>"백준으로 준비하라"는 대부분의 기존 가이드</b>. 백준이 2026년 4월 28일 종료돼 지금은 채점이 안 됩니다. 이 대시보드의 문제는 모두 프로그래머스와 코드트리로 바꿨습니다.</div></div>
-      <div class="drop"><span class="pill p-soft">주의</span><div class="small"><b>SK, 대한항공, 포스코DX 등의 세부 형식</b>. 최근 후기가 거의 없습니다. 오래된 후기의 형식을 현재 형식처럼 적지 않고 "정보 부족"으로 표시했습니다.</div></div>
-    </div>
-  </section>
-
-  <section class="sec" id="sources">
-    <div class="sec-head"><h2>출처</h2></div>
-    <ol class="src">
-      <li><a href="https://velog.io/@crm03008/2025-%EC%83%81%EB%B0%98%EA%B8%B0%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90-%EA%B0%9C%EB%B0%9C-%EC%A7%81%EB%AC%B4-SW%EC%97%AD%EB%9F%89%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%9B%84%EA%B8%B0" target="_blank" rel="noopener">2025 상반기 삼성전자 SW역량테스트 후기 (velog)</a></li>
-      <li><a href="https://www.codetree.ai/blog/2026-%EC%83%81%EB%B0%98%EA%B8%B0-%EC%82%BC%EC%84%B1-%EA%B3%B5%EC%B1%84-%EC%9D%BC%EC%A0%95-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%8C%80%EB%B9%84-%EC%BD%94%EB%93%9C%ED%8A%B8%EB%A6%AC/" target="_blank" rel="noopener">2026 상반기 삼성 공채 일정 (코드트리 블로그)</a></li>
-      <li><a href="https://applelime.github.io/review/2022-03-27-review-samsung-sw-competency-test/" target="_blank" rel="noopener">삼성 SW 역량테스트 A형·B형 후기</a></li>
-      <li><a href="https://gmelon.dev/162" target="_blank" rel="noopener">삼성 SW 역량 테스트 B형 취득 후기</a></li>
-      <li><a href="https://tech.kakao.com/posts/813" target="_blank" rel="noopener">2026 카카오 신입크루 공채 코딩테스트 1차 문제해설 (tech.kakao.com)</a></li>
-      <li><a href="https://tech.kakao.com/posts/814" target="_blank" rel="noopener">2026 카카오 신입크루 공채 코딩테스트 2차 문제해설</a></li>
-      <li><a href="https://velog.io/@pcjo1202/%ED%9B%84%EA%B8%B0-2026-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%8B%A0%EC%9E%85%EA%B3%B5%EC%B1%84-%EC%BD%94%EB%94%A9-%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%9B%84%EA%B8%B0" target="_blank" rel="noopener">2026 카카오 신입공채 코딩 테스트 후기 (velog)</a></li>
-      <li><a href="https://velog.io/@soonyoung/%ED%9A%8C%EC%82%AC%EB%B3%84-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8A%A4%ED%83%80%EC%9D%BC-%EB%B0%8F-%ED%9B%84%EA%B8%B0" target="_blank" rel="noopener">회사별 코딩테스트 스타일 및 후기 (velog)</a></li>
-      <li><a href="https://velog.io/@chae0738/2025-%ED%8C%80%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%9B%84%EA%B8%B0" target="_blank" rel="noopener">2025 팀네이버 코딩테스트 후기 (velog)</a></li>
-      <li><a href="https://blog.similarchart.com/259" target="_blank" rel="noopener">2025 네이버 신입공채 CS & 코딩테스트 후기</a></li>
-      <li><a href="https://recruit.navercorp.com/micro/teamnaver2025/tech" target="_blank" rel="noopener">2025 팀네이버 신입 공채 (공식)</a></li>
-      <li><a href="https://cse.snu.ac.kr/en/community/notice/21926" target="_blank" rel="noopener">Softeer HSAT 정기 코딩 인증평가 안내 (서울대 CSE 공지)</a></li>
-      <li><a href="https://softeer.ai" target="_blank" rel="noopener">Softeer (현대자동차그룹)</a></li>
-      <li><a href="https://velog.io/@dbwls89173/%ED%95%9C%ED%99%94%EC%8B%9C%EC%8A%A4%ED%85%9C-ICT-25%EB%85%84-%ED%95%98%EB%B0%98%EA%B8%B0-%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B0%9C%EB%B0%9C-%EC%9A%B4%EC%98%81-%EC%B1%84%EC%9A%A9-%ED%9B%84%EA%B8%B0" target="_blank" rel="noopener">한화시스템 ICT 25년 하반기 채용 후기 (velog)</a></li>
-      <li><a href="https://jasoseol.com/blog/post/lg-cns-%ED%95%A9%EA%B2%A9-%ED%9B%84%EA%B8%B0-%EC%9E%90%EC%86%8C%EC%84%9C-%EC%9D%B8%EC%A0%81%EC%84%B1-%EB%A9%B4%EC%A0%91-%EC%A7%88%EB%AC%B8-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%9E%90/" target="_blank" rel="noopener">LG CNS 합격 후기 (자소설닷컴)</a></li>
-      <li><a href="https://velog.io/@dbwls89173/LG-CNS-25%EB%85%84-%ED%95%98%EB%B0%98%EA%B8%B0-DX-%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4-%EC%B1%84%EC%9A%A9-%ED%9B%84%EA%B8%B0-feat.-%EC%B5%9C%EC%A2%85-%ED%83%88%EB%9D%BD" target="_blank" rel="noopener">LG CNS 25년 하반기 DX 엔지니어 채용 후기 (velog)</a></li>
-      <li><a href="https://sprint.codeit.kr/blog/kdt-career-guide-toss-developer-recruitment" target="_blank" rel="noopener">토스 신입 개발자 채용 공고 분석 (코드잇)</a></li>
-      <li><a href="https://community.linkareer.com/employment_data/4692188" target="_blank" rel="noopener">2025 하반기 SK하이닉스 합격 후기 모음 (링커리어)</a></li>
-      <li><a href="https://certi.programmers.co.kr/about/pccp" target="_blank" rel="noopener">PCCP 시험 소개 (프로그래머스)</a></li>
-      <li><a href="https://certi.programmers.co.kr/partners/enterprise-use-cases" target="_blank" rel="noopener">프로그래머스 인증 기업 활용 현황</a></li>
-      <li><a href="https://www.jobkorea.co.kr/goodjob/tip/view?News_No=22546" target="_blank" rel="noopener">AI 활용 코딩 테스트 분석 2026 (잡코리아)</a></li>
-      <li><a href="https://m.news.nate.com/view/20260912n05091" target="_blank" rel="noopener">"프롬프트까지 제출하세요" AI 시대 코딩테스트 (2026.09.12)</a></li>
-      <li><a href="https://github.com/encrypted-def/basic-algo-lecture" target="_blank" rel="noopener">바킹독 실전 알고리즘 강의 자료 (GitHub)</a></li>
-      <li><a href="https://kitpa.org/news/1366" target="_blank" rel="noopener">백준 온라인 저지 4월 28일 서비스 종료 (kitpa)</a></li>
-      <li><a href="https://kitpa.org/news/1640" target="_blank" rel="noopener">데이원컴퍼니 BOJ 인수·재개 예고 (kitpa, 2026.06.11)</a></li>
-      <li><a href="https://blog.encrypted.gg/1108" target="_blank" rel="noopener">BOJ 서비스 종료에 따른 안내 (바킹독 블로그)</a></li>
-      <li><a href="https://school.programmers.co.kr/learn/challenges" target="_blank" rel="noopener">프로그래머스 코딩테스트 연습 (문제 목록 689개 확인)</a></li>
-      <li><a href="https://www.codetree.ai/ko/frequent-problems" target="_blank" rel="noopener">코드트리 기출 문제 (삼성·HSAT)</a></li>
-      <li>검증한 영상 5편: 위 "보내주신 영상 검증" 섹션 링크 참고</li>
-    </ol>
-  </section>
-
-  <footer>AI·스크립트용: <a href="llms.txt">llms.txt</a> · <a href="README.md">README.md</a> · <a href="curriculum.json">curriculum.json</a> · 소스: <a href="https://github.com/bk11052/coding-test-roadmap">GitHub</a><br>2026년 9월 26일에 조사했습니다. 채용 형식은 해마다 바뀌므로, 지원 전 채용 공고를 최종 기준으로 삼으세요.</footer>
-</div>
-
-<div class="timerbar" id="timerBar" hidden role="region" aria-label="모의고사 타이머">
-  <div class="tm-info"><span class="small muted" id="tmState">남은 시간</span><span class="mono tm-clock" id="tmClock">0:00:00</span><span class="small tm-set" id="tmSet"></span></div>
-  <div class="tm-btns"><button type="button" class="btn sm" id="tmPause">일시정지</button><button type="button" class="btn sm" id="tmEnd">종료하고 기록</button><button type="button" class="linkbtn" id="tmCancel">기록 없이 취소</button></div>
-</div>
-<p class="toast small" id="tmMsg" hidden></p>
 <script>
 const WEEKS = [{"ph": 0, "n": 1, "t": "언어 기본기 · 입출력 · 문자열", "goal": "LV1 문제를 15분 안에 푼다", "lec": [{"u": "https://www.youtube.com/playlist?list=PLRx0vPvlEmdAghTr5mXQxGpHjWqSz0dgC", "t": "이코테 2021 (Python, 나동빈) 재생목록"}, {"u": "https://blog.encrypted.gg/922", "t": "바킹독 0x01 기초 코드 작성 요령 I"}, {"u": "https://blog.encrypted.gg/923", "t": "0x02 기초 코드 작성 요령 II"}], "learn": "문자열 슬라이싱·split·join, 정렬 key, 리스트/딕셔너리 컴프리헨션, 날짜·시간 문자열 다루기", "must": [{"s": "P", "id": "12926", "t": "시저 암호", "lv": "LV1"}, {"s": "P", "id": "12930", "t": "이상한 문자 만들기", "lv": "LV1"}, {"s": "P", "id": "12915", "t": "문자열 내 마음대로 정렬하기", "lv": "LV1"}, {"s": "P", "id": "142086", "t": "가장 가까운 같은 글자", "lv": "LV1"}, {"s": "P", "id": "12901", "t": "2016년", "lv": "LV1"}, {"s": "P", "id": "161990", "t": "바탕화면 정리", "lv": "LV1"}, {"s": "P", "id": "172928", "t": "공원 산책", "lv": "LV1"}], "more": [{"s": "P", "id": "17682", "t": "[1차] 다트 게임", "lv": "LV1"}, {"s": "P", "id": "72410", "t": "신규 아이디 추천", "lv": "LV1"}], "pit": ["파이썬 문자열에 += 를 반복하면 느립니다. 리스트에 모아 join 하세요", "대소문자·공백·특수문자 처리 조건을 지문에서 먼저 표시하세요", "날짜 계산은 윤년과 월별 일수를 확인하세요"]}, {"ph": 0, "n": 2, "t": "시간복잡도 · 배열 · 스택 · 큐 · 덱", "goal": "입력 크기를 보고 허용 복잡도를 바로 말할 수 있다", "lec": [{"u": "https://blog.encrypted.gg/927", "t": "0x03 배열"}, {"u": "https://blog.encrypted.gg/933", "t": "0x05 스택"}, {"u": "https://blog.encrypted.gg/934", "t": "0x06 큐"}, {"u": "https://blog.encrypted.gg/935", "t": "0x07 덱"}, {"u": "https://blog.encrypted.gg/936", "t": "0x08 스택의 활용"}], "learn": "deque로 큐 구현, 괄호 짝 검사, 단조 스택(뒤에 있는 큰 수), 큐 시뮬레이션", "must": [{"s": "P", "id": "12906", "t": "같은 숫자는 싫어", "lv": "LV1"}, {"s": "P", "id": "12909", "t": "올바른 괄호", "lv": "LV2"}, {"s": "P", "id": "42586", "t": "기능개발", "lv": "LV2"}, {"s": "P", "id": "42587", "t": "프로세스", "lv": "LV2"}, {"s": "P", "id": "42583", "t": "다리를 지나는 트럭", "lv": "LV2"}, {"s": "P", "id": "76502", "t": "괄호 회전하기", "lv": "LV2"}, {"s": "P", "id": "64061", "t": "크레인 인형뽑기 게임", "lv": "LV1"}], "more": [{"s": "P", "id": "42584", "t": "주식가격", "lv": "LV2"}, {"s": "P", "id": "154539", "t": "뒤에 있는 큰 수 찾기", "lv": "LV2"}, {"s": "P", "id": "131704", "t": "택배상자", "lv": "LV2"}], "pit": ["빈 스택에서 pop 하기 전에 비었는지 확인하세요", "list.pop(0)은 O(N)입니다. 큐는 deque를 쓰세요", "시뮬레이션의 시간 단위가 1씩 어긋나지 않는지(off-by-one) 확인하세요"]}, {"ph": 0, "n": 3, "t": "해시 · 정렬", "goal": "해시로 집계하고, 기준이 여러 개인 정렬을 막힘없이 쓴다", "lec": [{"u": "https://blog.encrypted.gg/1009", "t": "0x15 해시"}, {"u": "https://blog.encrypted.gg/955", "t": "0x0E 정렬 I"}, {"u": "https://blog.encrypted.gg/966", "t": "0x0F 정렬 II"}], "learn": "dict·Counter·defaultdict, set 연산, 정렬 key에 튜플과 음수 쓰기, 커스텀 비교", "must": [{"s": "P", "id": "42576", "t": "완주하지 못한 선수", "lv": "LV1"}, {"s": "P", "id": "1845", "t": "폰켓몬", "lv": "LV1"}, {"s": "P", "id": "42577", "t": "전화번호 목록", "lv": "LV2"}, {"s": "P", "id": "42578", "t": "의상", "lv": "LV2"}, {"s": "P", "id": "42748", "t": "K번째수", "lv": "LV1"}, {"s": "P", "id": "42746", "t": "가장 큰 수", "lv": "LV2"}, {"s": "P", "id": "42747", "t": "H-Index", "lv": "LV2"}, {"s": "P", "id": "92334", "t": "신고 결과 받기", "lv": "LV1"}, {"s": "P", "id": "42888", "t": "오픈채팅방", "lv": "LV2"}], "more": [{"s": "P", "id": "42579", "t": "베스트앨범", "lv": "LV3"}, {"s": "P", "id": "178871", "t": "달리기 경주", "lv": "LV1"}, {"s": "P", "id": "17686", "t": "[3차] 파일명 정렬", "lv": "LV2"}], "pit": ["없는 키는 dict.get이나 defaultdict로 처리하세요", "문자열로 된 숫자는 \"10\" < \"9\"로 정렬됩니다. 비교 기준을 확인하세요", "리스트는 해시 키가 될 수 없습니다. tuple로 바꾸세요"]}, {"ph": 1, "n": 4, "t": "재귀 · 완전탐색 · 백트래킹", "goal": "순열·조합·부분집합을 템플릿 없이 5분 안에 쓴다", "lec": [{"u": "https://blog.encrypted.gg/943", "t": "0x0B 재귀"}, {"u": "https://blog.encrypted.gg/945", "t": "0x0C 백트래킹"}], "learn": "itertools permutations/combinations/product, 재귀로 직접 구현(넣기→재귀→빼기), 가지치기", "must": [{"s": "P", "id": "42840", "t": "모의고사", "lv": "LV1"}, {"s": "P", "id": "86491", "t": "최소직사각형", "lv": "LV1"}, {"s": "P", "id": "42842", "t": "카펫", "lv": "LV2"}, {"s": "P", "id": "42839", "t": "소수 찾기", "lv": "LV2"}, {"s": "P", "id": "87946", "t": "피로도", "lv": "LV2"}, {"s": "P", "id": "84512", "t": "모음사전", "lv": "LV2"}, {"s": "P", "id": "12952", "t": "N-Queen", "lv": "LV2"}], "more": [{"s": "P", "id": "92342", "t": "양궁대회", "lv": "LV2"}, {"s": "P", "id": "150368", "t": "이모티콘 할인행사", "lv": "LV2"}, {"s": "P", "id": "64064", "t": "불량 사용자", "lv": "LV3"}], "pit": ["재귀에서 돌아올 때 방문 표시·선택을 되돌렸는지 확인하세요", "조합은 시작 인덱스를 넘겨야 중복이 생기지 않습니다", "경우의 수가 입력 크기로 감당되는지 먼저 계산하세요"]}, {"ph": 1, "n": 5, "t": "BFS · DFS 기본", "goal": "격자 BFS 최단 거리와 연결 요소 세기를 10분 안에 쓴다", "lec": [{"u": "https://blog.encrypted.gg/941", "t": "0x09 BFS"}, {"u": "https://blog.encrypted.gg/942", "t": "0x0A DFS"}], "learn": "방향 배열 dy/dx, 범위 체크, 방문 처리는 큐에 넣을 때, 거리 배열 -1 초기화, 여러 시작점 동시 BFS", "must": [{"s": "P", "id": "43165", "t": "타겟 넘버", "lv": "LV2"}, {"s": "P", "id": "43162", "t": "네트워크", "lv": "LV3"}, {"s": "P", "id": "1844", "t": "게임 맵 최단거리", "lv": "LV2"}, {"s": "P", "id": "43163", "t": "단어 변환", "lv": "LV3"}, {"s": "P", "id": "154540", "t": "무인도 여행", "lv": "LV2"}, {"s": "P", "id": "159993", "t": "미로 탈출", "lv": "LV2"}, {"s": "P", "id": "169199", "t": "리코쳇 로봇", "lv": "LV2"}, {"s": "P", "id": "86971", "t": "전력망을 둘로 나누기", "lv": "LV2"}], "more": [{"s": "P", "id": "81302", "t": "거리두기 확인하기", "lv": "LV2"}, {"s": "P", "id": "60062", "t": "외벽 점검", "lv": "LV3"}], "pit": ["방문 표시는 큐에 넣을 때 하세요. 꺼낼 때 하면 중복으로 들어갑니다", "행(N)과 열(M), 좌표 (y, x) 순서가 뒤바뀌지 않았는지 확인하세요", "Python 재귀 DFS는 setrecursionlimit이 필요합니다"]}, {"ph": 1, "n": 6, "t": "BFS 심화 · 상태 확장", "goal": "방문 배열에 (행, 열, 추가 상태)를 넣는 문제를 알아본다", "lec": [{"u": "https://blog.encrypted.gg/941", "t": "0x09 BFS 후반부 (벽 부수기 유형)"}, {"u": "https://youtu.be/iVfgiqM4has", "t": "최백준 특강 (다리 K개 미로)"}], "learn": "visited[r][c][k] 설계, 방향을 상태로 넣기, 0-1 BFS, 좌표 2배 확대(아이템 줍기)", "must": [{"s": "P", "id": "43164", "t": "여행경로", "lv": "LV3"}, {"s": "P", "id": "87694", "t": "아이템 줍기", "lv": "LV3"}, {"s": "P", "id": "67259", "t": "경주로 건설", "lv": "LV3"}, {"s": "P", "id": "154538", "t": "숫자 변환하기", "lv": "LV2"}, {"s": "P", "id": "132266", "t": "부대복귀", "lv": "LV3"}], "more": [{"s": "P", "id": "84021", "t": "퍼즐 조각 채우기", "lv": "LV3"}, {"s": "P", "id": "72415", "t": "카드 짝 맞추기", "lv": "LV3"}, {"s": "P", "id": "60063", "t": "블록 이동하기", "lv": "LV3"}], "pit": ["같은 칸이라도 추가 상태(부순 횟수·방향)가 다르면 다른 정점입니다", "상태를 늘리면 메모리가 N×M×K로 커집니다. 범위를 확인하세요", "가중치가 0과 1로 섞이면 일반 BFS가 아니라 0-1 BFS나 다익스트라입니다"]}, {"ph": 1, "n": 7, "t": "구현 · 시뮬레이션 1", "goal": "지문을 단계별 함수로 나눠 LV2 구현을 40분 안에 푼다", "lec": [{"u": "https://blog.encrypted.gg/948", "t": "0x0D 시뮬레이션"}, {"u": "https://youtu.be/w9dyVCvFCkw", "t": "큰돌의터전 삼성 기출 분석"}], "learn": "90도 회전 b[j][n-1-i]=a[i][j], 동시 처리는 임시 배열, 상태 변수 먼저 정의, 단계마다 출력해 확인", "must": [{"s": "P", "id": "68645", "t": "삼각 달팽이", "lv": "LV2"}, {"s": "P", "id": "49994", "t": "방문 길이", "lv": "LV2"}, {"s": "P", "id": "17679", "t": "[1차] 프렌즈4블록", "lv": "LV2"}, {"s": "P", "id": "60059", "t": "자물쇠와 열쇠", "lv": "LV3"}, {"s": "C", "id": "rotating-glacier", "t": "회전하는 빙하", "lv": "삼성 기출"}, {"s": "C", "id": "virus-experiment", "t": "바이러스 실험", "lv": "삼성 기출"}, {"s": "C", "id": "2048-game", "t": "2048 게임", "lv": "삼성 기출"}], "more": [{"s": "P", "id": "60061", "t": "기둥과 보 설치", "lv": "LV3"}, {"s": "P", "id": "87390", "t": "n^2 배열 자르기", "lv": "LV2"}], "pit": ["\"동시에\" 일어나는 변화를 순서대로 처리하면 틀립니다. 임시 배열을 쓰세요", "직사각형을 회전하면 N×M이 M×N이 됩니다", "격자 밖으로 나갈 때 규칙(멈춤, 튕김, 반대편)을 지문에서 확인하세요"]}, {"ph": 1, "n": 8, "t": "삼성형 시뮬레이션 2 · 첫 모의고사", "goal": "삼성 기출 1문제를 2시간 안에 완주한다", "lec": [{"u": "https://www.codetree.ai/ko/frequent-problems", "t": "코드트리 기출 문제 목록"}], "learn": "문제를 읽고 30분 동안 설계(상태, 순서, 함수)만 하고, 그다음 코딩합니다. 디버깅은 단계별 격자 출력으로", "must": [{"s": "C", "id": "tree-kill-all", "t": "나무박멸", "lv": "삼성 기출"}, {"s": "C", "id": "artistry", "t": "예술성", "lv": "삼성 기출"}, {"s": "C", "id": "tail-catch-play", "t": "꼬리잡기놀이", "lv": "삼성 기출"}, {"s": "C", "id": "battle-ground", "t": "싸움땅", "lv": "삼성 기출"}, {"s": "C", "id": "codetree-mon-bread", "t": "코드트리 빵", "lv": "삼성 기출"}, {"s": "C", "id": "maze-runner", "t": "메이즈 러너", "lv": "삼성 기출"}], "mock": {"t": "모의고사 · 2문제 4시간", "items": [{"s": "C", "id": "destroy-the-turret", "t": "포탑 부수기", "lv": "삼성 기출"}, {"s": "C", "id": "rudolph-rebellion", "t": "루돌프의 반란", "lv": "삼성 기출"}], "co": ["samsung"], "min": 240}, "pit": ["설계 없이 바로 코딩하면 디버깅에 시간을 다 씁니다. 30분은 설계하세요", "동점일 때의 우선순위 규칙(행 작은 순, 열 작은 순 등)을 빠뜨리기 쉽습니다", "한 문제에 3시간 넘게 쓰지 않도록 시간을 나눠 두세요"]}, {"ph": 2, "n": 9, "t": "그리디 · 이분탐색 · 투포인터 · 누적합", "goal": "\"답을 정하고 가능한지 검사\"하는 매개변수 탐색을 쓴다", "lec": [{"u": "https://blog.encrypted.gg/975", "t": "0x11 그리디"}, {"u": "https://blog.encrypted.gg/985", "t": "0x13 이분탐색"}, {"u": "https://blog.encrypted.gg/1004", "t": "0x14 투 포인터"}], "learn": "정렬 후 그리디, bisect, 매개변수 탐색, 슬라이딩 윈도우, 1차원·2차원 누적합(차분 배열)", "must": [{"s": "P", "id": "42862", "t": "체육복", "lv": "LV1"}, {"s": "P", "id": "42885", "t": "구명보트", "lv": "LV2"}, {"s": "P", "id": "42883", "t": "큰 수 만들기", "lv": "LV2"}, {"s": "P", "id": "42884", "t": "단속카메라", "lv": "LV3"}, {"s": "P", "id": "181188", "t": "요격 시스템", "lv": "LV2"}, {"s": "P", "id": "43238", "t": "입국심사", "lv": "LV3"}, {"s": "P", "id": "64062", "t": "징검다리 건너기", "lv": "LV3"}, {"s": "P", "id": "178870", "t": "연속된 부분 수열의 합", "lv": "LV2"}, {"s": "P", "id": "67258", "t": "보석 쇼핑", "lv": "LV3"}, {"s": "P", "id": "131701", "t": "연속 부분 수열 합의 개수", "lv": "LV2"}], "more": [{"s": "P", "id": "43236", "t": "징검다리", "lv": "LV4"}, {"s": "P", "id": "92344", "t": "파괴되지 않은 건물", "lv": "LV3"}, {"s": "P", "id": "72414", "t": "광고 삽입", "lv": "LV3"}], "pit": ["그리디는 반례를 하나 찾아보고 확신한 뒤 쓰세요", "이분탐색 무한 루프: lo < hi 조건과 mid 계산 방향을 맞추세요", "답의 범위 상한을 너무 작게 잡지 마세요 (예: 10^18)"]}, {"ph": 2, "n": 10, "t": "다이나믹 프로그래밍", "goal": "점화식을 말로 먼저 쓰고 코드로 옮긴다", "lec": [{"u": "https://blog.encrypted.gg/974", "t": "0x10 다이나믹 프로그래밍"}], "learn": "테이블 정의 → 점화식 → 초기값 순서. 배낭, LIS, 격자 경로, 원형 배열 처리", "must": [{"s": "P", "id": "12914", "t": "멀리 뛰기", "lv": "LV2"}, {"s": "P", "id": "12900", "t": "2 x n 타일링", "lv": "LV2"}, {"s": "P", "id": "12913", "t": "땅따먹기", "lv": "LV2"}, {"s": "P", "id": "43105", "t": "정수 삼각형", "lv": "LV3"}, {"s": "P", "id": "42898", "t": "등굣길", "lv": "LV3"}, {"s": "P", "id": "12905", "t": "가장 큰 정사각형 찾기", "lv": "LV2"}, {"s": "P", "id": "12907", "t": "거스름돈", "lv": "LV3"}, {"s": "P", "id": "42895", "t": "N으로 표현", "lv": "LV3"}], "more": [{"s": "P", "id": "42897", "t": "도둑질", "lv": "LV4"}, {"s": "P", "id": "118668", "t": "코딩 테스트 공부", "lv": "LV3"}, {"s": "P", "id": "161988", "t": "연속 펄스 부분 수열의 합", "lv": "LV3"}], "pit": ["테이블의 의미와 초기값(기저)을 먼저 적으세요", "0/1 배낭을 1차원으로 쓸 때는 용량을 역순으로 돌아야 합니다", "나머지 연산 지시가 있으면 매 단계에서 나누세요"]}, {"ph": 2, "n": 11, "t": "그래프 심화 · 우선순위 큐 · 다익스트라 · Union-Find", "goal": "다익스트라와 Union-Find를 보지 않고 쓴다", "lec": [{"u": "https://blog.encrypted.gg/1015", "t": "0x17 우선순위 큐"}, {"u": "https://blog.encrypted.gg/1016", "t": "0x18 그래프"}, {"u": "https://blog.encrypted.gg/1019", "t": "0x19 트리"}, {"u": "https://blog.encrypted.gg/1037", "t": "0x1D 다익스트라"}, {"u": "https://blog.encrypted.gg/1097", "t": "부록 D Union-Find"}], "learn": "heapq, 다익스트라(거리 비교로 오래된 항목 건너뛰기), 플로이드, Union-Find 경로 압축, 크루스칼", "must": [{"s": "P", "id": "42626", "t": "더 맵게", "lv": "LV2"}, {"s": "P", "id": "42628", "t": "이중우선순위큐", "lv": "LV3"}, {"s": "P", "id": "42627", "t": "디스크 컨트롤러", "lv": "LV3"}, {"s": "P", "id": "49189", "t": "가장 먼 노드", "lv": "LV3"}, {"s": "P", "id": "12978", "t": "배달", "lv": "LV2"}, {"s": "P", "id": "72413", "t": "합승 택시 요금", "lv": "LV3"}, {"s": "P", "id": "42861", "t": "섬 연결하기", "lv": "LV3"}, {"s": "P", "id": "49191", "t": "순위", "lv": "LV3"}], "more": [{"s": "P", "id": "118669", "t": "등산코스 정하기", "lv": "LV3"}, {"s": "P", "id": "42892", "t": "길 찾기 게임", "lv": "LV3"}, {"s": "P", "id": "64063", "t": "호텔 방 배정", "lv": "LV4"}], "pit": ["다익스트라는 음수 가중치에서 쓸 수 없습니다", "무방향 그래프는 간선을 양쪽에 넣으세요", "노드 번호가 1부터인지 0부터인지 확인하세요"]}, {"ph": 2, "n": 12, "t": "카카오형 문자열 · 파싱 + SQL", "goal": "긴 지문을 요구사항 목록으로 바꾼 뒤 코딩한다", "lec": [{"u": "https://blog.encrypted.gg/1081", "t": "부록 A 문자열 기초"}, {"u": "https://school.programmers.co.kr/learn/challenges?tab=sql_practice_kit", "t": "프로그래머스 SQL 고득점 Kit"}], "learn": "시간 문자열 → 분 변환, 정규식, 진법 변환, 집합 연산. SQL은 GROUP BY·HAVING, JOIN, 서브쿼리, 날짜 함수, 재귀 CTE", "must": [{"s": "P", "id": "60057", "t": "문자열 압축", "lv": "LV2"}, {"s": "P", "id": "60058", "t": "괄호 변환", "lv": "LV2"}, {"s": "P", "id": "17677", "t": "[1차] 뉴스 클러스터링", "lv": "LV2"}, {"s": "P", "id": "17680", "t": "[1차] 캐시", "lv": "LV2"}, {"s": "P", "id": "92341", "t": "주차 요금 계산", "lv": "LV2"}, {"s": "P", "id": "92335", "t": "k진수에서 소수 개수 구하기", "lv": "LV2"}, {"s": "P", "id": "72411", "t": "메뉴 리뉴얼", "lv": "LV2"}, {"s": "P", "id": "64065", "t": "튜플", "lv": "LV2"}, {"s": "P", "id": "150370", "t": "개인정보 수집 유효기간", "lv": "LV1"}, {"s": "P", "id": "258712", "t": "가장 많이 받은 선물", "lv": "LV1"}], "sql": [{"s": "P", "id": "131123", "t": "즐겨찾기가 가장 많은 식당 정보 출력하기", "lv": "LV3"}, {"s": "P", "id": "144855", "t": "카테고리 별 도서 판매량 집계하기", "lv": "LV3"}, {"s": "P", "id": "151139", "t": "대여 횟수가 많은 자동차들의 월별 대여 횟수 구하기", "lv": "LV3"}, {"s": "P", "id": "157340", "t": "자동차 대여 기록에서 대여중 / 대여 가능 여부 구분하기", "lv": "LV3"}, {"s": "P", "id": "131532", "t": "년, 월, 성별 별 상품 구매 회원 수 구하기", "lv": "LV4"}, {"s": "P", "id": "284528", "t": "연간 평가점수에 해당하는 평가 등급 및 성과금 조회하기", "lv": "LV4"}, {"s": "P", "id": "301650", "t": "특정 세대의 대장균 찾기", "lv": "LV4"}], "more": [{"s": "P", "id": "72412", "t": "순위 검색", "lv": "LV2"}, {"s": "P", "id": "17683", "t": "[3차] 방금그곡", "lv": "LV2"}, {"s": "P", "id": "81303", "t": "표 편집", "lv": "LV3"}], "pit": ["시간 문자열은 분이나 초 단위 정수로 바꿔 계산하세요", "SQL에서 NULL 비교는 = 가 아니라 IS NULL입니다", "GROUP BY에 없는 컬럼을 SELECT 하지 마세요"]}, {"ph": 3, "n": 13, "t": "지원 회사 기출 집중", "goal": "지원하는 회사의 최근 기출을 시간 재고 푼다", "lec": [{"u": "https://tech.kakao.com/posts/813", "t": "2026 카카오 1차 공식 해설"}, {"u": "https://tech.kakao.com/posts/814", "t": "2026 카카오 2차 공식 해설"}], "learn": "삼성·카카오·현대 중 지원하는 곳만 골라 푸세요. 시간은 실제 시험의 절반 비율로 잽니다", "groups": [["삼성", [{"s": "C", "id": "magical-forest-exploration", "t": "마법의 숲 탐색", "lv": "삼성 기출"}, {"s": "C", "id": "ancient-ruin-exploration", "t": "고대 문명 유적 탐사", "lv": "삼성 기출"}, {"s": "C", "id": "medusa-and-warriors", "t": "메두사와 전사들", "lv": "삼성 기출"}, {"s": "C", "id": "microbial-research", "t": "미생물 연구", "lv": "삼성 기출"}, {"s": "C", "id": "mint-choco-milk", "t": "민트 초코 우유", "lv": "삼성 기출"}, {"s": "C", "id": "royal-knight-duel", "t": "왕실의 기사 대결", "lv": "삼성 기출"}], ["samsung"]], ["카카오", [{"s": "P", "id": "150369", "t": "택배 배달과 수거하기", "lv": "LV2"}, {"s": "P", "id": "150365", "t": "미로 탈출 명령어", "lv": "LV3"}, {"s": "P", "id": "150367", "t": "표현 가능한 이진트리", "lv": "LV3"}, {"s": "P", "id": "150366", "t": "표 병합", "lv": "LV3"}, {"s": "P", "id": "258711", "t": "도넛과 막대 그래프", "lv": "LV2"}, {"s": "P", "id": "258709", "t": "주사위 고르기", "lv": "LV3"}, {"s": "P", "id": "258705", "t": "산 모양 타일링", "lv": "LV3"}, {"s": "P", "id": "258707", "t": "n + 1 카드게임", "lv": "LV3"}], ["kakao"]], ["현대차그룹", [{"s": "H", "id": "easy-workshop", "t": "편안한 워크숍", "lv": "HSAT 기출"}, {"s": "H", "id": "check-digital-logic-pattern", "t": "디지털 로직 패턴 검사", "lv": "HSAT 기출"}, {"s": "H", "id": "optimizing-battery-efficiency", "t": "배터리 효율 최적화 하기", "lv": "HSAT 기출"}, {"s": "H", "id": "road-repair-robot", "t": "도로 보수 로봇", "lv": "HSAT 기출"}], ["hyundai"]]], "pit": ["기출은 실제 시간의 절반 비율로 잽니다", "같은 회사 기출은 비슷한 구조가 반복됩니다. 공통 패턴을 메모하세요"]}, {"ph": 3, "n": 14, "t": "실전 모의고사 1", "goal": "실제 시험과 같은 시간·환경으로 한 번 치른다", "lec": [], "learn": "휴대폰을 멀리 두고, 시작 10분 동안 전체를 훑어 순서를 정합니다. 끝나면 문제별로 쓴 시간과 막힌 지점을 기록하세요", "mocks": [{"t": "카카오 2026 공채 1차 실제 기출 · 7문제 5시간", "items": [{"s": "P", "id": "468371", "t": "노란불 신호등", "lv": "LV1"}, {"s": "P", "id": "468370", "t": "중요한 단어를 스포 방지", "lv": "LV1"}, {"s": "P", "id": "468373", "t": "바이러스 파이프", "lv": "LV2"}, {"s": "P", "id": "468372", "t": "리프 노드 수 최대화", "lv": "LV2"}, {"s": "P", "id": "468375", "t": "발전소 회로 복구", "lv": "LV3"}, {"s": "P", "id": "468376", "t": "최고 속도", "lv": "LV3"}, {"s": "P", "id": "468374", "t": "카카오 앱 정리하기", "lv": "LV3"}], "co": ["kakao"], "min": 300}, {"t": "PCCP 세트 A · 4문제 120분", "items": [{"s": "P", "id": "250137", "t": "[PCCP 기출문제] 1번 / 붕대 감기", "lv": "LV1"}, {"s": "P", "id": "250136", "t": "[PCCP 기출문제] 2번 / 석유 시추", "lv": "LV2"}, {"s": "P", "id": "250135", "t": "[PCCP 기출문제] 3번 / 아날로그 시계", "lv": "LV2"}, {"s": "P", "id": "250134", "t": "[PCCP 기출문제] 4번 / 수레 움직이기", "lv": "LV3"}], "co": ["pg", "kakao", "hyundai"], "min": 120}, {"t": "삼성 2025 하반기 · 2문제 4시간", "items": [{"s": "C", "id": "street-light-installation", "t": "가로등 설치", "lv": "삼성 기출"}, {"s": "C", "id": "ai-robot", "t": "AI 로봇청소기", "lv": "삼성 기출"}], "co": ["samsung"], "min": 240}], "pit": ["쉬운 문제부터 확실히 맞히고, 어려운 문제는 부분 점수를 노리세요", "끝나면 문제별로 쓴 시간과 막힌 지점을 기록하세요"]}, {"ph": 3, "n": 15, "t": "약점 보완 · 인증 시험 응시", "goal": "오답 노트 상위 2개 유형을 다시 풀고 인증을 딴다", "lec": [{"u": "https://softeer.ai", "t": "Softeer HSAT 접수"}, {"u": "https://certi.programmers.co.kr/about/pccp", "t": "PCCP 접수"}, {"u": "https://swexpertacademy.com", "t": "SWEA 상시 역량테스트"}], "learn": "오답 노트에서 가장 많이 틀린 유형의 \"도전\" 문제를 다시 풉니다. 지원 회사에 맞는 인증 시험을 이 주에 응시하세요", "groups": [["보충 (삼성)", [{"s": "C", "id": "pacman", "t": "팩맨", "lv": "삼성 기출"}, {"s": "C", "id": "hide-and-seek", "t": "술래잡기", "lv": "삼성 기출"}], ["samsung"]], ["보충 (카카오 기출)", [{"s": "P", "id": "118667", "t": "두 큐 합 같게 만들기", "lv": "LV2"}, {"s": "P", "id": "67257", "t": "수식 최대화", "lv": "LV2"}, {"s": "P", "id": "42890", "t": "후보키", "lv": "LV2"}, {"s": "P", "id": "17678", "t": "[1차] 셔틀버스", "lv": "LV3"}], ["kakao"]]], "pit": ["인증 시험은 실제 채용 코테와 같은 긴장감으로 치르세요"]}, {"ph": 3, "n": 16, "t": "실전 모의고사 2 · 템플릿 점검", "goal": "템플릿 7종을 보지 않고 5분 안에 쓴다", "lec": [], "learn": "아래 \"핵심 템플릿\" 7종을 빈 파일에 외워서 써 보고, 모의고사로 마무리합니다", "mocks": [{"t": "카카오 2026 공채 2차 실제 기출 · 5문제 4시간 30분 (CS 제외)", "items": [{"s": "P", "id": "468379", "t": "선인장 숨기기", "lv": "LV2"}, {"s": "P", "id": "468377", "t": "힌트 스테이지", "lv": "LV2"}, {"s": "P", "id": "468381", "t": "기차 선로", "lv": "LV3"}, {"s": "P", "id": "468380", "t": "제곱 개수 배열", "lv": "LV3"}, {"s": "P", "id": "468378", "t": "보물 찾기", "lv": "LV3"}], "co": ["kakao"], "min": 270}, {"t": "PCCP 세트 B · 4문제 120분", "items": [{"s": "P", "id": "340213", "t": "[PCCP 기출문제] 1번 / 동영상 재생기", "lv": "LV1"}, {"s": "P", "id": "340212", "t": "[PCCP 기출문제] 2번 / 퍼즐 게임 챌린지", "lv": "LV2"}, {"s": "P", "id": "340211", "t": "[PCCP 기출문제] 3번 / 충돌위험 찾기", "lv": "LV2"}, {"s": "P", "id": "340210", "t": "[PCCP 기출문제] 4번 / 수식 복원하기", "lv": "LV3"}], "co": ["pg", "kakao", "hyundai"], "min": 120}, {"t": "삼성 2025 하반기 · 2문제 4시간", "items": [{"s": "C", "id": "pirate-captain-coddy", "t": "해적 선장 코디", "lv": "삼성 기출"}, {"s": "C", "id": "delivery-service", "t": "택배 하차", "lv": "삼성 기출"}], "co": ["samsung"], "min": 240}], "pit": ["템플릿을 외워서 쓰되, 문제에 맞게 고치는 연습을 함께 하세요"]}];
-const PHASES = [['1–3주','기초 체력','p-soft','실버 문제를 막힘없이 풀기'],['4–8주','1순위 유형','p-acc','삼성 A형·HSAT 수준의 구현을 시간 안에'],['9–12주','2순위 유형','p-mid','카카오 1차 3~4솔, 프로그래머스형 3문제 중 2~3솔'],['13–16주','실전','p-good','지원 회사 형식으로 모의고사']];
+const INFO = {"company_formats": [{"company": "삼성전자 (DX·DS SW)", "platform": "자체 시험장 (오프라인)", "format": "2문제 · 4시간", "content": "1번 복잡한 구현/시뮬레이션, 2번 큰 입력 대비 효율적 탐색. 격자, 회전, 확산, BFS/DFS, 백트래킹", "notes": "Java·C++·Python. PyCharm·VS Code 제공. SWEA 상시 A형(2문제·3시간)과 비슷", "confidence": "여러 출처 일치"}, {"company": "카카오 (신입크루 공채)", "platform": "프로그래머스", "format": "1차 7문제 · 5시간 / 2차 알고리즘 5 + CS 12 · 4.5시간", "content": "1~2번 브론즈, 3~5번 실버~골드, 6~7번 골드 상위. 문자열, 구현, 트리, 그래프. 2차는 백트래킹, 이분탐색, 그리디, 누적합", "notes": "1차 3솔 합격 후기 있음. 2차 영상 감독. 2025년부터 점수 비공개, 검색 제한", "confidence": "여러 출처 일치"}, {"company": "네이버 (팀네이버 공채)", "platform": "프로그래머스", "format": "알고리즘 3 + SQL 1 · 약 2시간, CS 약 20문항", "content": "실버 상위~골드 4. 한 문제에 여러 알고리즘을 섞음", "notes": "C/C++/Java/JS/Python/Swift/Kotlin", "confidence": "여러 출처 일치"}, {"company": "현대차그룹 (현대차·기아·모비스·오토에버 등)", "platform": "Softeer", "format": "HSAT 정기 인증 2문제", "content": "실버~골드. 기초 알고리즘과 구현", "notes": "2문제 모두 맞히면 인증, 2년간 6개 계열사 SW 코테 면제", "confidence": "여러 출처 일치"}, {"company": "한화시스템 ICT", "platform": "프로그래머스", "format": "알고리즘 3 + SQL 1 · 2시간", "content": "해시 구현, 수학, 부분 문자열(골드 4~5), SQL LV2~3", "notes": "1차 면접에서 코테 1문제 풀이 발표", "confidence": "후기 1건"}, {"company": "LG CNS", "platform": "구름 (이전 프로그래머스)", "format": "3문제", "content": "LV2에서 최근 골드 4~3으로 상승. 다익스트라, DP", "notes": "2025년 한 차수는 코테 대신 인성 검사 후기", "confidence": "후기 1건"}, {"company": "토스", "platform": "자체", "format": "5문제 · 4시간", "content": "구현, 자료구조", "notes": "부분 점수 있음", "confidence": "후기 1건"}, {"company": "라인", "platform": "프로그래머스", "format": "3문제 · 2시간", "content": "브론즈~골드 5", "notes": "신입 공채 빈도 낮음", "confidence": "후기 1건"}, {"company": "SK 계열", "platform": "계열사별 상이", "format": "미확인", "content": "프로그래머스 기반 알고리즘 코테가 일반적", "notes": "2025년 이후 공개 후기 부족", "confidence": "정보 부족"}, {"company": "대한항공·포스코DX·롯데이노베이트 등", "platform": "공고별 상이", "format": "미확인", "content": "대체로 실버~골드 하위", "notes": "공개 후기 부족", "confidence": "정보 부족"}], "frequency_columns": ["유형", "삼성", "카카오", "네이버", "현대차 HSAT", "프로그래머스형 (SK·한화·LG 등)"], "type_frequency": [["구현·시뮬레이션", "매우 자주", "매우 자주", "자주", "매우 자주", "자주"], ["BFS·DFS", "매우 자주", "자주", "자주", "자주", "자주"], ["완전탐색·백트래킹", "매우 자주", "자주", "가끔", "자주", "가끔"], ["문자열·파싱·해시", "가끔", "매우 자주", "자주", "가끔", "매우 자주"], ["정렬·그리디", "가끔", "자주", "자주", "자주", "자주"], ["이분탐색·투포인터·누적합", "가끔", "자주", "자주", "가끔", "자주"], ["DP", "가끔", "자주", "자주", "가끔", "자주"], ["다익스트라·최단 경로", "가끔", "자주", "가끔", "가끔", "가끔"], ["우선순위 큐·스케줄링", "가끔", "자주", "가끔", "가끔", "가끔"], ["트리·Union-Find", "드묾", "자주", "가끔", "드묾", "가끔"], ["SQL", "없음", "없음", "1문제", "없음", "1문제 (한화·금융권)"], ["CS 객관식", "없음", "2차에 12문항", "약 20문항", "없음", "드묾"]], "tools": [{"name": "프로그래머스", "url": "https://school.programmers.co.kr/learn/challenges", "use": "카카오·네이버·SK·한화 실제 시험 플랫폼. 카카오 기출, 고득점 Kit, SQL Kit, PCCP 기출"}, {"name": "코드트리", "url": "https://www.codetree.ai/ko/frequent-problems", "use": "삼성 SW역량테스트 기출 복원, HSAT 기출"}, {"name": "바킹독 실전 알고리즘", "url": "https://github.com/encrypted-def/basic-algo-lecture", "use": "무료 강의. 커리큘럼 강의 링크. 글 속 문제집은 백준 기반이라 현재 채점 불가"}, {"name": "이코테 2021 (Python)", "url": "https://github.com/ndb796/python-for-coding-test", "use": "나동빈 《이것이 취업을 위한 코딩 테스트다》 소스코드와 강의"}, {"name": "SW Expert Academy", "url": "https://swexpertacademy.com", "use": "삼성 상시 역량테스트 A형(2문제·3시간), B형(1문제·4시간, Python 불가)"}, {"name": "Softeer", "url": "https://softeer.ai", "use": "현대차그룹 HSAT 인증 (2년간 코테 면제)"}, {"name": "PCCP", "url": "https://certi.programmers.co.kr/about/pccp", "use": "4문제·120분, 5만 원. 일부 기업 LV.2 이상 코테 면제"}, {"name": "백준 BOJ", "url": "https://www.acmicpc.net", "use": "2026-04-28 서비스 종료. 현재 채점 불가 (재개 예고만 있음)"}], "verified_videos": [{"title": "2026년 코딩테스트 준비, 딱 정해드립니다", "channel": "개발남노씨", "url": "https://youtu.be/iWJUA78Fb8c", "verdict": "먼저 보기", "notes": "우선순위(구현·완전탐색·BFS/DFS → DP·다익스트라)와 10^8≈1초 기준은 정확. \"1순위만 하면 대부분 통과\"는 과장. 끝은 강의 홍보"}, {"title": "2026 삼성전자 코딩테스트 기출 분석", "channel": "큰돌의터전", "url": "https://youtu.be/w9dyVCvFCkw", "verdict": "삼성 지원자 필수", "notes": "회전 공식, dy/dx, 동시 확산은 임시 배열, 조합 재귀, 끝값 반례. 예시는 C++"}, {"title": "백준의 코딩테스트 벼락치기 · 2025 대기업 코테 풀이 특강", "channel": "제로베이스 (출연 최백준)", "url": "https://youtu.be/iVfgiqM4has", "verdict": "중급 이후", "notes": "상태 BFS(행, 열, 다리 사용 횟수) 설명이 핵심. 실제 기출 아님. 첫 문제 풀이는 N=10^5에서 O(N^2) 위험"}, {"title": "코딩테스트 벼락치기 · 2026 필수 코테 3문제", "channel": "제로베이스 (출연 최백준)", "url": "https://youtu.be/x0j8M4_-wT0", "verdict": "입문~중급", "notes": "제약 조건으로 완전탐색 가능 여부 판단, 출력 디버깅 시연. 실버 수준"}, {"title": "독학으로 코딩 테스트를 준비한다면", "channel": "개발자 강민철", "url": "https://youtu.be/jDjs1NsCPo4", "verdict": "입문자만", "notes": "일반론. 후반은 엘리스 광고. \"1~2시간 고민\"은 취업 준비엔 길다고 판단"}], "dropped_claims": ["\"1순위(구현·BFS/DFS)만 하면 대부분 통과\" — 과장. 카카오 2차·네이버는 이분탐색·그리디·누적합·SQL도 나옴", "\"카카오 코테 인터넷 검색 가능, 점수 공개\" — 2024년 이전 정보. 2025년부터 검색 제한·점수 비공개", "\"네이버 코테 40분 내외\" — 검색 요약에만 있고 실제 후기(약 2시간)와 모순", "\"벼락치기 3문제\", \"10년치 패턴만 알면 된다\" — 홍보 문구", "\"삼성은 제출 시간도 평가\" — 단일 후기, 공식 근거 없음", "\"AI 허용 기업 34%\" 등 비율 — 해외 설문 재인용, 국내와 무관", "\"한 문제당 1~2시간 고민\" — 취업 준비엔 30~45분 후 해설 권장", "백준 기반 기존 가이드 — 백준 종료로 모든 문제를 프로그래머스·코드트리로 교체"], "sources": [{"title": "2025 상반기 삼성전자 SW역량테스트 후기", "url": "https://velog.io/@crm03008/2025-%EC%83%81%EB%B0%98%EA%B8%B0%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90-%EA%B0%9C%EB%B0%9C-%EC%A7%81%EB%AC%B4-SW%EC%97%AD%EB%9F%89%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%9B%84%EA%B8%B0"}, {"title": "2026 카카오 1차 문제해설 (tech.kakao.com)", "url": "https://tech.kakao.com/posts/813"}, {"title": "2026 카카오 2차 문제해설", "url": "https://tech.kakao.com/posts/814"}, {"title": "2026 카카오 신입공채 코딩 테스트 후기", "url": "https://velog.io/@pcjo1202/%ED%9B%84%EA%B8%B0-2026-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%8B%A0%EC%9E%85%EA%B3%B5%EC%B1%84-%EC%BD%94%EB%94%A9-%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%9B%84%EA%B8%B0"}, {"title": "회사별 코딩테스트 스타일 및 후기", "url": "https://velog.io/@soonyoung/%ED%9A%8C%EC%82%AC%EB%B3%84-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8A%A4%ED%83%80%EC%9D%BC-%EB%B0%8F-%ED%9B%84%EA%B8%B0"}, {"title": "2025 네이버 신입공채 CS & 코딩테스트 후기", "url": "https://blog.similarchart.com/259"}, {"title": "Softeer HSAT 안내 (서울대 CSE)", "url": "https://cse.snu.ac.kr/en/community/notice/21926"}, {"title": "한화시스템 ICT 25년 하반기 후기", "url": "https://velog.io/@dbwls89173/%ED%95%9C%ED%99%94%EC%8B%9C%EC%8A%A4%ED%85%9C-ICT-25%EB%85%84-%ED%95%98%EB%B0%98%EA%B8%B0-%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B0%9C%EB%B0%9C-%EC%9A%B4%EC%98%81-%EC%B1%84%EC%9A%A9-%ED%9B%84%EA%B8%B0"}, {"title": "LG CNS 합격 후기 (자소설닷컴)", "url": "https://jasoseol.com/blog/post/lg-cns-%ED%95%A9%EA%B2%A9-%ED%9B%84%EA%B8%B0-%EC%9E%90%EC%86%8C%EC%84%9C-%EC%9D%B8%EC%A0%81%EC%84%B1-%EB%A9%B4%EC%A0%91-%EC%A7%88%EB%AC%B8-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%9E%90/"}, {"title": "삼성 SW 역량테스트 A형·B형 후기", "url": "https://applelime.github.io/review/2022-03-27-review-samsung-sw-competency-test/"}, {"title": "PCCP 시험 소개", "url": "https://certi.programmers.co.kr/about/pccp"}, {"title": "AI 활용 코딩 테스트 분석 2026 (잡코리아)", "url": "https://www.jobkorea.co.kr/goodjob/tip/view?News_No=22546"}, {"title": "백준 서비스 종료 (kitpa)", "url": "https://kitpa.org/news/1366"}, {"title": "BOJ 인수·재개 예고 (kitpa)", "url": "https://kitpa.org/news/1640"}, {"title": "BOJ 서비스 종료에 따른 안내 (바킹독)", "url": "https://blog.encrypted.gg/1108"}], "templates_python": [{"name": "매일 공부 루틴 (2~3시간)\n        강의 30분 → 필수 문제 2개 → 전날 틀린 문제 1개 다시 풀기\n        30분 고민해도 방향이 안 잡히면 해설을 보고, 다음 날 해설 없이 다시 풉니다\n        맞힌 문제도 프로그래머스 \"다른 사람의 풀이\"를 한 개 읽습니다\n        오답 노트에는 \"왜 틀렸나\"를 한 줄로 적습니다. 예: 범위 체크 누락, 동시 처리 순서\n      시간이 4주뿐이라면\n        1주: 4·5주차 필수 문제 (백트래킹, BFS/DFS)\n        2주: 7·8주차 필수 문제 (구현·시뮬레이션)\n        3주: 13주차 중 지원 회사 기출만\n        4주: 14·16주차 모의고사 중 지원 회사 세트\n        DP·그래프 심화는 과감히 건너뜁니다\n      언어 선택\n        Python: 구현이 빠르고 문자열 처리가 편해 카카오·네이버형에 유리합니다. 삼성 SW역량테스트 B형(Pro)은 Python 응시가 불가합니다\n        C++ / Java: 속도가 안정적이고 삼성 B형 이상을 노린다면 필수입니다\n        바킹독 강의는 C++이지만 파이썬·자바 코드가 추가됐습니다. Python이라면 이코테 소스코드도 함께 보세요\n    \n  \n\n  \n    핵심 템플릿 7종16주차 점검 대상입니다. Python 기준입니다. 보지 않고 5분 안에 쓸 수 있을 때까지 반복하세요.\n    \n      1. 격자 BFS 최단 거리", "code": "from collections import deque\ndef bfs(sr, sc, grid):\n    n, m = len(grid), len(grid[0])\n    dist = [[-1]*m for _ in range(n)]\n    dist[sr][sc] = 0\n    q = deque([(sr, sc)])\n    while q:\n        r, c = q.popleft()\n        for dr, dc in ((-1,0),(1,0),(0,-1),(0,1)):\n            nr, nc = r+dr, c+dc\n            if 0 <= nr < n and 0 <= nc < m \\\n               and grid[nr][nc] != '#' and dist[nr][nc] == -1:\n                dist[nr][nc] = dist[r][c] + 1\n                q.append((nr, nc))\n    return dist"}, {"name": "2. 조합 백트래킹 (넣기 → 재귀 → 빼기)", "code": "def comb(start, picked):\n    if len(picked) == k:\n        answers.append(picked[:])\n        return\n    for i in range(start, n):\n        picked.append(arr[i])\n        comb(i + 1, picked)\n        picked.pop()\n# 순열이면 used 배열로 모든 i를 돌고,\n# 간단하면 itertools.combinations / permutations"}, {"name": "3. 격자 회전 · 동시 갱신", "code": "# 시계 방향 90도: b[j][n-1-i] = a[i][j]\ndef rotate(a):\n    n = len(a)\n    return [[a[n-1-j][i] for j in range(n)] for i in range(n)]\n# 파이썬 한 줄: list(map(list, zip(*a[::-1])))\n\n# \"동시에\" 퍼진다 → 새 배열에 모았다가 한 번에 교체\nnxt = [row[:] for row in board]\n# ... board를 읽고 nxt에 쓰기 ...\nboard = nxt"}, {"name": "4. 매개변수 탐색 (이분탐색)", "code": "def ok(x):          # x로 조건을 만족하는가?\n    ...\nlo, hi = 0, 10**18\nwhile lo < hi:          # 조건을 만족하는 최솟값\n    mid = (lo + hi) // 2\n    if ok(mid): hi = mid\n    else: lo = mid + 1\nanswer = lo"}, {"name": "5. 다익스트라", "code": "import heapq\ndef dijkstra(start, adj, n):\n    INF = float('inf')\n    dist = [INF] * n\n    dist[start] = 0\n    pq = [(0, start)]\n    while pq:\n        d, u = heapq.heappop(pq)\n        if d > dist[u]: continue     # 오래된 항목\n        for v, w in adj[u]:\n            if d + w < dist[v]:\n                dist[v] = d + w\n                heapq.heappush(pq, (dist[v], v))\n    return dist"}, {"name": "6. Union-Find", "code": "parent = list(range(n))\ndef find(x):\n    while parent[x] != x:\n        parent[x] = parent[parent[x]]   # 경로 압축\n        x = parent[x]\n    return x\ndef union(a, b):\n    a, b = find(a), find(b)\n    if a == b: return False\n    parent[b] = a\n    return True"}, {"name": "7. 누적합 · 2차원 차분 배열", "code": "# 1차원 구간합\npre = [0]\nfor x in arr: pre.append(pre[-1] + x)\n# arr[l..r] 합 = pre[r+1] - pre[l]\n\n# 2차원 구간에 +v를 한꺼번에 (파괴되지 않은 건물)\nd[r1][c1] += v; d[r1][c2+1] -= v\nd[r2+1][c1] -= v; d[r2+1][c2+1] += v\n# 행 방향, 열 방향으로 한 번씩 누적하면 완성"}, {"name": "시작 코드 (Python 공통)", "code": "import sys\ninput = sys.stdin.readline          # 입력이 많을 때\nsys.setrecursionlimit(10**6)        # 깊은 재귀 DFS\nfrom collections import deque, defaultdict, Counter\nfrom itertools import permutations, combinations, product\nimport heapq, bisect"}]};
+const PHASES = ['1–3주 · 기초', '4–8주 · 핵심 유형', '9–12주 · 추가 유형', '13–16주 · 실전'];
 const PRIORITY = {samsung:[4,5,6,7,8], kakao:[3,9,10,11,12], pg:[3,9,10,12], hyundai:[4,5,7,9]};
 const CO_NAME = {samsung:'삼성', kakao:'카카오', pg:'네이버·SK 등', hyundai:'현대차그룹'};
-const STATUS = {solved:['혼자 풂','p-good'], hint:['해설 보고 풂','p-amber'], fail:['못 풂','p-bad']};
+const STATUS = {solved:'혼자 풂', hint:'해설 보고 풂', fail:'못 풂'};
+const SRC = {P:'프로그래머스', C:'코드트리 · 삼성 기출', H:'코드트리 · HSAT 기출'};
 const INTERVALS = [1, 3, 7, 14];
+const LVMIN = {LV1:15, LV2:30, LV3:50, LV4:70, LV5:90};
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const url = x => x.s==='P' ? `https://school.programmers.co.kr/learn/courses/30/lessons/${x.id}` : x.s==='C' ? `https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/${x.id}/description` : `https://www.codetree.ai/ko/frequent-problems/hsat/problems/${x.id}/description`;
-const SRC = {P:['P','p-acc','프로그래머스'],C:['C','p-amber','코드트리 삼성 기출'],H:['H','p-mid','코드트리 HSAT 기출']};
-const ymd = d => { const z = n => String(n).padStart(2,'0'); return `${d.getFullYear()}-${z(d.getMonth()+1)}-${z(d.getDate())}`; };
+const pad = n => String(n).padStart(2, '0');
+const ymd = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
 const today = () => ymd(new Date());
 const addDays = (s, n) => { const d = new Date(s + 'T00:00:00'); d.setDate(d.getDate() + n); return ymd(d); };
 const daysBetween = (a, b) => Math.round((new Date(b+'T00:00:00') - new Date(a+'T00:00:00')) / 86400000);
-const LVMIN = {LV1:15, LV2:30, LV3:50, LV4:70, LV5:90};
-function est(x, sql){ if (x.s === 'C') return 150; if (x.s === 'H') return 60; if (sql) return x.lv === 'LV3' ? 20 : 30; return LVMIN[x.lv] || 40; }
-const fmtH = m => m >= 60 ? `${Math.floor(m/60)}시간${m%60 ? ` ${m%60}분` : ''}` : `${m}분`;
-const shortDate = s => s ? s.slice(5).replace('-', '.') : '';
+const md = s => s ? `${Number(s.slice(5,7))}/${Number(s.slice(8,10))}` : '';
+const fmtH = m => { m = Math.round(m); const h = Math.floor(m/60), r = m % 60; return h ? `${h}시간${r ? ` ${r}분` : ''}` : `${r}분`; };
+const url = x => x.s === 'P' ? `https://school.programmers.co.kr/learn/courses/30/lessons/${x.id}` : `https://www.codetree.ai/ko/frequent-problems/${x.s === 'C' ? 'samsung-sw' : 'hsat'}/problems/${x.id}/description`;
+const est = (x, sql) => x.s === 'C' ? 150 : x.s === 'H' ? 60 : sql ? (x.lv === 'LV3' ? 20 : 30) : (LVMIN[x.lv] || 40);
 
-// ---------- problem index ----------
-const PROBS = {};      // key -> {x, week, group, kind, co}
-const blocks = [];     // per week list of blocks
+// ---------- index ----------
+const PROBS = {}, SETS = {};
 WEEKS.forEach(w => {
-  const bl = [];
-  const add = (title, items, kind, co, extra) => { bl.push(Object.assign({title, items, kind, co}, extra||{})); items.forEach(x => { PROBS[x.s+x.id] = {x, week:w, kind, co, min: est(x, title === 'SQL')}; }); };
+  const sets = [];
+  const add = (title, items, kind, co, extra) => {
+    const set = Object.assign({title, items, kind, co, id: `${w.n}-${sets.length}`}, extra || {});
+    sets.push(set);
+    items.forEach(x => { PROBS[x.s + x.id] = {x, w, set, min: est(x, title === 'SQL')}; });
+  };
   if (w.must) add('필수', w.must, 'must', null);
   if (w.sql) add('SQL', w.sql, 'must', ['pg']);
-  (w.groups||[]).forEach(g => add(g[0], g[1], 'must', g[2]));
-  if (w.mock) add(w.mock.t, w.mock.items, 'mock', w.mock.co, {min:w.mock.min});
-  (w.mocks||[]).forEach(m => add(m.t, m.items, 'mock', m.co, {min:m.min}));
-  if (w.more) add('도전', w.more, 'more', null);
-  blocks[w.n] = bl;
+  (w.groups || []).forEach(g => add(g[0].replace('보충 ', '보충 · ').replace(/[()]/g, ''), g[1], 'must', g[2]));
+  if (w.mock) add('모의고사 · 삼성 기출 2문제', w.mock.items, 'mock', w.mock.co, {min: w.mock.min});
+  (w.mocks || []).forEach(m => add('모의고사 · ' + m.t, m.items, 'mock', m.co, {min: m.min}));
+  if (w.more) add('도전 (선택)', w.more, 'more', null);
+  SETS[w.n] = sets;
 });
 
 // ---------- state ----------
-const blank = () => ({v:2, status:{}, notes:{}, review:{}, settings:{co:[], exam:'', hours:2}, log:{}, mocks:[], timer:null});
-let S = blank();
+const blank = () => ({v:2, status:{}, notes:{}, review:{}, settings:{co:[], exam:'', hours:2}, log:{}, mocks:[], timer:null, plan:null});
 function loadLocal(){
   try {
     const raw = localStorage.getItem('cote-state-v2');
-    if (raw) return Object.assign(blank(), JSON.parse(raw));
-    const old = JSON.parse(localStorage.getItem('cote-probs') || '{}');
-    const s = blank(); Object.keys(old).forEach(k => { if (old[k]) s.status[k] = 'solved'; }); return s;
+    if (raw) { const s = Object.assign(blank(), JSON.parse(raw)); s.settings = Object.assign(blank().settings, s.settings); return s; }
+    const old = JSON.parse(localStorage.getItem('cote-probs') || '{}'), s = blank();
+    Object.keys(old).forEach(k => { if (old[k]) s.status[k] = 'solved'; });
+    return s;
   } catch(e) { return blank(); }
 }
-S = loadLocal();
+let S = loadLocal();
 let docRef = null, saveTimer = null, saving = false, pending = false, sampleFn = null;
 function persist(){
   try { localStorage.setItem('cote-state-v2', JSON.stringify(S)); } catch(e) {}
-  if (!docRef) return;
-  clearTimeout(saveTimer);
-  saveTimer = setTimeout(flush, 1200);
+  if (docRef) { clearTimeout(saveTimer); saveTimer = setTimeout(flush, 1200); }
 }
 async function flush(){
   if (!docRef) return;
   if (saving) { pending = true; return; }
   saving = true;
-  try { await docRef.set(JSON.parse(JSON.stringify(S))); setSync('계정에 저장했습니다. 다른 기기에서 열어도 이어서 볼 수 있습니다.'); }
+  try { await docRef.set(JSON.parse(JSON.stringify(S))); setSync('기록은 Claude 계정에 저장됩니다. 다른 기기에서도 이어집니다.'); }
   catch(e) {
-    if (e && e.code === 'quota_exceeded') setSync('저장 공간이 가득 차 계정 저장에 실패했습니다. 이 브라우저에는 저장됩니다.');
-    else if (e && (e.code === 'invalid_argument' || e.code === 'revoked' || e.code === 'not_granted')) { docRef = null; setSync('이 화면에서는 계정 저장을 쓸 수 없어 이 브라우저에만 저장합니다.'); }
-    else setSync('계정 저장이 잠시 실패했습니다. 다음 변경 때 다시 저장합니다.');
+    if (['invalid_argument','revoked','not_granted'].includes(e && e.code)) { docRef = null; setSync('기록은 이 브라우저에 저장됩니다.'); }
+    else setSync('계정 저장에 잠시 실패했습니다. 다음 변경 때 다시 저장합니다.');
   }
   saving = false;
   if (pending) { pending = false; flush(); }
 }
-function setSync(t){ $('#syncState').textContent = t; }
+const setSync = t => { $('#syncState').textContent = t; };
 function mergeState(remote, local){
-  const r = Object.assign(blank(), remote);
-  for (const k in local.status) if (!(k in r.status)) r.status[k] = local.status[k];
-  for (const k in local.notes) if (!(k in r.notes)) r.notes[k] = local.notes[k];
-  for (const k in local.review) if (!(k in r.review)) r.review[k] = local.review[k];
-  for (const d in local.log) r.log[d] = Math.max(r.log[d]||0, local.log[d]);
+  const r = Object.assign(blank(), remote); r.settings = Object.assign(blank().settings, r.settings);
+  for (const f of ['status','notes','review']) for (const k in local[f]) if (!(k in r[f])) r[f][k] = local[f][k];
+  for (const d in local.log) r.log[d] = Math.max(r.log[d] || 0, local.log[d]);
   return r;
 }
+const isDone = k => S.status[k] === 'solved' || S.status[k] === 'hint';
+const coSel = () => S.settings.co || [];
+const relevant = co => !co || !coSel().length || co.some(c => coSel().includes(c));
+const coreKeys = n => SETS[n].filter(s => s.kind !== 'more' && relevant(s.co)).flatMap(s => s.items.map(x => x.s + x.id));
 
-// ---------- status changes ----------
 function setStatus(key, st){
   const prev = S.status[key];
-  if (!st) delete S.status[key]; else S.status[key] = st;
-  if (st && !prev) S.log[today()] = (S.log[today()]||0) + 1;
-  if (st === 'hint' || st === 'fail') { if (!S.review[key]) S.review[key] = {step:0, due:addDays(today(), 1)}; }
-  if (!st || st === 'solved') { if (S.review[key] && prev !== 'solved' && st === 'solved' && prev) { /* upgraded from hint/fail by re-solving */ } }
-  persist(); refreshRow(key); refreshAll();
+  if (st) S.status[key] = st; else delete S.status[key];
+  if (st && !prev) S.log[today()] = (S.log[today()] || 0) + 1;
+  if ((st === 'hint' || st === 'fail') && !S.review[key]) S.review[key] = {step:0, due:addDays(today(), 1)};
+  persist(); refreshRows(key); refresh();
 }
 function reviewDone(key, ok){
   const r = S.review[key]; if (!r) return;
-  if (ok) {
-    r.step += 1;
-    if (r.step >= INTERVALS.length) { delete S.review[key]; S.status[key] = 'solved'; }
-    else r.due = addDays(today(), INTERVALS[r.step]);
-  } else { r.step = 0; r.due = addDays(today(), 1); }
-  S.log[today()] = (S.log[today()]||0) + 1;
-  persist(); refreshRow(key); refreshAll();
+  if (ok) { r.step++; if (r.step >= INTERVALS.length) { delete S.review[key]; S.status[key] = 'solved'; } else r.due = addDays(today(), INTERVALS[r.step]); }
+  else { r.step = 0; r.due = addDays(today(), 1); }
+  S.log[today()] = (S.log[today()] || 0) + 1;
+  persist(); refresh(); renderDetail();
 }
-const isDone = k => S.status[k] === 'solved' || S.status[k] === 'hint';
 
-// ---------- company filter ----------
-const coSel = () => S.settings.co || [];
-const relevant = co => !co || !coSel().length || co.some(c => coSel().includes(c));
-
-// ---------- render weeks ----------
+// ---------- problem row ----------
 const openPanels = new Set();
-function probRow(x){
-  const key = x.s + x.id, st = S.status[key];
-  return `<li class="prob" data-key="${esc(key)}"><input type="checkbox" id="pb-${esc(key)}" ${isDone(key)?'checked':''} aria-label="${esc(x.t)} 혼자 풂">
-    <span class="pill ${SRC[x.s][1]} srcp" title="${SRC[x.s][2]}">${SRC[x.s][0]}</span>
-    <a href="${url(x)}" target="_blank" rel="noopener">${esc(x.t)}</a>
-    <span class="meta"><span class="st">${st ? `<span class="pill ${STATUS[st][1]}">${STATUS[st][0]}</span>` : ''}${S.notes[key] ? '<span class="memo-dot" title="메모 있음"></span>' : ''}</span><span class="lv">${esc(x.lv)} · ${fmtH(PROBS[key].min)}</span><button type="button" class="rowbtn" aria-expanded="${openPanels.has(key)}" aria-controls="pn-${esc(key)}">기록</button></span>
-    ${openPanels.has(key) ? panelHtml(key) : ''}</li>`;
+function rowHtml(x, opt){
+  opt = opt || {};
+  const key = x.s + x.id, P = PROBS[key], st = S.status[key];
+  const right = [
+    st ? `<span class="st-${st}">${STATUS[st]}</span>` : '',
+    S.notes[key] ? '<span class="memo-mark" title="메모 있음">메모</span>' : '',
+    opt.week ? `<span>${pad(P.w.n)}주</span>` : '',
+    `<span class="lv">${esc(x.lv)} · ${fmtH(P.min)}</span>`,
+    `<button type="button" class="more" data-more="${esc(key)}" aria-expanded="${openPanels.has(key)}">기록</button>`
+  ].join('');
+  return `<li class="row${isDone(key) ? ' is-done' : ''}" data-key="${esc(key)}" data-opt="${opt.week ? 'w' : ''}">
+    <input type="checkbox" ${isDone(key) ? 'checked' : ''} aria-label="${esc(x.t)} 풀었음">
+    <span class="name"><a href="${url(x)}" target="_blank" rel="noopener">${esc(x.t)}</a><span class="src">${SRC[x.s]}</span></span>
+    <span class="right">${right}</span>
+    ${opt.extra || ''}${openPanels.has(key) ? panelHtml(key) : ''}</li>`;
 }
 function panelHtml(key){
-  const P = PROBS[key], st = S.status[key] || '', r = S.review[key];
-  const radios = [['','아직'],['solved','혼자 풂'],['hint','해설 보고 풂'],['fail','못 풂 · 복습 예약']].map(([v,l]) =>
-    `<label><input type="radio" name="st-${esc(key)}" value="${v}" ${st===v?'checked':''}> ${l}</label>`).join('');
-  return `<div class="panel" id="pn-${esc(key)}">
-    <div class="radios">${radios}</div>
-    ${r ? `<p class="small muted">다음 복습: <b class="mono">${shortDate(r.due)}</b> (${r.step+1}/${INTERVALS.length}단계)</p>` : ''}
-    <label class="field"><span class="plabel">메모 (왜 막혔나, 핵심 아이디어)</span><textarea rows="3" data-note="${esc(key)}" placeholder="예: 동시 확산을 순서대로 처리해서 틀림 → 임시 배열">${esc(S.notes[key]||'')}</textarea></label>
-    <div class="ai" ${sampleFn ? '' : 'hidden'}>
-      <label class="field"><span class="plabel">AI 힌트용 지문 요약이나 내 코드 (선택)</span><textarea rows="4" data-ctx="${esc(key)}" placeholder="지문 핵심이나 작성 중인 코드를 붙여 넣으면 더 정확한 힌트를 받습니다"></textarea></label>
-      <div class="ai-btns"><span class="plabel">AI 힌트</span>
-        <button type="button" class="btn sm" data-hint="1" data-key="${esc(key)}">1단계 · 방향</button>
-        <button type="button" class="btn sm" data-hint="2" data-key="${esc(key)}">2단계 · 알고리즘</button>
-        <button type="button" class="btn sm" data-hint="3" data-key="${esc(key)}">3단계 · 핵심 아이디어</button>
-        <button type="button" class="btn sm ghost" data-hint="review" data-key="${esc(key)}">내 코드 검토</button>
-        <button type="button" class="linkbtn" data-stop="${esc(key)}" hidden>중지</button></div>
-      <div class="ai-out" data-out="${esc(key)}" hidden></div>
-      <p class="small muted">정답 코드는 주지 않도록 요청합니다. 내 Claude 사용량을 씁니다.</p>
-    </div></div>`;
+  const st = S.status[key] || '', r = S.review[key];
+  const seg = [['','안 풂'],['solved','혼자 풂'],['hint','해설 보고 풂'],['fail','못 풂']].map(([v,l]) =>
+    `<label><input type="radio" name="st-${esc(key)}" value="${v}" ${st === v ? 'checked' : ''}>${l}</label>`).join('');
+  return `<div class="panel">
+    <div class="seg" role="radiogroup" aria-label="풀이 상태">${seg}</div>
+    ${r ? `<p class="small ink2">다음 복습 ${md(r.due)} (${r.step + 1}/${INTERVALS.length}회차)</p>` : '<p class="small muted">"해설 보고 풂"이나 "못 풂"을 고르면 복습 일정이 잡힙니다.</p>'}
+    <label class="fld"><span>메모</span><textarea rows="2" data-note="${esc(key)}" placeholder="막힌 이유나 핵심 아이디어">${esc(S.notes[key] || '')}</textarea></label>
+    ${sampleFn ? `<div class="fld"><span>막혔을 때 Claude에게 힌트 받기 (정답 코드는 주지 않습니다)</span>
+      <textarea rows="3" data-ctx="${esc(key)}" placeholder="지문 요약이나 작성 중인 코드를 붙여 넣으면 더 정확합니다 (선택)"></textarea>
+      <div class="ai-btns"><button type="button" class="btn line sm" data-hint="1" data-key="${esc(key)}">방향</button><button type="button" class="btn line sm" data-hint="2" data-key="${esc(key)}">쓸 알고리즘</button><button type="button" class="btn line sm" data-hint="3" data-key="${esc(key)}">핵심 아이디어</button><button type="button" class="btn line sm" data-hint="review" data-key="${esc(key)}">내 코드 검토</button><button type="button" class="lnk" data-stop="${esc(key)}" hidden>중지</button></div>
+      <div class="ai-out" data-out="${esc(key)}" hidden></div></div>` : ''}
+  </div>`;
 }
-function fmtMin(m){ const h = Math.floor(m/60), r = Math.round(m%60); return h ? `${h}시간${r?` ${r}분`:''}` : `${r}분`; }
-function blockHtml(b, w, bi){
-  const rel = relevant(b.co);
-  const cls = b.kind === 'mock' ? 'mock' : b.kind === 'more' ? 'more' : '';
-  const tags = b.co ? `<span class="cotags">${b.co.map(c=>CO_NAME[c]).join(' · ')}</span>` : '';
-  let extra = '';
-  if (b.kind === 'mock') {
-    const hist = S.mocks.filter(m => m.set === b.title).slice(-3).map(m => `${shortDate(m.date)} ${m.solved}/${m.total} · ${fmtMin(m.minutes)}`).join(' / ');
-    extra = `<div class="mockbar"><button type="button" class="btn sm" data-mock="${w.n}-${bi}">${fmtMin(b.min)} 타이머 시작</button>${hist ? `<span class="small muted">기록: ${esc(hist)}</span>` : ''}</div>`;
-  }
-  if (!rel) return `<div class="plist off ${cls}"><div class="plabel">${esc(b.title)} ${tags}</div><button type="button" class="linkbtn" data-unfold="${w.n}-${bi}">지원 회사와 무관 · 펼치기</button></div>`;
-  return `<div class="plist ${cls}"><div class="plabel">${esc(b.title)} ${tags}</div>${extra}<ul>${b.items.map(probRow).join('')}</ul></div>`;
-}
-const unfolded = new Set();
-function renderWeeks(){
-  const openWeeks = new Set([...document.querySelectorAll('.week[open]')].map(d => d.id));
-  let html = '', lastPh = -1;
-  WEEKS.forEach(w => {
-    if (w.ph !== lastPh) { const P = PHASES[w.ph]; html += `<div class="phase-h"><span class="mono">${P[0]}</span><span class="pill ${P[2]}">${P[1]}</span><span class="small muted">목표: ${P[3]}</span></div>`; lastPh = w.ph; }
-    const pri = coSel().filter(c => PRIORITY[c].includes(w.n));
-    let body = '';
-    if (w.lec.length) body += `<div class="lec"><span class="plabel">강의</span>${w.lec.map(l=>`<a href="${l.u}" target="_blank" rel="noopener">${esc(l.t)}</a>`).join('<span class="dot-sep">·</span>')}</div>`;
-    body += `<p class="small learn"><b>익힐 것</b> ${esc(w.learn)}</p>`;
-    if (w.pit && w.pit.length) body += `<div class="pit"><span class="plabel">자주 하는 실수</span><ul>${w.pit.map(p => `<li>${esc(p)}</li>`).join('')}</ul></div>`;
-    body += `<div class="pcols">${blocks[w.n].map((b,bi) => unfolded.has(`${w.n}-${bi}`) ? blockHtml(Object.assign({}, b, {co:null}), w, bi) : blockHtml(b, w, bi)).join('')}</div>`;
-    body += `<div class="gate"><span class="pill p-good">통과 기준</span> ${esc(w.goal)}</div>`;
-    html += `<details class="week card" id="week-${w.n}" ${openWeeks.has('week-'+w.n)?'open':''}><summary><span class="wn mono">${String(w.n).padStart(2,'0')}주</span><span class="wt">${esc(w.t)}${pri.length ? ` <span class="pill p-acc pri">${pri.map(c=>CO_NAME[c]).join('·')} 우선</span>` : ''}</span><span class="whrs small muted"></span><span class="wprog mono"></span></summary><div class="wbody">${body}</div></details>`;
+function refreshRows(key){
+  document.querySelectorAll(`li.row[data-key="${CSS.escape(key)}"]`).forEach(li => {
+    const extra = li.querySelector('.rv')?.outerHTML || '';
+    const t = document.createElement('ul');
+    t.innerHTML = rowHtml(PROBS[key].x, {week: li.dataset.opt === 'w', extra});
+    li.replaceWith(t.firstElementChild);
   });
-  $('#weeks').innerHTML = html;
-  if (!document.querySelector('.week[open]')) {
-    const w = WEEKS.find(w => weekKeys(w.n, true).some(k => !isDone(k)));
-    if (w) document.getElementById('week-'+w.n).open = true;
-  }
-}
-function weekKeys(n, onlyRelevant){
-  return blocks[n].filter(b => b.kind !== 'more' && (!onlyRelevant || relevant(b.co))).flatMap(b => b.items.map(x => x.s+x.id));
-}
-function refreshRow(key){
-  document.querySelectorAll(`li.prob[data-key="${CSS.escape(key)}"]`).forEach(li => {
-    const P = PROBS[key]; const tmp = document.createElement('ul'); tmp.innerHTML = probRow(P.x); li.replaceWith(tmp.firstElementChild);
-  });
-}
-function refreshAll(){
-  // progress
-  let all = 0, done = 0;
-  WEEKS.forEach(w => {
-    const ks = blocks[w.n].filter(b => relevant(b.co)).flatMap(b => b.items.map(x => x.s+x.id));
-    const d = ks.filter(isDone).length; all += ks.length; done += d;
-    const el = document.querySelector(`#week-${w.n} .wprog`); if (el) el.textContent = `${d}/${ks.length}`;
-    const hr = document.querySelector(`#week-${w.n} .whrs`); if (hr) { const m = ks.reduce((a,k) => a + PROBS[k].min, 0); hr.textContent = `약 ${Math.round(m/60)}시간`; }
-    const det = document.getElementById('week-'+w.n); if (det) det.classList.toggle('complete', ks.length > 0 && d === ks.length);
-  });
-  $('#pbar').style.width = (all ? done/all*100 : 0) + '%';
-  $('#ptext').textContent = `${done} / ${all}`;
-  renderToday(); renderNotes();
-  if (filterActive()) applyFilter();
 }
 
-// ---------- today panel ----------
-function streak(){
-  let n = 0, d = today();
-  if (!S.log[d]) d = addDays(d, -1);
-  while (S.log[d]) { n++; d = addDays(d, -1); }
-  return n;
+// ---------- router ----------
+let curWeek = null;
+function firstOpenWeek(){ const w = WEEKS.find(w => coreKeys(w.n).some(k => !isDone(k))); return w ? w.n : 16; }
+function route(){
+  const h = location.hash.replace('#', '') || 'today';
+  let view = h, m = h.match(/^w(\d+)$/);
+  if (m) { view = 'plan'; curWeek = Math.min(16, Math.max(1, Number(m[1]))); }
+  if (!['today','plan','companies','resources'].includes(view)) view = 'today';
+  document.querySelectorAll('.view').forEach(v => v.hidden = v.id !== 'v-' + view);
+  document.querySelectorAll('.tabs a').forEach(a => a.setAttribute('aria-current', a.dataset.view === view ? 'page' : 'false'));
+  if (view === 'plan') { if (!curWeek) curWeek = firstOpenWeek(); renderSide(); renderDetail(); }
+  window.scrollTo(0, 0);
 }
-function miniRow(key, extra){
-  const P = PROBS[key], x = P.x;
-  return `<li class="mini"><span class="pill ${SRC[x.s][1]} srcp">${SRC[x.s][0]}</span><a href="${url(x)}" target="_blank" rel="noopener">${esc(x.t)}</a><span class="lv">${fmtH(P.min)}</span><button type="button" class="linkbtn" data-goto="${esc(key)}">${String(P.week.n).padStart(2,'0')}주</button>${extra||''}</li>`;
-}
+window.addEventListener('hashchange', route);
+
+// ---------- today ----------
+function streak(){ let n = 0, d = today(); if (!S.log[d]) d = addDays(d, -1); while (S.log[d]) { n++; d = addDays(d, -1); } return n; }
 function renderToday(){
   document.querySelectorAll('#coChips input').forEach(i => i.checked = coSel().includes(i.value));
   $('#examDate').value = S.settings.exam || '';
   $('#hoursDay').value = S.settings.hours || 2;
-  const remaining = WEEKS.flatMap(w => weekKeys(w.n, true)).filter(k => !isDone(k));
-  const totalDone = Object.values(S.status).filter(s => s==='solved'||s==='hint').length;
-  const self = Object.values(S.status).filter(s => s==='solved').length;
-  const due = Object.entries(S.review).filter(([k,r]) => r.due <= today()).map(([k]) => k);
-  let dday = '—', perDay = null, left = null;
-  if (S.settings.exam) { left = daysBetween(today(), S.settings.exam); dday = left > 0 ? `D-${left}` : left === 0 ? 'D-DAY' : `D+${-left}`; if (left > 0) perDay = Math.ceil(remaining.length / left); }
-  $('#kpis').innerHTML = [['시험까지', dday], ['푼 문제', totalDone], ['혼자 푼 비율', totalDone ? Math.round(self/totalDone*100)+'%' : '—'], ['연속 학습', streak()+'일'], ['오늘 푼 문제', S.log[today()]||0]]
-    .map(([k,v]) => `<div class="kpi"><span class="k">${k}</span><span class="v mono">${v}</span></div>`).join('');
-  const hours = Number(S.settings.hours) || 2;
-  const remMin = remaining.reduce((a,k) => a + PROBS[k].min, 0);
-  const needDays = Math.ceil(remMin / (hours * 60));
-  let pace = `남은 필수·모의고사 문제 <b class="mono">${remaining.length}</b>개, 예상 <b class="mono">${fmtH(remMin)}</b>`;
-  if (coSel().length) pace += ` (${coSel().map(c=>CO_NAME[c]).join(', ')} 기준)`;
-  pace += `. 하루 ${hours}시간이면 약 <b class="mono">${needDays}</b>일이 걸립니다.`;
-  if (left !== null && left > 0) {
-    if (needDays <= left) pace += ` 시험까지 ${left}일이라 여유가 ${left - needDays}일 있습니다.`;
-    else pace += ` 시험까지 ${left}일이라 <b>${needDays - left}일 부족</b>합니다. 하루 ${Math.ceil(remMin/60/left*10)/10}시간으로 늘리거나, 아래 "시간이 4주뿐이라면" 순서로 범위를 좁히세요.`;
-  } else if (S.settings.exam && left !== null && left <= 0) pace += ' 시험일이 지났습니다. 새 목표 날짜를 넣어 주세요.';
-  else pace += ' 시험 날짜를 넣으면 남은 기간과 비교합니다.';
-  $('#pace').innerHTML = pace;
-  const budget = hours * 60; let used = 0; const todays = [];
-  for (const k of remaining.filter(k => PROBS[k].kind === 'must')) { if (todays.length && used + PROBS[k].min > budget) break; todays.push(k); used += PROBS[k].min; if (todays.length >= 8) break; }
-  $('#todayList').innerHTML = todays.length ? todays.map(k => miniRow(k)).join('') : '<li class="small muted">필수 문제를 모두 풀었습니다. 모의고사와 도전 문제로 넘어가세요.</li>';
-  $('#reviewList').innerHTML = due.length ? due.map(k => miniRow(k, `<span class="rv"><button type="button" class="btn sm" data-rv="ok" data-key="${esc(k)}">혼자 풀었음</button><button type="button" class="btn sm ghost" data-rv="no" data-key="${esc(k)}">또 막힘</button></span>`)).join('')
-    : `<li class="small muted">오늘 복습할 문제가 없습니다.${Object.keys(S.review).length ? ` 예약된 복습 ${Object.keys(S.review).length}개` : ''}</li>`;
+  const all = WEEKS.flatMap(w => coreKeys(w.n)), remaining = all.filter(k => !isDone(k));
+  const done = all.length - remaining.length, remMin = remaining.reduce((a, k) => a + PROBS[k].min, 0);
+  const hours = Number(S.settings.hours) || 2, needDays = Math.ceil(remMin / (hours * 60));
+  let left = null, dLabel = '—', dSub = '날짜를 정하세요';
+  if (S.settings.exam) { left = daysBetween(today(), S.settings.exam); dLabel = left > 0 ? `D-${left}` : left === 0 ? 'D-day' : '지남'; dSub = S.settings.exam.replaceAll('-', '.'); }
+  $('#stats').innerHTML = [
+    ['진행', `${done}<span class="small muted"> / ${all.length}</span>`, all.length ? `${Math.round(done / all.length * 100)}%` : ''],
+    ['시험까지', dLabel, dSub],
+    ['남은 공부', fmtH(remMin), `하루 ${hours}시간이면 ${needDays}일`],
+    ['연속 공부', `${streak()}일`, `오늘 ${S.log[today()] || 0}문제`],
+  ].map(([k, v, s]) => `<div class="stat"><span class="k">${k}</span><span class="v">${v}</span><span class="s">${s}</span></div>`).join('');
+  let pace = '';
+  if (left !== null && left > 0) pace = needDays <= left ? `지금 계획대로면 시험 ${left - needDays}일 전에 모두 끝납니다.` : `이대로면 ${needDays - left}일이 모자랍니다. 하루 ${Math.ceil(remMin / 60 / left * 2) / 2}시간으로 늘리거나, 지원 회사 우선 주차부터 공부하세요.`;
+  else if (left !== null) pace = '시험 날짜가 지났습니다. 다음 목표 날짜를 넣어 주세요.';
+  if (coSel().length) pace += ` ${coSel().map(c => CO_NAME[c]).join(', ')} 기준으로 관련 없는 기출은 빼고 계산했습니다.`;
+  $('#pace').textContent = pace.trim(); $('#pace').hidden = !pace.trim();
+  const n = firstOpenWeek(), w = WEEKS.find(w => w.n === n), ks = coreKeys(n), d = ks.filter(isDone).length;
+  $('#curWeek').innerHTML = `<div><div class="small muted">지금 공부할 주차</div><div class="t">${pad(n)}주 · ${esc(w.t)}</div><div class="small ink2">${d} / ${ks.length}문제 · 통과 기준: ${esc(w.goal)}</div></div><a class="btn" href="#w${n}" style="text-decoration:none">이어서 공부하기</a>`;
+  if (!S.plan || S.plan.date !== today()) S.plan = {date: today(), keys: pickNext([], hours * 60)};
+  const picks = S.plan.keys.filter(k => PROBS[k]), used = picks.reduce((a, k) => a + PROBS[k].min, 0);
+  const allDone = picks.length && picks.every(isDone);
+  $('#todayMeta').innerHTML = picks.length ? `약 ${fmtH(used)}${allDone ? ' · <button type="button" class="lnk" id="moreToday">더 풀기</button>' : ''}` : '';
+  $('#todayList').innerHTML = picks.length ? picks.map(k => rowHtml(PROBS[k].x, {week:true})).join('') : '<li class="empty">남은 필수 문제가 없습니다. 모의고사와 도전 문제를 풀어 보세요.</li>';
+  const due = Object.keys(S.review).filter(k => S.review[k].due <= today() && PROBS[k]);
+  const later = Object.keys(S.review).length - due.length;
+  $('#reviewList').innerHTML = due.length ? due.map(k => rowHtml(PROBS[k].x, {week:true, extra:`<span class="rv ai-btns" style="grid-column:2/-1"><button type="button" class="btn sm" data-rv="ok" data-key="${esc(k)}">혼자 풀었음</button><button type="button" class="btn line sm" data-rv="no" data-key="${esc(k)}">또 막힘</button></span>`})).join('')
+    : `<li class="empty">오늘 복습할 문제가 없습니다.${later ? ` 예정된 복습 ${later}개.` : ''}</li>`;
 }
 
-// ---------- notes ----------
-function renderNotes(){
-  const keys = Object.keys(PROBS).filter(k => S.status[k]==='hint' || S.status[k]==='fail' || S.notes[k] || S.review[k]);
-  keys.sort((a,b) => (S.review[a]?.due||'9') < (S.review[b]?.due||'9') ? -1 : 1);
-  $('#notesBody').innerHTML = keys.length ? keys.map(k => {
-    const P = PROBS[k], st = S.status[k], r = S.review[k];
-    return `<tr><td><a href="${url(P.x)}" target="_blank" rel="noopener">${esc(P.x.t)}</a><span class="sub">${String(P.week.n).padStart(2,'0')}주 · ${esc(P.week.t)}</span></td><td>${st ? `<span class="pill ${STATUS[st][1]}">${STATUS[st][0]}</span>` : '—'}</td><td class="mono">${r ? shortDate(r.due) + (r.due <= today() ? ' <span class="pill p-bad">오늘</span>' : '') : '—'}</td><td class="notecell">${esc(S.notes[k]||'')}</td></tr>`;
-  }).join('') : '<tr><td colspan="4" class="muted">아직 기록이 없습니다. 문제 옆 "기록"에서 "해설 보고 풂"이나 "못 풂"을 고르거나 메모를 남기면 여기에 모입니다.</td></tr>';
+function pickNext(exclude, budget){
+  const out = []; let used = 0;
+  for (const k of WEEKS.flatMap(w => coreKeys(w.n))) {
+    if (isDone(k) || exclude.includes(k) || S.review[k] || PROBS[k].set.kind !== 'must') continue;
+    if (out.length && used + PROBS[k].min > budget) break;
+    out.push(k); used += PROBS[k].min; if (out.length >= 8) break;
+  }
+  return out;
 }
 
-// ---------- AI ----------
+// ---------- curriculum ----------
+function renderSide(){
+  let html = '', last = -1;
+  WEEKS.forEach(w => {
+    if (w.ph !== last) { if (last >= 0) html += '</div>'; html += `<div><h3>${PHASES[w.ph]}</h3>`; last = w.ph; }
+    const ks = coreKeys(w.n), d = ks.filter(isDone).length, pri = coSel().some(c => PRIORITY[c].includes(w.n));
+    html += `<button type="button" class="wk${ks.length && d === ks.length ? ' complete' : ''}" data-week="${w.n}" aria-current="${w.n === curWeek}"><span class="n">${pad(w.n)}</span><span>${esc(w.t)}${pri ? '<span class="pri" title="지원 회사 우선 주차"></span>' : ''}</span><span class="c">${d}/${ks.length}</span></button>`;
+  });
+  $('#side').innerHTML = html + '</div>';
+  $('#wkSelect').innerHTML = WEEKS.map(w => `<option value="${w.n}" ${w.n === curWeek ? 'selected' : ''}>${pad(w.n)}주 · ${esc(w.t)} (${coreKeys(w.n).filter(isDone).length}/${coreKeys(w.n).length})</option>`).join('');
+}
+const unfolded = new Set();
+function filterOn(){ return !!(($('#fText').value || '').trim() || $('#fStatus').value); }
+function matchKey(k){
+  const q = ($('#fText').value || '').trim().toLowerCase(), st = $('#fStatus').value, P = PROBS[k];
+  if (q && ![P.x.t, P.w.t, P.set.title, SRC[P.x.s]].some(s => s.toLowerCase().includes(q))) return false;
+  if (st === 'todo' && isDone(k)) return false;
+  if (st === 'done' && !isDone(k)) return false;
+  if (st === 'review' && !S.review[k]) return false;
+  if (st === 'memo' && !S.notes[k]) return false;
+  return true;
+}
+function renderDetail(){
+  if (!curWeek) curWeek = firstOpenWeek();
+  $('#fClear').hidden = !filterOn();
+  if (filterOn()) {
+    const hits = Object.keys(PROBS).filter(matchKey);
+    let html = `<p class="small muted">${hits.length}개 문제</p>`;
+    WEEKS.forEach(w => {
+      const ks = hits.filter(k => PROBS[k].w.n === w.n); if (!ks.length) return;
+      html += `<div class="set"><div class="set-h"><a class="t" href="#w${w.n}">${pad(w.n)}주 · ${esc(w.t)}</a></div><ul class="list">${ks.map(k => rowHtml(PROBS[k].x)).join('')}</ul></div>`;
+    });
+    $('#detail').innerHTML = `<div class="detail">${html}</div>`;
+    return;
+  }
+  const w = WEEKS.find(w => w.n === curWeek), ks = coreKeys(w.n), d = ks.filter(isDone).length;
+  const mins = ks.reduce((a, k) => a + PROBS[k].min, 0);
+  const pri = coSel().filter(c => PRIORITY[c].includes(w.n));
+  let html = `<div class="dhead"><span class="small muted">${PHASES[w.ph]}</span><h2 style="font-size:24px">${pad(w.n)}주 · ${esc(w.t)}</h2>
+    <div class="dmeta"><span>${d} / ${ks.length}문제 완료</span><span>약 ${fmtH(mins)}</span>${pri.length ? `<span style="color:var(--accent)">${pri.map(c => CO_NAME[c]).join('·')} 우선</span>` : ''}</div>
+    <div class="bar"><i style="width:${ks.length ? d / ks.length * 100 : 0}%"></i></div></div>
+    <dl class="info">
+      ${w.lec.length ? `<dt>강의</dt><dd>${w.lec.map(l => `<a href="${l.u}" target="_blank" rel="noopener">${esc(l.t)}</a>`).join('<br>')}</dd>` : ''}
+      <dt>배울 것</dt><dd>${esc(w.learn)}</dd>
+      ${w.pit && w.pit.length ? `<dt>자주 하는 실수</dt><dd><ul>${w.pit.map(p => `<li>${esc(p)}</li>`).join('')}</ul></dd>` : ''}
+      <dt>통과 기준</dt><dd>${esc(w.goal)}</dd>
+    </dl>`;
+  SETS[w.n].forEach(set => {
+    const rel = relevant(set.co) || unfolded.has(set.id);
+    const setMin = set.items.reduce((a, x) => a + PROBS[x.s + x.id].min, 0);
+    let m = `${set.items.length}문제 · 약 ${fmtH(setMin)}`;
+    if (set.co) m += ` · ${set.co.map(c => CO_NAME[c]).join(', ')}`;
+    let tools = '';
+    if (set.kind === 'mock' && rel) {
+      const hist = S.mocks.filter(x => x.set === set.title).slice(-3).map(x => `${md(x.date)} ${x.solved}/${x.total}문제 ${fmtH(x.minutes)}`).join(' · ');
+      m = `${set.items.length}문제 · 제한 ${fmtH(set.min)}`;
+      tools = `<div class="ai-btns"><button type="button" class="btn sm" data-mock="${set.id}">타이머 시작</button>${hist ? `<span class="small muted">지난 기록 ${esc(hist)}</span>` : ''}</div>`;
+    }
+    html += `<div class="set${rel ? '' : ' off'}"><div class="set-h"><span class="t">${esc(set.title)}</span><span class="m">${m}</span></div>
+      ${rel ? tools + `<ul class="list">${set.items.map(x => rowHtml(x)).join('')}</ul>` : `<button type="button" class="lnk" data-unfold="${set.id}">지원 회사와 관련 없어 접어 두었습니다 · 펼치기</button>`}</div>`;
+  });
+  const prev = w.n > 1 ? `<a href="#w${w.n - 1}">← ${pad(w.n - 1)}주</a>` : '<span></span>';
+  const next = w.n < 16 ? `<a href="#w${w.n + 1}">${pad(w.n + 1)}주 →</a>` : '<span></span>';
+  html += `<div style="display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:16px">${prev}${next}</div>`;
+  $('#detail').innerHTML = `<div class="detail">${html}</div>`;
+}
+
+// ---------- companies & resources (static) ----------
+function renderStatic(){
+  $('#coTable').innerHTML = '<thead><tr><th>기업</th><th>시험 환경</th><th>구성</th><th>출제 경향</th><th>참고</th></tr></thead><tbody>' +
+    INFO.company_formats.map(c => {
+      const m = c.company.match(/^(.*?)\s*\((.*)\)$/), name = m ? m[1] : c.company, sub = m ? m[2] : '';
+      const conf = c.confidence === '여러 출처 일치' ? '' : ` <span class="muted">(${esc(c.confidence)})</span>`;
+      return `<tr><td>${esc(name)}${sub ? `<span class="sub">${esc(sub)}</span>` : ''}</td><td>${esc(c.platform)}</td><td>${esc(c.format)}</td><td class="ink2">${esc(c.content)}</td><td class="ink2">${esc(c.notes)}${conf}</td></tr>`;
+    }).join('') + '</tbody>';
+  const dot = v => ({'매우 자주':'●●●','자주':'●●','가끔':'●','드묾':'','없음':''}[v] ?? null);
+  const cols = INFO.frequency_columns;
+  $('#typeTable').innerHTML = `<thead><tr>${cols.map(c => `<th>${esc(c.replace(' (SK·한화·LG 등)', ''))}</th>`).join('')}</tr></thead><tbody>` +
+    INFO.type_frequency.map(r => `<tr><td>${esc(r[0])}</td>${r.slice(1).map(v => { const d = dot(v); return `<td class="${d !== null ? 'dots' : 'small ink2'}">${d !== null ? d : esc(v)}</td>`; }).join('')}</tr>`).join('') + '</tbody>';
+  $('#toolTable').innerHTML = '<thead><tr><th>이름</th><th>쓰는 곳</th></tr></thead><tbody>' + INFO.tools.map(t => `<tr><td><a href="${t.url}" target="_blank" rel="noopener">${esc(t.name)}</a></td><td class="ink2">${esc(t.use)}</td></tr>`).join('') + '</tbody>';
+  $('#tpls').innerHTML = INFO.templates_python.map(t => `<details class="code"><summary>${esc(t.name.replace(/^\d+\.\s*/, ''))}</summary><pre><code>${esc(t.code)}</code></pre></details>`).join('');
+  $('#vidTable').innerHTML = '<thead><tr><th>영상</th><th>추천</th><th>내용</th></tr></thead><tbody>' + INFO.verified_videos.map(v => `<tr><td><a href="${v.url}" target="_blank" rel="noopener">${esc(v.title)}</a><span class="sub">${esc(v.channel)}</span></td><td>${esc(v.verdict)}</td><td class="ink2">${esc(v.notes)}</td></tr>`).join('') + '</tbody>';
+  $('#dropList').innerHTML = INFO.dropped_claims.map(x => `<li>${esc(x)}</li>`).join('');
+  $('#srcList').innerHTML = INFO.sources.map(s => `<li><a href="${s.url}" target="_blank" rel="noopener">${esc(s.title)}</a></li>`).join('');
+}
+
+// ---------- refresh ----------
+function refresh(){
+  const all = WEEKS.flatMap(w => coreKeys(w.n)), done = all.filter(isDone).length;
+  $('#topProg').innerHTML = `<b>${done}</b> / ${all.length}문제`;
+  renderToday();
+  if (!$('#v-plan').hidden) renderSide();
+}
+
+// ---------- AI (claude.ai only) ----------
 const aiCtl = {};
-function codeMsg(c){
-  return ({not_granted:'AI 사용이 허용되지 않아 힌트를 쓸 수 없습니다.', sampling_disabled:'이 계정에서는 AI를 쓸 수 없습니다.', rate_limited:'요청이 많거나 사용량 한도에 도달했습니다. 잠시 뒤에 다시 시도하세요.', session_expired:'다시 로그인한 뒤 시도하세요.', refused:'이 요청에는 답할 수 없습니다. 질문을 바꿔 보세요.', prompt_too_large:'붙여 넣은 내용이 너무 깁니다. 줄여서 다시 시도하세요.'})[c] || '답을 받지 못했습니다. 다시 시도하세요.';
-}
-function hideAi(){ sampleFn = null; document.querySelectorAll('.ai').forEach(e => e.hidden = true); $('#coachBox').hidden = true; }
+const aiErr = c => ({not_granted:'Claude 사용이 허용되지 않았습니다.', rate_limited:'사용량 한도에 걸렸습니다. 잠시 뒤에 다시 해 보세요.', session_expired:'다시 로그인해 주세요.', refused:'답할 수 없는 요청입니다. 내용을 바꿔 보세요.', prompt_too_large:'붙여 넣은 내용이 너무 깁니다.'})[c] || '답을 받지 못했습니다. 다시 시도해 주세요.';
+function aiOff(e){ if (['not_granted','sampling_disabled','not_declared','capability_disabled','capability_removed'].includes(e && e.code)) { sampleFn = null; $('#coachBox').hidden = true; } }
 async function askHint(key, level){
   if (!sampleFn) return;
-  const P = PROBS[key], x = P.x;
-  const ctx = (document.querySelector(`textarea[data-ctx="${CSS.escape(key)}"]`)?.value || '').slice(0, 12000);
-  const out = document.querySelector(`[data-out="${CSS.escape(key)}"]`), stop = document.querySelector(`[data-stop="${CSS.escape(key)}"]`);
-  const btns = document.querySelectorAll(`[data-hint][data-key="${CSS.escape(key)}"]`);
-  const stepText = {1:'1단계: 문제를 어떤 관점으로 봐야 하는지만 알려 줘. 알고리즘 이름은 말하지 마.', 2:'2단계: 어떤 알고리즘·자료구조를 왜 써야 하는지, 입력 크기로 본 시간복잡도 판단까지만 알려 줘.', 3:'3단계: 핵심 아이디어와 놓치기 쉬운 예외 조건을 알려 줘. 코드는 쓰지 마.', review:'학생 코드를 검토해 줘. 버그, 시간 초과 위험, 놓친 예외를 줄 번호나 코드 조각으로 짚고 어떻게 고칠지 방향만 말해. 고친 전체 코드는 쓰지 마.'}[level];
+  const P = PROBS[key], sel = s => document.querySelector(`[${s}="${CSS.escape(key)}"]`);
+  const ctx = (sel('data-ctx')?.value || '').slice(0, 12000), out = sel('data-out'), stop = sel('data-stop');
+  const ask = {1:'문제를 어떤 관점으로 봐야 하는지만 알려 줘. 알고리즘 이름은 말하지 마.', 2:'어떤 알고리즘과 자료구조를 왜 써야 하는지, 입력 크기로 본 시간복잡도까지만 알려 줘.', 3:'핵심 아이디어와 놓치기 쉬운 예외를 알려 줘. 코드는 쓰지 마.', review:'학생 코드의 버그, 시간 초과 위험, 놓친 예외를 짚고 고칠 방향만 말해. 고친 전체 코드는 쓰지 마.'}[level];
   if (level === 'review' && !ctx.trim()) { out.hidden = false; out.textContent = '검토할 코드를 위 칸에 붙여 넣어 주세요.'; return; }
-  const prompt = `너는 한국 대기업 코딩테스트를 준비하는 학부생의 코치야. 한국어로, 5문장 이내로 답해. 정답 코드나 전체 풀이는 절대 쓰지 마.
-문제: ${SRC[x.s][2]} "${x.t}" (${x.lv}), 커리큘럼 ${P.week.n}주차 주제: ${P.week.t}
-이 문제를 정확히 기억하지 못하면 추측하지 말고 그렇다고 말한 뒤, 학생이 붙여 넣은 내용과 주차 주제를 바탕으로 일반적인 접근만 말해.
-요청: ${stepText}
-${ctx.trim() ? '학생이 붙여 넣은 지문/코드:\n' + ctx : '(학생이 붙여 넣은 내용 없음)'}`;
-  aiCtl[key]?.abort(); const ctl = new AbortController(); aiCtl[key] = ctl;
-  out.hidden = false; out.textContent = '생각하는 중…'; stop.hidden = false; btns.forEach(b => b.disabled = true);
-  try {
-    const { truncated } = await sampleFn(prompt, { signal: ctl.signal, onText: ({text}) => { out.textContent = text; } });
-    if (truncated) out.textContent += '\n\n(답이 길어 중간에 끊겼습니다.)';
-  } catch(e) {
-    out.textContent = e?.text || '';
-    if (e?.code !== 'cancelled') out.textContent += (out.textContent ? '\n\n' : '') + codeMsg(e?.code);
-    if (['not_granted','sampling_disabled','not_declared','capability_disabled','capability_removed'].includes(e?.code)) hideAi();
-  } finally { stop.hidden = true; btns.forEach(b => b.disabled = false); }
+  const prompt = `너는 한국 대기업 코딩테스트를 준비하는 학생의 코치야. 한국어로 5문장 이내로 답해. 정답 코드나 전체 풀이는 쓰지 마.\n문제: ${SRC[P.x.s]} "${P.x.t}" (${P.x.lv}), ${P.w.n}주차 주제: ${P.w.t}\n이 문제를 정확히 모르면 추측하지 말고 그렇다고 말한 뒤 일반적인 접근만 말해.\n요청: ${ask}\n${ctx.trim() ? '학생이 붙여 넣은 내용:\n' + ctx : ''}`;
+  aiCtl[key]?.abort(); const ctl = aiCtl[key] = new AbortController();
+  out.hidden = false; out.textContent = '생각하는 중…'; stop.hidden = false;
+  try { await sampleFn(prompt, {signal: ctl.signal, onText: ({text}) => { out.textContent = text; }}); }
+  catch(e) { out.textContent = (e && e.text) || ''; if (e?.code !== 'cancelled') out.textContent += (out.textContent ? '\n\n' : '') + aiErr(e?.code); aiOff(e); }
+  finally { stop.hidden = true; }
 }
 let coachCtl = null;
 async function askCoach(){
   if (!sampleFn) return;
-  const out = $('#coachOut'), btn = $('#coachBtn'), stop = $('#coachStop');
-  const weekStats = WEEKS.map(w => { const ks = weekKeys(w.n, true); return `${w.n}주 ${w.t}: ${ks.filter(isDone).length}/${ks.length}`; }).join('\n');
-  const stuck = Object.keys(PROBS).filter(k => S.status[k]==='hint'||S.status[k]==='fail').slice(0, 25).map(k => `- ${PROBS[k].x.t} (${PROBS[k].week.n}주, ${STATUS[S.status[k]][0]})${S.notes[k] ? ' 메모: ' + S.notes[k].slice(0,120) : ''}`).join('\n');
-  const recent = Object.entries(S.log).sort().slice(-14).map(([d,n]) => `${d}: ${n}`).join(', ');
-  const prompt = `너는 한국 대기업 코딩테스트 코치야. 아래 학생 기록을 보고 한국어로 이번 주 공부 조언을 해 줘. 형식: 현재 상태 한 줄, 이번 주에 할 일 3가지(구체적인 주차와 유형), 조심할 점 한 줄. 전체 10줄 이내. 커리큘럼에 없는 사이트나 강의를 새로 추천하지 마.
-지원 회사: ${coSel().map(c=>CO_NAME[c]).join(', ') || '미정'}
-오늘: ${today()}, 시험일: ${S.settings.exam || '미정'}
-주차별 진행(필수+모의고사):
-${weekStats}
-막혔던 문제:
-${stuck || '(없음)'}
-최근 14일 푼 문제 수: ${recent || '(기록 없음)'}
-모의고사 기록: ${S.mocks.slice(-5).map(m => `${m.set} ${m.solved}/${m.total} ${fmtMin(m.minutes)}`).join('; ') || '(없음)'}`;
+  const out = $('#coachOut');
+  const weeks = WEEKS.map(w => { const ks = coreKeys(w.n); return `${w.n}주 ${w.t}: ${ks.filter(isDone).length}/${ks.length}`; }).join('\n');
+  const stuck = Object.keys(PROBS).filter(k => S.status[k] === 'hint' || S.status[k] === 'fail').slice(0, 25).map(k => `- ${PROBS[k].x.t} (${PROBS[k].w.n}주, ${STATUS[S.status[k]]})${S.notes[k] ? ': ' + S.notes[k].slice(0, 100) : ''}`).join('\n');
+  const prompt = `너는 한국 대기업 코딩테스트 코치야. 아래 기록을 보고 이번 주 공부 조언을 한국어로 해 줘. 형식: 현재 상태 한 줄, 이번 주 할 일 3가지(주차와 유형을 구체적으로), 조심할 점 한 줄. 10줄 이내. 새 사이트나 강의는 추천하지 마.\n지원 회사: ${coSel().map(c => CO_NAME[c]).join(', ') || '미정'}\n오늘: ${today()}, 시험일: ${S.settings.exam || '미정'}, 하루 ${S.settings.hours}시간\n주차별 진행:\n${weeks}\n막힌 문제:\n${stuck || '없음'}\n모의고사: ${S.mocks.slice(-5).map(m => `${m.set} ${m.solved}/${m.total}`).join('; ') || '없음'}`;
   coachCtl?.abort(); coachCtl = new AbortController();
-  out.hidden = false; out.textContent = '생각하는 중…'; btn.disabled = true; stop.hidden = false;
-  try { await sampleFn(prompt, { signal: coachCtl.signal, cache: false, onText: ({text}) => { out.textContent = text; } }); }
-  catch(e) {
-    out.textContent = e?.text || '';
-    if (e?.code !== 'cancelled') out.textContent += (out.textContent ? '\n\n' : '') + codeMsg(e?.code);
-    if (['not_granted','sampling_disabled','not_declared','capability_disabled','capability_removed'].includes(e?.code)) hideAi();
-  } finally { btn.disabled = false; stop.hidden = true; }
+  out.hidden = false; out.textContent = '생각하는 중…'; $('#coachBtn').disabled = true; $('#coachStop').hidden = false;
+  try { await sampleFn(prompt, {signal: coachCtl.signal, cache: false, onText: ({text}) => { out.textContent = text; }}); }
+  catch(e) { out.textContent = (e && e.text) || ''; if (e?.code !== 'cancelled') out.textContent += (out.textContent ? '\n\n' : '') + aiErr(e?.code); aiOff(e); }
+  finally { $('#coachBtn').disabled = false; $('#coachStop').hidden = true; }
 }
 
 // ---------- mock timer ----------
 let tick = null;
-function mockBlock(id){ const [n, bi] = id.split('-').map(Number); return {w: WEEKS.find(w => w.n === n), b: blocks[n][bi]}; }
-function startMock(id){
-  const {b} = mockBlock(id);
-  S.timer = {id, set:b.title, min:b.min, start:Date.now(), paused:null, pausedTotal:0};
-  persist(); showTimer();
-}
-function elapsedMs(){ const t = S.timer; if (!t) return 0; const now = t.paused || Date.now(); return now - t.start - t.pausedTotal; }
+const findSet = id => { const [n, i] = id.split('-').map(Number); return SETS[n][i]; };
+const elapsed = () => { const t = S.timer; return t ? (t.paused || Date.now()) - t.start - t.pausedTotal : 0; };
 function showTimer(){
-  const bar = $('#timerBar');
-  if (!S.timer) { bar.hidden = true; clearInterval(tick); tick = null; return; }
-  bar.hidden = false; $('#tmSet').textContent = S.timer.set;
-  $('#tmPause').textContent = S.timer.paused ? '재개' : '일시정지';
+  if (!S.timer) { $('#timer').hidden = true; clearInterval(tick); return; }
+  $('#timer').hidden = false; $('#tmSet').textContent = S.timer.set;
+  $('#tmPause').textContent = S.timer.paused ? '다시 시작' : '일시정지';
   const draw = () => {
-    const left = S.timer.min*60000 - elapsedMs(), neg = left < 0, a = Math.abs(left);
-    const h = Math.floor(a/3600000), m = Math.floor(a%3600000/60000), s = Math.floor(a%60000/1000);
-    $('#tmClock').textContent = `${neg?'+':''}${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-    $('#tmClock').classList.toggle('over', neg);
-    $('#tmState').textContent = neg ? '시간 초과' : S.timer.paused ? '일시정지' : '남은 시간';
+    const left = S.timer.min * 60000 - elapsed(), a = Math.abs(left);
+    $('#tmClock').textContent = `${left < 0 ? '+' : ''}${Math.floor(a / 3600000)}:${pad(Math.floor(a % 3600000 / 60000))}:${pad(Math.floor(a % 60000 / 1000))}`;
+    $('#tmClock').classList.toggle('over', left < 0);
+    $('#tmState').textContent = left < 0 ? '시간 초과' : S.timer.paused ? '일시정지 중' : '';
   };
   draw(); clearInterval(tick); tick = setInterval(draw, 1000);
 }
-function pauseMock(){
-  const t = S.timer; if (!t) return;
-  if (t.paused) { t.pausedTotal += Date.now() - t.paused; t.paused = null; } else t.paused = Date.now();
-  persist(); showTimer();
-}
+function toast(t){ const el = $('#toast'); el.textContent = t; el.hidden = false; clearTimeout(toast.t); toast.t = setTimeout(() => el.hidden = true, 3000); }
 let endArmed = false;
-function endMock(cancel){
+function endMock(save){
   const t = S.timer; if (!t) return;
-  if (!cancel) {
-    const {b} = mockBlock(t.id); const keys = b.items.map(x => x.s+x.id);
-    S.mocks.push({set:t.set, date:today(), minutes:Math.round(elapsedMs()/60000), solved:keys.filter(isDone).length, total:keys.length});
-    if (S.mocks.length > 100) S.mocks = S.mocks.slice(-100);
+  if (save) {
+    const ks = findSet(t.id).items.map(x => x.s + x.id);
+    S.mocks.push({set: t.set, date: today(), minutes: Math.round(elapsed() / 60000), solved: ks.filter(isDone).length, total: ks.length});
+    S.mocks = S.mocks.slice(-100);
+    toast(`기록했습니다: ${ks.filter(isDone).length}/${ks.length}문제, ${fmtH(elapsed() / 60000)}`);
   }
-  S.timer = null; persist(); showTimer(); renderWeeks(); refreshAll();
-}
-
-// ---------- filter ----------
-function matches(key){
-  const q = ($('#fText').value || '').trim().toLowerCase(), st = $('#fStatus').value, src = $('#fSrc').value, P = PROBS[key];
-  if (q && !P.x.t.toLowerCase().includes(q) && !P.week.t.toLowerCase().includes(q)) return false;
-  if (src && P.x.s !== src) return false;
-  if (st === 'todo' && isDone(key)) return false;
-  if (st === 'done' && !isDone(key)) return false;
-  if (st === 'review' && !S.review[key]) return false;
-  if (st === 'memo' && !S.notes[key]) return false;
-  return true;
-}
-function filterActive(){ return !!(($('#fText').value||'').trim() || $('#fStatus').value || $('#fSrc').value); }
-function applyFilter(){
-  const on = filterActive(); let hits = 0;
-  document.querySelectorAll('.week').forEach(d => {
-    let wHits = 0;
-    d.querySelectorAll('.plist').forEach(pl => {
-      let n = 0;
-      pl.querySelectorAll('li.prob').forEach(li => { const ok = !on || matches(li.dataset.key); li.hidden = !ok; if (ok) n++; });
-      pl.hidden = on && n === 0; wHits += n;
-    });
-    d.hidden = on && wHits === 0;
-    if (on && wHits) d.open = true;
-    hits += wHits;
-  });
-  document.querySelectorAll('.phase-h').forEach(h => { let el = h.nextElementSibling, any = false; while (el && el.classList.contains('week')) { if (!el.hidden) any = true; el = el.nextElementSibling; } h.hidden = !any; });
-  $('#fCount').textContent = on ? `${hits}개 문제` : '';
-  $('#fClear').hidden = !on;
+  S.timer = null; persist(); showTimer(); renderDetail();
 }
 
 // ---------- export / import ----------
 function exportState(){
-  const data = JSON.stringify(Object.assign({app:'coding-test-roadmap', exported: new Date().toISOString()}, S), null, 1);
-  const msg = $('#ioMsg');
+  const data = JSON.stringify(Object.assign({app:'coding-test-roadmap', exported:new Date().toISOString()}, S), null, 1);
   if (window.claude) {
-    navigator.clipboard?.writeText(data).then(() => { msg.textContent = '기록을 클립보드에 복사했습니다. 메모장에 붙여 넣어 .json 파일로 저장하세요.'; }, () => { msg.textContent = '복사하지 못했습니다. 브라우저 권한을 확인하세요.'; });
+    navigator.clipboard?.writeText(data).then(() => { $('#ioMsg').textContent = '기록을 클립보드에 복사했습니다. 메모장에 붙여 넣어 .json 파일로 저장하세요.'; }, () => { $('#ioMsg').textContent = '복사하지 못했습니다.'; });
     return;
   }
   const a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([data], {type:'application/json'}));
-  a.download = `cote-progress-${today()}.json`; document.body.appendChild(a); a.click(); a.remove();
+  a.download = `coding-test-progress-${today()}.json`; document.body.appendChild(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-  msg.textContent = '기록 파일을 내려받았습니다. 다른 브라우저에서 "기록 가져오기"로 불러오세요.';
+  $('#ioMsg').textContent = '기록 파일을 내려받았습니다.';
 }
 async function importFile(input){
   const f = input.files && input.files[0]; if (!f) return;
-  const msg = $('#ioMsg');
   try {
-    const obj = JSON.parse(await f.text());
-    if (!obj || typeof obj.status !== 'object') throw 0;
-    S = mergeState(obj, S); persist(); renderWeeks(); refreshAll(); showTimer();
-    msg.textContent = `기록을 가져왔습니다. 푼 문제 ${Object.keys(S.status).length}개.`;
-  } catch(e) { msg.textContent = '이 파일은 읽을 수 없습니다. 이 대시보드에서 내보낸 .json 파일인지 확인하세요.'; }
+    const obj = JSON.parse(await f.text()); if (!obj || typeof obj.status !== 'object') throw 0;
+    S = mergeState(obj, S); persist(); refresh(); renderDetail(); showTimer();
+    $('#ioMsg').textContent = `기록을 가져왔습니다. 푼 문제 ${Object.values(S.status).filter(s => s !== 'fail').length}개.`;
+  } catch(e) { $('#ioMsg').textContent = '이 파일은 읽을 수 없습니다. 이 페이지에서 내보낸 파일인지 확인하세요.'; }
   input.value = '';
 }
 
 // ---------- events ----------
 document.addEventListener('change', e => {
   const t = e.target;
-  if (t.matches('li.prob > input[type=checkbox]')) { const key = t.closest('li.prob').dataset.key; setStatus(key, t.checked ? (S.status[key]==='hint' ? 'hint' : 'solved') : null); }
-  else if (t.matches('.panel input[type=radio]')) { const key = t.closest('li.prob').dataset.key; openPanels.add(key); setStatus(key, t.value || null); }
-  else if (t.matches('#coChips input')) { S.settings.co = [...document.querySelectorAll('#coChips input:checked')].map(i => i.value); unfolded.clear(); persist(); renderWeeks(); refreshAll(); }
-  else if (t.id === 'examDate') { S.settings.exam = t.value; persist(); refreshAll(); }
-  else if (t.id === 'hoursDay') { const v = Math.min(12, Math.max(0.5, Number(t.value) || 2)); S.settings.hours = v; persist(); refreshAll(); }
-  else if (t.id === 'fStatus' || t.id === 'fSrc') applyFilter();
+  if (t.matches('li.row > input[type=checkbox]')) { const k = t.closest('li.row').dataset.key; setStatus(k, t.checked ? (S.status[k] === 'hint' ? 'hint' : 'solved') : null); }
+  else if (t.matches('.panel input[type=radio]')) setStatus(t.closest('li.row').dataset.key, t.value || null);
+  else if (t.matches('#coChips input')) { S.settings.co = [...document.querySelectorAll('#coChips input:checked')].map(i => i.value); unfolded.clear(); S.plan = null; persist(); refresh(); }
+  else if (t.id === 'examDate') { S.settings.exam = t.value; persist(); refresh(); }
+  else if (t.id === 'hoursDay') { S.settings.hours = Math.min(12, Math.max(0.5, Number(t.value) || 2)); S.plan = null; persist(); refresh(); }
+  else if (t.id === 'fStatus') renderDetail();
+  else if (t.id === 'wkSelect') location.hash = 'w' + t.value;
   else if (t.id === 'importFile') importFile(t);
 });
-let noteTimer = null;
+let noteTimer = null, searchTimer = null;
 document.addEventListener('input', e => {
   const t = e.target;
-  if (t.id === 'fText') { applyFilter(); return; }
-  if (t.matches('textarea[data-note]')) {
-    const key = t.dataset.note; const v = t.value.slice(0, 2000);
-    if (v.trim()) S.notes[key] = v; else delete S.notes[key];
-    clearTimeout(noteTimer); noteTimer = setTimeout(() => { persist(); renderNotes(); const li = t.closest('li.prob'); li?.querySelector('.memo-dot') || (S.notes[key] && li?.querySelector('.st')?.insertAdjacentHTML('beforeend','<span class="memo-dot" title="메모 있음"></span>')); }, 700);
+  if (t.id === 'fText') { clearTimeout(searchTimer); searchTimer = setTimeout(renderDetail, 150); }
+  else if (t.matches('textarea[data-note]')) {
+    const k = t.dataset.note, v = t.value.slice(0, 2000);
+    if (v.trim()) S.notes[k] = v; else delete S.notes[k];
+    clearTimeout(noteTimer); noteTimer = setTimeout(persist, 600);
   }
 });
 document.addEventListener('click', e => {
   const t = e.target.closest('button'); if (!t) return;
-  if (t.classList.contains('rowbtn')) { const key = t.closest('li.prob').dataset.key; openPanels.has(key) ? openPanels.delete(key) : openPanels.add(key); refreshRow(key); document.querySelector(`li.prob[data-key="${CSS.escape(key)}"] .rowbtn`)?.focus(); }
+  if (t.dataset.more) { const k = t.dataset.more; openPanels.has(k) ? openPanels.delete(k) : openPanels.add(k); refreshRows(k); document.querySelector(`li.row[data-key="${CSS.escape(k)}"] .more`)?.focus(); }
+  else if (t.dataset.week) location.hash = 'w' + t.dataset.week;
+  else if (t.dataset.rv) reviewDone(t.dataset.key, t.dataset.rv === 'ok');
+  else if (t.dataset.unfold) { unfolded.add(t.dataset.unfold); renderDetail(); }
   else if (t.dataset.hint) askHint(t.dataset.key, t.dataset.hint);
   else if (t.dataset.stop) aiCtl[t.dataset.stop]?.abort();
-  else if (t.dataset.rv) reviewDone(t.dataset.key, t.dataset.rv === 'ok');
-  else if (t.dataset.goto) { const P = PROBS[t.dataset.goto]; const d = document.getElementById('week-'+P.week.n); d.open = true; openPanels.add(t.dataset.goto); refreshRow(t.dataset.goto); document.querySelector(`li.prob[data-key="${CSS.escape(t.dataset.goto)}"]`)?.scrollIntoView({block:'center', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}); }
-  else if (t.dataset.unfold) { unfolded.add(t.dataset.unfold); renderWeeks(); refreshAll(); }
-  else if (t.dataset.mock) { if (S.timer) { $('#tmMsg').textContent = '진행 중인 모의고사를 먼저 끝내 주세요.'; $('#tmMsg').hidden = false; setTimeout(()=>$('#tmMsg').hidden = true, 3000); return; } startMock(t.dataset.mock); }
-  else if (t.id === 'tmPause') pauseMock();
-  else if (t.id === 'tmEnd') { if (!endArmed) { endArmed = true; t.textContent = '한 번 더 누르면 종료·기록'; setTimeout(() => { endArmed = false; t.textContent = '종료하고 기록'; }, 4000); return; } endArmed = false; t.textContent = '종료하고 기록'; endMock(false); }
-  else if (t.id === 'tmCancel') endMock(true);
+  else if (t.dataset.mock) { if (S.timer) return toast('진행 중인 모의고사를 먼저 끝내 주세요.'); const s = findSet(t.dataset.mock); S.timer = {id: s.id, set: s.title.replace('모의고사 · ', ''), min: s.min, start: Date.now(), paused: null, pausedTotal: 0}; persist(); showTimer(); }
+  else if (t.id === 'tmPause') { const x = S.timer; if (x.paused) { x.pausedTotal += Date.now() - x.paused; x.paused = null; } else x.paused = Date.now(); persist(); showTimer(); }
+  else if (t.id === 'tmEnd') { if (!endArmed) { endArmed = true; t.textContent = '한 번 더 누르면 기록'; setTimeout(() => { endArmed = false; t.textContent = '끝내고 기록'; }, 4000); return; } endArmed = false; t.textContent = '끝내고 기록'; endMock(true); }
+  else if (t.id === 'tmCancel') endMock(false);
+  else if (t.id === 'fClear') { $('#fText').value = ''; $('#fStatus').value = ''; renderDetail(); }
   else if (t.id === 'coachBtn') askCoach();
+  else if (t.id === 'moreToday') { S.plan.keys = S.plan.keys.concat(pickNext(S.plan.keys, (Number(S.settings.hours) || 2) * 60)); persist(); refresh(); }
   else if (t.id === 'coachStop') coachCtl?.abort();
   else if (t.id === 'exportBtn') exportState();
-  else if (t.id === 'fClear') { $('#fText').value = ''; $('#fStatus').value = ''; $('#fSrc').value = ''; applyFilter(); }
-});
-let armed = false;
-$('#resetBtn').addEventListener('click', () => {
-  const msg = $('#resetMsg');
-  if (!armed) { armed = true; msg.hidden = false; setTimeout(() => { armed = false; msg.hidden = true; }, 4000); return; }
-  const co = S.settings.co, exam = S.settings.exam;
-  S = blank(); S.settings.co = co; S.settings.exam = exam;
-  armed = false; msg.hidden = true; openPanels.clear(); persist(); renderWeeks(); refreshAll(); showTimer();
+  else if (t.id === 'resetBtn') {
+    if (!t.dataset.armed) { t.dataset.armed = '1'; t.textContent = '한 번 더 누르면 모두 지워집니다'; setTimeout(() => { delete t.dataset.armed; t.textContent = '기록 초기화'; }, 4000); return; }
+    const {co, exam, hours} = S.settings; S = blank(); Object.assign(S.settings, {co, exam, hours});
+    delete t.dataset.armed; t.textContent = '기록 초기화'; openPanels.clear(); persist(); refresh(); renderDetail(); showTimer();
+  }
 });
 
 // ---------- boot ----------
-renderWeeks(); refreshAll(); showTimer();
+renderStatic(); refresh(); route(); showTimer();
 (async () => {
-  const use = window.claude?.use; if (!use) return;
-  const [db, user, sample] = await Promise.all([window.claude.use('db'), window.claude.use('user'), window.claude.use('sample')].map(p => p.catch(() => null)));
-  if (sample) { sampleFn = sample; document.querySelectorAll('.ai').forEach(e => e.hidden = false); $('#coachBox').hidden = false; }
+  if (!window.claude || !window.claude.use) return;
+  const [db, user, sample] = await Promise.all(['db', 'user', 'sample'].map(n => window.claude.use(n).catch(() => null)));
+  if (sample) { sampleFn = sample; $('#coachBox').hidden = false; }
   const uid = user ? await user.id() : null;
   if (db && uid) {
     try {
       docRef = db.doc(`data/users/${uid}/progress`);
       const snap = await docRef.get();
-      if (snap.exists) { S = mergeState(snap.data(), S); try { localStorage.setItem('cote-state-v2', JSON.stringify(S)); } catch(e) {} renderWeeks(); refreshAll(); showTimer(); setSync('계정에 저장된 기록을 불러왔습니다. 다른 기기에서도 이어서 볼 수 있습니다.'); }
-      else { setSync('계정에 저장합니다. 다른 기기에서 열어도 이어서 볼 수 있습니다.'); if (Object.keys(S.status).length || Object.keys(S.notes).length) flush(); }
-    } catch(e) { docRef = null; setSync('계정 저장을 쓸 수 없어 이 브라우저에만 저장합니다.'); }
+      if (snap.exists) { S = mergeState(snap.data(), S); try { localStorage.setItem('cote-state-v2', JSON.stringify(S)); } catch(e) {} }
+      else if (Object.keys(S.status).length || Object.keys(S.notes).length) flush();
+      setSync('기록은 Claude 계정에 저장됩니다. 다른 기기에서도 이어집니다.');
+    } catch(e) { docRef = null; }
   }
+  refresh(); renderDetail(); showTimer();
 })();
 
 </script>
+
 </body>
 </html>
