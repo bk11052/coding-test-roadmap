@@ -37,6 +37,22 @@ def est(x, sql=False):
     return LVMIN.get(x["lv"], 40)
 
 
+def lec_tag(u):
+    if "blog.encrypted.gg" in u:
+        return "바킹독 · 글과 영상 · C++"
+    if "PLRx0vPvlEmd" in u:
+        return "나동빈 · 영상 · Python"
+    if "youtu" in u:
+        return "유튜브 영상"
+    if "tech.kakao.com" in u:
+        return "카카오 공식 해설"
+    if "sql_practice_kit" in u:
+        return "프로그래머스 문제 모음"
+    if "frequent-problems" in u:
+        return "코드트리 기출 목록"
+    return "접수 페이지"
+
+
 def fmt_h(m):
     h, r = divmod(m, 60)
     return f"{h}시간 {r}분" if h and r else f"{h}시간" if h else f"{r}분"
@@ -125,7 +141,13 @@ for w in weeks:
     A(f'<a id="week-{w["week"]}"></a>')
     A(f"<details>\n<summary><b>{w['week']:02d}주 · {w['topic']}</b> — 필수 {w['required_count']}문제, 약 {fmt_h(w['est_minutes_required'])}</summary>\n")
     if w["lectures"]:
-        A("**강의** " + " · ".join(f"[{l['title']}]({l['url']})" for l in w["lectures"]) + "\n")
+        study = w["week"] <= 12
+        A(f"**{'개념 강의' if study else '참고 링크'}**" + (" — 먼저 보고 아래 문제를 푸세요." if study else "") + "\n")
+        for l in w["lectures"]:
+            A(f"- [{l['title']}]({l['url']}) ({lec_tag(l['url'])})")
+        if study and any("blog.encrypted.gg" in l["url"] for l in w["lectures"]):
+            A("- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.")
+        A("")
     A(f"**배울 것** {w['learn']}\n")
     if w["common_mistakes"]:
         A("**자주 하는 실수**\n")

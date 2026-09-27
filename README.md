@@ -76,7 +76,12 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 <details>
 <summary><b>01주 · 언어 기본기 · 입출력 · 문자열</b> — 필수 7문제, 약 1시간 45분</summary>
 
-**강의** [이코테 2021 (Python, 나동빈) 재생목록](https://www.youtube.com/playlist?list=PLRx0vPvlEmdAghTr5mXQxGpHjWqSz0dgC) · [바킹독 0x01 기초 코드 작성 요령 I](https://blog.encrypted.gg/922) · [0x02 기초 코드 작성 요령 II](https://blog.encrypted.gg/923)
+**개념 강의** — 먼저 보고 아래 문제를 푸세요.
+
+- [이코테 2021 (Python, 나동빈) 재생목록](https://www.youtube.com/playlist?list=PLRx0vPvlEmdAghTr5mXQxGpHjWqSz0dgC) (나동빈 · 영상 · Python)
+- [바킹독 0x01 기초 코드 작성 요령 I](https://blog.encrypted.gg/922) (바킹독 · 글과 영상 · C++)
+- [0x02 기초 코드 작성 요령 II](https://blog.encrypted.gg/923) (바킹독 · 글과 영상 · C++)
+- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
 
 **배울 것** 문자열 슬라이싱·split·join, 정렬 key, 리스트/딕셔너리 컴프리헨션, 날짜·시간 문자열 다루기
 
@@ -113,7 +118,14 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 <details>
 <summary><b>02주 · 시간복잡도 · 배열 · 스택 · 큐 · 덱</b> — 필수 7문제, 약 3시간</summary>
 
-**강의** [0x03 배열](https://blog.encrypted.gg/927) · [0x05 스택](https://blog.encrypted.gg/933) · [0x06 큐](https://blog.encrypted.gg/934) · [0x07 덱](https://blog.encrypted.gg/935) · [0x08 스택의 활용](https://blog.encrypted.gg/936)
+**개념 강의** — 먼저 보고 아래 문제를 푸세요.
+
+- [0x03 배열](https://blog.encrypted.gg/927) (바킹독 · 글과 영상 · C++)
+- [0x05 스택](https://blog.encrypted.gg/933) (바킹독 · 글과 영상 · C++)
+- [0x06 큐](https://blog.encrypted.gg/934) (바킹독 · 글과 영상 · C++)
+- [0x07 덱](https://blog.encrypted.gg/935) (바킹독 · 글과 영상 · C++)
+- [0x08 스택의 활용](https://blog.encrypted.gg/936) (바킹독 · 글과 영상 · C++)
+- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
 
 **배울 것** deque로 큐 구현, 괄호 짝 검사, 단조 스택(뒤에 있는 큰 수), 큐 시뮬레이션
 
@@ -151,7 +163,12 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 <details>
 <summary><b>03주 · 해시 · 정렬</b> — 필수 9문제, 약 3시간 30분</summary>
 
-**강의** [0x15 해시](https://blog.encrypted.gg/1009) · [0x0E 정렬 I](https://blog.encrypted.gg/955) · [0x0F 정렬 II](https://blog.encrypted.gg/966)
+**개념 강의** — 먼저 보고 아래 문제를 푸세요.
+
+- [0x15 해시](https://blog.encrypted.gg/1009) (바킹독 · 글과 영상 · C++)
+- [0x0E 정렬 I](https://blog.encrypted.gg/955) (바킹독 · 글과 영상 · C++)
+- [0x0F 정렬 II](https://blog.encrypted.gg/966) (바킹독 · 글과 영상 · C++)
+- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
 
 **배울 것** dict·Counter·defaultdict, set 연산, 정렬 key에 튜플과 음수 쓰기, 커스텀 비교
 
@@ -193,7 +210,11 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 <details>
 <summary><b>04주 · 재귀 · 완전탐색 · 백트래킹</b> — 필수 7문제, 약 3시간</summary>
 
-**강의** [0x0B 재귀](https://blog.encrypted.gg/943) · [0x0C 백트래킹](https://blog.encrypted.gg/945)
+**개념 강의** — 먼저 보고 아래 문제를 푸세요.
+
+- [0x0B 재귀](https://blog.encrypted.gg/943) (바킹독 · 글과 영상 · C++)
+- [0x0C 백트래킹](https://blog.encrypted.gg/945) (바킹독 · 글과 영상 · C++)
+- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
 
 **배울 것** itertools permutations/combinations/product, 재귀로 직접 구현(넣기→재귀→빼기), 가지치기
 
@@ -231,7 +252,11 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 <details>
 <summary><b>05주 · BFS · DFS 기본</b> — 필수 8문제, 약 4시간 40분</summary>
 
-**강의** [0x09 BFS](https://blog.encrypted.gg/941) · [0x0A DFS](https://blog.encrypted.gg/942)
+**개념 강의** — 먼저 보고 아래 문제를 푸세요.
+
+- [0x09 BFS](https://blog.encrypted.gg/941) (바킹독 · 글과 영상 · C++)
+- [0x0A DFS](https://blog.encrypted.gg/942) (바킹독 · 글과 영상 · C++)
+- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
 
 **배울 것** 방향 배열 dy/dx, 범위 체크, 방문 처리는 큐에 넣을 때, 거리 배열 -1 초기화, 여러 시작점 동시 BFS
 
@@ -269,7 +294,11 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 <details>
 <summary><b>06주 · BFS 심화 · 상태 확장</b> — 필수 5문제, 약 3시간 50분</summary>
 
-**강의** [0x09 BFS 후반부 (벽 부수기 유형)](https://blog.encrypted.gg/941) · [최백준 특강 (다리 K개 미로)](https://youtu.be/iVfgiqM4has)
+**개념 강의** — 먼저 보고 아래 문제를 푸세요.
+
+- [0x09 BFS 후반부 (벽 부수기 유형)](https://blog.encrypted.gg/941) (바킹독 · 글과 영상 · C++)
+- [최백준 특강 (다리 K개 미로)](https://youtu.be/iVfgiqM4has) (유튜브 영상)
+- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
 
 **배울 것** visited[r][c][k] 설계, 방향을 상태로 넣기, 0-1 BFS, 좌표 2배 확대(아이템 줍기)
 
@@ -305,7 +334,11 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 <details>
 <summary><b>07주 · 구현 · 시뮬레이션 1</b> — 필수 7문제, 약 9시간 50분</summary>
 
-**강의** [0x0D 시뮬레이션](https://blog.encrypted.gg/948) · [큰돌의터전 삼성 기출 분석](https://youtu.be/w9dyVCvFCkw)
+**개념 강의** — 먼저 보고 아래 문제를 푸세요.
+
+- [0x0D 시뮬레이션](https://blog.encrypted.gg/948) (바킹독 · 글과 영상 · C++)
+- [큰돌의터전 삼성 기출 분석](https://youtu.be/w9dyVCvFCkw) (유튜브 영상)
+- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
 
 **배울 것** 90도 회전 b[j][n-1-i]=a[i][j], 동시 처리는 임시 배열, 상태 변수 먼저 정의, 단계마다 출력해 확인
 
@@ -342,7 +375,9 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 <details>
 <summary><b>08주 · 삼성형 시뮬레이션 2 · 첫 모의고사</b> — 필수 8문제, 약 20시간</summary>
 
-**강의** [코드트리 기출 문제 목록](https://www.codetree.ai/ko/frequent-problems)
+**개념 강의** — 먼저 보고 아래 문제를 푸세요.
+
+- [코드트리 기출 문제 목록](https://www.codetree.ai/ko/frequent-problems) (코드트리 기출 목록)
 
 **배울 것** 문제를 읽고 30분 동안 설계(상태, 순서, 함수)만 하고, 그다음 코딩합니다. 디버깅은 단계별 격자 출력으로
 
@@ -380,7 +415,12 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 <details>
 <summary><b>09주 · 그리디 · 이분탐색 · 투포인터 · 누적합</b> — 필수 10문제, 약 6시간 5분</summary>
 
-**강의** [0x11 그리디](https://blog.encrypted.gg/975) · [0x13 이분탐색](https://blog.encrypted.gg/985) · [0x14 투 포인터](https://blog.encrypted.gg/1004)
+**개념 강의** — 먼저 보고 아래 문제를 푸세요.
+
+- [0x11 그리디](https://blog.encrypted.gg/975) (바킹독 · 글과 영상 · C++)
+- [0x13 이분탐색](https://blog.encrypted.gg/985) (바킹독 · 글과 영상 · C++)
+- [0x14 투 포인터](https://blog.encrypted.gg/1004) (바킹독 · 글과 영상 · C++)
+- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
 
 **배울 것** 정렬 후 그리디, bisect, 매개변수 탐색, 슬라이딩 윈도우, 1차원·2차원 누적합(차분 배열)
 
@@ -421,7 +461,10 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 <details>
 <summary><b>10주 · 다이나믹 프로그래밍</b> — 필수 8문제, 약 5시간 20분</summary>
 
-**강의** [0x10 다이나믹 프로그래밍](https://blog.encrypted.gg/974)
+**개념 강의** — 먼저 보고 아래 문제를 푸세요.
+
+- [0x10 다이나믹 프로그래밍](https://blog.encrypted.gg/974) (바킹독 · 글과 영상 · C++)
+- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
 
 **배울 것** 테이블 정의 → 점화식 → 초기값 순서. 배낭, LIS, 격자 경로, 원형 배열 처리
 
@@ -460,7 +503,14 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 <details>
 <summary><b>11주 · 그래프 심화 · 우선순위 큐 · 다익스트라 · Union-Find</b> — 필수 8문제, 약 6시간</summary>
 
-**강의** [0x17 우선순위 큐](https://blog.encrypted.gg/1015) · [0x18 그래프](https://blog.encrypted.gg/1016) · [0x19 트리](https://blog.encrypted.gg/1019) · [0x1D 다익스트라](https://blog.encrypted.gg/1037) · [부록 D Union-Find](https://blog.encrypted.gg/1097)
+**개념 강의** — 먼저 보고 아래 문제를 푸세요.
+
+- [0x17 우선순위 큐](https://blog.encrypted.gg/1015) (바킹독 · 글과 영상 · C++)
+- [0x18 그래프](https://blog.encrypted.gg/1016) (바킹독 · 글과 영상 · C++)
+- [0x19 트리](https://blog.encrypted.gg/1019) (바킹독 · 글과 영상 · C++)
+- [0x1D 다익스트라](https://blog.encrypted.gg/1037) (바킹독 · 글과 영상 · C++)
+- [부록 D Union-Find](https://blog.encrypted.gg/1097) (바킹독 · 글과 영상 · C++)
+- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
 
 **배울 것** heapq, 다익스트라(거리 비교로 오래된 항목 건너뛰기), 플로이드, Union-Find 경로 압축, 크루스칼
 
@@ -499,7 +549,11 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 <details>
 <summary><b>12주 · 카카오형 문자열 · 파싱 + SQL</b> — 필수 17문제, 약 7시간 20분</summary>
 
-**강의** [부록 A 문자열 기초](https://blog.encrypted.gg/1081) · [프로그래머스 SQL 고득점 Kit](https://school.programmers.co.kr/learn/challenges?tab=sql_practice_kit)
+**개념 강의** — 먼저 보고 아래 문제를 푸세요.
+
+- [부록 A 문자열 기초](https://blog.encrypted.gg/1081) (바킹독 · 글과 영상 · C++)
+- [프로그래머스 SQL 고득점 Kit](https://school.programmers.co.kr/learn/challenges?tab=sql_practice_kit) (프로그래머스 문제 모음)
+- 바킹독 강의는 C++ 코드입니다. Python은 [파이썬·자바 코드](https://blog.encrypted.gg/1106)를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.
 
 **배울 것** 시간 문자열 → 분 변환, 정규식, 진법 변환, 집합 연산. SQL은 GROUP BY·HAVING, JOIN, 서브쿼리, 날짜 함수, 재귀 CTE
 
@@ -554,7 +608,10 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 <details>
 <summary><b>13주 · 지원 회사 기출 집중</b> — 필수 18문제, 약 25시간</summary>
 
-**강의** [2026 카카오 1차 공식 해설](https://tech.kakao.com/posts/813) · [2026 카카오 2차 공식 해설](https://tech.kakao.com/posts/814)
+**참고 링크**
+
+- [2026 카카오 1차 공식 해설](https://tech.kakao.com/posts/813) (카카오 공식 해설)
+- [2026 카카오 2차 공식 해설](https://tech.kakao.com/posts/814) (카카오 공식 해설)
 
 **배울 것** 삼성·카카오·현대 중 지원하는 곳만 골라 푸세요. 시간은 실제 시험의 절반 비율로 잽니다
 
@@ -647,7 +704,11 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 <details>
 <summary><b>15주 · 약점 보완 · 인증 시험 응시</b> — 필수 6문제, 약 7시간 20분</summary>
 
-**강의** [Softeer HSAT 접수](https://softeer.ai) · [PCCP 접수](https://certi.programmers.co.kr/about/pccp) · [SWEA 상시 역량테스트](https://swexpertacademy.com)
+**참고 링크**
+
+- [Softeer HSAT 접수](https://softeer.ai) (접수 페이지)
+- [PCCP 접수](https://certi.programmers.co.kr/about/pccp) (접수 페이지)
+- [SWEA 상시 역량테스트](https://swexpertacademy.com) (접수 페이지)
 
 **배울 것** 오답 노트에서 가장 많이 틀린 유형의 "도전" 문제를 다시 풉니다. 지원 회사에 맞는 인증 시험을 이 주에 응시하세요
 

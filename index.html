@@ -579,6 +579,24 @@ function pickNext(exclude, budget){
   return out;
 }
 
+// ---------- lectures ----------
+function lecTag(u){
+  if (u.includes('blog.encrypted.gg')) return '바킹독 · 글과 영상 · C++';
+  if (u.includes('PLRx0vPvlEmd')) return '나동빈 · 영상 · Python';
+  if (u.includes('youtu')) return '유튜브 영상';
+  if (u.includes('tech.kakao.com')) return '카카오 공식 해설';
+  if (u.includes('sql_practice_kit')) return '프로그래머스 문제 모음';
+  if (u.includes('frequent-problems')) return '코드트리 기출 목록';
+  return '접수 페이지';
+}
+function lectureHtml(w){
+  const study = w.n <= 12;
+  const links = w.lec.map(l => `<a href="${l.u}" target="_blank" rel="noopener">${esc(l.t)}</a> <span class="small muted">${lecTag(l.u)}</span>`).join('<br>');
+  const baek = w.lec.some(l => l.u.includes('blog.encrypted.gg'));
+  const note = study ? `<p class="small muted" style="margin-top:4px">먼저 보고 아래 문제를 푸세요.${baek ? ' 바킹독 강의는 C++ 코드라 Python은 <a href="https://blog.encrypted.gg/1106" target="_blank" rel="noopener">파이썬·자바 코드</a>를 함께 보세요. 글 끝의 백준 연습 문제는 풀 수 없으니 건너뜁니다.' : ''}</p>` : '';
+  return `<dt>${study ? '개념 강의' : '참고 링크'}</dt><dd>${links}${note}</dd>`;
+}
+
 // ---------- curriculum ----------
 function renderSide(){
   let html = '', last = -1;
@@ -621,7 +639,7 @@ function renderDetail(){
     <div class="dmeta"><span>${d} / ${ks.length}문제 완료</span><span>약 ${fmtH(mins)}</span>${pri.length ? `<span style="color:var(--accent)">${pri.map(c => CO_NAME[c]).join('·')} 우선</span>` : ''}</div>
     <div class="bar"><i style="width:${ks.length ? d / ks.length * 100 : 0}%"></i></div></div>
     <dl class="info">
-      ${w.lec.length ? `<dt>강의</dt><dd>${w.lec.map(l => `<a href="${l.u}" target="_blank" rel="noopener">${esc(l.t)}</a>`).join('<br>')}</dd>` : ''}
+      ${w.lec.length ? lectureHtml(w) : ''}
       <dt>배울 것</dt><dd>${esc(w.learn)}</dd>
       ${w.pit && w.pit.length ? `<dt>자주 하는 실수</dt><dd><ul>${w.pit.map(p => `<li>${esc(p)}</li>`).join('')}</ul></dd>` : ''}
       <dt>통과 기준</dt><dd>${esc(w.goal)}</dd>
