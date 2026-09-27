@@ -28,7 +28,7 @@ WEEKS.forEach(w => {
   };
   if (w.must) add('필수', w.must, 'must', null);
   if (w.sql) add('SQL', w.sql, 'must', ['pg']);
-  (w.groups || []).forEach(g => add(g[0].replace('보충 ', '보충 · ').replace(/[()]/g, ''), g[1], 'must', g[2]));
+  (w.groups || []).forEach(g => add(g[0].replace('보충 ', '보충 · ').replace(/^(보충 · )\((.*)\)$/, '$1$2'), g[1], g[3] === 'more' ? 'more' : 'must', g[2]));
   if (w.mock) add('모의고사 · 삼성 기출 2문제', w.mock.items, 'mock', w.mock.co, {min: w.mock.min});
   (w.mocks || []).forEach(m => add('모의고사 · ' + m.t, m.items, 'mock', m.co, {min: m.min}));
   if (w.more) add('도전 (선택)', w.more, 'more', null);
@@ -105,7 +105,7 @@ function rowHtml(x, opt){
   ].join('');
   return `<li class="row${isDone(key) ? ' is-done' : ''}" data-key="${esc(key)}" data-opt="${opt.week ? 'w' : ''}">
     <input type="checkbox" ${isDone(key) ? 'checked' : ''} aria-label="${esc(x.t)} 풀었음">
-    <span class="name"><a href="${url(x)}" target="_blank" rel="noopener">${esc(x.t)}</a><span class="src">${SRC[x.s]}</span></span>
+    <span class="name"><a href="${url(x)}" target="_blank" rel="noopener">${esc(x.t)}</a><span class="src">${SRC[x.s]}</span>${x.sol ? `<a class="sol" href="${x.sol}" target="_blank" rel="noopener" title="카카오 공식 해설">해설</a>` : ''}</span>
     <span class="right">${right}</span>
     ${opt.extra || ''}${openPanels.has(key) ? panelHtml(key) : ''}</li>`;
 }
@@ -314,11 +314,25 @@ function renderDetail(){
 }
 
 // ---------- code highlight ----------
-const FLOW = /<span class="hljs-keyword">(if|elif|else|for|while|return|import|from|continue|break|in|try|except|raise|with|yield|pass|not|and|or|is)<\/span>/g;
-function hl(line){
+const FLOW = /<span class="hljs-keyword">(if|elif|else|for|while|return|import|from|continue|break|in|try|except|catch|throw|raise|with|yield|pass|not|and|or|is|switch|case|do)<\/span>/g;
+function hl(line, language){
   if (!line) return ' ';
-  try { if (window.hljs) return window.hljs.highlight(line, {language:'python', ignoreIllegals:true}).value.replace(FLOW, '<span class="hljs-keyword flow">$1</span>'); } catch(e) {}
+  try { if (window.hljs) return window.hljs.highlight(line, {language: language || lang, ignoreIllegals:true}).value.replace(FLOW, '<span class="hljs-keyword flow">$1</span>'); } catch(e) {}
   return esc(line);
+}
+
+// ---------- code files (Python / Java) ----------
+let lang = 'python';
+try { lang = localStorage.getItem('cote-lang') === 'java' ? 'java' : 'python'; } catch(e) {}
+const FILES = {python:['grid_bfs.py', 'combination.py', 'rotate.py', 'param_search.py', 'dijkstra.py', 'union_find.py', 'prefix_sum.py', 'starter.py'],
+  java:['GridBfs.java', 'Combination.java', 'Rotate.java', 'ParamSearch.java', 'Dijkstra.java', 'UnionFind.java', 'PrefixSum.java', 'Main.java']};
+const IO_FILES = {python:['solution.py', 'swea.py', 'stdin.py'], java:['Solution.java', 'Solution.java', 'Main.java']};
+const codeOf = o => lang === 'java' && o.java ? o.java : o.code;
+const lines = (code) => code.split('\n').map(l => `<span class="l">${hl(l)}</span>`).join('');
+function renderCode(){
+  document.querySelectorAll('.langsw input').forEach(i => i.checked = i.value === lang);
+  $('#tpls').innerHTML = INFO.templates_python.map((t, i) => `<div class="file"><div class="file-tab"><span class="fn">${FILES[lang][i]}</span><span class="desc">${esc(t.name.replace(/^\d+\.\s*/, ''))}</span><button type="button" class="copy" data-copy="${i}">복사</button></div><pre class="code"><code>${lines(codeOf(t))}</code></pre></div>`).join('');
+  $('#ioFiles').innerHTML = INFO.io_formats.map((f, i) => `<div class="file"><div class="file-tab"><span class="fn">${IO_FILES[lang][i]}</span><span class="desc">${esc(f.site)}</span><button type="button" class="copy" data-io="${i}">복사</button></div><p class="note">${esc(f.how)}${lang === 'java' && f.how_java ? ' ' + esc(f.how_java) : ''}</p><pre class="code"><code>${lines(codeOf(f))}</code></pre></div>`).join('');
 }
 
 // ---------- theme ----------
@@ -332,22 +346,20 @@ function renderTheme(){
 
 // ---------- companies & resources (static) ----------
 function renderStatic(){
-  $('#coTable').innerHTML = '<thead><tr><th>기업</th><th>시험 환경</th><th>구성</th><th>출제 경향</th><th>참고</th></tr></thead><tbody>' +
+  $('#coTable').innerHTML = '<thead><tr><th>기업</th><th>시험 환경</th><th>구성</th><th>출제 경향</th><th>참고</th><th>근거 시점</th></tr></thead><tbody>' +
     INFO.company_formats.map(c => {
       const m = c.company.match(/^(.*?)\s*\((.*)\)$/), name = m ? m[1] : c.company, sub = m ? m[2] : '';
       const conf = c.confidence === '여러 출처 일치' ? '' : ` <span class="muted">(${esc(c.confidence)})</span>`;
-      return `<tr><td>${esc(name)}${sub ? `<span class="sub">${esc(sub)}</span>` : ''}</td><td>${esc(c.platform)}</td><td>${esc(c.format)}</td><td class="ink2">${esc(c.content)}</td><td class="ink2">${esc(c.notes)}${conf}</td></tr>`;
+      return `<tr><td>${esc(name)}${sub ? `<span class="sub">${esc(sub)}</span>` : ''}</td><td>${esc(c.platform)}</td><td>${esc(c.format)}</td><td class="ink2">${esc(c.content)}</td><td class="ink2">${esc(c.notes)}${conf}</td><td class="small muted" style="white-space:nowrap">${esc(c.basis || '—')}</td></tr>`;
     }).join('') + '</tbody>';
   const dot = v => ({'매우 자주':'●●●','자주':'●●','가끔':'●','드묾':'','없음':''}[v] ?? null);
   const cols = INFO.frequency_columns;
   $('#typeTable').innerHTML = `<thead><tr>${cols.map(c => `<th>${esc(c.replace(' (SK·한화·LG 등)', ''))}</th>`).join('')}</tr></thead><tbody>` +
     INFO.type_frequency.map(r => `<tr><td>${esc(r[0])}</td>${r.slice(1).map(v => { const d = dot(v); return `<td class="${d !== null ? 'dots' : 'small ink2'}">${d !== null ? d : esc(v)}</td>`; }).join('')}</tr>`).join('') + '</tbody>';
   $('#toolTable').innerHTML = '<thead><tr><th>이름</th><th>쓰는 곳</th></tr></thead><tbody>' + INFO.tools.map(t => `<tr><td><a href="${t.url}" target="_blank" rel="noopener">${esc(t.name)}</a></td><td class="ink2">${esc(t.use)}</td></tr>`).join('') + '</tbody>';
-  const FILES = ['grid_bfs.py', 'combination.py', 'rotate.py', 'param_search.py', 'dijkstra.py', 'union_find.py', 'prefix_sum.py', 'starter.py'];
-  $('#tpls').innerHTML = INFO.templates_python.map((t, i) => `<div class="file"><div class="file-tab"><span class="fn">${FILES[i] || 'code.py'}</span><span class="desc">${esc(t.name.replace(/^\d+\.\s*/, ''))}</span><button type="button" class="copy" data-copy="${i}">복사</button></div><pre class="code"><code>${t.code.split('\n').map(l => `<span class="l">${hl(l)}</span>`).join('')}</code></pre></div>`).join('');
+  renderCode();
   $('#sigTable').innerHTML = '<thead><tr><th>지문의 단서</th><th>떠올릴 방법</th><th>배우는 주차</th></tr></thead><tbody>' + INFO.signals.map(([s, m, n]) => `<tr><td>${esc(s)}</td><td>${esc(m)}</td><td><a href="#w${n}">${pad(n)}주</a></td></tr>`).join('') + '</tbody>';
-  $('#ioFiles').innerHTML = INFO.io_formats.map((f, i) => `<div class="file"><div class="file-tab"><span class="fn">${['solution.py', 'swea.py', 'stdin.py'][i]}</span><span class="desc">${esc(f.site)}</span><button type="button" class="copy" data-io="${i}">복사</button></div><p class="note">${esc(f.how)}</p><pre class="code"><code>${f.code.split('\n').map(l => `<span class="l">${hl(l)}</span>`).join('')}</code></pre></div>`).join('');
-  $('#cheatTable').innerHTML = '<thead><tr><th>상황</th><th>코드</th><th>설명</th></tr></thead><tbody>' + INFO.cheats.map(([a, c, n]) => `<tr><td>${esc(a)}</td><td><code>${hl(c)}</code></td><td class="small">${esc(n)}</td></tr>`).join('') + '</tbody>';
+  $('#cheatTable').innerHTML = '<thead><tr><th>상황</th><th>코드</th><th>설명</th></tr></thead><tbody>' + INFO.cheats.map(([a, c, n]) => `<tr><td>${esc(a)}</td><td><code>${hl(c, 'python')}</code></td><td class="small">${esc(n)}</td></tr>`).join('') + '</tbody>';
   $('#mythList').innerHTML = INFO.myths.map(x => `<li>${esc(x)}</li>`).join('');
   $('#srcList').innerHTML = INFO.sources.map(s => `<li><a href="${s.url}" target="_blank" rel="noopener">${esc(s.title)}</a></li>`).join('');
 }
@@ -460,6 +472,7 @@ document.addEventListener('change', e => {
   else if (t.id === 'fStatus') renderDetail();
   else if (t.id === 'wkSelect') location.hash = 'w' + t.value;
   else if (t.id === 'importFile') importFile(t);
+  else if (t.matches('.langsw input')) { lang = t.value; try { localStorage.setItem('cote-lang', lang); } catch(e) {} renderCode(); }
 });
 let noteTimer = null, searchTimer = null;
 document.addEventListener('input', e => {
@@ -485,7 +498,7 @@ document.addEventListener('click', e => {
   else if (t.id === 'tmCancel') endMock(false);
   else if (t.id === 'stTimer') $('#tmPanel').hidden = !$('#tmPanel').hidden;
   else if (t.id === 'themeBtn') { theme = THEMES[(THEMES.indexOf(theme) + 1) % 3]; try { localStorage.setItem('cote-theme', theme); } catch(e) {} renderTheme(); }
-  else if (t.dataset.copy !== undefined || t.dataset.io !== undefined) { const code = t.dataset.io !== undefined ? INFO.io_formats[Number(t.dataset.io)].code : INFO.templates_python[Number(t.dataset.copy)].code; navigator.clipboard?.writeText(code).then(() => { t.textContent = '복사됨'; setTimeout(() => t.textContent = '복사', 1500); }, () => toast('복사하지 못했습니다. 코드를 직접 선택해 주세요.')); }
+  else if (t.dataset.copy !== undefined || t.dataset.io !== undefined) { const code = codeOf(t.dataset.io !== undefined ? INFO.io_formats[Number(t.dataset.io)] : INFO.templates_python[Number(t.dataset.copy)]); navigator.clipboard?.writeText(code).then(() => { t.textContent = '복사됨'; setTimeout(() => t.textContent = '복사', 1500); }, () => toast('복사하지 못했습니다. 코드를 직접 선택해 주세요.')); }
   else if (t.id === 'fClear') { $('#fText').value = ''; $('#fStatus').value = ''; renderDetail(); }
   else if (t.id === 'coachBtn') askCoach();
   else if (t.id === 'moreToday') { S.plan.keys = S.plan.keys.concat(pickNext(S.plan.keys, (Number(S.settings.hours) || 2) * 60)); persist(); refresh(); }

@@ -68,13 +68,15 @@
     "s": "P",
     "id": "17682",
     "t": "[1차] 다트 게임",
-    "lv": "LV1"
+    "lv": "LV1",
+    "sol": "https://tech.kakao.com/posts/344"
    },
    {
     "s": "P",
     "id": "72410",
     "t": "신규 아이디 추천",
-    "lv": "LV1"
+    "lv": "LV1",
+    "sol": "https://tech.kakao.com/posts/420"
    }
   ],
   "pit": [
@@ -152,7 +154,8 @@
     "s": "P",
     "id": "64061",
     "t": "크레인 인형뽑기 게임",
-    "lv": "LV1"
+    "lv": "LV1",
+    "sol": "https://tech.kakao.com/posts/381"
    }
   ],
   "more": [
@@ -248,13 +251,15 @@
     "s": "P",
     "id": "92334",
     "t": "신고 결과 받기",
-    "lv": "LV1"
+    "lv": "LV1",
+    "sol": "https://tech.kakao.com/posts/488"
    },
    {
     "s": "P",
     "id": "42888",
     "t": "오픈채팅방",
-    "lv": "LV2"
+    "lv": "LV2",
+    "sol": "https://tech.kakao.com/posts/355"
    }
   ],
   "more": [
@@ -274,7 +279,8 @@
     "s": "P",
     "id": "17686",
     "t": "[3차] 파일명 정렬",
-    "lv": "LV2"
+    "lv": "LV2",
+    "sol": "https://tech.kakao.com/posts/348"
    }
   ],
   "pit": [
@@ -348,19 +354,22 @@
     "s": "P",
     "id": "92342",
     "t": "양궁대회",
-    "lv": "LV2"
+    "lv": "LV2",
+    "sol": "https://tech.kakao.com/posts/488"
    },
    {
     "s": "P",
     "id": "150368",
     "t": "이모티콘 할인행사",
-    "lv": "LV2"
+    "lv": "LV2",
+    "sol": "https://tech.kakao.com/posts/567"
    },
    {
     "s": "P",
     "id": "64064",
     "t": "불량 사용자",
-    "lv": "LV3"
+    "lv": "LV3",
+    "sol": "https://tech.kakao.com/posts/381"
    }
   ],
   "pit": [
@@ -440,13 +449,15 @@
     "s": "P",
     "id": "81302",
     "t": "거리두기 확인하기",
-    "lv": "LV2"
+    "lv": "LV2",
+    "sol": "https://tech.kakao.com/posts/448"
    },
    {
     "s": "P",
     "id": "60062",
     "t": "외벽 점검",
-    "lv": "LV3"
+    "lv": "LV3",
+    "sol": "https://tech.kakao.com/posts/367"
    }
   ],
   "pit": [
@@ -488,7 +499,8 @@
     "s": "P",
     "id": "67259",
     "t": "경주로 건설",
-    "lv": "LV3"
+    "lv": "LV3",
+    "sol": "https://tech.kakao.com/posts/395"
    },
    {
     "s": "P",
@@ -514,13 +526,15 @@
     "s": "P",
     "id": "72415",
     "t": "카드 짝 맞추기",
-    "lv": "LV3"
+    "lv": "LV3",
+    "sol": "https://tech.kakao.com/posts/420"
    },
    {
     "s": "P",
     "id": "60063",
     "t": "블록 이동하기",
-    "lv": "LV3"
+    "lv": "LV3",
+    "sol": "https://tech.kakao.com/posts/367"
    }
   ],
   "pit": [
@@ -562,13 +576,15 @@
     "s": "P",
     "id": "17679",
     "t": "[1차] 프렌즈4블록",
-    "lv": "LV2"
+    "lv": "LV2",
+    "sol": "https://tech.kakao.com/posts/344"
    },
    {
     "s": "P",
     "id": "60059",
     "t": "자물쇠와 열쇠",
-    "lv": "LV3"
+    "lv": "LV3",
+    "sol": "https://tech.kakao.com/posts/367"
    },
    {
     "s": "C",
@@ -594,7 +610,8 @@
     "s": "P",
     "id": "60061",
     "t": "기둥과 보 설치",
-    "lv": "LV3"
+    "lv": "LV3",
+    "sol": "https://tech.kakao.com/posts/367"
    },
    {
     "s": "P",
@@ -747,7 +764,8 @@
     "s": "P",
     "id": "64062",
     "t": "징검다리 건너기",
-    "lv": "LV3"
+    "lv": "LV3",
+    "sol": "https://tech.kakao.com/posts/381"
    },
    {
     "s": "P",
@@ -759,7 +777,8 @@
     "s": "P",
     "id": "67258",
     "t": "보석 쇼핑",
-    "lv": "LV3"
+    "lv": "LV3",
+    "sol": "https://tech.kakao.com/posts/395"
    },
    {
     "s": "P",
@@ -779,13 +798,15 @@
     "s": "P",
     "id": "92344",
     "t": "파괴되지 않은 건물",
-    "lv": "LV3"
+    "lv": "LV3",
+    "sol": "https://tech.kakao.com/posts/488"
    },
    {
     "s": "P",
     "id": "72414",
     "t": "광고 삽입",
-    "lv": "LV3"
+    "lv": "LV3",
+    "sol": "https://tech.kakao.com/posts/420"
    }
   ],
   "pit": [
@@ -867,7 +888,8 @@
     "s": "P",
     "id": "118668",
     "t": "코딩 테스트 공부",
-    "lv": "LV3"
+    "lv": "LV3",
+    "sol": "https://tech.kakao.com/posts/530"
    },
    {
     "s": "P",
@@ -945,7 +967,8 @@
     "s": "P",
     "id": "72413",
     "t": "합승 택시 요금",
-    "lv": "LV3"
+    "lv": "LV3",
+    "sol": "https://tech.kakao.com/posts/420"
    },
    {
     "s": "P",
@@ -965,19 +988,22 @@
     "s": "P",
     "id": "118669",
     "t": "등산코스 정하기",
-    "lv": "LV3"
+    "lv": "LV3",
+    "sol": "https://tech.kakao.com/posts/530"
    },
    {
     "s": "P",
     "id": "42892",
     "t": "길 찾기 게임",
-    "lv": "LV3"
+    "lv": "LV3",
+    "sol": "https://tech.kakao.com/posts/355"
    },
    {
     "s": "P",
     "id": "64063",
     "t": "호텔 방 배정",
-    "lv": "LV4"
+    "lv": "LV4",
+    "sol": "https://tech.kakao.com/posts/381"
    }
   ],
   "pit": [
@@ -1007,61 +1033,50 @@
     "s": "P",
     "id": "60057",
     "t": "문자열 압축",
-    "lv": "LV2"
+    "lv": "LV2",
+    "sol": "https://tech.kakao.com/posts/367"
    },
    {
     "s": "P",
     "id": "60058",
     "t": "괄호 변환",
-    "lv": "LV2"
+    "lv": "LV2",
+    "sol": "https://tech.kakao.com/posts/367"
    },
    {
     "s": "P",
     "id": "17677",
     "t": "[1차] 뉴스 클러스터링",
-    "lv": "LV2"
+    "lv": "LV2",
+    "sol": "https://tech.kakao.com/posts/344"
    },
    {
     "s": "P",
     "id": "17680",
     "t": "[1차] 캐시",
-    "lv": "LV2"
+    "lv": "LV2",
+    "sol": "https://tech.kakao.com/posts/344"
    },
    {
     "s": "P",
     "id": "92341",
     "t": "주차 요금 계산",
-    "lv": "LV2"
-   },
-   {
-    "s": "P",
-    "id": "92335",
-    "t": "k진수에서 소수 개수 구하기",
-    "lv": "LV2"
+    "lv": "LV2",
+    "sol": "https://tech.kakao.com/posts/488"
    },
    {
     "s": "P",
     "id": "72411",
     "t": "메뉴 리뉴얼",
-    "lv": "LV2"
-   },
-   {
-    "s": "P",
-    "id": "64065",
-    "t": "튜플",
-    "lv": "LV2"
-   },
-   {
-    "s": "P",
-    "id": "150370",
-    "t": "개인정보 수집 유효기간",
-    "lv": "LV1"
+    "lv": "LV2",
+    "sol": "https://tech.kakao.com/posts/420"
    },
    {
     "s": "P",
     "id": "258712",
     "t": "가장 많이 받은 선물",
-    "lv": "LV1"
+    "lv": "LV1",
+    "sol": "https://tech.kakao.com/posts/610"
    }
   ],
   "sql": [
@@ -1111,21 +1126,45 @@
   "more": [
    {
     "s": "P",
+    "id": "92335",
+    "t": "k진수에서 소수 개수 구하기",
+    "lv": "LV2",
+    "sol": "https://tech.kakao.com/posts/488"
+   },
+   {
+    "s": "P",
+    "id": "64065",
+    "t": "튜플",
+    "lv": "LV2",
+    "sol": "https://tech.kakao.com/posts/381"
+   },
+   {
+    "s": "P",
+    "id": "150370",
+    "t": "개인정보 수집 유효기간",
+    "lv": "LV1",
+    "sol": "https://tech.kakao.com/posts/567"
+   },
+   {
+    "s": "P",
     "id": "72412",
     "t": "순위 검색",
-    "lv": "LV2"
+    "lv": "LV2",
+    "sol": "https://tech.kakao.com/posts/420"
    },
    {
     "s": "P",
     "id": "17683",
     "t": "[3차] 방금그곡",
-    "lv": "LV2"
+    "lv": "LV2",
+    "sol": "https://tech.kakao.com/posts/348"
    },
    {
     "s": "P",
     "id": "81303",
     "t": "표 편집",
-    "lv": "LV3"
+    "lv": "LV3",
+    "sol": "https://tech.kakao.com/posts/448"
    }
   ],
   "pit": [
@@ -1168,12 +1207,6 @@
      },
      {
       "s": "C",
-      "id": "medusa-and-warriors",
-      "t": "메두사와 전사들",
-      "lv": "삼성 기출"
-     },
-     {
-      "s": "C",
       "id": "microbial-research",
       "t": "미생물 연구",
       "lv": "삼성 기출"
@@ -1182,6 +1215,20 @@
       "s": "C",
       "id": "mint-choco-milk",
       "t": "민트 초코 우유",
+      "lv": "삼성 기출"
+     }
+    ],
+    [
+     "samsung"
+    ]
+   ],
+   [
+    "도전 · 삼성 (선택)",
+    [
+     {
+      "s": "C",
+      "id": "medusa-and-warriors",
+      "t": "메두사와 전사들",
       "lv": "삼성 기출"
      },
      {
@@ -1193,7 +1240,8 @@
     ],
     [
      "samsung"
-    ]
+    ],
+    "more"
    ],
    [
     "카카오",
@@ -1202,54 +1250,71 @@
       "s": "P",
       "id": "150369",
       "t": "택배 배달과 수거하기",
-      "lv": "LV2"
+      "lv": "LV2",
+      "sol": "https://tech.kakao.com/posts/567"
      },
      {
       "s": "P",
       "id": "150365",
       "t": "미로 탈출 명령어",
-      "lv": "LV3"
-     },
-     {
-      "s": "P",
-      "id": "150367",
-      "t": "표현 가능한 이진트리",
-      "lv": "LV3"
+      "lv": "LV3",
+      "sol": "https://tech.kakao.com/posts/567"
      },
      {
       "s": "P",
       "id": "150366",
       "t": "표 병합",
-      "lv": "LV3"
+      "lv": "LV3",
+      "sol": "https://tech.kakao.com/posts/567"
      },
      {
       "s": "P",
       "id": "258711",
       "t": "도넛과 막대 그래프",
-      "lv": "LV2"
+      "lv": "LV2",
+      "sol": "https://tech.kakao.com/posts/610"
      },
      {
       "s": "P",
       "id": "258709",
       "t": "주사위 고르기",
-      "lv": "LV3"
-     },
-     {
-      "s": "P",
-      "id": "258705",
-      "t": "산 모양 타일링",
-      "lv": "LV3"
-     },
-     {
-      "s": "P",
-      "id": "258707",
-      "t": "n + 1 카드게임",
-      "lv": "LV3"
+      "lv": "LV3",
+      "sol": "https://tech.kakao.com/posts/610"
      }
     ],
     [
      "kakao"
     ]
+   ],
+   [
+    "도전 · 카카오 (선택)",
+    [
+     {
+      "s": "P",
+      "id": "150367",
+      "t": "표현 가능한 이진트리",
+      "lv": "LV3",
+      "sol": "https://tech.kakao.com/posts/567"
+     },
+     {
+      "s": "P",
+      "id": "258705",
+      "t": "산 모양 타일링",
+      "lv": "LV3",
+      "sol": "https://tech.kakao.com/posts/610"
+     },
+     {
+      "s": "P",
+      "id": "258707",
+      "t": "n + 1 카드게임",
+      "lv": "LV3",
+      "sol": "https://tech.kakao.com/posts/610"
+     }
+    ],
+    [
+     "kakao"
+    ],
+    "more"
    ],
    [
     "현대차그룹",
@@ -1304,43 +1369,50 @@
       "s": "P",
       "id": "468371",
       "t": "노란불 신호등",
-      "lv": "LV1"
+      "lv": "LV1",
+      "sol": "https://tech.kakao.com/posts/813"
      },
      {
       "s": "P",
       "id": "468370",
       "t": "중요한 단어를 스포 방지",
-      "lv": "LV1"
+      "lv": "LV1",
+      "sol": "https://tech.kakao.com/posts/813"
      },
      {
       "s": "P",
       "id": "468373",
       "t": "바이러스 파이프",
-      "lv": "LV2"
+      "lv": "LV2",
+      "sol": "https://tech.kakao.com/posts/813"
      },
      {
       "s": "P",
       "id": "468372",
       "t": "리프 노드 수 최대화",
-      "lv": "LV2"
+      "lv": "LV2",
+      "sol": "https://tech.kakao.com/posts/813"
      },
      {
       "s": "P",
       "id": "468375",
       "t": "발전소 회로 복구",
-      "lv": "LV3"
+      "lv": "LV3",
+      "sol": "https://tech.kakao.com/posts/813"
      },
      {
       "s": "P",
       "id": "468376",
       "t": "최고 속도",
-      "lv": "LV3"
+      "lv": "LV3",
+      "sol": "https://tech.kakao.com/posts/813"
      },
      {
       "s": "P",
       "id": "468374",
       "t": "카카오 앱 정리하기",
-      "lv": "LV3"
+      "lv": "LV3",
+      "sol": "https://tech.kakao.com/posts/813"
      }
     ],
     "co": [
@@ -1458,25 +1530,29 @@
       "s": "P",
       "id": "118667",
       "t": "두 큐 합 같게 만들기",
-      "lv": "LV2"
+      "lv": "LV2",
+      "sol": "https://tech.kakao.com/posts/530"
      },
      {
       "s": "P",
       "id": "67257",
       "t": "수식 최대화",
-      "lv": "LV2"
+      "lv": "LV2",
+      "sol": "https://tech.kakao.com/posts/395"
      },
      {
       "s": "P",
       "id": "42890",
       "t": "후보키",
-      "lv": "LV2"
+      "lv": "LV2",
+      "sol": "https://tech.kakao.com/posts/355"
      },
      {
       "s": "P",
       "id": "17678",
       "t": "[1차] 셔틀버스",
-      "lv": "LV3"
+      "lv": "LV3",
+      "sol": "https://tech.kakao.com/posts/344"
      }
     ],
     [
@@ -1503,31 +1579,36 @@
       "s": "P",
       "id": "468379",
       "t": "선인장 숨기기",
-      "lv": "LV2"
+      "lv": "LV2",
+      "sol": "https://tech.kakao.com/posts/814"
      },
      {
       "s": "P",
       "id": "468377",
       "t": "힌트 스테이지",
-      "lv": "LV2"
+      "lv": "LV2",
+      "sol": "https://tech.kakao.com/posts/814"
      },
      {
       "s": "P",
       "id": "468381",
       "t": "기차 선로",
-      "lv": "LV3"
+      "lv": "LV3",
+      "sol": "https://tech.kakao.com/posts/814"
      },
      {
       "s": "P",
       "id": "468380",
       "t": "제곱 개수 배열",
-      "lv": "LV3"
+      "lv": "LV3",
+      "sol": "https://tech.kakao.com/posts/814"
      },
      {
       "s": "P",
       "id": "468378",
       "t": "보물 찾기",
-      "lv": "LV3"
+      "lv": "LV3",
+      "sol": "https://tech.kakao.com/posts/814"
      }
     ],
     "co": [

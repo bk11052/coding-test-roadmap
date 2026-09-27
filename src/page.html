@@ -108,6 +108,7 @@ textarea{width:100%;background:var(--input);border:1px solid var(--input-line);b
 .row .name a:hover{color:var(--link)}
 .row.is-done .name a{color:var(--muted)}
 .row .src{font-size:12px;color:var(--muted)}
+.row .sol{font-size:12px}
 .row .right{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--muted);white-space:nowrap}
 .row .lv{font-family:inherit;font-size:11.5px}
 .st-solved{color:var(--pass)} .st-hint{color:var(--warn)} .st-fail{color:var(--fail)}
@@ -343,8 +344,8 @@ ol.plain{padding-left:1.3em}
             <tr><td>그 이상</td><td>O(N)</td><td class="small muted">투포인터, 누적합</td></tr></tbody></table>
             <p class="small muted">1초에 약 10⁸번 연산 기준입니다. Python은 5~10배 느리게 잡으세요.</p></div>
         </div>
-        <div class="block"><h2>사이트별 입출력 형식</h2><div class="files" id="ioFiles"></div></div>
-        <div class="block"><div class="block-h"><h2>외워 둘 코드</h2><span class="small muted">Python · 16주차에 보지 않고 쓸 수 있는지 확인합니다</span></div><div class="files" id="tpls"></div></div>
+        <div class="block"><div class="block-h"><h2>사이트별 입출력 형식</h2><span class="seg langsw" role="radiogroup" aria-label="코드 언어"><label><input type="radio" name="lang1" value="python" checked>Python</label><label><input type="radio" name="lang1" value="java">Java</label></span></div><div class="files" id="ioFiles"></div></div>
+        <div class="block"><div class="block-h"><h2>외워 둘 코드</h2><span class="seg langsw" role="radiogroup" aria-label="코드 언어"><label><input type="radio" name="lang2" value="python" checked>Python</label><label><input type="radio" name="lang2" value="java">Java</label></span></div><p class="small muted">16주차에 보지 않고 쓸 수 있는지 확인합니다.</p><div class="files" id="tpls"></div></div>
         <div class="block"><h2>Python에서 자주 틀리는 것</h2><div class="scroll"><table class="tbl cheat" id="cheatTable"></table></div></div>
         <div class="block"><h2>흔한 오해</h2><ul class="plain" id="mythList"></ul></div>
       </section>
@@ -353,7 +354,7 @@ ol.plain{padding-left:1.3em}
       <section class="view" id="v-companies" aria-labelledby="h-co" hidden>
         <div class="head">
           <h1 id="h-co">기업별 정보</h1>
-          <p class="lead">최근 응시 후기와 기업 공개 자료를 모았습니다. 형식은 해마다 바뀌니 지원 전에 채용 공고를 꼭 확인하세요.</p>
+          <p class="lead">최근 응시 후기와 기업 공개 자료를 모았습니다. 형식은 해마다 바뀌니 지원 전에 채용 공고를 꼭 확인하세요. 바뀐 내용을 알고 있다면 <a href="https://github.com/bk11052/coding-test-roadmap/issues/new?template=company-report.yml" target="_blank" rel="noopener">후기를 제보</a>해 주세요.</p>
         </div>
         <div class="block"><h2>시험 형식</h2><div class="scroll"><table class="tbl" id="coTable"></table></div></div>
         <div class="block"><h2>자주 나오는 유형</h2><p class="small muted">●●● 매우 자주 · ●● 자주 · ● 가끔 · 빈칸은 거의 안 나옴</p><div class="scroll"><table class="tbl" id="typeTable"></table></div></div>

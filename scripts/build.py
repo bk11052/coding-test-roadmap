@@ -62,7 +62,10 @@ def fmt_h(m):
 
 
 def problem(x, sql=False):
-    return {"title": x["t"], "platform": SRC[x["s"]], "level": x["lv"], "est_minutes": est(x, sql), "url": url(x)}
+    p = {"title": x["t"], "platform": SRC[x["s"]], "level": x["lv"], "est_minutes": est(x, sql), "url": url(x)}
+    if x.get("sol"):
+        p["solution_url"] = x["sol"]
+    return p
 
 
 weeks = []
@@ -72,8 +75,10 @@ for w in weeks_raw:
         sets.append({"name": "필수", "kind": "required", "problems": [problem(x) for x in w["must"]]})
     if w.get("sql"):
         sets.append({"name": "SQL", "kind": "required", "companies": [CO["pg"]], "problems": [problem(x, True) for x in w["sql"]]})
-    for name, items, cos in w.get("groups", []):
-        sets.append({"name": name, "kind": "required", "companies": [CO[c] for c in cos], "problems": [problem(x) for x in items]})
+    for g in w.get("groups", []):
+        name, items, cos = g[0], g[1], g[2]
+        kind = "optional" if len(g) > 3 and g[3] == "more" else "required"
+        sets.append({"name": name, "kind": kind, "companies": [CO[c] for c in cos], "problems": [problem(x) for x in items]})
     for m in ([w["mock"]] if "mock" in w else []) + w.get("mocks", []):
         sets.append({"name": m["t"], "kind": "mock_exam", "time_limit_minutes": m["min"], "companies": [CO[c] for c in m["co"]], "problems": [problem(x) for x in m["items"]]})
     if w.get("more"):
@@ -113,7 +118,8 @@ A("## 목차\n")
 for t_, a in [("사용법", "사용법"), ("AI에게 맡기기", "ai에게-맡기기"), ("16주 계획", "16주-계획"), ("주차별 문제", "주차별-문제"),
               ("기업별 시험 형식", "기업별-시험-형식"), ("자주 나오는 유형", "자주-나오는-유형"), ("문제 보고 방법 고르기", "문제-보고-방법-고르기"),
               ("사이트별 입출력 형식", "사이트별-입출력-형식"), ("Python에서 자주 틀리는 것", "python에서-자주-틀리는-것"),
-              ("외워 둘 코드", "외워-둘-코드"), ("공부 도구", "공부-도구"), ("흔한 오해", "흔한-오해"), ("출처", "출처")]:
+              ("외워 둘 코드", "외워-둘-코드"), ("공부 도구", "공부-도구"), ("흔한 오해", "흔한-오해"), ("출처", "출처"),
+              ("기여", "기여"), ("라이선스", "라이선스")]:
     A(f"- [{t_}](#{a})")
 A("\n## 사용법\n")
 A("1. 한 주에 한 가지 유형을 공부합니다. 강의를 보고, 필수 문제를 모두 풀고, 통과 기준을 확인한 뒤 다음 주로 넘어갑니다.")
@@ -171,17 +177,19 @@ for w in weeks:
             extra.append(", ".join(s["companies"]))
         name = {"도전": "선택"}.get(s["name"], s["name"])
         A(f"**{name}**" + (f" ({' · '.join(extra)})" if extra else "") + "\n")
-        A("| 문제 | 사이트 | 난이도 | 예상 |\n|---|---|:--:|:--:|")
+        has_sol = any("solution_url" in x for x in s["problems"])
+        A("| 문제 | 사이트 | 난이도 | 예상 |" + (" 해설 |" if has_sol else "") + "\n|---|---|:--:|:--:|" + (":--:|" if has_sol else ""))
         for x in s["problems"]:
-            A(f"| [{x['title']}]({x['url']}) | {x['platform']} | {x['level']} | {fmt_h(x['est_minutes'])} |")
+            sol = (f" [카카오 해설]({x['solution_url']}) |" if "solution_url" in x else " |") if has_sol else ""
+            A(f"| [{x['title']}]({x['url']}) | {x['platform']} | {x['level']} | {fmt_h(x['est_minutes'])} |{sol}")
         A("")
     A("</details>\n")
 A("## 기업별 시험 형식\n")
 A("최근 응시 후기와 기업 공개 자료를 모았습니다. 형식은 해마다 바뀌니 지원 전에 채용 공고를 확인하세요.\n")
-A("| 기업 | 시험 환경 | 구성 | 출제 경향 | 참고 |\n|---|---|---|---|---|")
+A("| 기업 | 시험 환경 | 구성 | 출제 경향 | 참고 | 근거 시점 |\n|---|---|---|---|---|---|")
 for c in static["company_formats"]:
     conf = "" if c["confidence"] == "여러 출처 일치" else f" ({c['confidence']})"
-    A(f"| {c['company']} | {c['platform']} | {c['format']} | {c['content']} | {c['notes']}{conf} |")
+    A(f"| {c['company']} | {c['platform']} | {c['format']} | {c['content']} | {c['notes']}{conf} | {c.get('basis', '—')} |")
 A("\n## 자주 나오는 유형\n")
 A("●●● 매우 자주 · ●● 자주 · ● 가끔 · 빈칸은 거의 안 나옴\n")
 dot = {"매우 자주": "●●●", "자주": "●●", "가끔": "●", "드묾": "", "없음": ""}
@@ -196,14 +204,16 @@ for sgn, m, n in static["signals"]:
 A("\n## 사이트별 입출력 형식\n")
 for f in static["io_formats"]:
     A(f"**{f['site']}** — {f['how']}\n\n```python\n{f['code']}\n```\n")
+    if f.get("java"):
+        A(f"<details>\n<summary>Java{(' — ' + f['how_java']) if f.get('how_java') else ''}</summary>\n\n```java\n{f['java']}\n```\n\n</details>\n")
 A("## Python에서 자주 틀리는 것\n")
 A("| 상황 | 코드 | 설명 |\n|---|---|---|")
 for a, c, n in static["cheats"]:
     A(f"| {a} | `{c}` | {n} |")
 A("\n## 외워 둘 코드\n")
-A("Python 기준입니다. 16주차에 보지 않고 쓸 수 있는지 확인합니다.\n")
+A("Python과 Java로 적었습니다. 16주차에 보지 않고 쓸 수 있는지 확인합니다.\n")
 for x in static["templates_python"]:
-    A(f"<details>\n<summary>{x['name'].split('. ', 1)[-1]}</summary>\n\n```python\n{x['code']}\n```\n\n</details>\n")
+    A(f"<details>\n<summary>{x['name'].split('. ', 1)[-1]}</summary>\n\n```python\n{x['code']}\n```\n" + (f"\n```java\n{x['java']}\n```\n" if x.get("java") else "") + "\n</details>\n")
 A("## 공부 도구\n")
 A("| 이름 | 쓰는 곳 |\n|---|---|")
 for x in static["tools"]:
@@ -214,7 +224,13 @@ for x in static["myths"]:
 A("\n## 출처\n")
 for s in static["sources"]:
     A(f"- [{s['title']}]({s['url']})")
-A(f"\n---\n\n문제 저작권은 각 사이트에 있으며, 이 저장소는 링크만 모아 둡니다. 마지막 수정 {UPDATED}.")
+A("\n## 기여\n")
+A("- 기업 시험 형식이 바뀌었다면 [후기 제보](https://github.com/bk11052/coding-test-roadmap/issues/new?template=company-report.yml)로 알려 주세요.")
+A("- 열리지 않는 링크는 [링크 오류 신고](https://github.com/bk11052/coding-test-roadmap/issues/new?template=broken-link.yml)로 알려 주세요. 매주 자동 점검도 돌고 있습니다.")
+A("- 내용은 `data/`, 대시보드는 `src/`를 고친 뒤 `python3 scripts/build.py`를 실행하면 README, curriculum.json, llms.txt, index.html이 함께 만들어집니다.")
+A("\n## 라이선스\n")
+A("코드(`src/`, `scripts/`, 외워 둘 코드)는 [MIT](LICENSE), 글과 데이터는 [CC BY 4.0](LICENSE-CONTENT)입니다. 출처를 밝히면 자유롭게 쓰고 고칠 수 있습니다. 링크한 문제의 저작권은 각 사이트에 있습니다.")
+A(f"\n---\n\n마지막 수정 {UPDATED}.")
 (ROOT / "README.md").write_text("\n".join(L) + "\n")
 
 # ---------- dashboard ----------
@@ -229,6 +245,12 @@ index = ("<!doctype html>\n<html lang=\"ko\">\n<head>\n<meta charset=\"utf-8\">\
          "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n"
          "<meta name=\"description\" content=\"국내 대기업 신입 개발자 코딩테스트를 16주 동안 준비하는 계획과 기록 도구\">\n"
          "<link rel=\"alternate\" type=\"text/markdown\" href=\"README.md\">\n"
+         "<link rel=\"icon\" href=\"favicon.svg\" type=\"image/svg+xml\">\n"
+         f"<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:url\" content=\"{SITE}/\">\n"
+         "<meta property=\"og:title\" content=\"코딩테스트 로드맵\">\n"
+         "<meta property=\"og:description\" content=\"국내 대기업 신입 개발자 코딩테스트를 16주 동안 준비하는 계획과 기록 도구\">\n"
+         f"<meta property=\"og:image\" content=\"{SITE}/og.png\">\n<meta property=\"og:image:width\" content=\"1200\">\n<meta property=\"og:image:height\" content=\"630\">\n"
+         "<meta name=\"twitter:card\" content=\"summary_large_image\">\n"
          + fragment[:split] + "</head>\n<body>\n" + fragment[split:] + "\n</body>\n</html>\n")
 (ROOT / "index.html").write_text(index)
 

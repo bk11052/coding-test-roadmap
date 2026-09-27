@@ -21,6 +21,8 @@
 - [공부 도구](#공부-도구)
 - [흔한 오해](#흔한-오해)
 - [출처](#출처)
+- [기여](#기여)
+- [라이선스](#라이선스)
 
 ## 사용법
 
@@ -62,8 +64,8 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 | [09](#week-9) | 그리디 · 이분탐색 · 투포인터 · 누적합 | 10 | 3 | 6시간 5분 |
 | [10](#week-10) | 다이나믹 프로그래밍 | 8 | 3 | 5시간 20분 |
 | [11](#week-11) | 그래프 심화 · 우선순위 큐 · 다익스트라 · Union-Find | 8 | 3 | 6시간 |
-| [12](#week-12) | 카카오형 문자열 · 파싱 + SQL | 17 | 3 | 7시간 20분 |
-| [13](#week-13) | 지원 회사 기출 집중 | 18 | — | 25시간 |
+| [12](#week-12) | 카카오형 문자열 · 파싱 + SQL | 14 | 6 | 6시간 5분 |
+| [13](#week-13) | 지원 회사 기출 집중 | 13 | 5 | 17시간 30분 |
 | [14](#week-14) | 실전 모의고사 1 | 13 | — | 11시간 5분 |
 | [15](#week-15) | 약점 보완 · 인증 시험 응시 | 6 | — | 7시간 20분 |
 | [16](#week-16) | 실전 모의고사 2 · 템플릿 점검 | 11 | — | 10시간 35분 |
@@ -109,10 +111,10 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 **선택**
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [[1차] 다트 게임](https://school.programmers.co.kr/learn/courses/30/lessons/17682) | 프로그래머스 | LV1 | 15분 |
-| [신규 아이디 추천](https://school.programmers.co.kr/learn/courses/30/lessons/72410) | 프로그래머스 | LV1 | 15분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [[1차] 다트 게임](https://school.programmers.co.kr/learn/courses/30/lessons/17682) | 프로그래머스 | LV1 | 15분 | [카카오 해설](https://tech.kakao.com/posts/344) |
+| [신규 아이디 추천](https://school.programmers.co.kr/learn/courses/30/lessons/72410) | 프로그래머스 | LV1 | 15분 | [카카오 해설](https://tech.kakao.com/posts/420) |
 
 </details>
 
@@ -141,15 +143,15 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 **필수**
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [같은 숫자는 싫어](https://school.programmers.co.kr/learn/courses/30/lessons/12906) | 프로그래머스 | LV1 | 15분 |
-| [올바른 괄호](https://school.programmers.co.kr/learn/courses/30/lessons/12909) | 프로그래머스 | LV2 | 30분 |
-| [기능개발](https://school.programmers.co.kr/learn/courses/30/lessons/42586) | 프로그래머스 | LV2 | 30분 |
-| [프로세스](https://school.programmers.co.kr/learn/courses/30/lessons/42587) | 프로그래머스 | LV2 | 30분 |
-| [다리를 지나는 트럭](https://school.programmers.co.kr/learn/courses/30/lessons/42583) | 프로그래머스 | LV2 | 30분 |
-| [괄호 회전하기](https://school.programmers.co.kr/learn/courses/30/lessons/76502) | 프로그래머스 | LV2 | 30분 |
-| [크레인 인형뽑기 게임](https://school.programmers.co.kr/learn/courses/30/lessons/64061) | 프로그래머스 | LV1 | 15분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [같은 숫자는 싫어](https://school.programmers.co.kr/learn/courses/30/lessons/12906) | 프로그래머스 | LV1 | 15분 | |
+| [올바른 괄호](https://school.programmers.co.kr/learn/courses/30/lessons/12909) | 프로그래머스 | LV2 | 30분 | |
+| [기능개발](https://school.programmers.co.kr/learn/courses/30/lessons/42586) | 프로그래머스 | LV2 | 30분 | |
+| [프로세스](https://school.programmers.co.kr/learn/courses/30/lessons/42587) | 프로그래머스 | LV2 | 30분 | |
+| [다리를 지나는 트럭](https://school.programmers.co.kr/learn/courses/30/lessons/42583) | 프로그래머스 | LV2 | 30분 | |
+| [괄호 회전하기](https://school.programmers.co.kr/learn/courses/30/lessons/76502) | 프로그래머스 | LV2 | 30분 | |
+| [크레인 인형뽑기 게임](https://school.programmers.co.kr/learn/courses/30/lessons/64061) | 프로그래머스 | LV1 | 15분 | [카카오 해설](https://tech.kakao.com/posts/381) |
 
 **선택**
 
@@ -184,25 +186,25 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 **필수**
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [완주하지 못한 선수](https://school.programmers.co.kr/learn/courses/30/lessons/42576) | 프로그래머스 | LV1 | 15분 |
-| [폰켓몬](https://school.programmers.co.kr/learn/courses/30/lessons/1845) | 프로그래머스 | LV1 | 15분 |
-| [전화번호 목록](https://school.programmers.co.kr/learn/courses/30/lessons/42577) | 프로그래머스 | LV2 | 30분 |
-| [의상](https://school.programmers.co.kr/learn/courses/30/lessons/42578) | 프로그래머스 | LV2 | 30분 |
-| [K번째수](https://school.programmers.co.kr/learn/courses/30/lessons/42748) | 프로그래머스 | LV1 | 15분 |
-| [가장 큰 수](https://school.programmers.co.kr/learn/courses/30/lessons/42746) | 프로그래머스 | LV2 | 30분 |
-| [H-Index](https://school.programmers.co.kr/learn/courses/30/lessons/42747) | 프로그래머스 | LV2 | 30분 |
-| [신고 결과 받기](https://school.programmers.co.kr/learn/courses/30/lessons/92334) | 프로그래머스 | LV1 | 15분 |
-| [오픈채팅방](https://school.programmers.co.kr/learn/courses/30/lessons/42888) | 프로그래머스 | LV2 | 30분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [완주하지 못한 선수](https://school.programmers.co.kr/learn/courses/30/lessons/42576) | 프로그래머스 | LV1 | 15분 | |
+| [폰켓몬](https://school.programmers.co.kr/learn/courses/30/lessons/1845) | 프로그래머스 | LV1 | 15분 | |
+| [전화번호 목록](https://school.programmers.co.kr/learn/courses/30/lessons/42577) | 프로그래머스 | LV2 | 30분 | |
+| [의상](https://school.programmers.co.kr/learn/courses/30/lessons/42578) | 프로그래머스 | LV2 | 30분 | |
+| [K번째수](https://school.programmers.co.kr/learn/courses/30/lessons/42748) | 프로그래머스 | LV1 | 15분 | |
+| [가장 큰 수](https://school.programmers.co.kr/learn/courses/30/lessons/42746) | 프로그래머스 | LV2 | 30분 | |
+| [H-Index](https://school.programmers.co.kr/learn/courses/30/lessons/42747) | 프로그래머스 | LV2 | 30분 | |
+| [신고 결과 받기](https://school.programmers.co.kr/learn/courses/30/lessons/92334) | 프로그래머스 | LV1 | 15분 | [카카오 해설](https://tech.kakao.com/posts/488) |
+| [오픈채팅방](https://school.programmers.co.kr/learn/courses/30/lessons/42888) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/355) |
 
 **선택**
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [베스트앨범](https://school.programmers.co.kr/learn/courses/30/lessons/42579) | 프로그래머스 | LV3 | 50분 |
-| [달리기 경주](https://school.programmers.co.kr/learn/courses/30/lessons/178871) | 프로그래머스 | LV1 | 15분 |
-| [[3차] 파일명 정렬](https://school.programmers.co.kr/learn/courses/30/lessons/17686) | 프로그래머스 | LV2 | 30분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [베스트앨범](https://school.programmers.co.kr/learn/courses/30/lessons/42579) | 프로그래머스 | LV3 | 50분 | |
+| [달리기 경주](https://school.programmers.co.kr/learn/courses/30/lessons/178871) | 프로그래머스 | LV1 | 15분 | |
+| [[3차] 파일명 정렬](https://school.programmers.co.kr/learn/courses/30/lessons/17686) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/348) |
 
 </details>
 
@@ -242,11 +244,11 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 **선택**
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [양궁대회](https://school.programmers.co.kr/learn/courses/30/lessons/92342) | 프로그래머스 | LV2 | 30분 |
-| [이모티콘 할인행사](https://school.programmers.co.kr/learn/courses/30/lessons/150368) | 프로그래머스 | LV2 | 30분 |
-| [불량 사용자](https://school.programmers.co.kr/learn/courses/30/lessons/64064) | 프로그래머스 | LV3 | 50분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [양궁대회](https://school.programmers.co.kr/learn/courses/30/lessons/92342) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/488) |
+| [이모티콘 할인행사](https://school.programmers.co.kr/learn/courses/30/lessons/150368) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/567) |
+| [불량 사용자](https://school.programmers.co.kr/learn/courses/30/lessons/64064) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/381) |
 
 </details>
 
@@ -285,10 +287,10 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 **선택**
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [거리두기 확인하기](https://school.programmers.co.kr/learn/courses/30/lessons/81302) | 프로그래머스 | LV2 | 30분 |
-| [외벽 점검](https://school.programmers.co.kr/learn/courses/30/lessons/60062) | 프로그래머스 | LV3 | 50분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [거리두기 확인하기](https://school.programmers.co.kr/learn/courses/30/lessons/81302) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/448) |
+| [외벽 점검](https://school.programmers.co.kr/learn/courses/30/lessons/60062) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/367) |
 
 </details>
 
@@ -314,21 +316,21 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 **필수**
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [여행경로](https://school.programmers.co.kr/learn/courses/30/lessons/43164) | 프로그래머스 | LV3 | 50분 |
-| [아이템 줍기](https://school.programmers.co.kr/learn/courses/30/lessons/87694) | 프로그래머스 | LV3 | 50분 |
-| [경주로 건설](https://school.programmers.co.kr/learn/courses/30/lessons/67259) | 프로그래머스 | LV3 | 50분 |
-| [숫자 변환하기](https://school.programmers.co.kr/learn/courses/30/lessons/154538) | 프로그래머스 | LV2 | 30분 |
-| [부대복귀](https://school.programmers.co.kr/learn/courses/30/lessons/132266) | 프로그래머스 | LV3 | 50분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [여행경로](https://school.programmers.co.kr/learn/courses/30/lessons/43164) | 프로그래머스 | LV3 | 50분 | |
+| [아이템 줍기](https://school.programmers.co.kr/learn/courses/30/lessons/87694) | 프로그래머스 | LV3 | 50분 | |
+| [경주로 건설](https://school.programmers.co.kr/learn/courses/30/lessons/67259) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/395) |
+| [숫자 변환하기](https://school.programmers.co.kr/learn/courses/30/lessons/154538) | 프로그래머스 | LV2 | 30분 | |
+| [부대복귀](https://school.programmers.co.kr/learn/courses/30/lessons/132266) | 프로그래머스 | LV3 | 50분 | |
 
 **선택**
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [퍼즐 조각 채우기](https://school.programmers.co.kr/learn/courses/30/lessons/84021) | 프로그래머스 | LV3 | 50분 |
-| [카드 짝 맞추기](https://school.programmers.co.kr/learn/courses/30/lessons/72415) | 프로그래머스 | LV3 | 50분 |
-| [블록 이동하기](https://school.programmers.co.kr/learn/courses/30/lessons/60063) | 프로그래머스 | LV3 | 50분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [퍼즐 조각 채우기](https://school.programmers.co.kr/learn/courses/30/lessons/84021) | 프로그래머스 | LV3 | 50분 | |
+| [카드 짝 맞추기](https://school.programmers.co.kr/learn/courses/30/lessons/72415) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/420) |
+| [블록 이동하기](https://school.programmers.co.kr/learn/courses/30/lessons/60063) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/367) |
 
 </details>
 
@@ -354,22 +356,22 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 **필수**
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [삼각 달팽이](https://school.programmers.co.kr/learn/courses/30/lessons/68645) | 프로그래머스 | LV2 | 30분 |
-| [방문 길이](https://school.programmers.co.kr/learn/courses/30/lessons/49994) | 프로그래머스 | LV2 | 30분 |
-| [[1차] 프렌즈4블록](https://school.programmers.co.kr/learn/courses/30/lessons/17679) | 프로그래머스 | LV2 | 30분 |
-| [자물쇠와 열쇠](https://school.programmers.co.kr/learn/courses/30/lessons/60059) | 프로그래머스 | LV3 | 50분 |
-| [회전하는 빙하](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/rotating-glacier/description) | 코드트리 삼성 기출 | 삼성 기출 | 2시간 30분 |
-| [바이러스 실험](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/virus-experiment/description) | 코드트리 삼성 기출 | 삼성 기출 | 2시간 30분 |
-| [2048 게임](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/2048-game/description) | 코드트리 삼성 기출 | 삼성 기출 | 2시간 30분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [삼각 달팽이](https://school.programmers.co.kr/learn/courses/30/lessons/68645) | 프로그래머스 | LV2 | 30분 | |
+| [방문 길이](https://school.programmers.co.kr/learn/courses/30/lessons/49994) | 프로그래머스 | LV2 | 30분 | |
+| [[1차] 프렌즈4블록](https://school.programmers.co.kr/learn/courses/30/lessons/17679) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/344) |
+| [자물쇠와 열쇠](https://school.programmers.co.kr/learn/courses/30/lessons/60059) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/367) |
+| [회전하는 빙하](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/rotating-glacier/description) | 코드트리 삼성 기출 | 삼성 기출 | 2시간 30분 | |
+| [바이러스 실험](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/virus-experiment/description) | 코드트리 삼성 기출 | 삼성 기출 | 2시간 30분 | |
+| [2048 게임](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/2048-game/description) | 코드트리 삼성 기출 | 삼성 기출 | 2시간 30분 | |
 
 **선택**
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [기둥과 보 설치](https://school.programmers.co.kr/learn/courses/30/lessons/60061) | 프로그래머스 | LV3 | 50분 |
-| [n^2 배열 자르기](https://school.programmers.co.kr/learn/courses/30/lessons/87390) | 프로그래머스 | LV2 | 30분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [기둥과 보 설치](https://school.programmers.co.kr/learn/courses/30/lessons/60061) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/367) |
+| [n^2 배열 자르기](https://school.programmers.co.kr/learn/courses/30/lessons/87390) | 프로그래머스 | LV2 | 30분 | |
 
 </details>
 
@@ -436,26 +438,26 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 **필수**
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [체육복](https://school.programmers.co.kr/learn/courses/30/lessons/42862) | 프로그래머스 | LV1 | 15분 |
-| [구명보트](https://school.programmers.co.kr/learn/courses/30/lessons/42885) | 프로그래머스 | LV2 | 30분 |
-| [큰 수 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/42883) | 프로그래머스 | LV2 | 30분 |
-| [단속카메라](https://school.programmers.co.kr/learn/courses/30/lessons/42884) | 프로그래머스 | LV3 | 50분 |
-| [요격 시스템](https://school.programmers.co.kr/learn/courses/30/lessons/181188) | 프로그래머스 | LV2 | 30분 |
-| [입국심사](https://school.programmers.co.kr/learn/courses/30/lessons/43238) | 프로그래머스 | LV3 | 50분 |
-| [징검다리 건너기](https://school.programmers.co.kr/learn/courses/30/lessons/64062) | 프로그래머스 | LV3 | 50분 |
-| [연속된 부분 수열의 합](https://school.programmers.co.kr/learn/courses/30/lessons/178870) | 프로그래머스 | LV2 | 30분 |
-| [보석 쇼핑](https://school.programmers.co.kr/learn/courses/30/lessons/67258) | 프로그래머스 | LV3 | 50분 |
-| [연속 부분 수열 합의 개수](https://school.programmers.co.kr/learn/courses/30/lessons/131701) | 프로그래머스 | LV2 | 30분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [체육복](https://school.programmers.co.kr/learn/courses/30/lessons/42862) | 프로그래머스 | LV1 | 15분 | |
+| [구명보트](https://school.programmers.co.kr/learn/courses/30/lessons/42885) | 프로그래머스 | LV2 | 30분 | |
+| [큰 수 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/42883) | 프로그래머스 | LV2 | 30분 | |
+| [단속카메라](https://school.programmers.co.kr/learn/courses/30/lessons/42884) | 프로그래머스 | LV3 | 50분 | |
+| [요격 시스템](https://school.programmers.co.kr/learn/courses/30/lessons/181188) | 프로그래머스 | LV2 | 30분 | |
+| [입국심사](https://school.programmers.co.kr/learn/courses/30/lessons/43238) | 프로그래머스 | LV3 | 50분 | |
+| [징검다리 건너기](https://school.programmers.co.kr/learn/courses/30/lessons/64062) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/381) |
+| [연속된 부분 수열의 합](https://school.programmers.co.kr/learn/courses/30/lessons/178870) | 프로그래머스 | LV2 | 30분 | |
+| [보석 쇼핑](https://school.programmers.co.kr/learn/courses/30/lessons/67258) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/395) |
+| [연속 부분 수열 합의 개수](https://school.programmers.co.kr/learn/courses/30/lessons/131701) | 프로그래머스 | LV2 | 30분 | |
 
 **선택**
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [징검다리](https://school.programmers.co.kr/learn/courses/30/lessons/43236) | 프로그래머스 | LV4 | 1시간 10분 |
-| [파괴되지 않은 건물](https://school.programmers.co.kr/learn/courses/30/lessons/92344) | 프로그래머스 | LV3 | 50분 |
-| [광고 삽입](https://school.programmers.co.kr/learn/courses/30/lessons/72414) | 프로그래머스 | LV3 | 50분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [징검다리](https://school.programmers.co.kr/learn/courses/30/lessons/43236) | 프로그래머스 | LV4 | 1시간 10분 | |
+| [파괴되지 않은 건물](https://school.programmers.co.kr/learn/courses/30/lessons/92344) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/488) |
+| [광고 삽입](https://school.programmers.co.kr/learn/courses/30/lessons/72414) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/420) |
 
 </details>
 
@@ -493,11 +495,11 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 **선택**
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [도둑질](https://school.programmers.co.kr/learn/courses/30/lessons/42897) | 프로그래머스 | LV4 | 1시간 10분 |
-| [코딩 테스트 공부](https://school.programmers.co.kr/learn/courses/30/lessons/118668) | 프로그래머스 | LV3 | 50분 |
-| [연속 펄스 부분 수열의 합](https://school.programmers.co.kr/learn/courses/30/lessons/161988) | 프로그래머스 | LV3 | 50분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [도둑질](https://school.programmers.co.kr/learn/courses/30/lessons/42897) | 프로그래머스 | LV4 | 1시간 10분 | |
+| [코딩 테스트 공부](https://school.programmers.co.kr/learn/courses/30/lessons/118668) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/530) |
+| [연속 펄스 부분 수열의 합](https://school.programmers.co.kr/learn/courses/30/lessons/161988) | 프로그래머스 | LV3 | 50분 | |
 
 </details>
 
@@ -526,30 +528,30 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 **필수**
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [더 맵게](https://school.programmers.co.kr/learn/courses/30/lessons/42626) | 프로그래머스 | LV2 | 30분 |
-| [이중우선순위큐](https://school.programmers.co.kr/learn/courses/30/lessons/42628) | 프로그래머스 | LV3 | 50분 |
-| [디스크 컨트롤러](https://school.programmers.co.kr/learn/courses/30/lessons/42627) | 프로그래머스 | LV3 | 50분 |
-| [가장 먼 노드](https://school.programmers.co.kr/learn/courses/30/lessons/49189) | 프로그래머스 | LV3 | 50분 |
-| [배달](https://school.programmers.co.kr/learn/courses/30/lessons/12978) | 프로그래머스 | LV2 | 30분 |
-| [합승 택시 요금](https://school.programmers.co.kr/learn/courses/30/lessons/72413) | 프로그래머스 | LV3 | 50분 |
-| [섬 연결하기](https://school.programmers.co.kr/learn/courses/30/lessons/42861) | 프로그래머스 | LV3 | 50분 |
-| [순위](https://school.programmers.co.kr/learn/courses/30/lessons/49191) | 프로그래머스 | LV3 | 50분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [더 맵게](https://school.programmers.co.kr/learn/courses/30/lessons/42626) | 프로그래머스 | LV2 | 30분 | |
+| [이중우선순위큐](https://school.programmers.co.kr/learn/courses/30/lessons/42628) | 프로그래머스 | LV3 | 50분 | |
+| [디스크 컨트롤러](https://school.programmers.co.kr/learn/courses/30/lessons/42627) | 프로그래머스 | LV3 | 50분 | |
+| [가장 먼 노드](https://school.programmers.co.kr/learn/courses/30/lessons/49189) | 프로그래머스 | LV3 | 50분 | |
+| [배달](https://school.programmers.co.kr/learn/courses/30/lessons/12978) | 프로그래머스 | LV2 | 30분 | |
+| [합승 택시 요금](https://school.programmers.co.kr/learn/courses/30/lessons/72413) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/420) |
+| [섬 연결하기](https://school.programmers.co.kr/learn/courses/30/lessons/42861) | 프로그래머스 | LV3 | 50분 | |
+| [순위](https://school.programmers.co.kr/learn/courses/30/lessons/49191) | 프로그래머스 | LV3 | 50분 | |
 
 **선택**
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [등산코스 정하기](https://school.programmers.co.kr/learn/courses/30/lessons/118669) | 프로그래머스 | LV3 | 50분 |
-| [길 찾기 게임](https://school.programmers.co.kr/learn/courses/30/lessons/42892) | 프로그래머스 | LV3 | 50분 |
-| [호텔 방 배정](https://school.programmers.co.kr/learn/courses/30/lessons/64063) | 프로그래머스 | LV4 | 1시간 10분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [등산코스 정하기](https://school.programmers.co.kr/learn/courses/30/lessons/118669) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/530) |
+| [길 찾기 게임](https://school.programmers.co.kr/learn/courses/30/lessons/42892) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/355) |
+| [호텔 방 배정](https://school.programmers.co.kr/learn/courses/30/lessons/64063) | 프로그래머스 | LV4 | 1시간 10분 | [카카오 해설](https://tech.kakao.com/posts/381) |
 
 </details>
 
 <a id="week-12"></a>
 <details>
-<summary><b>12주 · 카카오형 문자열 · 파싱 + SQL</b> — 필수 17문제, 약 7시간 20분</summary>
+<summary><b>12주 · 카카오형 문자열 · 파싱 + SQL</b> — 필수 14문제, 약 6시간 5분</summary>
 
 **개념 강의** — 먼저 보고 아래 문제를 푸세요.
 
@@ -569,18 +571,15 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 **필수**
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [문자열 압축](https://school.programmers.co.kr/learn/courses/30/lessons/60057) | 프로그래머스 | LV2 | 30분 |
-| [괄호 변환](https://school.programmers.co.kr/learn/courses/30/lessons/60058) | 프로그래머스 | LV2 | 30분 |
-| [[1차] 뉴스 클러스터링](https://school.programmers.co.kr/learn/courses/30/lessons/17677) | 프로그래머스 | LV2 | 30분 |
-| [[1차] 캐시](https://school.programmers.co.kr/learn/courses/30/lessons/17680) | 프로그래머스 | LV2 | 30분 |
-| [주차 요금 계산](https://school.programmers.co.kr/learn/courses/30/lessons/92341) | 프로그래머스 | LV2 | 30분 |
-| [k진수에서 소수 개수 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/92335) | 프로그래머스 | LV2 | 30분 |
-| [메뉴 리뉴얼](https://school.programmers.co.kr/learn/courses/30/lessons/72411) | 프로그래머스 | LV2 | 30분 |
-| [튜플](https://school.programmers.co.kr/learn/courses/30/lessons/64065) | 프로그래머스 | LV2 | 30분 |
-| [개인정보 수집 유효기간](https://school.programmers.co.kr/learn/courses/30/lessons/150370) | 프로그래머스 | LV1 | 15분 |
-| [가장 많이 받은 선물](https://school.programmers.co.kr/learn/courses/30/lessons/258712) | 프로그래머스 | LV1 | 15분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [문자열 압축](https://school.programmers.co.kr/learn/courses/30/lessons/60057) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/367) |
+| [괄호 변환](https://school.programmers.co.kr/learn/courses/30/lessons/60058) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/367) |
+| [[1차] 뉴스 클러스터링](https://school.programmers.co.kr/learn/courses/30/lessons/17677) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/344) |
+| [[1차] 캐시](https://school.programmers.co.kr/learn/courses/30/lessons/17680) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/344) |
+| [주차 요금 계산](https://school.programmers.co.kr/learn/courses/30/lessons/92341) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/488) |
+| [메뉴 리뉴얼](https://school.programmers.co.kr/learn/courses/30/lessons/72411) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/420) |
+| [가장 많이 받은 선물](https://school.programmers.co.kr/learn/courses/30/lessons/258712) | 프로그래머스 | LV1 | 15분 | [카카오 해설](https://tech.kakao.com/posts/610) |
 
 **SQL** (네이버·SK·한화·LG 등)
 
@@ -596,11 +595,14 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 **선택**
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [순위 검색](https://school.programmers.co.kr/learn/courses/30/lessons/72412) | 프로그래머스 | LV2 | 30분 |
-| [[3차] 방금그곡](https://school.programmers.co.kr/learn/courses/30/lessons/17683) | 프로그래머스 | LV2 | 30분 |
-| [표 편집](https://school.programmers.co.kr/learn/courses/30/lessons/81303) | 프로그래머스 | LV3 | 50분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [k진수에서 소수 개수 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/92335) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/488) |
+| [튜플](https://school.programmers.co.kr/learn/courses/30/lessons/64065) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/381) |
+| [개인정보 수집 유효기간](https://school.programmers.co.kr/learn/courses/30/lessons/150370) | 프로그래머스 | LV1 | 15분 | [카카오 해설](https://tech.kakao.com/posts/567) |
+| [순위 검색](https://school.programmers.co.kr/learn/courses/30/lessons/72412) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/420) |
+| [[3차] 방금그곡](https://school.programmers.co.kr/learn/courses/30/lessons/17683) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/348) |
+| [표 편집](https://school.programmers.co.kr/learn/courses/30/lessons/81303) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/448) |
 
 </details>
 
@@ -608,7 +610,7 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 <a id="week-13"></a>
 <details>
-<summary><b>13주 · 지원 회사 기출 집중</b> — 필수 18문제, 약 25시간</summary>
+<summary><b>13주 · 지원 회사 기출 집중</b> — 필수 13문제, 약 17시간 30분</summary>
 
 **참고 링크**
 
@@ -630,23 +632,33 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 |---|---|:--:|:--:|
 | [마법의 숲 탐색](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/magical-forest-exploration/description) | 코드트리 삼성 기출 | 삼성 기출 | 2시간 30분 |
 | [고대 문명 유적 탐사](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/ancient-ruin-exploration/description) | 코드트리 삼성 기출 | 삼성 기출 | 2시간 30분 |
-| [메두사와 전사들](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/medusa-and-warriors/description) | 코드트리 삼성 기출 | 삼성 기출 | 2시간 30분 |
 | [미생물 연구](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/microbial-research/description) | 코드트리 삼성 기출 | 삼성 기출 | 2시간 30분 |
 | [민트 초코 우유](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/mint-choco-milk/description) | 코드트리 삼성 기출 | 삼성 기출 | 2시간 30분 |
+
+**도전 · 삼성 (선택)** (삼성)
+
+| 문제 | 사이트 | 난이도 | 예상 |
+|---|---|:--:|:--:|
+| [메두사와 전사들](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/medusa-and-warriors/description) | 코드트리 삼성 기출 | 삼성 기출 | 2시간 30분 |
 | [왕실의 기사 대결](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/royal-knight-duel/description) | 코드트리 삼성 기출 | 삼성 기출 | 2시간 30분 |
 
 **카카오** (카카오)
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [택배 배달과 수거하기](https://school.programmers.co.kr/learn/courses/30/lessons/150369) | 프로그래머스 | LV2 | 30분 |
-| [미로 탈출 명령어](https://school.programmers.co.kr/learn/courses/30/lessons/150365) | 프로그래머스 | LV3 | 50분 |
-| [표현 가능한 이진트리](https://school.programmers.co.kr/learn/courses/30/lessons/150367) | 프로그래머스 | LV3 | 50분 |
-| [표 병합](https://school.programmers.co.kr/learn/courses/30/lessons/150366) | 프로그래머스 | LV3 | 50분 |
-| [도넛과 막대 그래프](https://school.programmers.co.kr/learn/courses/30/lessons/258711) | 프로그래머스 | LV2 | 30분 |
-| [주사위 고르기](https://school.programmers.co.kr/learn/courses/30/lessons/258709) | 프로그래머스 | LV3 | 50분 |
-| [산 모양 타일링](https://school.programmers.co.kr/learn/courses/30/lessons/258705) | 프로그래머스 | LV3 | 50분 |
-| [n + 1 카드게임](https://school.programmers.co.kr/learn/courses/30/lessons/258707) | 프로그래머스 | LV3 | 50분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [택배 배달과 수거하기](https://school.programmers.co.kr/learn/courses/30/lessons/150369) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/567) |
+| [미로 탈출 명령어](https://school.programmers.co.kr/learn/courses/30/lessons/150365) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/567) |
+| [표 병합](https://school.programmers.co.kr/learn/courses/30/lessons/150366) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/567) |
+| [도넛과 막대 그래프](https://school.programmers.co.kr/learn/courses/30/lessons/258711) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/610) |
+| [주사위 고르기](https://school.programmers.co.kr/learn/courses/30/lessons/258709) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/610) |
+
+**도전 · 카카오 (선택)** (카카오)
+
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [표현 가능한 이진트리](https://school.programmers.co.kr/learn/courses/30/lessons/150367) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/567) |
+| [산 모양 타일링](https://school.programmers.co.kr/learn/courses/30/lessons/258705) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/610) |
+| [n + 1 카드게임](https://school.programmers.co.kr/learn/courses/30/lessons/258707) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/610) |
 
 **현대차그룹** (현대차그룹)
 
@@ -674,15 +686,15 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 **카카오 2026 공채 1차 실제 기출 · 7문제 5시간** (제한 5시간 · 카카오)
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [노란불 신호등](https://school.programmers.co.kr/learn/courses/30/lessons/468371) | 프로그래머스 | LV1 | 15분 |
-| [중요한 단어를 스포 방지](https://school.programmers.co.kr/learn/courses/30/lessons/468370) | 프로그래머스 | LV1 | 15분 |
-| [바이러스 파이프](https://school.programmers.co.kr/learn/courses/30/lessons/468373) | 프로그래머스 | LV2 | 30분 |
-| [리프 노드 수 최대화](https://school.programmers.co.kr/learn/courses/30/lessons/468372) | 프로그래머스 | LV2 | 30분 |
-| [발전소 회로 복구](https://school.programmers.co.kr/learn/courses/30/lessons/468375) | 프로그래머스 | LV3 | 50분 |
-| [최고 속도](https://school.programmers.co.kr/learn/courses/30/lessons/468376) | 프로그래머스 | LV3 | 50분 |
-| [카카오 앱 정리하기](https://school.programmers.co.kr/learn/courses/30/lessons/468374) | 프로그래머스 | LV3 | 50분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [노란불 신호등](https://school.programmers.co.kr/learn/courses/30/lessons/468371) | 프로그래머스 | LV1 | 15분 | [카카오 해설](https://tech.kakao.com/posts/813) |
+| [중요한 단어를 스포 방지](https://school.programmers.co.kr/learn/courses/30/lessons/468370) | 프로그래머스 | LV1 | 15분 | [카카오 해설](https://tech.kakao.com/posts/813) |
+| [바이러스 파이프](https://school.programmers.co.kr/learn/courses/30/lessons/468373) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/813) |
+| [리프 노드 수 최대화](https://school.programmers.co.kr/learn/courses/30/lessons/468372) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/813) |
+| [발전소 회로 복구](https://school.programmers.co.kr/learn/courses/30/lessons/468375) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/813) |
+| [최고 속도](https://school.programmers.co.kr/learn/courses/30/lessons/468376) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/813) |
+| [카카오 앱 정리하기](https://school.programmers.co.kr/learn/courses/30/lessons/468374) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/813) |
 
 **PCCP 세트 A · 4문제 120분** (제한 2시간 · 네이버·SK·한화·LG 등, 카카오, 현대차그룹)
 
@@ -729,12 +741,12 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 **보충 (카카오 기출)** (카카오)
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [두 큐 합 같게 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/118667) | 프로그래머스 | LV2 | 30분 |
-| [수식 최대화](https://school.programmers.co.kr/learn/courses/30/lessons/67257) | 프로그래머스 | LV2 | 30분 |
-| [후보키](https://school.programmers.co.kr/learn/courses/30/lessons/42890) | 프로그래머스 | LV2 | 30분 |
-| [[1차] 셔틀버스](https://school.programmers.co.kr/learn/courses/30/lessons/17678) | 프로그래머스 | LV3 | 50분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [두 큐 합 같게 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/118667) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/530) |
+| [수식 최대화](https://school.programmers.co.kr/learn/courses/30/lessons/67257) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/395) |
+| [후보키](https://school.programmers.co.kr/learn/courses/30/lessons/42890) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/355) |
+| [[1차] 셔틀버스](https://school.programmers.co.kr/learn/courses/30/lessons/17678) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/344) |
 
 </details>
 
@@ -752,13 +764,13 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 **카카오 2026 공채 2차 실제 기출 · 5문제 4시간 30분 (CS 제외)** (제한 4시간 30분 · 카카오)
 
-| 문제 | 사이트 | 난이도 | 예상 |
-|---|---|:--:|:--:|
-| [선인장 숨기기](https://school.programmers.co.kr/learn/courses/30/lessons/468379) | 프로그래머스 | LV2 | 30분 |
-| [힌트 스테이지](https://school.programmers.co.kr/learn/courses/30/lessons/468377) | 프로그래머스 | LV2 | 30분 |
-| [기차 선로](https://school.programmers.co.kr/learn/courses/30/lessons/468381) | 프로그래머스 | LV3 | 50분 |
-| [제곱 개수 배열](https://school.programmers.co.kr/learn/courses/30/lessons/468380) | 프로그래머스 | LV3 | 50분 |
-| [보물 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/468378) | 프로그래머스 | LV3 | 50분 |
+| 문제 | 사이트 | 난이도 | 예상 | 해설 |
+|---|---|:--:|:--:|:--:|
+| [선인장 숨기기](https://school.programmers.co.kr/learn/courses/30/lessons/468379) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/814) |
+| [힌트 스테이지](https://school.programmers.co.kr/learn/courses/30/lessons/468377) | 프로그래머스 | LV2 | 30분 | [카카오 해설](https://tech.kakao.com/posts/814) |
+| [기차 선로](https://school.programmers.co.kr/learn/courses/30/lessons/468381) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/814) |
+| [제곱 개수 배열](https://school.programmers.co.kr/learn/courses/30/lessons/468380) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/814) |
+| [보물 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/468378) | 프로그래머스 | LV3 | 50분 | [카카오 해설](https://tech.kakao.com/posts/814) |
 
 **PCCP 세트 B · 4문제 120분** (제한 2시간 · 네이버·SK·한화·LG 등, 카카오, 현대차그룹)
 
@@ -782,17 +794,17 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 최근 응시 후기와 기업 공개 자료를 모았습니다. 형식은 해마다 바뀌니 지원 전에 채용 공고를 확인하세요.
 
-| 기업 | 시험 환경 | 구성 | 출제 경향 | 참고 |
-|---|---|---|---|---|
-| 삼성전자 (DX·DS SW) | 자체 시험장 (오프라인) | 2문제 · 4시간 | 1번 복잡한 구현/시뮬레이션, 2번 큰 입력 대비 효율적 탐색. 격자, 회전, 확산, BFS/DFS, 백트래킹 | Java·C++·Python. 2025 상반기 후기 기준 PyCharm·VS Code 제공, 소지품 제출 |
-| 카카오 (신입크루 공채) | 프로그래머스 | 1차 7문제 · 5시간 / 2차 알고리즘 5 + CS 12 · 4.5시간 | 1~2번 브론즈, 3~5번 실버~골드, 6~7번 골드 상위. 문자열, 구현, 트리, 그래프. 2차는 백트래킹, 이분탐색, 그리디, 누적합 | 1차 3솔로 합격한 후기 있음. 2차 영상 감독, 2025년부터 점수 비공개·검색 제한은 각각 후기 1건 기준 |
-| 네이버 (팀네이버 공채) | 프로그래머스 | 알고리즘 3 + SQL 1 · 약 2시간, CS 약 20문항 | 실버 상위~골드 4. 한 문제에 여러 알고리즘을 섞음 | C/C++/Java/JS/Python/Swift/Kotlin |
-| 현대차그룹 (현대차·기아·모비스·오토에버 등) | Softeer (현재 NGV CAMPUS 사이트) | HSAT 정기 인증 2문제 | 실버~골드. 기초 알고리즘과 구현 | 2문제 모두 맞히면 인증, 2년간 6개 계열사 SW 코테 면제 |
-| 한화시스템 ICT | 프로그래머스 | 알고리즘 3 + SQL 1 · 2시간 | 해시 구현, 수학, 부분 문자열(골드 4~5), SQL LV2~3 | 1차 면접에서 코테 1문제 풀이 발표 (후기 1건) |
-| LG CNS | 구름 (이전 프로그래머스) | 공고마다 다름 | 다익스트라, DP가 나왔다는 이전 후기가 있음 | 2025년 하반기에는 코테 없이 인적성 검사(LG Way Fit)를 봤다는 후기 (후기 1건) |
-| 라인 | 프로그래머스 | 3문제 · 2시간 | 브론즈~골드 5 | 신입 공채 빈도 낮음 (후기 1건) |
-| SK 계열 | 계열사별 상이 | 미확인 | 프로그래머스 기반 알고리즘 코테가 일반적 | 2025년 이후 공개 후기 부족 (정보 부족) |
-| 대한항공·포스코DX·롯데이노베이트 등 | 공고별 상이 | 미확인 | 대체로 실버~골드 하위 | 공개 후기 부족 (정보 부족) |
+| 기업 | 시험 환경 | 구성 | 출제 경향 | 참고 | 근거 시점 |
+|---|---|---|---|---|---|
+| 삼성전자 (DX·DS SW) | 자체 시험장 (오프라인) | 2문제 · 4시간 | 1번 복잡한 구현/시뮬레이션, 2번 큰 입력 대비 효율적 탐색. 격자, 회전, 확산, BFS/DFS, 백트래킹 | Java·C++·Python. 2025 상반기 후기 기준 PyCharm·VS Code 제공, 소지품 제출 | 2025 상반기 후기 |
+| 카카오 (신입크루 공채) | 프로그래머스 | 1차 7문제 · 5시간 / 2차 알고리즘 5 + CS 12 · 4.5시간 | 1~2번 브론즈, 3~5번 실버~골드, 6~7번 골드 상위. 문자열, 구현, 트리, 그래프. 2차는 백트래킹, 이분탐색, 그리디, 누적합 | 1차 3솔로 합격한 후기 있음. 2차 영상 감독, 2025년부터 점수 비공개·검색 제한은 각각 후기 1건 기준 | 2026 공채 (2025년 가을) |
+| 네이버 (팀네이버 공채) | 프로그래머스 | 알고리즘 3 + SQL 1 · 약 2시간, CS 약 20문항 | 실버 상위~골드 4. 한 문제에 여러 알고리즘을 섞음 | C/C++/Java/JS/Python/Swift/Kotlin | 2025 공채 후기 |
+| 현대차그룹 (현대차·기아·모비스·오토에버 등) | Softeer (현재 NGV CAMPUS 사이트) | HSAT 정기 인증 2문제 | 실버~골드. 기초 알고리즘과 구현 | 2문제 모두 맞히면 인증, 2년간 6개 계열사 SW 코테 면제 | 2026년 9월 사이트 확인 |
+| 한화시스템 ICT | 프로그래머스 | 알고리즘 3 + SQL 1 · 2시간 | 해시 구현, 수학, 부분 문자열(골드 4~5), SQL LV2~3 | 1차 면접에서 코테 1문제 풀이 발표 (후기 1건) | 2025 하반기 후기 |
+| LG CNS | 구름 (이전 프로그래머스) | 공고마다 다름 | 다익스트라, DP가 나왔다는 이전 후기가 있음 | 2025년 하반기에는 코테 없이 인적성 검사(LG Way Fit)를 봤다는 후기 (후기 1건) | 2025 하반기 후기 |
+| 라인 | 프로그래머스 | 3문제 · 2시간 | 브론즈~골드 5 | 신입 공채 빈도 낮음 (후기 1건) | 2024 후기 |
+| SK 계열 | 계열사별 상이 | 미확인 | 프로그래머스 기반 알고리즘 코테가 일반적 | 2025년 이후 공개 후기 부족 (정보 부족) | — |
+| 대한항공·포스코DX·롯데이노베이트 등 | 공고별 상이 | 미확인 | 대체로 실버~골드 하위 | 공개 후기 부족 (정보 부족) | — |
 
 ## 자주 나오는 유형
 
@@ -841,6 +853,21 @@ def solution(n, arr):
     return answer
 ```
 
+<details>
+<summary>Java</summary>
+
+```java
+class Solution {
+    public int solution(int n, int[] arr) {
+        int answer = 0;
+        // arr를 이용해 계산
+        return answer;
+    }
+}
+```
+
+</details>
+
 **SW Expert Academy (삼성 상시 역량테스트)** — 첫 줄에 테스트케이스 수 T가 주어지고, 케이스마다 "#번호 답" 형식으로 출력합니다.
 
 ```python
@@ -851,6 +878,31 @@ for tc in range(1, T + 1):
     answer = 0
     print(f"#{tc} {answer}")
 ```
+
+<details>
+<summary>Java — Java는 클래스 이름을 Solution으로 둡니다.</summary>
+
+```java
+import java.io.*;
+import java.util.*;
+
+class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine().trim());
+        StringBuilder sb = new StringBuilder();
+        for (int tc = 1; tc <= T; tc++) {
+            int n = Integer.parseInt(br.readLine().trim());
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            int answer = 0;
+            sb.append('#').append(tc).append(' ').append(answer).append('\n');
+        }
+        System.out.print(sb);
+    }
+}
+```
+
+</details>
 
 **코드트리 · Softeer (삼성 기출, 현대차 HSAT)** — 표준 입력으로 받고 표준 출력으로 답을 씁니다. 격자 입력은 줄 끝 개행 문자를 지우세요.
 
@@ -863,6 +915,32 @@ words = [input().strip() for _ in range(n)]   # 문자 줄은 strip()
 answer = 0
 print(answer)
 ```
+
+<details>
+<summary>Java — Java는 보통 public class Main으로 제출합니다. 사이트 안내를 확인하세요.</summary>
+
+```java
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
+        int[][] grid = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            st = new StringTokenizer(br.readLine());
+            for (int j = 0; j < m; j++) grid[i][j] = Integer.parseInt(st.nextToken());
+        }
+        int answer = 0;
+        System.out.println(answer);
+    }
+}
+```
+
+</details>
 
 ## Python에서 자주 틀리는 것
 
@@ -883,7 +961,7 @@ print(answer)
 
 ## 외워 둘 코드
 
-Python 기준입니다. 16주차에 보지 않고 쓸 수 있는지 확인합니다.
+Python과 Java로 적었습니다. 16주차에 보지 않고 쓸 수 있는지 확인합니다.
 
 <details>
 <summary>격자 BFS 최단 거리</summary>
@@ -906,6 +984,29 @@ def bfs(sr, sc, grid):
     return dist
 ```
 
+```java
+static int[][] bfs(char[][] grid, int sr, int sc) {
+    int n = grid.length, m = grid[0].length;
+    int[][] dist = new int[n][m];
+    for (int[] row : dist) Arrays.fill(row, -1);
+    int[] dr = {-1, 1, 0, 0}, dc = {0, 0, -1, 1};
+    ArrayDeque<int[]> q = new ArrayDeque<>();
+    dist[sr][sc] = 0;
+    q.add(new int[]{sr, sc});
+    while (!q.isEmpty()) {
+        int[] cur = q.poll();
+        for (int d = 0; d < 4; d++) {
+            int nr = cur[0] + dr[d], nc = cur[1] + dc[d];
+            if (nr < 0 || nr >= n || nc < 0 || nc >= m) continue;
+            if (grid[nr][nc] == '#' || dist[nr][nc] != -1) continue;
+            dist[nr][nc] = dist[cur[0]][cur[1]] + 1;
+            q.add(new int[]{nr, nc});
+        }
+    }
+    return dist;
+}
+```
+
 </details>
 
 <details>
@@ -922,6 +1023,24 @@ def comb(start, picked):
         picked.pop()
 # 순열이면 used 배열로 모든 i를 돌고,
 # 간단하면 itertools.combinations / permutations
+```
+
+```java
+static int n, k;
+static int[] arr;
+static List<List<Integer>> answers = new ArrayList<>();
+
+static void comb(int start, List<Integer> picked) {
+    if (picked.size() == k) {
+        answers.add(new ArrayList<>(picked));
+        return;
+    }
+    for (int i = start; i < n; i++) {
+        picked.add(arr[i]);
+        comb(i + 1, picked);
+        picked.remove(picked.size() - 1);
+    }
+}
 ```
 
 </details>
@@ -942,6 +1061,22 @@ nxt = [row[:] for row in board]
 board = nxt
 ```
 
+```java
+// 시계 방향 90도: b[j][n-1-i] = a[i][j]  (N×M → M×N)
+static int[][] rotate(int[][] a) {
+    int n = a.length, m = a[0].length;
+    int[][] b = new int[m][n];
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            b[j][n - 1 - i] = a[i][j];
+    return b;
+}
+
+// "동시에" 퍼진다 → 새 배열에 모았다가 한 번에 교체
+// int[][] nxt = new int[n][m];  // board를 읽고 nxt에 쓰기
+// board = nxt;
+```
+
 </details>
 
 <details>
@@ -956,6 +1091,22 @@ while lo < hi:          # 조건을 만족하는 최솟값
     if ok(mid): hi = mid
     else: lo = mid + 1
 answer = lo
+```
+
+```java
+static boolean ok(long x) {   // x로 조건을 만족하는가?
+    return false;
+}
+
+static long search() {
+    long lo = 0, hi = (long) 1e18;   // ok() 안에서 곱셈이 long을 넘지 않게 hi를 잡으세요
+    while (lo < hi) {              // 조건을 만족하는 최솟값
+        long mid = lo + (hi - lo) / 2;
+        if (ok(mid)) hi = mid;
+        else lo = mid + 1;
+    }
+    return lo;
+}
 ```
 
 </details>
@@ -980,6 +1131,29 @@ def dijkstra(start, adj, n):
     return dist
 ```
 
+```java
+static long[] dijkstra(int start, List<int[]>[] adj, int n) {
+    long[] dist = new long[n];
+    Arrays.fill(dist, Long.MAX_VALUE);
+    dist[start] = 0;
+    PriorityQueue<long[]> pq = new PriorityQueue<>((x, y) -> Long.compare(x[0], y[0]));
+    pq.add(new long[]{0, start});
+    while (!pq.isEmpty()) {
+        long[] cur = pq.poll();
+        int u = (int) cur[1];
+        if (cur[0] > dist[u]) continue;       // 오래된 항목
+        for (int[] e : adj[u]) {              // e = {v, w}
+            int v = e[0], w = e[1];
+            if (dist[u] + w < dist[v]) {
+                dist[v] = dist[u] + w;
+                pq.add(new long[]{dist[v], v});
+            }
+        }
+    }
+    return dist;
+}
+```
+
 </details>
 
 <details>
@@ -997,6 +1171,25 @@ def union(a, b):
     if a == b: return False
     parent[b] = a
     return True
+```
+
+```java
+static int[] parent;   // parent[i] = i 로 초기화
+
+static int find(int x) {
+    while (parent[x] != x) {
+        parent[x] = parent[parent[x]];   // 경로 압축
+        x = parent[x];
+    }
+    return x;
+}
+
+static boolean union(int a, int b) {
+    a = find(a); b = find(b);
+    if (a == b) return false;
+    parent[b] = a;
+    return true;
+}
 ```
 
 </details>
@@ -1017,6 +1210,19 @@ d[r2+1][c1] -= v; d[r2+1][c2+1] += v
 # 행 방향, 열 방향으로 한 번씩 누적하면 완성
 ```
 
+```java
+// 1차원 구간합
+long[] pre = new long[arr.length + 1];
+for (int i = 0; i < arr.length; i++) pre[i + 1] = pre[i] + arr[i];
+// arr[l..r] 합 = pre[r + 1] - pre[l]
+
+// 2차원 구간에 +v를 한꺼번에 (파괴되지 않은 건물)
+// d는 한 칸 더 크게: new long[N + 1][M + 1]
+d[r1][c1] += v; d[r1][c2 + 1] -= v;
+d[r2 + 1][c1] -= v; d[r2 + 1][c2 + 1] += v;
+// 행 방향, 열 방향으로 한 번씩 누적하면 완성
+```
+
 </details>
 
 <details>
@@ -1029,6 +1235,22 @@ sys.setrecursionlimit(10**6)        # 깊은 재귀 DFS
 from collections import deque, defaultdict, Counter
 from itertools import permutations, combinations, product
 import heapq, bisect
+```
+
+```java
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        StringBuilder sb = new StringBuilder();   // 출력은 모아서 한 번에
+        sb.append(n).append('\n');
+        System.out.print(sb);
+    }
+}
 ```
 
 </details>
@@ -1073,6 +1295,16 @@ import heapq, bisect
 - [프로그래머스 PCCP 취득자, 교보생명 공채서 코딩테스트 면제 (컨슈머타임스)](https://www.cstimes.com/news/articleView.html?idxno=539625)
 - [Softeer HSAT 안내 (NGV CAMPUS)](https://exam.hyundai-ngv.com/challenge/HSAT/list)
 
+## 기여
+
+- 기업 시험 형식이 바뀌었다면 [후기 제보](https://github.com/bk11052/coding-test-roadmap/issues/new?template=company-report.yml)로 알려 주세요.
+- 열리지 않는 링크는 [링크 오류 신고](https://github.com/bk11052/coding-test-roadmap/issues/new?template=broken-link.yml)로 알려 주세요. 매주 자동 점검도 돌고 있습니다.
+- 내용은 `data/`, 대시보드는 `src/`를 고친 뒤 `python3 scripts/build.py`를 실행하면 README, curriculum.json, llms.txt, index.html이 함께 만들어집니다.
+
+## 라이선스
+
+코드(`src/`, `scripts/`, 외워 둘 코드)는 [MIT](LICENSE), 글과 데이터는 [CC BY 4.0](LICENSE-CONTENT)입니다. 출처를 밝히면 자유롭게 쓰고 고칠 수 있습니다. 링크한 문제의 저작권은 각 사이트에 있습니다.
+
 ---
 
-문제 저작권은 각 사이트에 있으며, 이 저장소는 링크만 모아 둡니다. 마지막 수정 2026-09-27.
+마지막 수정 2026-09-27.

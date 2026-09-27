@@ -1,0 +1,19 @@
+name: 링크 오류 신고
+description: 열리지 않거나 다른 문제로 연결되는 링크
+title: "[링크] "
+labels: ["broken-link"]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: 위치
+      placeholder: 예) 7주차 필수 · 회전하는 빙하
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 무엇이 문제인가요
+      placeholder: 예) 404가 나옵니다 / 다른 문제가 열립니다
+    validations:
+      required: true

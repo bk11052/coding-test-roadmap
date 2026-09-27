@@ -15,7 +15,8 @@
    "format": "2문제 · 4시간",
    "content": "1번 복잡한 구현/시뮬레이션, 2번 큰 입력 대비 효율적 탐색. 격자, 회전, 확산, BFS/DFS, 백트래킹",
    "notes": "Java·C++·Python. 2025 상반기 후기 기준 PyCharm·VS Code 제공, 소지품 제출",
-   "confidence": "여러 출처 일치"
+   "confidence": "여러 출처 일치",
+   "basis": "2025 상반기 후기"
   },
   {
    "company": "카카오 (신입크루 공채)",
@@ -23,7 +24,8 @@
    "format": "1차 7문제 · 5시간 / 2차 알고리즘 5 + CS 12 · 4.5시간",
    "content": "1~2번 브론즈, 3~5번 실버~골드, 6~7번 골드 상위. 문자열, 구현, 트리, 그래프. 2차는 백트래킹, 이분탐색, 그리디, 누적합",
    "notes": "1차 3솔로 합격한 후기 있음. 2차 영상 감독, 2025년부터 점수 비공개·검색 제한은 각각 후기 1건 기준",
-   "confidence": "여러 출처 일치"
+   "confidence": "여러 출처 일치",
+   "basis": "2026 공채 (2025년 가을)"
   },
   {
    "company": "네이버 (팀네이버 공채)",
@@ -31,7 +33,8 @@
    "format": "알고리즘 3 + SQL 1 · 약 2시간, CS 약 20문항",
    "content": "실버 상위~골드 4. 한 문제에 여러 알고리즘을 섞음",
    "notes": "C/C++/Java/JS/Python/Swift/Kotlin",
-   "confidence": "여러 출처 일치"
+   "confidence": "여러 출처 일치",
+   "basis": "2025 공채 후기"
   },
   {
    "company": "현대차그룹 (현대차·기아·모비스·오토에버 등)",
@@ -39,7 +42,8 @@
    "format": "HSAT 정기 인증 2문제",
    "content": "실버~골드. 기초 알고리즘과 구현",
    "notes": "2문제 모두 맞히면 인증, 2년간 6개 계열사 SW 코테 면제",
-   "confidence": "여러 출처 일치"
+   "confidence": "여러 출처 일치",
+   "basis": "2026년 9월 사이트 확인"
   },
   {
    "company": "한화시스템 ICT",
@@ -47,7 +51,8 @@
    "format": "알고리즘 3 + SQL 1 · 2시간",
    "content": "해시 구현, 수학, 부분 문자열(골드 4~5), SQL LV2~3",
    "notes": "1차 면접에서 코테 1문제 풀이 발표",
-   "confidence": "후기 1건"
+   "confidence": "후기 1건",
+   "basis": "2025 하반기 후기"
   },
   {
    "company": "LG CNS",
@@ -55,7 +60,8 @@
    "format": "공고마다 다름",
    "content": "다익스트라, DP가 나왔다는 이전 후기가 있음",
    "notes": "2025년 하반기에는 코테 없이 인적성 검사(LG Way Fit)를 봤다는 후기",
-   "confidence": "후기 1건"
+   "confidence": "후기 1건",
+   "basis": "2025 하반기 후기"
   },
   {
    "company": "라인",
@@ -63,7 +69,8 @@
    "format": "3문제 · 2시간",
    "content": "브론즈~골드 5",
    "notes": "신입 공채 빈도 낮음",
-   "confidence": "후기 1건"
+   "confidence": "후기 1건",
+   "basis": "2024 후기"
   },
   {
    "company": "SK 계열",
@@ -71,7 +78,8 @@
    "format": "미확인",
    "content": "프로그래머스 기반 알고리즘 코테가 일반적",
    "notes": "2025년 이후 공개 후기 부족",
-   "confidence": "정보 부족"
+   "confidence": "정보 부족",
+   "basis": "—"
   },
   {
    "company": "대한항공·포스코DX·롯데이노베이트 등",
@@ -79,7 +87,8 @@
    "format": "미확인",
    "content": "대체로 실버~골드 하위",
    "notes": "공개 후기 부족",
-   "confidence": "정보 부족"
+   "confidence": "정보 부족",
+   "basis": "—"
   }
  ],
  "frequency_columns": [
@@ -282,14 +291,16 @@
        "platform": "프로그래머스",
        "level": "LV1",
        "est_minutes": 15,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17682"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17682",
+       "solution_url": "https://tech.kakao.com/posts/344"
       },
       {
        "title": "신규 아이디 추천",
        "platform": "프로그래머스",
        "level": "LV1",
        "est_minutes": 15,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/72410"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/72410",
+       "solution_url": "https://tech.kakao.com/posts/420"
       }
      ]
     }
@@ -383,7 +394,8 @@
        "platform": "프로그래머스",
        "level": "LV1",
        "est_minutes": 15,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/64061"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/64061",
+       "solution_url": "https://tech.kakao.com/posts/381"
       }
      ]
     },
@@ -503,14 +515,16 @@
        "platform": "프로그래머스",
        "level": "LV1",
        "est_minutes": 15,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/92334"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/92334",
+       "solution_url": "https://tech.kakao.com/posts/488"
       },
       {
        "title": "오픈채팅방",
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42888"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42888",
+       "solution_url": "https://tech.kakao.com/posts/355"
       }
      ]
     },
@@ -537,7 +551,8 @@
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17686"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17686",
+       "solution_url": "https://tech.kakao.com/posts/348"
       }
      ]
     }
@@ -632,21 +647,24 @@
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/92342"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/92342",
+       "solution_url": "https://tech.kakao.com/posts/488"
       },
       {
        "title": "이모티콘 할인행사",
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/150368"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/150368",
+       "solution_url": "https://tech.kakao.com/posts/567"
       },
       {
        "title": "불량 사용자",
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/64064"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/64064",
+       "solution_url": "https://tech.kakao.com/posts/381"
       }
      ]
     }
@@ -748,14 +766,16 @@
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/81302"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/81302",
+       "solution_url": "https://tech.kakao.com/posts/448"
       },
       {
        "title": "외벽 점검",
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/60062"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/60062",
+       "solution_url": "https://tech.kakao.com/posts/367"
       }
      ]
     }
@@ -809,7 +829,8 @@
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/67259"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/67259",
+       "solution_url": "https://tech.kakao.com/posts/395"
       },
       {
        "title": "숫자 변환하기",
@@ -843,14 +864,16 @@
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/72415"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/72415",
+       "solution_url": "https://tech.kakao.com/posts/420"
       },
       {
        "title": "블록 이동하기",
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/60063"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/60063",
+       "solution_url": "https://tech.kakao.com/posts/367"
       }
      ]
     }
@@ -904,14 +927,16 @@
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17679"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17679",
+       "solution_url": "https://tech.kakao.com/posts/344"
       },
       {
        "title": "자물쇠와 열쇠",
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/60059"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/60059",
+       "solution_url": "https://tech.kakao.com/posts/367"
       },
       {
        "title": "회전하는 빙하",
@@ -945,7 +970,8 @@
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/60061"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/60061",
+       "solution_url": "https://tech.kakao.com/posts/367"
       },
       {
        "title": "n^2 배열 자르기",
@@ -1133,7 +1159,8 @@
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/64062"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/64062",
+       "solution_url": "https://tech.kakao.com/posts/381"
       },
       {
        "title": "연속된 부분 수열의 합",
@@ -1147,7 +1174,8 @@
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/67258"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/67258",
+       "solution_url": "https://tech.kakao.com/posts/395"
       },
       {
        "title": "연속 부분 수열 합의 개수",
@@ -1174,14 +1202,16 @@
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/92344"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/92344",
+       "solution_url": "https://tech.kakao.com/posts/488"
       },
       {
        "title": "광고 삽입",
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/72414"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/72414",
+       "solution_url": "https://tech.kakao.com/posts/420"
       }
      ]
     }
@@ -1286,7 +1316,8 @@
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/118668"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/118668",
+       "solution_url": "https://tech.kakao.com/posts/530"
       },
       {
        "title": "연속 펄스 부분 수열의 합",
@@ -1380,7 +1411,8 @@
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/72413"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/72413",
+       "solution_url": "https://tech.kakao.com/posts/420"
       },
       {
        "title": "섬 연결하기",
@@ -1407,21 +1439,24 @@
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/118669"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/118669",
+       "solution_url": "https://tech.kakao.com/posts/530"
       },
       {
        "title": "길 찾기 게임",
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42892"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42892",
+       "solution_url": "https://tech.kakao.com/posts/355"
       },
       {
        "title": "호텔 방 배정",
        "platform": "프로그래머스",
        "level": "LV4",
        "est_minutes": 70,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/64063"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/64063",
+       "solution_url": "https://tech.kakao.com/posts/381"
       }
      ]
     }
@@ -1448,9 +1483,9 @@
     "GROUP BY에 없는 컬럼을 SELECT 하지 마세요"
    ],
    "pass_criterion": "긴 지문을 요구사항 목록으로 바꾼 뒤 코딩한다",
-   "required_count": 17,
-   "optional_count": 3,
-   "est_minutes_required": 440,
+   "required_count": 14,
+   "optional_count": 6,
+   "est_minutes_required": 365,
    "problem_sets": [
     {
      "name": "필수",
@@ -1461,70 +1496,56 @@
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/60057"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/60057",
+       "solution_url": "https://tech.kakao.com/posts/367"
       },
       {
        "title": "괄호 변환",
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/60058"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/60058",
+       "solution_url": "https://tech.kakao.com/posts/367"
       },
       {
        "title": "[1차] 뉴스 클러스터링",
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17677"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17677",
+       "solution_url": "https://tech.kakao.com/posts/344"
       },
       {
        "title": "[1차] 캐시",
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17680"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17680",
+       "solution_url": "https://tech.kakao.com/posts/344"
       },
       {
        "title": "주차 요금 계산",
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/92341"
-      },
-      {
-       "title": "k진수에서 소수 개수 구하기",
-       "platform": "프로그래머스",
-       "level": "LV2",
-       "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/92335"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/92341",
+       "solution_url": "https://tech.kakao.com/posts/488"
       },
       {
        "title": "메뉴 리뉴얼",
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/72411"
-      },
-      {
-       "title": "튜플",
-       "platform": "프로그래머스",
-       "level": "LV2",
-       "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/64065"
-      },
-      {
-       "title": "개인정보 수집 유효기간",
-       "platform": "프로그래머스",
-       "level": "LV1",
-       "est_minutes": 15,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/150370"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/72411",
+       "solution_url": "https://tech.kakao.com/posts/420"
       },
       {
        "title": "가장 많이 받은 선물",
        "platform": "프로그래머스",
        "level": "LV1",
        "est_minutes": 15,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/258712"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/258712",
+       "solution_url": "https://tech.kakao.com/posts/610"
       }
      ]
     },
@@ -1591,25 +1612,52 @@
      "kind": "optional",
      "problems": [
       {
+       "title": "k진수에서 소수 개수 구하기",
+       "platform": "프로그래머스",
+       "level": "LV2",
+       "est_minutes": 30,
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/92335",
+       "solution_url": "https://tech.kakao.com/posts/488"
+      },
+      {
+       "title": "튜플",
+       "platform": "프로그래머스",
+       "level": "LV2",
+       "est_minutes": 30,
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/64065",
+       "solution_url": "https://tech.kakao.com/posts/381"
+      },
+      {
+       "title": "개인정보 수집 유효기간",
+       "platform": "프로그래머스",
+       "level": "LV1",
+       "est_minutes": 15,
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/150370",
+       "solution_url": "https://tech.kakao.com/posts/567"
+      },
+      {
        "title": "순위 검색",
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/72412"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/72412",
+       "solution_url": "https://tech.kakao.com/posts/420"
       },
       {
        "title": "[3차] 방금그곡",
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17683"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17683",
+       "solution_url": "https://tech.kakao.com/posts/348"
       },
       {
        "title": "표 편집",
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/81303"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/81303",
+       "solution_url": "https://tech.kakao.com/posts/448"
       }
      ]
     }
@@ -1635,9 +1683,9 @@
     "같은 회사 기출은 비슷한 구조가 반복됩니다. 공통 패턴을 메모하세요"
    ],
    "pass_criterion": "지원하는 회사의 최근 기출을 시간 재고 푼다",
-   "required_count": 18,
-   "optional_count": 0,
-   "est_minutes_required": 1500,
+   "required_count": 13,
+   "optional_count": 5,
+   "est_minutes_required": 1050,
    "problem_sets": [
     {
      "name": "삼성",
@@ -1661,13 +1709,6 @@
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/ancient-ruin-exploration/description"
       },
       {
-       "title": "메두사와 전사들",
-       "platform": "코드트리 삼성 기출",
-       "level": "삼성 기출",
-       "est_minutes": 150,
-       "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/medusa-and-warriors/description"
-      },
-      {
        "title": "미생물 연구",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
@@ -1680,6 +1721,22 @@
        "level": "삼성 기출",
        "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/mint-choco-milk/description"
+      }
+     ]
+    },
+    {
+     "name": "도전 · 삼성 (선택)",
+     "kind": "optional",
+     "companies": [
+      "삼성"
+     ],
+     "problems": [
+      {
+       "title": "메두사와 전사들",
+       "platform": "코드트리 삼성 기출",
+       "level": "삼성 기출",
+       "est_minutes": 150,
+       "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/medusa-and-warriors/description"
       },
       {
        "title": "왕실의 기사 대결",
@@ -1702,56 +1759,73 @@
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/150369"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/150369",
+       "solution_url": "https://tech.kakao.com/posts/567"
       },
       {
        "title": "미로 탈출 명령어",
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/150365"
-      },
-      {
-       "title": "표현 가능한 이진트리",
-       "platform": "프로그래머스",
-       "level": "LV3",
-       "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/150367"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/150365",
+       "solution_url": "https://tech.kakao.com/posts/567"
       },
       {
        "title": "표 병합",
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/150366"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/150366",
+       "solution_url": "https://tech.kakao.com/posts/567"
       },
       {
        "title": "도넛과 막대 그래프",
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/258711"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/258711",
+       "solution_url": "https://tech.kakao.com/posts/610"
       },
       {
        "title": "주사위 고르기",
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/258709"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/258709",
+       "solution_url": "https://tech.kakao.com/posts/610"
+      }
+     ]
+    },
+    {
+     "name": "도전 · 카카오 (선택)",
+     "kind": "optional",
+     "companies": [
+      "카카오"
+     ],
+     "problems": [
+      {
+       "title": "표현 가능한 이진트리",
+       "platform": "프로그래머스",
+       "level": "LV3",
+       "est_minutes": 50,
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/150367",
+       "solution_url": "https://tech.kakao.com/posts/567"
       },
       {
        "title": "산 모양 타일링",
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/258705"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/258705",
+       "solution_url": "https://tech.kakao.com/posts/610"
       },
       {
        "title": "n + 1 카드게임",
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/258707"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/258707",
+       "solution_url": "https://tech.kakao.com/posts/610"
       }
      ]
     },
@@ -1822,49 +1896,56 @@
        "platform": "프로그래머스",
        "level": "LV1",
        "est_minutes": 15,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468371"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468371",
+       "solution_url": "https://tech.kakao.com/posts/813"
       },
       {
        "title": "중요한 단어를 스포 방지",
        "platform": "프로그래머스",
        "level": "LV1",
        "est_minutes": 15,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468370"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468370",
+       "solution_url": "https://tech.kakao.com/posts/813"
       },
       {
        "title": "바이러스 파이프",
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468373"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468373",
+       "solution_url": "https://tech.kakao.com/posts/813"
       },
       {
        "title": "리프 노드 수 최대화",
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468372"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468372",
+       "solution_url": "https://tech.kakao.com/posts/813"
       },
       {
        "title": "발전소 회로 복구",
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468375"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468375",
+       "solution_url": "https://tech.kakao.com/posts/813"
       },
       {
        "title": "최고 속도",
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468376"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468376",
+       "solution_url": "https://tech.kakao.com/posts/813"
       },
       {
        "title": "카카오 앱 정리하기",
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468374"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468374",
+       "solution_url": "https://tech.kakao.com/posts/813"
       }
      ]
     },
@@ -1996,28 +2077,32 @@
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/118667"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/118667",
+       "solution_url": "https://tech.kakao.com/posts/530"
       },
       {
        "title": "수식 최대화",
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/67257"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/67257",
+       "solution_url": "https://tech.kakao.com/posts/395"
       },
       {
        "title": "후보키",
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42890"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42890",
+       "solution_url": "https://tech.kakao.com/posts/355"
       },
       {
        "title": "[1차] 셔틀버스",
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17678"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17678",
+       "solution_url": "https://tech.kakao.com/posts/344"
       }
      ]
     }
@@ -2050,35 +2135,40 @@
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468379"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468379",
+       "solution_url": "https://tech.kakao.com/posts/814"
       },
       {
        "title": "힌트 스테이지",
        "platform": "프로그래머스",
        "level": "LV2",
        "est_minutes": 30,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468377"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468377",
+       "solution_url": "https://tech.kakao.com/posts/814"
       },
       {
        "title": "기차 선로",
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468381"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468381",
+       "solution_url": "https://tech.kakao.com/posts/814"
       },
       {
        "title": "제곱 개수 배열",
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468380"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468380",
+       "solution_url": "https://tech.kakao.com/posts/814"
       },
       {
        "title": "보물 찾기",
        "platform": "프로그래머스",
        "level": "LV3",
        "est_minutes": 50,
-       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468378"
+       "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468378",
+       "solution_url": "https://tech.kakao.com/posts/814"
       }
      ]
     },
@@ -2152,35 +2242,43 @@
  "templates_python": [
   {
    "name": "1. 격자 BFS 최단 거리",
-   "code": "from collections import deque\ndef bfs(sr, sc, grid):\n    n, m = len(grid), len(grid[0])\n    dist = [[-1]*m for _ in range(n)]\n    dist[sr][sc] = 0\n    q = deque([(sr, sc)])\n    while q:\n        r, c = q.popleft()\n        for dr, dc in ((-1,0),(1,0),(0,-1),(0,1)):\n            nr, nc = r+dr, c+dc\n            if 0 <= nr < n and 0 <= nc < m \\\n               and grid[nr][nc] != '#' and dist[nr][nc] == -1:\n                dist[nr][nc] = dist[r][c] + 1\n                q.append((nr, nc))\n    return dist"
+   "code": "from collections import deque\ndef bfs(sr, sc, grid):\n    n, m = len(grid), len(grid[0])\n    dist = [[-1]*m for _ in range(n)]\n    dist[sr][sc] = 0\n    q = deque([(sr, sc)])\n    while q:\n        r, c = q.popleft()\n        for dr, dc in ((-1,0),(1,0),(0,-1),(0,1)):\n            nr, nc = r+dr, c+dc\n            if 0 <= nr < n and 0 <= nc < m \\\n               and grid[nr][nc] != '#' and dist[nr][nc] == -1:\n                dist[nr][nc] = dist[r][c] + 1\n                q.append((nr, nc))\n    return dist",
+   "java": "static int[][] bfs(char[][] grid, int sr, int sc) {\n    int n = grid.length, m = grid[0].length;\n    int[][] dist = new int[n][m];\n    for (int[] row : dist) Arrays.fill(row, -1);\n    int[] dr = {-1, 1, 0, 0}, dc = {0, 0, -1, 1};\n    ArrayDeque<int[]> q = new ArrayDeque<>();\n    dist[sr][sc] = 0;\n    q.add(new int[]{sr, sc});\n    while (!q.isEmpty()) {\n        int[] cur = q.poll();\n        for (int d = 0; d < 4; d++) {\n            int nr = cur[0] + dr[d], nc = cur[1] + dc[d];\n            if (nr < 0 || nr >= n || nc < 0 || nc >= m) continue;\n            if (grid[nr][nc] == '#' || dist[nr][nc] != -1) continue;\n            dist[nr][nc] = dist[cur[0]][cur[1]] + 1;\n            q.add(new int[]{nr, nc});\n        }\n    }\n    return dist;\n}"
   },
   {
    "name": "2. 조합 백트래킹 (넣기 → 재귀 → 빼기)",
-   "code": "def comb(start, picked):\n    if len(picked) == k:\n        answers.append(picked[:])\n        return\n    for i in range(start, n):\n        picked.append(arr[i])\n        comb(i + 1, picked)\n        picked.pop()\n# 순열이면 used 배열로 모든 i를 돌고,\n# 간단하면 itertools.combinations / permutations"
+   "code": "def comb(start, picked):\n    if len(picked) == k:\n        answers.append(picked[:])\n        return\n    for i in range(start, n):\n        picked.append(arr[i])\n        comb(i + 1, picked)\n        picked.pop()\n# 순열이면 used 배열로 모든 i를 돌고,\n# 간단하면 itertools.combinations / permutations",
+   "java": "static int n, k;\nstatic int[] arr;\nstatic List<List<Integer>> answers = new ArrayList<>();\n\nstatic void comb(int start, List<Integer> picked) {\n    if (picked.size() == k) {\n        answers.add(new ArrayList<>(picked));\n        return;\n    }\n    for (int i = start; i < n; i++) {\n        picked.add(arr[i]);\n        comb(i + 1, picked);\n        picked.remove(picked.size() - 1);\n    }\n}"
   },
   {
    "name": "3. 격자 회전 · 동시 갱신",
-   "code": "# 시계 방향 90도: b[j][n-1-i] = a[i][j]  (N×M → M×N)\ndef rotate(a):\n    n, m = len(a), len(a[0])\n    return [[a[n-1-j][i] for j in range(n)] for i in range(m)]\n# 파이썬 한 줄: [list(r) for r in zip(*a[::-1])]\n\n# \"동시에\" 퍼진다 → 새 배열에 모았다가 한 번에 교체\nnxt = [row[:] for row in board]\n# ... board를 읽고 nxt에 쓰기 ...\nboard = nxt"
+   "code": "# 시계 방향 90도: b[j][n-1-i] = a[i][j]  (N×M → M×N)\ndef rotate(a):\n    n, m = len(a), len(a[0])\n    return [[a[n-1-j][i] for j in range(n)] for i in range(m)]\n# 파이썬 한 줄: [list(r) for r in zip(*a[::-1])]\n\n# \"동시에\" 퍼진다 → 새 배열에 모았다가 한 번에 교체\nnxt = [row[:] for row in board]\n# ... board를 읽고 nxt에 쓰기 ...\nboard = nxt",
+   "java": "// 시계 방향 90도: b[j][n-1-i] = a[i][j]  (N×M → M×N)\nstatic int[][] rotate(int[][] a) {\n    int n = a.length, m = a[0].length;\n    int[][] b = new int[m][n];\n    for (int i = 0; i < n; i++)\n        for (int j = 0; j < m; j++)\n            b[j][n - 1 - i] = a[i][j];\n    return b;\n}\n\n// \"동시에\" 퍼진다 → 새 배열에 모았다가 한 번에 교체\n// int[][] nxt = new int[n][m];  // board를 읽고 nxt에 쓰기\n// board = nxt;"
   },
   {
    "name": "4. 매개변수 탐색 (이분탐색)",
-   "code": "def ok(x):          # x로 조건을 만족하는가?\n    ...\nlo, hi = 0, 10**18\nwhile lo < hi:          # 조건을 만족하는 최솟값\n    mid = (lo + hi) // 2\n    if ok(mid): hi = mid\n    else: lo = mid + 1\nanswer = lo"
+   "code": "def ok(x):          # x로 조건을 만족하는가?\n    ...\nlo, hi = 0, 10**18\nwhile lo < hi:          # 조건을 만족하는 최솟값\n    mid = (lo + hi) // 2\n    if ok(mid): hi = mid\n    else: lo = mid + 1\nanswer = lo",
+   "java": "static boolean ok(long x) {   // x로 조건을 만족하는가?\n    return false;\n}\n\nstatic long search() {\n    long lo = 0, hi = (long) 1e18;   // ok() 안에서 곱셈이 long을 넘지 않게 hi를 잡으세요\n    while (lo < hi) {              // 조건을 만족하는 최솟값\n        long mid = lo + (hi - lo) / 2;\n        if (ok(mid)) hi = mid;\n        else lo = mid + 1;\n    }\n    return lo;\n}"
   },
   {
    "name": "5. 다익스트라",
-   "code": "import heapq\ndef dijkstra(start, adj, n):\n    INF = float('inf')\n    dist = [INF] * n\n    dist[start] = 0\n    pq = [(0, start)]\n    while pq:\n        d, u = heapq.heappop(pq)\n        if d > dist[u]: continue     # 오래된 항목\n        for v, w in adj[u]:\n            if d + w < dist[v]:\n                dist[v] = d + w\n                heapq.heappush(pq, (dist[v], v))\n    return dist"
+   "code": "import heapq\ndef dijkstra(start, adj, n):\n    INF = float('inf')\n    dist = [INF] * n\n    dist[start] = 0\n    pq = [(0, start)]\n    while pq:\n        d, u = heapq.heappop(pq)\n        if d > dist[u]: continue     # 오래된 항목\n        for v, w in adj[u]:\n            if d + w < dist[v]:\n                dist[v] = d + w\n                heapq.heappush(pq, (dist[v], v))\n    return dist",
+   "java": "static long[] dijkstra(int start, List<int[]>[] adj, int n) {\n    long[] dist = new long[n];\n    Arrays.fill(dist, Long.MAX_VALUE);\n    dist[start] = 0;\n    PriorityQueue<long[]> pq = new PriorityQueue<>((x, y) -> Long.compare(x[0], y[0]));\n    pq.add(new long[]{0, start});\n    while (!pq.isEmpty()) {\n        long[] cur = pq.poll();\n        int u = (int) cur[1];\n        if (cur[0] > dist[u]) continue;       // 오래된 항목\n        for (int[] e : adj[u]) {              // e = {v, w}\n            int v = e[0], w = e[1];\n            if (dist[u] + w < dist[v]) {\n                dist[v] = dist[u] + w;\n                pq.add(new long[]{dist[v], v});\n            }\n        }\n    }\n    return dist;\n}"
   },
   {
    "name": "6. Union-Find",
-   "code": "parent = list(range(n))\ndef find(x):\n    while parent[x] != x:\n        parent[x] = parent[parent[x]]   # 경로 압축\n        x = parent[x]\n    return x\ndef union(a, b):\n    a, b = find(a), find(b)\n    if a == b: return False\n    parent[b] = a\n    return True"
+   "code": "parent = list(range(n))\ndef find(x):\n    while parent[x] != x:\n        parent[x] = parent[parent[x]]   # 경로 압축\n        x = parent[x]\n    return x\ndef union(a, b):\n    a, b = find(a), find(b)\n    if a == b: return False\n    parent[b] = a\n    return True",
+   "java": "static int[] parent;   // parent[i] = i 로 초기화\n\nstatic int find(int x) {\n    while (parent[x] != x) {\n        parent[x] = parent[parent[x]];   // 경로 압축\n        x = parent[x];\n    }\n    return x;\n}\n\nstatic boolean union(int a, int b) {\n    a = find(a); b = find(b);\n    if (a == b) return false;\n    parent[b] = a;\n    return true;\n}"
   },
   {
    "name": "7. 누적합 · 2차원 차분 배열",
-   "code": "# 1차원 구간합\npre = [0]\nfor x in arr: pre.append(pre[-1] + x)\n# arr[l..r] 합 = pre[r+1] - pre[l]\n\n# 2차원 구간에 +v를 한꺼번에 (파괴되지 않은 건물)\n# d는 한 칸 더 크게: [[0] * (M + 1) for _ in range(N + 1)]\nd[r1][c1] += v; d[r1][c2+1] -= v\nd[r2+1][c1] -= v; d[r2+1][c2+1] += v\n# 행 방향, 열 방향으로 한 번씩 누적하면 완성"
+   "code": "# 1차원 구간합\npre = [0]\nfor x in arr: pre.append(pre[-1] + x)\n# arr[l..r] 합 = pre[r+1] - pre[l]\n\n# 2차원 구간에 +v를 한꺼번에 (파괴되지 않은 건물)\n# d는 한 칸 더 크게: [[0] * (M + 1) for _ in range(N + 1)]\nd[r1][c1] += v; d[r1][c2+1] -= v\nd[r2+1][c1] -= v; d[r2+1][c2+1] += v\n# 행 방향, 열 방향으로 한 번씩 누적하면 완성",
+   "java": "// 1차원 구간합\nlong[] pre = new long[arr.length + 1];\nfor (int i = 0; i < arr.length; i++) pre[i + 1] = pre[i] + arr[i];\n// arr[l..r] 합 = pre[r + 1] - pre[l]\n\n// 2차원 구간에 +v를 한꺼번에 (파괴되지 않은 건물)\n// d는 한 칸 더 크게: new long[N + 1][M + 1]\nd[r1][c1] += v; d[r1][c2 + 1] -= v;\nd[r2 + 1][c1] -= v; d[r2 + 1][c2 + 1] += v;\n// 행 방향, 열 방향으로 한 번씩 누적하면 완성"
   },
   {
    "name": "시작 코드 (Python 공통)",
-   "code": "import sys\ninput = sys.stdin.readline          # 입력이 많을 때\nsys.setrecursionlimit(10**6)        # 깊은 재귀 DFS\nfrom collections import deque, defaultdict, Counter\nfrom itertools import permutations, combinations, product\nimport heapq, bisect"
+   "code": "import sys\ninput = sys.stdin.readline          # 입력이 많을 때\nsys.setrecursionlimit(10**6)        # 깊은 재귀 DFS\nfrom collections import deque, defaultdict, Counter\nfrom itertools import permutations, combinations, product\nimport heapq, bisect",
+   "java": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        StringBuilder sb = new StringBuilder();   // 출력은 모아서 한 번에\n        sb.append(n).append('\\n');\n        System.out.print(sb);\n    }\n}"
   }
  ],
  "tools": [
@@ -2291,17 +2389,22 @@
   {
    "site": "프로그래머스 (카카오, 네이버, SK, 한화 등)",
    "how": "입력을 직접 받지 않습니다. solution 함수의 매개변수로 받아 return 합니다. print는 채점에 쓰이지 않습니다.",
-   "code": "def solution(n, arr):\n    answer = 0\n    # arr를 이용해 계산\n    return answer"
+   "code": "def solution(n, arr):\n    answer = 0\n    # arr를 이용해 계산\n    return answer",
+   "java": "class Solution {\n    public int solution(int n, int[] arr) {\n        int answer = 0;\n        // arr를 이용해 계산\n        return answer;\n    }\n}"
   },
   {
    "site": "SW Expert Academy (삼성 상시 역량테스트)",
    "how": "첫 줄에 테스트케이스 수 T가 주어지고, 케이스마다 \"#번호 답\" 형식으로 출력합니다.",
-   "code": "T = int(input())\nfor tc in range(1, T + 1):\n    n = int(input())\n    arr = list(map(int, input().split()))\n    answer = 0\n    print(f\"#{tc} {answer}\")"
+   "code": "T = int(input())\nfor tc in range(1, T + 1):\n    n = int(input())\n    arr = list(map(int, input().split()))\n    answer = 0\n    print(f\"#{tc} {answer}\")",
+   "java": "import java.io.*;\nimport java.util.*;\n\nclass Solution {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int T = Integer.parseInt(br.readLine().trim());\n        StringBuilder sb = new StringBuilder();\n        for (int tc = 1; tc <= T; tc++) {\n            int n = Integer.parseInt(br.readLine().trim());\n            StringTokenizer st = new StringTokenizer(br.readLine());\n            int answer = 0;\n            sb.append('#').append(tc).append(' ').append(answer).append('\\n');\n        }\n        System.out.print(sb);\n    }\n}",
+   "how_java": "Java는 클래스 이름을 Solution으로 둡니다."
   },
   {
    "site": "코드트리 · Softeer (삼성 기출, 현대차 HSAT)",
    "how": "표준 입력으로 받고 표준 출력으로 답을 씁니다. 격자 입력은 줄 끝 개행 문자를 지우세요.",
-   "code": "import sys\ninput = sys.stdin.readline\nn, m = map(int, input().split())\ngrid = [list(map(int, input().split())) for _ in range(n)]\nwords = [input().strip() for _ in range(n)]   # 문자 줄은 strip()\nanswer = 0\nprint(answer)"
+   "code": "import sys\ninput = sys.stdin.readline\nn, m = map(int, input().split())\ngrid = [list(map(int, input().split())) for _ in range(n)]\nwords = [input().strip() for _ in range(n)]   # 문자 줄은 strip()\nanswer = 0\nprint(answer)",
+   "java": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int m = Integer.parseInt(st.nextToken());\n        int[][] grid = new int[n][m];\n        for (int i = 0; i < n; i++) {\n            st = new StringTokenizer(br.readLine());\n            for (int j = 0; j < m; j++) grid[i][j] = Integer.parseInt(st.nextToken());\n        }\n        int answer = 0;\n        System.out.println(answer);\n    }\n}",
+   "how_java": "Java는 보통 public class Main으로 제출합니다. 사이트 안내를 확인하세요."
   }
  ],
  "python_pitfalls": [

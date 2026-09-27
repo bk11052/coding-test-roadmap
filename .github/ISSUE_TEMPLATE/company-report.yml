@@ -1,0 +1,36 @@
+name: 코딩테스트 후기 제보
+description: 기업 코딩테스트 형식이 바뀌었거나 새 정보를 알고 있을 때
+title: "[후기] "
+labels: ["company-info"]
+body:
+  - type: input
+    id: company
+    attributes:
+      label: 기업과 직군
+      placeholder: 예) 카카오 신입 공채, 삼성전자 DX SW
+    validations:
+      required: true
+  - type: input
+    id: when
+    attributes:
+      label: 응시 시기
+      placeholder: 예) 2026년 하반기
+    validations:
+      required: true
+  - type: textarea
+    id: format
+    attributes:
+      label: 시험 형식
+      description: 문제 수, 시간, 사이트, 언어, 감독 방식 등 아는 만큼 적어 주세요
+    validations:
+      required: true
+  - type: textarea
+    id: types
+    attributes:
+      label: 나온 유형과 난이도
+      description: 문제 내용을 그대로 옮기지는 말아 주세요
+  - type: input
+    id: source
+    attributes:
+      label: 근거
+      description: 직접 응시했는지, 공개된 글이 있다면 링크
