@@ -6,7 +6,7 @@
 
 ![문제](https://img.shields.io/badge/%EB%AC%B8%EC%A0%9C-179%EA%B0%9C-2f5bea) ![기간](https://img.shields.io/badge/%EA%B8%B0%EA%B0%84-16%EC%A3%BC-6a53c9) ![기업](https://img.shields.io/badge/%EA%B8%B0%EC%97%85-10%EA%B3%B3-1d7f55) ![링크 확인](https://img.shields.io/badge/%EB%A7%81%ED%81%AC%20%ED%99%95%EC%9D%B8-2026--09--26-b7730f) ![백준](https://img.shields.io/badge/%EB%B0%B1%EC%A4%80-%EB%AF%B8%EC%82%AC%EC%9A%A9%20%28%EC%84%9C%EB%B9%84%EC%8A%A4%20%EC%A2%85%EB%A3%8C%29-b4323c)
 
-[**대시보드 열기**](https://bk11052.github.io/korea-coding-test-roadmap/) · [AI용 요약 (llms.txt)](https://bk11052.github.io/korea-coding-test-roadmap/llms.txt) · [데이터 (curriculum.json)](https://bk11052.github.io/korea-coding-test-roadmap/curriculum.json)
+[**대시보드 열기**](https://bk11052.github.io/coding-test-roadmap/) · [AI용 요약 (llms.txt)](https://bk11052.github.io/coding-test-roadmap/llms.txt) · [데이터 (curriculum.json)](https://bk11052.github.io/coding-test-roadmap/curriculum.json)
 
 </div>
 
@@ -30,7 +30,7 @@
 
 ## 이 저장소 사용법
 
-1. **[대시보드](https://bk11052.github.io/korea-coding-test-roadmap/)를 엽니다.** 지원 회사, 시험 날짜, 하루 공부 시간을 넣으면 오늘 풀 문제와 남은 일정을 계산합니다.
+1. **[대시보드](https://bk11052.github.io/coding-test-roadmap/)를 엽니다.** 지원 회사, 시험 날짜, 하루 공부 시간을 넣으면 오늘 풀 문제와 남은 일정을 계산합니다.
 2. **주차 순서대로 공부합니다.** 강의를 보고, 필수 문제를 풀고, 통과 기준을 확인합니다. 문제 옆 **기록** 버튼으로 풀이 상태와 메모를 남기면 해설을 본 문제는 1·3·7·14일 뒤 복습으로 다시 나옵니다.
 3. **13주차부터 실전입니다.** 지원 회사 기출을 풀고, 모의고사 타이머로 실제 시험 시간에 맞춰 연습합니다.
 
@@ -42,15 +42,15 @@ HTML을 해석하지 않아도 되도록 같은 내용을 파일 3개로 따로 
 
 | 파일 | 내용 |
 |---|---|
-| [`llms.txt`](https://bk11052.github.io/korea-coding-test-roadmap/llms.txt) | 한 문단 요약과 나머지 파일 안내. AI에게 처음 줄 주소로 적당합니다 |
-| [`README.md`](https://bk11052.github.io/korea-coding-test-roadmap/README.md) | 전체 내용을 Markdown으로 정리한 이 문서. 주차별 문제 링크, 템플릿, 출처까지 들어 있습니다 |
-| [`curriculum.json`](https://bk11052.github.io/korea-coding-test-roadmap/curriculum.json) | 같은 내용을 구조화한 JSON. 프로그램이나 에이전트가 문제 목록을 다룰 때 씁니다 |
+| [`llms.txt`](https://bk11052.github.io/coding-test-roadmap/llms.txt) | 한 문단 요약과 나머지 파일 안내. AI에게 처음 줄 주소로 적당합니다 |
+| [`README.md`](https://bk11052.github.io/coding-test-roadmap/README.md) | 전체 내용을 Markdown으로 정리한 이 문서. 주차별 문제 링크, 템플릿, 출처까지 들어 있습니다 |
+| [`curriculum.json`](https://bk11052.github.io/coding-test-roadmap/curriculum.json) | 같은 내용을 구조화한 JSON. 프로그램이나 에이전트가 문제 목록을 다룰 때 씁니다 |
 
 이렇게 요청해 보세요.
 
 ```text
-https://bk11052.github.io/korea-coding-test-roadmap/llms.txt 읽고 내 진도에 맞춰 이번 주 문제 골라 줘. 나는 5주차까지 끝냈고 삼성 지원 예정이야.
-https://bk11052.github.io/korea-coding-test-roadmap/curriculum.json 에서 카카오 관련 필수 문제만 뽑아 하루 2시간 기준 4주 계획으로 다시 짜 줘.
+https://bk11052.github.io/coding-test-roadmap/llms.txt 읽고 내 진도에 맞춰 이번 주 문제 골라 줘. 나는 5주차까지 끝냈고 삼성 지원 예정이야.
+https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 관련 필수 문제만 뽑아 하루 2시간 기준 4주 계획으로 다시 짜 줘.
 README의 7주차 '자주 하는 실수'를 기준으로 내 코드를 검토해 줘. (코드 붙여 넣기)
 ```
 

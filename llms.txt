@@ -4,9 +4,9 @@
 
 ## 문서
 
-- [README.md](https://bk11052.github.io/korea-coding-test-roadmap/README.md): 전체 내용을 Markdown으로 정리 (기업 형식표, 유형 빈도, 16주 요약표, 주차별 문제 표, 템플릿, 출처)
-- [curriculum.json](https://bk11052.github.io/korea-coding-test-roadmap/curriculum.json): 같은 내용을 구조화한 JSON. 주요 필드: company_formats, type_frequency, curriculum[].problem_sets[].problems[] (title, platform, level, est_minutes, url), curriculum[].common_mistakes, templates_python, sources
-- [index.html](https://bk11052.github.io/korea-coding-test-roadmap/): 사람용 대화형 대시보드 (진행 체크·복습 일정·모의고사 타이머, 기록은 브라우저에 저장)
+- [README.md](https://bk11052.github.io/coding-test-roadmap/README.md): 전체 내용을 Markdown으로 정리 (기업 형식표, 유형 빈도, 16주 요약표, 주차별 문제 표, 템플릿, 출처)
+- [curriculum.json](https://bk11052.github.io/coding-test-roadmap/curriculum.json): 같은 내용을 구조화한 JSON. 주요 필드: company_formats, type_frequency, curriculum[].problem_sets[].problems[] (title, platform, level, est_minutes, url), curriculum[].common_mistakes, templates_python, sources
+- [index.html](https://bk11052.github.io/coding-test-roadmap/): 사람용 대화형 대시보드 (진행 체크·복습 일정·모의고사 타이머, 기록은 브라우저에 저장)
 
 ## 사용 안내
 

@@ -619,7 +619,7 @@ import heapq, bisect</code></pre></div>
     </ol>
   </section>
 
-  <footer>AI·스크립트용: <a href="llms.txt">llms.txt</a> · <a href="README.md">README.md</a> · <a href="curriculum.json">curriculum.json</a> · 소스: <a href="https://github.com/bk11052/korea-coding-test-roadmap">GitHub</a><br>2026년 9월 26일에 조사했습니다. 채용 형식은 해마다 바뀌므로, 지원 전 채용 공고를 최종 기준으로 삼으세요.</footer>
+  <footer>AI·스크립트용: <a href="llms.txt">llms.txt</a> · <a href="README.md">README.md</a> · <a href="curriculum.json">curriculum.json</a> · 소스: <a href="https://github.com/bk11052/coding-test-roadmap">GitHub</a><br>2026년 9월 26일에 조사했습니다. 채용 형식은 해마다 바뀌므로, 지원 전 채용 공고를 최종 기준으로 삼으세요.</footer>
 </div>
 
 <div class="timerbar" id="timerBar" hidden role="region" aria-label="모의고사 타이머">
@@ -996,7 +996,7 @@ function applyFilter(){
 
 // ---------- export / import ----------
 function exportState(){
-  const data = JSON.stringify(Object.assign({app:'korea-coding-test-roadmap', exported: new Date().toISOString()}, S), null, 1);
+  const data = JSON.stringify(Object.assign({app:'coding-test-roadmap', exported: new Date().toISOString()}, S), null, 1);
   const msg = $('#ioMsg');
   if (window.claude) {
     navigator.clipboard?.writeText(data).then(() => { msg.textContent = '기록을 클립보드에 복사했습니다. 메모장에 붙여 넣어 .json 파일로 저장하세요.'; }, () => { msg.textContent = '복사하지 못했습니다. 브라우저 권한을 확인하세요.'; });

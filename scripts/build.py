@@ -7,7 +7,7 @@ import pathlib
 from urllib.parse import quote
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SITE = "https://bk11052.github.io/korea-coding-test-roadmap"
+SITE = "https://bk11052.github.io/coding-test-roadmap"
 UPDATED = "2026-09-27"
 CHECKED = "2026-09-26"
 
