@@ -2,7 +2,8 @@
 
 - Programmers problems: compare title and level with the public catalog API.
 - Codetree problems: compare the page title.
-- Other links: expect HTTP 200. 403/429 count as warnings (bot blocking).
+- Other links: expect HTTP 200. HTTP errors and DNS failures are broken;
+  403/429, resets and timeouts are warnings (bot or overseas blocking).
 
 Prints a Markdown report. Exit code 1 when anything is broken.
 Usage: python3 scripts/check_links.py
@@ -11,6 +12,7 @@ import concurrent.futures as cf
 import json
 import pathlib
 import re
+import socket
 import sys
 import time
 import urllib.error
@@ -32,6 +34,8 @@ def fetch(url, retries=2):
                 continue
             return e.code, ""
         except Exception as e:  # DNS, reset, timeout
+            if isinstance(getattr(e, "reason", None), socket.gaierror):
+                return "DNS", ""  # 도메인이 사라짐: 확실히 깨진 링크
             if i < retries:
                 time.sleep(3 * (i + 1))
                 continue
@@ -93,7 +97,10 @@ def check_link(u):
     status, _ = fetch(u)
     if status == 200:
         return None
-    return ("warn" if status in (401, 403, 429) else "broken", f"{u} ({status})")
+    # 404·410 같은 HTTP 오류와 DNS 실패만 깨진 것으로 봅니다.
+    # 403·429와 연결 끊김·시간 초과는 해외 접속 차단일 수 있어 경고로 둡니다.
+    real = status == "DNS" or (isinstance(status, int) and status not in (401, 403, 429))
+    return ("broken" if real else "warn", f"{u} ({status})")
 
 
 with cf.ThreadPoolExecutor(8) as ex:
