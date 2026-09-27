@@ -1,10 +1,13 @@
 {
  "name": "대기업 코테 로드맵",
- "description": "국내 대기업 신입 SW 코딩테스트 준비 가이드: 기업별 형식, 출제 유형, 16주 커리큘럼(문제 179개, 모든 링크 2026-09-26 확인)",
+ "site": "https://bk11052.github.io/korea-coding-test-roadmap/",
  "updated": "2026-09-27",
+ "links_checked": "2026-09-26",
  "language": "ko",
- "important_notice": "백준(BOJ)은 2026-04-28 서비스 종료로 현재 채점 불가. 모든 연습 문제는 프로그래머스와 코드트리로 구성.",
- "how_to_use": "주차마다 강의를 보고 필수 문제를 모두 푼 뒤 통과 기준을 만족하면 다음 주로. 도전 문제는 선택. 13~16주는 지원 회사 세트만 골라도 됨. 한 문제 30분 고민 후 해설을 보고 다음 날 다시 풀기.",
+ "description": "국내 대기업 신입 SW 코딩테스트 준비 가이드: 기업별 형식, 출제 유형, 16주 커리큘럼(문제 179개)",
+ "important_notice": "백준(BOJ)은 2026년 4월 28일 서비스를 종료해 현재 채점이 되지 않습니다. 이 커리큘럼의 문제는 모두 프로그래머스와 코드트리 문제입니다.",
+ "how_to_use": "주차마다 강의를 보고 필수 문제를 모두 푼 뒤 통과 기준을 만족하면 다음 주로 넘어갑니다. 도전 문제는 선택입니다. 13~16주는 지원 회사 세트만 골라도 됩니다. 한 문제에 30분 고민해도 방향이 안 잡히면 해설을 보고, 다음 날 해설 없이 다시 풉니다.",
+ "est_minutes_rule": "LV1 15분, LV2 30분, LV3 50분, LV4 70분, LV5 90분, 코드트리 삼성 기출 150분, HSAT 기출 60분, SQL LV3 20분·LV4 이상 30분",
  "company_formats": [
   {
    "company": "삼성전자 (DX·DS SW)",
@@ -196,7 +199,7 @@
  "curriculum": [
   {
    "week": 1,
-   "phase": "1–3주 기초 체력",
+   "phase": "1–3주 · 기초 체력",
    "topic": "언어 기본기 · 입출력 · 문자열",
    "lectures": [
     {
@@ -213,7 +216,15 @@
     }
    ],
    "learn": "문자열 슬라이싱·split·join, 정렬 key, 리스트/딕셔너리 컴프리헨션, 날짜·시간 문자열 다루기",
+   "common_mistakes": [
+    "파이썬 문자열에 += 를 반복하면 느립니다. 리스트에 모아 join 하세요",
+    "대소문자·공백·특수문자 처리 조건을 지문에서 먼저 표시하세요",
+    "날짜 계산은 윤년과 월별 일수를 확인하세요"
+   ],
    "pass_criterion": "LV1 문제를 15분 안에 푼다",
+   "required_count": 7,
+   "optional_count": 2,
+   "est_minutes_required": 105,
    "problem_sets": [
     {
      "name": "필수",
@@ -223,42 +234,49 @@
        "title": "시저 암호",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/12926"
       },
       {
        "title": "이상한 문자 만들기",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/12930"
       },
       {
        "title": "문자열 내 마음대로 정렬하기",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/12915"
       },
       {
        "title": "가장 가까운 같은 글자",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/142086"
       },
       {
        "title": "2016년",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/12901"
       },
       {
        "title": "바탕화면 정리",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/161990"
       },
       {
        "title": "공원 산책",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/172928"
       }
      ]
@@ -271,12 +289,14 @@
        "title": "[1차] 다트 게임",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17682"
       },
       {
        "title": "신규 아이디 추천",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/72410"
       }
      ]
@@ -285,7 +305,7 @@
   },
   {
    "week": 2,
-   "phase": "1–3주 기초 체력",
+   "phase": "1–3주 · 기초 체력",
    "topic": "시간복잡도 · 배열 · 스택 · 큐 · 덱",
    "lectures": [
     {
@@ -310,7 +330,15 @@
     }
    ],
    "learn": "deque로 큐 구현, 괄호 짝 검사, 단조 스택(뒤에 있는 큰 수), 큐 시뮬레이션",
+   "common_mistakes": [
+    "빈 스택에서 pop 하기 전에 비었는지 확인하세요",
+    "list.pop(0)은 O(N)입니다. 큐는 deque를 쓰세요",
+    "시뮬레이션의 시간 단위가 1씩 어긋나지 않는지(off-by-one) 확인하세요"
+   ],
    "pass_criterion": "입력 크기를 보고 허용 복잡도를 바로 말할 수 있다",
+   "required_count": 7,
+   "optional_count": 3,
+   "est_minutes_required": 180,
    "problem_sets": [
     {
      "name": "필수",
@@ -320,42 +348,49 @@
        "title": "같은 숫자는 싫어",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/12906"
       },
       {
        "title": "올바른 괄호",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/12909"
       },
       {
        "title": "기능개발",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42586"
       },
       {
        "title": "프로세스",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42587"
       },
       {
        "title": "다리를 지나는 트럭",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42583"
       },
       {
        "title": "괄호 회전하기",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/76502"
       },
       {
        "title": "크레인 인형뽑기 게임",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/64061"
       }
      ]
@@ -368,18 +403,21 @@
        "title": "주식가격",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42584"
       },
       {
        "title": "뒤에 있는 큰 수 찾기",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/154539"
       },
       {
        "title": "택배상자",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/131704"
       }
      ]
@@ -388,7 +426,7 @@
   },
   {
    "week": 3,
-   "phase": "1–3주 기초 체력",
+   "phase": "1–3주 · 기초 체력",
    "topic": "해시 · 정렬",
    "lectures": [
     {
@@ -405,7 +443,15 @@
     }
    ],
    "learn": "dict·Counter·defaultdict, set 연산, 정렬 key에 튜플과 음수 쓰기, 커스텀 비교",
+   "common_mistakes": [
+    "없는 키는 dict.get이나 defaultdict로 처리하세요",
+    "문자열로 된 숫자는 \"10\" < \"9\"로 정렬됩니다. 비교 기준을 확인하세요",
+    "리스트는 해시 키가 될 수 없습니다. tuple로 바꾸세요"
+   ],
    "pass_criterion": "해시로 집계하고, 기준이 여러 개인 정렬을 막힘없이 쓴다",
+   "required_count": 9,
+   "optional_count": 3,
+   "est_minutes_required": 210,
    "problem_sets": [
     {
      "name": "필수",
@@ -415,54 +461,63 @@
        "title": "완주하지 못한 선수",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42576"
       },
       {
        "title": "폰켓몬",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/1845"
       },
       {
        "title": "전화번호 목록",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42577"
       },
       {
        "title": "의상",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42578"
       },
       {
        "title": "K번째수",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42748"
       },
       {
        "title": "가장 큰 수",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42746"
       },
       {
        "title": "H-Index",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42747"
       },
       {
        "title": "신고 결과 받기",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/92334"
       },
       {
        "title": "오픈채팅방",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42888"
       }
      ]
@@ -475,18 +530,21 @@
        "title": "베스트앨범",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42579"
       },
       {
        "title": "달리기 경주",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/178871"
       },
       {
        "title": "[3차] 파일명 정렬",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17686"
       }
      ]
@@ -495,7 +553,7 @@
   },
   {
    "week": 4,
-   "phase": "4–8주 1순위 유형",
+   "phase": "4–8주 · 1순위 유형",
    "topic": "재귀 · 완전탐색 · 백트래킹",
    "lectures": [
     {
@@ -508,7 +566,15 @@
     }
    ],
    "learn": "itertools permutations/combinations/product, 재귀로 직접 구현(넣기→재귀→빼기), 가지치기",
+   "common_mistakes": [
+    "재귀에서 돌아올 때 방문 표시·선택을 되돌렸는지 확인하세요",
+    "조합은 시작 인덱스를 넘겨야 중복이 생기지 않습니다",
+    "경우의 수가 입력 크기로 감당되는지 먼저 계산하세요"
+   ],
    "pass_criterion": "순열·조합·부분집합을 템플릿 없이 5분 안에 쓴다",
+   "required_count": 7,
+   "optional_count": 3,
+   "est_minutes_required": 180,
    "problem_sets": [
     {
      "name": "필수",
@@ -518,42 +584,49 @@
        "title": "모의고사",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42840"
       },
       {
        "title": "최소직사각형",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/86491"
       },
       {
        "title": "카펫",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42842"
       },
       {
        "title": "소수 찾기",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42839"
       },
       {
        "title": "피로도",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/87946"
       },
       {
        "title": "모음사전",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/84512"
       },
       {
        "title": "N-Queen",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/12952"
       }
      ]
@@ -566,18 +639,21 @@
        "title": "양궁대회",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/92342"
       },
       {
        "title": "이모티콘 할인행사",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/150368"
       },
       {
        "title": "불량 사용자",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/64064"
       }
      ]
@@ -586,7 +662,7 @@
   },
   {
    "week": 5,
-   "phase": "4–8주 1순위 유형",
+   "phase": "4–8주 · 1순위 유형",
    "topic": "BFS · DFS 기본",
    "lectures": [
     {
@@ -599,7 +675,15 @@
     }
    ],
    "learn": "방향 배열 dy/dx, 범위 체크, 방문 처리는 큐에 넣을 때, 거리 배열 -1 초기화, 여러 시작점 동시 BFS",
+   "common_mistakes": [
+    "방문 표시는 큐에 넣을 때 하세요. 꺼낼 때 하면 중복으로 들어갑니다",
+    "행(N)과 열(M), 좌표 (y, x) 순서가 뒤바뀌지 않았는지 확인하세요",
+    "Python 재귀 DFS는 setrecursionlimit이 필요합니다"
+   ],
    "pass_criterion": "격자 BFS 최단 거리와 연결 요소 세기를 10분 안에 쓴다",
+   "required_count": 8,
+   "optional_count": 2,
+   "est_minutes_required": 280,
    "problem_sets": [
     {
      "name": "필수",
@@ -609,48 +693,56 @@
        "title": "타겟 넘버",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/43165"
       },
       {
        "title": "네트워크",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/43162"
       },
       {
        "title": "게임 맵 최단거리",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/1844"
       },
       {
        "title": "단어 변환",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/43163"
       },
       {
        "title": "무인도 여행",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/154540"
       },
       {
        "title": "미로 탈출",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/159993"
       },
       {
        "title": "리코쳇 로봇",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/169199"
       },
       {
        "title": "전력망을 둘로 나누기",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/86971"
       }
      ]
@@ -663,12 +755,14 @@
        "title": "거리두기 확인하기",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/81302"
       },
       {
        "title": "외벽 점검",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/60062"
       }
      ]
@@ -677,7 +771,7 @@
   },
   {
    "week": 6,
-   "phase": "4–8주 1순위 유형",
+   "phase": "4–8주 · 1순위 유형",
    "topic": "BFS 심화 · 상태 확장",
    "lectures": [
     {
@@ -690,7 +784,15 @@
     }
    ],
    "learn": "visited[r][c][k] 설계, 방향을 상태로 넣기, 0-1 BFS, 좌표 2배 확대(아이템 줍기)",
+   "common_mistakes": [
+    "같은 칸이라도 추가 상태(부순 횟수·방향)가 다르면 다른 정점입니다",
+    "상태를 늘리면 메모리가 N×M×K로 커집니다. 범위를 확인하세요",
+    "가중치가 0과 1로 섞이면 일반 BFS가 아니라 0-1 BFS나 다익스트라입니다"
+   ],
    "pass_criterion": "방문 배열에 (행, 열, 추가 상태)를 넣는 문제를 알아본다",
+   "required_count": 5,
+   "optional_count": 3,
+   "est_minutes_required": 230,
    "problem_sets": [
     {
      "name": "필수",
@@ -700,30 +802,35 @@
        "title": "여행경로",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/43164"
       },
       {
        "title": "아이템 줍기",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/87694"
       },
       {
        "title": "경주로 건설",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/67259"
       },
       {
        "title": "숫자 변환하기",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/154538"
       },
       {
        "title": "부대복귀",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/132266"
       }
      ]
@@ -736,18 +843,21 @@
        "title": "퍼즐 조각 채우기",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/84021"
       },
       {
        "title": "카드 짝 맞추기",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/72415"
       },
       {
        "title": "블록 이동하기",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/60063"
       }
      ]
@@ -756,7 +866,7 @@
   },
   {
    "week": 7,
-   "phase": "4–8주 1순위 유형",
+   "phase": "4–8주 · 1순위 유형",
    "topic": "구현 · 시뮬레이션 1",
    "lectures": [
     {
@@ -769,7 +879,15 @@
     }
    ],
    "learn": "90도 회전 b[j][n-1-i]=a[i][j], 동시 처리는 임시 배열, 상태 변수 먼저 정의, 단계마다 출력해 확인",
+   "common_mistakes": [
+    "\"동시에\" 일어나는 변화를 순서대로 처리하면 틀립니다. 임시 배열을 쓰세요",
+    "직사각형을 회전하면 N×M이 M×N이 됩니다",
+    "격자 밖으로 나갈 때 규칙(멈춤, 튕김, 반대편)을 지문에서 확인하세요"
+   ],
    "pass_criterion": "지문을 단계별 함수로 나눠 LV2 구현을 40분 안에 푼다",
+   "required_count": 7,
+   "optional_count": 2,
+   "est_minutes_required": 590,
    "problem_sets": [
     {
      "name": "필수",
@@ -779,42 +897,49 @@
        "title": "삼각 달팽이",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/68645"
       },
       {
        "title": "방문 길이",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/49994"
       },
       {
        "title": "[1차] 프렌즈4블록",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17679"
       },
       {
        "title": "자물쇠와 열쇠",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/60059"
       },
       {
        "title": "회전하는 빙하",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/rotating-glacier/description"
       },
       {
        "title": "바이러스 실험",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/virus-experiment/description"
       },
       {
        "title": "2048 게임",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/2048-game/description"
       }
      ]
@@ -827,12 +952,14 @@
        "title": "기둥과 보 설치",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/60061"
       },
       {
        "title": "n^2 배열 자르기",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/87390"
       }
      ]
@@ -841,7 +968,7 @@
   },
   {
    "week": 8,
-   "phase": "4–8주 1순위 유형",
+   "phase": "4–8주 · 1순위 유형",
    "topic": "삼성형 시뮬레이션 2 · 첫 모의고사",
    "lectures": [
     {
@@ -850,7 +977,15 @@
     }
    ],
    "learn": "문제를 읽고 30분 동안 설계(상태, 순서, 함수)만 하고, 그다음 코딩합니다. 디버깅은 단계별 격자 출력으로",
+   "common_mistakes": [
+    "설계 없이 바로 코딩하면 디버깅에 시간을 다 씁니다. 30분은 설계하세요",
+    "동점일 때의 우선순위 규칙(행 작은 순, 열 작은 순 등)을 빠뜨리기 쉽습니다",
+    "한 문제에 3시간 넘게 쓰지 않도록 시간을 나눠 두세요"
+   ],
    "pass_criterion": "삼성 기출 1문제를 2시간 안에 완주한다",
+   "required_count": 8,
+   "optional_count": 0,
+   "est_minutes_required": 1200,
    "problem_sets": [
     {
      "name": "필수",
@@ -860,36 +995,42 @@
        "title": "나무박멸",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/tree-kill-all/description"
       },
       {
        "title": "예술성",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/artistry/description"
       },
       {
        "title": "꼬리잡기놀이",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/tail-catch-play/description"
       },
       {
        "title": "싸움땅",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/battle-ground/description"
       },
       {
        "title": "코드트리 빵",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/codetree-mon-bread/description"
       },
       {
        "title": "메이즈 러너",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/maze-runner/description"
       }
      ]
@@ -906,12 +1047,14 @@
        "title": "포탑 부수기",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/destroy-the-turret/description"
       },
       {
        "title": "루돌프의 반란",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/rudolph-rebellion/description"
       }
      ]
@@ -920,7 +1063,7 @@
   },
   {
    "week": 9,
-   "phase": "9–12주 2순위 유형",
+   "phase": "9–12주 · 2순위 유형",
    "topic": "그리디 · 이분탐색 · 투포인터 · 누적합",
    "lectures": [
     {
@@ -937,7 +1080,15 @@
     }
    ],
    "learn": "정렬 후 그리디, bisect, 매개변수 탐색, 슬라이딩 윈도우, 1차원·2차원 누적합(차분 배열)",
+   "common_mistakes": [
+    "그리디는 반례를 하나 찾아보고 확신한 뒤 쓰세요",
+    "이분탐색 무한 루프: lo < hi 조건과 mid 계산 방향을 맞추세요",
+    "답의 범위 상한을 너무 작게 잡지 마세요 (예: 10^18)"
+   ],
    "pass_criterion": "\"답을 정하고 가능한지 검사\"하는 매개변수 탐색을 쓴다",
+   "required_count": 10,
+   "optional_count": 3,
+   "est_minutes_required": 365,
    "problem_sets": [
     {
      "name": "필수",
@@ -947,60 +1098,70 @@
        "title": "체육복",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42862"
       },
       {
        "title": "구명보트",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42885"
       },
       {
        "title": "큰 수 만들기",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42883"
       },
       {
        "title": "단속카메라",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42884"
       },
       {
        "title": "요격 시스템",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/181188"
       },
       {
        "title": "입국심사",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/43238"
       },
       {
        "title": "징검다리 건너기",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/64062"
       },
       {
        "title": "연속된 부분 수열의 합",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/178870"
       },
       {
        "title": "보석 쇼핑",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/67258"
       },
       {
        "title": "연속 부분 수열 합의 개수",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/131701"
       }
      ]
@@ -1013,18 +1174,21 @@
        "title": "징검다리",
        "platform": "프로그래머스",
        "level": "LV4",
+       "est_minutes": 70,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/43236"
       },
       {
        "title": "파괴되지 않은 건물",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/92344"
       },
       {
        "title": "광고 삽입",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/72414"
       }
      ]
@@ -1033,7 +1197,7 @@
   },
   {
    "week": 10,
-   "phase": "9–12주 2순위 유형",
+   "phase": "9–12주 · 2순위 유형",
    "topic": "다이나믹 프로그래밍",
    "lectures": [
     {
@@ -1042,7 +1206,15 @@
     }
    ],
    "learn": "테이블 정의 → 점화식 → 초기값 순서. 배낭, LIS, 격자 경로, 원형 배열 처리",
+   "common_mistakes": [
+    "테이블의 의미와 초기값(기저)을 먼저 적으세요",
+    "0/1 배낭을 1차원으로 쓸 때는 용량을 역순으로 돌아야 합니다",
+    "나머지 연산 지시가 있으면 매 단계에서 나누세요"
+   ],
    "pass_criterion": "점화식을 말로 먼저 쓰고 코드로 옮긴다",
+   "required_count": 8,
+   "optional_count": 3,
+   "est_minutes_required": 320,
    "problem_sets": [
     {
      "name": "필수",
@@ -1052,48 +1224,56 @@
        "title": "멀리 뛰기",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/12914"
       },
       {
        "title": "2 x n 타일링",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/12900"
       },
       {
        "title": "땅따먹기",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/12913"
       },
       {
        "title": "정수 삼각형",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/43105"
       },
       {
        "title": "등굣길",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42898"
       },
       {
        "title": "가장 큰 정사각형 찾기",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/12905"
       },
       {
        "title": "거스름돈",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/12907"
       },
       {
        "title": "N으로 표현",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42895"
       }
      ]
@@ -1106,18 +1286,21 @@
        "title": "도둑질",
        "platform": "프로그래머스",
        "level": "LV4",
+       "est_minutes": 70,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42897"
       },
       {
        "title": "코딩 테스트 공부",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/118668"
       },
       {
        "title": "연속 펄스 부분 수열의 합",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/161988"
       }
      ]
@@ -1126,7 +1309,7 @@
   },
   {
    "week": 11,
-   "phase": "9–12주 2순위 유형",
+   "phase": "9–12주 · 2순위 유형",
    "topic": "그래프 심화 · 우선순위 큐 · 다익스트라 · Union-Find",
    "lectures": [
     {
@@ -1151,7 +1334,15 @@
     }
    ],
    "learn": "heapq, 다익스트라(거리 비교로 오래된 항목 건너뛰기), 플로이드, Union-Find 경로 압축, 크루스칼",
+   "common_mistakes": [
+    "다익스트라는 음수 가중치에서 쓸 수 없습니다",
+    "무방향 그래프는 간선을 양쪽에 넣으세요",
+    "노드 번호가 1부터인지 0부터인지 확인하세요"
+   ],
    "pass_criterion": "다익스트라와 Union-Find를 보지 않고 쓴다",
+   "required_count": 8,
+   "optional_count": 3,
+   "est_minutes_required": 360,
    "problem_sets": [
     {
      "name": "필수",
@@ -1161,48 +1352,56 @@
        "title": "더 맵게",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42626"
       },
       {
        "title": "이중우선순위큐",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42628"
       },
       {
        "title": "디스크 컨트롤러",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42627"
       },
       {
        "title": "가장 먼 노드",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/49189"
       },
       {
        "title": "배달",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/12978"
       },
       {
        "title": "합승 택시 요금",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/72413"
       },
       {
        "title": "섬 연결하기",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42861"
       },
       {
        "title": "순위",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/49191"
       }
      ]
@@ -1215,18 +1414,21 @@
        "title": "등산코스 정하기",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/118669"
       },
       {
        "title": "길 찾기 게임",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42892"
       },
       {
        "title": "호텔 방 배정",
        "platform": "프로그래머스",
        "level": "LV4",
+       "est_minutes": 70,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/64063"
       }
      ]
@@ -1235,7 +1437,7 @@
   },
   {
    "week": 12,
-   "phase": "9–12주 2순위 유형",
+   "phase": "9–12주 · 2순위 유형",
    "topic": "카카오형 문자열 · 파싱 + SQL",
    "lectures": [
     {
@@ -1248,7 +1450,15 @@
     }
    ],
    "learn": "시간 문자열 → 분 변환, 정규식, 진법 변환, 집합 연산. SQL은 GROUP BY·HAVING, JOIN, 서브쿼리, 날짜 함수, 재귀 CTE",
+   "common_mistakes": [
+    "시간 문자열은 분이나 초 단위 정수로 바꿔 계산하세요",
+    "SQL에서 NULL 비교는 = 가 아니라 IS NULL입니다",
+    "GROUP BY에 없는 컬럼을 SELECT 하지 마세요"
+   ],
    "pass_criterion": "긴 지문을 요구사항 목록으로 바꾼 뒤 코딩한다",
+   "required_count": 17,
+   "optional_count": 3,
+   "est_minutes_required": 440,
    "problem_sets": [
     {
      "name": "필수",
@@ -1258,60 +1468,70 @@
        "title": "문자열 압축",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/60057"
       },
       {
        "title": "괄호 변환",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/60058"
       },
       {
        "title": "[1차] 뉴스 클러스터링",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17677"
       },
       {
        "title": "[1차] 캐시",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17680"
       },
       {
        "title": "주차 요금 계산",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/92341"
       },
       {
        "title": "k진수에서 소수 개수 구하기",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/92335"
       },
       {
        "title": "메뉴 리뉴얼",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/72411"
       },
       {
        "title": "튜플",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/64065"
       },
       {
        "title": "개인정보 수집 유효기간",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/150370"
       },
       {
        "title": "가장 많이 받은 선물",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/258712"
       }
      ]
@@ -1320,49 +1540,56 @@
      "name": "SQL",
      "kind": "required",
      "companies": [
-      "네이버·SK·한화·LG 등 프로그래머스형"
+      "네이버·SK·한화·LG 등"
      ],
      "problems": [
       {
        "title": "즐겨찾기가 가장 많은 식당 정보 출력하기",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 20,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/131123"
       },
       {
        "title": "카테고리 별 도서 판매량 집계하기",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 20,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/144855"
       },
       {
        "title": "대여 횟수가 많은 자동차들의 월별 대여 횟수 구하기",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 20,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/151139"
       },
       {
        "title": "자동차 대여 기록에서 대여중 / 대여 가능 여부 구분하기",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 20,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/157340"
       },
       {
        "title": "년, 월, 성별 별 상품 구매 회원 수 구하기",
        "platform": "프로그래머스",
        "level": "LV4",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/131532"
       },
       {
        "title": "연간 평가점수에 해당하는 평가 등급 및 성과금 조회하기",
        "platform": "프로그래머스",
        "level": "LV4",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/284528"
       },
       {
        "title": "특정 세대의 대장균 찾기",
        "platform": "프로그래머스",
        "level": "LV4",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/301650"
       }
      ]
@@ -1375,18 +1602,21 @@
        "title": "순위 검색",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/72412"
       },
       {
        "title": "[3차] 방금그곡",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17683"
       },
       {
        "title": "표 편집",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/81303"
       }
      ]
@@ -1395,7 +1625,7 @@
   },
   {
    "week": 13,
-   "phase": "13–16주 실전",
+   "phase": "13–16주 · 실전",
    "topic": "지원 회사 기출 집중",
    "lectures": [
     {
@@ -1408,7 +1638,14 @@
     }
    ],
    "learn": "삼성·카카오·현대 중 지원하는 곳만 골라 푸세요. 시간은 실제 시험의 절반 비율로 잽니다",
+   "common_mistakes": [
+    "기출은 실제 시간의 절반 비율로 잽니다",
+    "같은 회사 기출은 비슷한 구조가 반복됩니다. 공통 패턴을 메모하세요"
+   ],
    "pass_criterion": "지원하는 회사의 최근 기출을 시간 재고 푼다",
+   "required_count": 18,
+   "optional_count": 0,
+   "est_minutes_required": 1500,
    "problem_sets": [
     {
      "name": "삼성",
@@ -1421,36 +1658,42 @@
        "title": "마법의 숲 탐색",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/magical-forest-exploration/description"
       },
       {
        "title": "고대 문명 유적 탐사",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/ancient-ruin-exploration/description"
       },
       {
        "title": "메두사와 전사들",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/medusa-and-warriors/description"
       },
       {
        "title": "미생물 연구",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/microbial-research/description"
       },
       {
        "title": "민트 초코 우유",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/mint-choco-milk/description"
       },
       {
        "title": "왕실의 기사 대결",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/royal-knight-duel/description"
       }
      ]
@@ -1466,48 +1709,56 @@
        "title": "택배 배달과 수거하기",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/150369"
       },
       {
        "title": "미로 탈출 명령어",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/150365"
       },
       {
        "title": "표현 가능한 이진트리",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/150367"
       },
       {
        "title": "표 병합",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/150366"
       },
       {
        "title": "도넛과 막대 그래프",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/258711"
       },
       {
        "title": "주사위 고르기",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/258709"
       },
       {
        "title": "산 모양 타일링",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/258705"
       },
       {
        "title": "n + 1 카드게임",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/258707"
       }
      ]
@@ -1523,24 +1774,28 @@
        "title": "편안한 워크숍",
        "platform": "코드트리 HSAT 기출",
        "level": "HSAT 기출",
+       "est_minutes": 60,
        "url": "https://www.codetree.ai/ko/frequent-problems/hsat/problems/easy-workshop/description"
       },
       {
        "title": "디지털 로직 패턴 검사",
        "platform": "코드트리 HSAT 기출",
        "level": "HSAT 기출",
+       "est_minutes": 60,
        "url": "https://www.codetree.ai/ko/frequent-problems/hsat/problems/check-digital-logic-pattern/description"
       },
       {
        "title": "배터리 효율 최적화 하기",
        "platform": "코드트리 HSAT 기출",
        "level": "HSAT 기출",
+       "est_minutes": 60,
        "url": "https://www.codetree.ai/ko/frequent-problems/hsat/problems/optimizing-battery-efficiency/description"
       },
       {
        "title": "도로 보수 로봇",
        "platform": "코드트리 HSAT 기출",
        "level": "HSAT 기출",
+       "est_minutes": 60,
        "url": "https://www.codetree.ai/ko/frequent-problems/hsat/problems/road-repair-robot/description"
       }
      ]
@@ -1549,11 +1804,18 @@
   },
   {
    "week": 14,
-   "phase": "13–16주 실전",
+   "phase": "13–16주 · 실전",
    "topic": "실전 모의고사 1",
    "lectures": [],
    "learn": "휴대폰을 멀리 두고, 시작 10분 동안 전체를 훑어 순서를 정합니다. 끝나면 문제별로 쓴 시간과 막힌 지점을 기록하세요",
+   "common_mistakes": [
+    "쉬운 문제부터 확실히 맞히고, 어려운 문제는 부분 점수를 노리세요",
+    "끝나면 문제별로 쓴 시간과 막힌 지점을 기록하세요"
+   ],
    "pass_criterion": "실제 시험과 같은 시간·환경으로 한 번 치른다",
+   "required_count": 13,
+   "optional_count": 0,
+   "est_minutes_required": 665,
    "problem_sets": [
     {
      "name": "카카오 2026 공채 1차 실제 기출 · 7문제 5시간",
@@ -1567,42 +1829,49 @@
        "title": "노란불 신호등",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468371"
       },
       {
        "title": "중요한 단어를 스포 방지",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468370"
       },
       {
        "title": "바이러스 파이프",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468373"
       },
       {
        "title": "리프 노드 수 최대화",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468372"
       },
       {
        "title": "발전소 회로 복구",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468375"
       },
       {
        "title": "최고 속도",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468376"
       },
       {
        "title": "카카오 앱 정리하기",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468374"
       }
      ]
@@ -1612,7 +1881,7 @@
      "kind": "mock_exam",
      "time_limit_minutes": 120,
      "companies": [
-      "네이버·SK·한화·LG 등 프로그래머스형",
+      "네이버·SK·한화·LG 등",
       "카카오",
       "현대차그룹"
      ],
@@ -1621,24 +1890,28 @@
        "title": "[PCCP 기출문제] 1번 / 붕대 감기",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/250137"
       },
       {
        "title": "[PCCP 기출문제] 2번 / 석유 시추",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/250136"
       },
       {
        "title": "[PCCP 기출문제] 3번 / 아날로그 시계",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/250135"
       },
       {
        "title": "[PCCP 기출문제] 4번 / 수레 움직이기",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/250134"
       }
      ]
@@ -1655,12 +1928,14 @@
        "title": "가로등 설치",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/street-light-installation/description"
       },
       {
        "title": "AI 로봇청소기",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/ai-robot/description"
       }
      ]
@@ -1669,7 +1944,7 @@
   },
   {
    "week": 15,
-   "phase": "13–16주 실전",
+   "phase": "13–16주 · 실전",
    "topic": "약점 보완 · 인증 시험 응시",
    "lectures": [
     {
@@ -1686,7 +1961,13 @@
     }
    ],
    "learn": "오답 노트에서 가장 많이 틀린 유형의 \"도전\" 문제를 다시 풉니다. 지원 회사에 맞는 인증 시험을 이 주에 응시하세요",
+   "common_mistakes": [
+    "인증 시험은 실제 채용 코테와 같은 긴장감으로 치르세요"
+   ],
    "pass_criterion": "오답 노트 상위 2개 유형을 다시 풀고 인증을 딴다",
+   "required_count": 6,
+   "optional_count": 0,
+   "est_minutes_required": 440,
    "problem_sets": [
     {
      "name": "보충 (삼성)",
@@ -1699,12 +1980,14 @@
        "title": "팩맨",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/pacman/description"
       },
       {
        "title": "술래잡기",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/hide-and-seek/description"
       }
      ]
@@ -1720,24 +2003,28 @@
        "title": "두 큐 합 같게 만들기",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/118667"
       },
       {
        "title": "수식 최대화",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/67257"
       },
       {
        "title": "후보키",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/42890"
       },
       {
        "title": "[1차] 셔틀버스",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/17678"
       }
      ]
@@ -1746,11 +2033,17 @@
   },
   {
    "week": 16,
-   "phase": "13–16주 실전",
+   "phase": "13–16주 · 실전",
    "topic": "실전 모의고사 2 · 템플릿 점검",
    "lectures": [],
    "learn": "아래 \"핵심 템플릿\" 7종을 빈 파일에 외워서 써 보고, 모의고사로 마무리합니다",
+   "common_mistakes": [
+    "템플릿을 외워서 쓰되, 문제에 맞게 고치는 연습을 함께 하세요"
+   ],
    "pass_criterion": "템플릿 7종을 보지 않고 5분 안에 쓴다",
+   "required_count": 11,
+   "optional_count": 0,
+   "est_minutes_required": 635,
    "problem_sets": [
     {
      "name": "카카오 2026 공채 2차 실제 기출 · 5문제 4시간 30분 (CS 제외)",
@@ -1764,30 +2057,35 @@
        "title": "선인장 숨기기",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468379"
       },
       {
        "title": "힌트 스테이지",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468377"
       },
       {
        "title": "기차 선로",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468381"
       },
       {
        "title": "제곱 개수 배열",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468380"
       },
       {
        "title": "보물 찾기",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/468378"
       }
      ]
@@ -1797,7 +2095,7 @@
      "kind": "mock_exam",
      "time_limit_minutes": 120,
      "companies": [
-      "네이버·SK·한화·LG 등 프로그래머스형",
+      "네이버·SK·한화·LG 등",
       "카카오",
       "현대차그룹"
      ],
@@ -1806,24 +2104,28 @@
        "title": "[PCCP 기출문제] 1번 / 동영상 재생기",
        "platform": "프로그래머스",
        "level": "LV1",
+       "est_minutes": 15,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/340213"
       },
       {
        "title": "[PCCP 기출문제] 2번 / 퍼즐 게임 챌린지",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/340212"
       },
       {
        "title": "[PCCP 기출문제] 3번 / 충돌위험 찾기",
        "platform": "프로그래머스",
        "level": "LV2",
+       "est_minutes": 30,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/340211"
       },
       {
        "title": "[PCCP 기출문제] 4번 / 수식 복원하기",
        "platform": "프로그래머스",
        "level": "LV3",
+       "est_minutes": 50,
        "url": "https://school.programmers.co.kr/learn/courses/30/lessons/340210"
       }
      ]
@@ -1840,12 +2142,14 @@
        "title": "해적 선장 코디",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/pirate-captain-coddy/description"
       },
       {
        "title": "택배 하차",
        "platform": "코드트리 삼성 기출",
        "level": "삼성 기출",
+       "est_minutes": 150,
        "url": "https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/delivery-service/description"
       }
      ]
