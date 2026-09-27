@@ -78,7 +78,7 @@
    }
   ],
   "pit": [
-   "파이썬 문자열에 += 를 반복하면 느립니다. 리스트에 모아 join 하세요",
+   "문자열을 += 로 계속 이어 붙이면 느려질 수 있습니다. 리스트에 모았다가 join 하세요",
    "대소문자·공백·특수문자 처리 조건을 지문에서 먼저 표시하세요",
    "날짜 계산은 윤년과 월별 일수를 확인하세요"
   ]
@@ -1417,8 +1417,8 @@
   "goal": "오답 노트 상위 2개 유형을 다시 풀고 인증을 딴다",
   "lec": [
    {
-    "u": "https://softeer.ai",
-    "t": "Softeer HSAT 접수"
+    "u": "https://exam.hyundai-ngv.com/challenge/HSAT/list",
+    "t": "HSAT 접수 (NGV CAMPUS)"
    },
    {
     "u": "https://certi.programmers.co.kr/about/pccp",

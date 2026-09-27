@@ -51,6 +51,8 @@ def lec_tag(u):
         return "프로그래머스 문제 모음"
     if "frequent-problems" in u:
         return "코드트리 기출 목록"
+    if "hyundai-ngv" in u:
+        return "현대차그룹 HSAT"
     return "접수 페이지"
 
 

@@ -89,7 +89,7 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 **자주 하는 실수**
 
-- 파이썬 문자열에 += 를 반복하면 느립니다. 리스트에 모아 join 하세요
+- 문자열을 += 로 계속 이어 붙이면 느려질 수 있습니다. 리스트에 모았다가 join 하세요
 - 대소문자·공백·특수문자 처리 조건을 지문에서 먼저 표시하세요
 - 날짜 계산은 윤년과 월별 일수를 확인하세요
 
@@ -708,7 +708,7 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 **참고 링크**
 
-- [Softeer HSAT 접수](https://softeer.ai) (접수 페이지)
+- [HSAT 접수 (NGV CAMPUS)](https://exam.hyundai-ngv.com/challenge/HSAT/list) (현대차그룹 HSAT)
 - [PCCP 접수](https://certi.programmers.co.kr/about/pccp) (접수 페이지)
 - [SWEA 상시 역량테스트](https://swexpertacademy.com) (접수 페이지)
 
@@ -784,13 +784,12 @@ https://bk11052.github.io/coding-test-roadmap/curriculum.json 에서 카카오 �
 
 | 기업 | 시험 환경 | 구성 | 출제 경향 | 참고 |
 |---|---|---|---|---|
-| 삼성전자 (DX·DS SW) | 자체 시험장 (오프라인) | 2문제 · 4시간 | 1번 복잡한 구현/시뮬레이션, 2번 큰 입력 대비 효율적 탐색. 격자, 회전, 확산, BFS/DFS, 백트래킹 | Java·C++·Python. PyCharm·VS Code 제공. SWEA 상시 A형(2문제·3시간)과 비슷 |
-| 카카오 (신입크루 공채) | 프로그래머스 | 1차 7문제 · 5시간 / 2차 알고리즘 5 + CS 12 · 4.5시간 | 1~2번 브론즈, 3~5번 실버~골드, 6~7번 골드 상위. 문자열, 구현, 트리, 그래프. 2차는 백트래킹, 이분탐색, 그리디, 누적합 | 1차 3솔 합격 후기 있음. 2차 영상 감독. 2025년부터 점수 비공개, 검색 제한 |
+| 삼성전자 (DX·DS SW) | 자체 시험장 (오프라인) | 2문제 · 4시간 | 1번 복잡한 구현/시뮬레이션, 2번 큰 입력 대비 효율적 탐색. 격자, 회전, 확산, BFS/DFS, 백트래킹 | Java·C++·Python. 2025 상반기 후기 기준 PyCharm·VS Code 제공, 소지품 제출 |
+| 카카오 (신입크루 공채) | 프로그래머스 | 1차 7문제 · 5시간 / 2차 알고리즘 5 + CS 12 · 4.5시간 | 1~2번 브론즈, 3~5번 실버~골드, 6~7번 골드 상위. 문자열, 구현, 트리, 그래프. 2차는 백트래킹, 이분탐색, 그리디, 누적합 | 1차 3솔로 합격한 후기 있음. 2차 영상 감독, 2025년부터 점수 비공개·검색 제한은 각각 후기 1건 기준 |
 | 네이버 (팀네이버 공채) | 프로그래머스 | 알고리즘 3 + SQL 1 · 약 2시간, CS 약 20문항 | 실버 상위~골드 4. 한 문제에 여러 알고리즘을 섞음 | C/C++/Java/JS/Python/Swift/Kotlin |
-| 현대차그룹 (현대차·기아·모비스·오토에버 등) | Softeer | HSAT 정기 인증 2문제 | 실버~골드. 기초 알고리즘과 구현 | 2문제 모두 맞히면 인증, 2년간 6개 계열사 SW 코테 면제 |
+| 현대차그룹 (현대차·기아·모비스·오토에버 등) | Softeer (현재 NGV CAMPUS 사이트) | HSAT 정기 인증 2문제 | 실버~골드. 기초 알고리즘과 구현 | 2문제 모두 맞히면 인증, 2년간 6개 계열사 SW 코테 면제 |
 | 한화시스템 ICT | 프로그래머스 | 알고리즘 3 + SQL 1 · 2시간 | 해시 구현, 수학, 부분 문자열(골드 4~5), SQL LV2~3 | 1차 면접에서 코테 1문제 풀이 발표 (후기 1건) |
-| LG CNS | 구름 (이전 프로그래머스) | 3문제 | LV2에서 최근 골드 4~3으로 상승. 다익스트라, DP | 2025년 한 차수는 코테 대신 인성 검사 후기 (후기 1건) |
-| 토스 | 자체 | 5문제 · 4시간 | 구현, 자료구조 | 부분 점수 있음 (후기 1건) |
+| LG CNS | 구름 (이전 프로그래머스) | 공고마다 다름 | 다익스트라, DP가 나왔다는 이전 후기가 있음 | 2025년 하반기에는 코테 없이 인적성 검사(LG Way Fit)를 봤다는 후기 (후기 1건) |
 | 라인 | 프로그래머스 | 3문제 · 2시간 | 브론즈~골드 5 | 신입 공채 빈도 낮음 (후기 1건) |
 | SK 계열 | 계열사별 상이 | 미확인 | 프로그래머스 기반 알고리즘 코테가 일반적 | 2025년 이후 공개 후기 부족 (정보 부족) |
 | 대한항공·포스코DX·롯데이노베이트 등 | 공고별 상이 | 미확인 | 대체로 실버~골드 하위 | 공개 후기 부족 (정보 부족) |
@@ -861,6 +860,7 @@ input = sys.stdin.readline
 n, m = map(int, input().split())
 grid = [list(map(int, input().split())) for _ in range(n)]
 words = [input().strip() for _ in range(n)]   # 문자 줄은 strip()
+answer = 0
 print(answer)
 ```
 
@@ -930,11 +930,11 @@ def comb(start, picked):
 <summary>격자 회전 · 동시 갱신</summary>
 
 ```python
-# 시계 방향 90도: b[j][n-1-i] = a[i][j]
+# 시계 방향 90도: b[j][n-1-i] = a[i][j]  (N×M → M×N)
 def rotate(a):
-    n = len(a)
-    return [[a[n-1-j][i] for j in range(n)] for i in range(n)]
-# 파이썬 한 줄: list(map(list, zip(*a[::-1])))
+    n, m = len(a), len(a[0])
+    return [[a[n-1-j][i] for j in range(n)] for i in range(m)]
+# 파이썬 한 줄: [list(r) for r in zip(*a[::-1])]
 
 # "동시에" 퍼진다 → 새 배열에 모았다가 한 번에 교체
 nxt = [row[:] for row in board]
@@ -1011,6 +1011,7 @@ for x in arr: pre.append(pre[-1] + x)
 # arr[l..r] 합 = pre[r+1] - pre[l]
 
 # 2차원 구간에 +v를 한꺼번에 (파괴되지 않은 건물)
+# d는 한 칸 더 크게: [[0] * (M + 1) for _ in range(N + 1)]
 d[r1][c1] += v; d[r1][c2+1] -= v
 d[r2+1][c1] -= v; d[r2+1][c2+1] += v
 # 행 방향, 열 방향으로 한 번씩 누적하면 완성
@@ -1041,15 +1042,15 @@ import heapq, bisect
 | [바킹독 실전 알고리즘](https://github.com/encrypted-def/basic-algo-lecture) | 무료 강의. 커리큘럼 강의 링크. 글 속 문제집은 백준 기반이라 현재 채점 불가 |
 | [바킹독 강의 Python 풀이](https://github.com/hanXen/basic-algo-lecture-python) | 바킹독 강의 0x02~0x11강의 예제와 연습 문제를 Python으로 푼 코드 (강의 작성자가 소개한 저장소) |
 | [이코테 2021 (Python)](https://github.com/ndb796/python-for-coding-test) | 나동빈 《이것이 취업을 위한 코딩 테스트다》 소스코드와 강의 |
-| [SW Expert Academy](https://swexpertacademy.com) | 삼성 상시 역량테스트 A형(2문제·3시간), B형(1문제·4시간, Python 불가) |
-| [Softeer](https://softeer.ai) | 현대차그룹 HSAT 인증 (2년간 코테 면제) |
-| [PCCP](https://certi.programmers.co.kr/about/pccp) | 4문제·120분, 5만 원. 일부 기업 LV.2 이상 코테 면제 |
+| [SW Expert Academy](https://swexpertacademy.com) | 삼성 공식 연습 사이트. 상시 SW역량테스트(A형, B형 등)를 볼 수 있습니다. 입력 형식이 삼성 시험과 같습니다 |
+| [Softeer (NGV CAMPUS)](https://exam.hyundai-ngv.com/challenge/HSAT/list) | 현대차그룹 HSAT 인증 시험. 2문제를 모두 맞히면 2년 동안 계열사 SW 코테 면제. softeer.ai에서 이 사이트로 옮겨졌습니다 |
+| [PCCP](https://certi.programmers.co.kr/about/pccp) | 프로그래머스 인증 시험. 4문제·120분, 응시료 5만 원, 유효 2년. 교보생명·현대캐피탈이 LV.2 이상에 코테를 면제한 사례가 있습니다 (2023년 공고) |
 
 ## 흔한 오해
 
 - "백준 문제집으로 준비하라"는 기존 가이드는 지금 그대로 따라 할 수 없습니다. 백준은 2026년 4월 28일 서비스를 종료했습니다.
 - "구현과 BFS/DFS만 하면 된다"는 삼성과 현대차에는 대체로 맞지만, 카카오와 네이버는 이분탐색, 그리디, 누적합, SQL도 나옵니다.
-- "카카오 시험은 검색이 된다"는 2024년 이전 이야기입니다. 지금은 검색이 제한되고 2차는 영상으로 감독합니다.
+- "카카오 시험은 검색이 된다"는 2024년 이전 후기입니다. 2025년 이후 후기에서는 검색이 제한되고, 2차는 영상으로 감독했다고 합니다.
 - "한 문제를 1~2시간 붙잡아야 실력이 는다"는 취업 준비에는 비효율적입니다. 30분 안에 방향이 안 보이면 해설을 보고 다음 날 다시 푸세요.
 
 ## 출처
@@ -1062,13 +1063,15 @@ import heapq, bisect
 - [2025 네이버 신입공채 CS & 코딩테스트 후기](https://blog.similarchart.com/259)
 - [Softeer HSAT 안내 (서울대 CSE)](https://cse.snu.ac.kr/en/community/notice/21926)
 - [한화시스템 ICT 25년 하반기 후기](https://velog.io/@dbwls89173/%ED%95%9C%ED%99%94%EC%8B%9C%EC%8A%A4%ED%85%9C-ICT-25%EB%85%84-%ED%95%98%EB%B0%98%EA%B8%B0-%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B0%9C%EB%B0%9C-%EC%9A%B4%EC%98%81-%EC%B1%84%EC%9A%A9-%ED%9B%84%EA%B8%B0)
-- [LG CNS 합격 후기 (자소설닷컴)](https://jasoseol.com/blog/post/lg-cns-%ED%95%A9%EA%B2%A9-%ED%9B%84%EA%B8%B0-%EC%9E%90%EC%86%8C%EC%84%9C-%EC%9D%B8%EC%A0%81%EC%84%B1-%EB%A9%B4%EC%A0%91-%EC%A7%88%EB%AC%B8-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%9E%90/)
 - [삼성 SW 역량테스트 A형·B형 후기](https://applelime.github.io/review/2022-03-27-review-samsung-sw-competency-test/)
 - [PCCP 시험 소개](https://certi.programmers.co.kr/about/pccp)
 - [AI 활용 코딩 테스트 분석 2026 (잡코리아)](https://www.jobkorea.co.kr/goodjob/tip/view?News_No=22546)
 - [백준 서비스 종료 (kitpa)](https://kitpa.org/news/1366)
 - [BOJ 인수·재개 예고 (kitpa)](https://kitpa.org/news/1640)
 - [BOJ 서비스 종료에 따른 안내 (바킹독)](https://blog.encrypted.gg/1108)
+- [LG CNS 25년 하반기 DX 엔지니어 채용 후기](https://velog.io/@dbwls89173/LG-CNS-25%EB%85%84-%ED%95%98%EB%B0%98%EA%B8%B0-DX-%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4-%EC%B1%84%EC%9A%A9-%ED%9B%84%EA%B8%B0-feat.-%EC%B5%9C%EC%A2%85-%ED%83%88%EB%9D%BD)
+- [프로그래머스 PCCP 취득자, 교보생명 공채서 코딩테스트 면제 (컨슈머타임스)](https://www.cstimes.com/news/articleView.html?idxno=539625)
+- [Softeer HSAT 안내 (NGV CAMPUS)](https://exam.hyundai-ngv.com/challenge/HSAT/list)
 
 ---
 

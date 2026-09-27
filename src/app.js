@@ -223,6 +223,7 @@ function lecTag(u){
   if (u.includes('tech.kakao.com')) return '카카오 공식 해설';
   if (u.includes('sql_practice_kit')) return '프로그래머스 문제 모음';
   if (u.includes('frequent-problems')) return '코드트리 기출 목록';
+  if (u.includes('hyundai-ngv')) return '현대차그룹 HSAT';
   return '접수 페이지';
 }
 const PY_REPO = 'https://github.com/hanXen/basic-algo-lecture-python';
