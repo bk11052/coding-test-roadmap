@@ -134,7 +134,7 @@ function refreshRows(key){
 
 // ---------- router ----------
 let curWeek = null, curView = 'today';
-const VIEW_NAME = {today:'오늘', plan:'커리큘럼', companies:'기업별 정보', resources:'자료'};
+const VIEW_NAME = {today:'오늘', plan:'커리큘럼', guide:'가이드', companies:'기업별 정보', resources:'자료'};
 function renderCrumb(){
   const parts = ['코딩테스트 로드맵', VIEW_NAME[curView]];
   if (curView === 'plan' && curWeek && !filterOn()) { const w = WEEKS.find(w => w.n === curWeek); parts.push(`${pad(w.n)}주 · ${w.t}`); }
@@ -145,7 +145,7 @@ function route(){
   const h = location.hash.replace('#', '') || 'today';
   let view = h, m = h.match(/^w(\d+)$/);
   if (m) { view = 'plan'; curWeek = Math.min(16, Math.max(1, Number(m[1]))); }
-  if (!['today','plan','companies','resources'].includes(view)) view = 'today';
+  if (!['today','plan','guide','companies','resources'].includes(view)) view = 'today';
   document.querySelectorAll('.view').forEach(v => v.hidden = v.id !== 'v-' + view);
   document.querySelectorAll('.act a').forEach(a => a.setAttribute('aria-current', a.dataset.view === view ? 'page' : 'false'));
   curView = view;
@@ -156,6 +156,20 @@ function route(){
 window.addEventListener('hashchange', route);
 
 // ---------- today ----------
+function renderGrass(){
+  const end = new Date(today() + 'T00:00:00'), start = new Date(end); start.setDate(end.getDate() - end.getDay() - 7 * 15);
+  let cells = '', total = 0, days = 0;
+  for (let d = new Date(start); d <= end || d.getDay() !== 0; d.setDate(d.getDate() + 1)) {
+    const k = ymd(d), n = S.log[k] || 0, fut = d > end;
+    if (!fut) { total += n; if (n) days++; }
+    const lv = fut ? 'fut' : n >= 5 ? 'l3' : n >= 3 ? 'l2' : n >= 1 ? 'l1' : '';
+    cells += `<i class="${lv}" title="${fut ? '' : `${md(k)} ${n}문제`}"></i>`;
+    if (d > end && d.getDay() === 6) break;
+  }
+  $('#grass').innerHTML = cells;
+  $('#grass').setAttribute('aria-label', `최근 16주 동안 ${days}일, ${total}문제`);
+  $('#actMeta').textContent = `최근 16주 · ${days}일 공부 · ${total}문제`;
+}
 function streak(){ let n = 0, d = today(); if (!S.log[d]) d = addDays(d, -1); while (S.log[d]) { n++; d = addDays(d, -1); } return n; }
 function renderToday(){
   document.querySelectorAll('#coChips input').forEach(i => i.checked = coSel().includes(i.value));
@@ -177,6 +191,7 @@ function renderToday(){
   else if (left !== null) pace = '시험 날짜가 지났습니다. 다음 목표 날짜를 넣어 주세요.';
   if (coSel().length) pace += ` ${coSel().map(c => CO_NAME[c]).join(', ')} 기준으로 관련 없는 기출은 빼고 계산했습니다.`;
   $('#pace').textContent = pace.trim(); $('#pace').hidden = !pace.trim();
+  renderGrass();
   const n = firstOpenWeek(), w = WEEKS.find(w => w.n === n), ks = coreKeys(n), d = ks.filter(isDone).length;
   $('#curWeek').innerHTML = `<div><div class="small muted">지금 공부할 주차</div><div class="t">${pad(n)}주 · ${esc(w.t)}</div><div class="small ink2">${d} / ${ks.length}문제 · 통과 기준: ${esc(w.goal)}</div></div><a class="btn" href="#w${n}" style="text-decoration:none">이어서 공부하기</a>`;
   if (!S.plan || S.plan.date !== today()) S.plan = {date: today(), keys: pickNext([], hours * 60)};
@@ -318,8 +333,10 @@ function renderStatic(){
   $('#toolTable').innerHTML = '<thead><tr><th>이름</th><th>쓰는 곳</th></tr></thead><tbody>' + INFO.tools.map(t => `<tr><td><a href="${t.url}" target="_blank" rel="noopener">${esc(t.name)}</a></td><td class="ink2">${esc(t.use)}</td></tr>`).join('') + '</tbody>';
   const FILES = ['grid_bfs.py', 'combination.py', 'rotate.py', 'param_search.py', 'dijkstra.py', 'union_find.py', 'prefix_sum.py', 'starter.py'];
   $('#tpls').innerHTML = INFO.templates_python.map((t, i) => `<div class="file"><div class="file-tab"><span class="fn">${FILES[i] || 'code.py'}</span><span class="desc">${esc(t.name.replace(/^\d+\.\s*/, ''))}</span><button type="button" class="copy" data-copy="${i}">복사</button></div><pre class="code"><code>${t.code.split('\n').map(l => `<span class="l">${hl(l)}</span>`).join('')}</code></pre></div>`).join('');
-  $('#vidTable').innerHTML = '<thead><tr><th>영상</th><th>추천</th><th>내용</th></tr></thead><tbody>' + INFO.verified_videos.map(v => `<tr><td><a href="${v.url}" target="_blank" rel="noopener">${esc(v.title)}</a><span class="sub">${esc(v.channel)}</span></td><td>${esc(v.verdict)}</td><td class="ink2">${esc(v.notes)}</td></tr>`).join('') + '</tbody>';
-  $('#dropList').innerHTML = INFO.dropped_claims.map(x => `<li>${esc(x)}</li>`).join('');
+  $('#sigTable').innerHTML = '<thead><tr><th>지문의 단서</th><th>떠올릴 방법</th><th>배우는 주차</th></tr></thead><tbody>' + INFO.signals.map(([s, m, n]) => `<tr><td>${esc(s)}</td><td>${esc(m)}</td><td><a href="#w${n}">${pad(n)}주</a></td></tr>`).join('') + '</tbody>';
+  $('#ioFiles').innerHTML = INFO.io_formats.map((f, i) => `<div class="file"><div class="file-tab"><span class="fn">${['solution.py', 'swea.py', 'stdin.py'][i]}</span><span class="desc">${esc(f.site)}</span><button type="button" class="copy" data-io="${i}">복사</button></div><p class="note">${esc(f.how)}</p><pre class="code"><code>${f.code.split('\n').map(l => `<span class="l">${hl(l)}</span>`).join('')}</code></pre></div>`).join('');
+  $('#cheatTable').innerHTML = '<thead><tr><th>상황</th><th>코드</th><th>설명</th></tr></thead><tbody>' + INFO.cheats.map(([a, c, n]) => `<tr><td>${esc(a)}</td><td><code>${hl(c)}</code></td><td class="small">${esc(n)}</td></tr>`).join('') + '</tbody>';
+  $('#mythList').innerHTML = INFO.myths.map(x => `<li>${esc(x)}</li>`).join('');
   $('#srcList').innerHTML = INFO.sources.map(s => `<li><a href="${s.url}" target="_blank" rel="noopener">${esc(s.title)}</a></li>`).join('');
 }
 
@@ -456,7 +473,7 @@ document.addEventListener('click', e => {
   else if (t.id === 'tmCancel') endMock(false);
   else if (t.id === 'stTimer') $('#tmPanel').hidden = !$('#tmPanel').hidden;
   else if (t.id === 'themeBtn') { theme = THEMES[(THEMES.indexOf(theme) + 1) % 3]; try { localStorage.setItem('cote-theme', theme); } catch(e) {} renderTheme(); }
-  else if (t.dataset.copy !== undefined) { const code = INFO.templates_python[Number(t.dataset.copy)].code; navigator.clipboard?.writeText(code).then(() => { t.textContent = '복사됨'; setTimeout(() => t.textContent = '복사', 1500); }, () => toast('복사하지 못했습니다. 코드를 직접 선택해 주세요.')); }
+  else if (t.dataset.copy !== undefined || t.dataset.io !== undefined) { const code = t.dataset.io !== undefined ? INFO.io_formats[Number(t.dataset.io)].code : INFO.templates_python[Number(t.dataset.copy)].code; navigator.clipboard?.writeText(code).then(() => { t.textContent = '복사됨'; setTimeout(() => t.textContent = '복사', 1500); }, () => toast('복사하지 못했습니다. 코드를 직접 선택해 주세요.')); }
   else if (t.id === 'fClear') { $('#fText').value = ''; $('#fStatus').value = ''; renderDetail(); }
   else if (t.id === 'coachBtn') askCoach();
   else if (t.id === 'moreToday') { S.plan.keys = S.plan.keys.concat(pickNext(S.plan.keys, (Number(S.settings.hours) || 2) * 60)); persist(); refresh(); }

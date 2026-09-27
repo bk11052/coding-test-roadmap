@@ -190,6 +190,23 @@ textarea{width:100%;background:var(--input);border:1px solid var(--input-line);b
 .hljs-operator,.hljs-punctuation{color:var(--t-op)}
 .foot{font-size:12.5px;color:var(--muted);display:grid;gap:3px;border-top:1px solid var(--line);padding-top:16px}
 
+/* guide */
+.tbl.sig td:first-child{white-space:normal;font-weight:400;color:var(--ink)}
+.tbl.sig td:nth-child(2){color:var(--head);font-weight:600;white-space:nowrap}
+.tbl.cheat td:first-child{white-space:nowrap}
+.tbl.cheat code{font-size:13px;color:var(--t-var)}
+ol.plain{padding-left:1.3em}
+.srcs summary{cursor:pointer;list-style:none}
+.srcs summary::-webkit-details-marker{display:none}
+.file .note{padding:10px 14px 0;font-size:13px;color:var(--muted)}
+/* activity */
+.grass{display:grid;grid-template-rows:repeat(7,11px);grid-auto-flow:column;grid-auto-columns:11px;gap:3px;overflow-x:auto;padding-bottom:4px}
+.grass i{border-radius:2px;background:var(--line)}
+.grass i.l1{background:color-mix(in srgb,var(--btn) 35%,var(--line))}
+.grass i.l2{background:color-mix(in srgb,var(--btn) 60%,var(--line))}
+.grass i.l3{background:var(--btn)}
+.grass i.fut{background:transparent}
+
 /* status bar */
 .status{position:fixed;left:0;right:0;bottom:0;z-index:30;height:26px;background:var(--status);color:var(--status-ink);display:flex;justify-content:space-between;align-items:stretch;font-size:12px;padding-bottom:env(safe-area-inset-bottom,0px);box-sizing:content-box}
 .status .grp{display:flex;align-items:stretch;min-width:0;overflow:hidden}
@@ -235,6 +252,7 @@ textarea{width:100%;background:var(--input);border:1px solid var(--input-line);b
   <nav class="act" aria-label="메뉴">
     <a href="#today" data-view="today"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="1.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>오늘</a>
     <a href="#plan" data-view="plan"><svg viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></svg>커리큘럼</a>
+    <a href="#guide" data-view="guide"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>가이드</a>
     <a href="#companies" data-view="companies"><svg viewBox="0 0 24 24"><path d="M4 20V6l7-3v17M11 20V9l9 3v8M2.5 20h19M7 8v.01M7 11v.01M7 14v.01M15 14v.01M15 17v.01"/></svg>기업</a>
     <a href="#resources" data-view="resources"><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg>자료</a>
   </nav>
@@ -259,6 +277,7 @@ textarea{width:100%;background:var(--input);border:1px solid var(--input-line);b
         </div>
         <div class="stats" id="stats"></div>
         <p class="pace" id="pace"></p>
+        <div class="block"><div class="block-h"><h2>공부 기록</h2><span class="small muted" id="actMeta"></span></div><div class="grass" id="grass" role="img"></div></div>
         <div class="cur" id="curWeek"></div>
         <div class="two">
           <div class="block"><div class="block-h"><h2>오늘 풀 문제</h2><span class="small muted" id="todayMeta"></span></div><ul class="list" id="todayList"></ul></div>
@@ -297,6 +316,39 @@ textarea{width:100%;background:var(--input);border:1px solid var(--input-line);b
         </div>
       </section>
 
+      <!-- 가이드 -->
+      <section class="view" id="v-guide" aria-labelledby="h-guide" hidden>
+        <div class="head">
+          <h1 id="h-guide">가이드</h1>
+          <p class="lead">시험에서는 문제 유형을 알려 주지 않습니다. 지문에서 단서를 찾아 방법을 고르고, 사이트별 입출력 형식에 맞춰 답을 내는 데 필요한 내용입니다.</p>
+        </div>
+        <div class="block"><h2>문제 보고 방법 고르기</h2><div class="scroll"><table class="tbl sig" id="sigTable"></table></div></div>
+        <div class="two">
+          <div class="block"><h2>풀이 순서</h2><ol class="plain">
+            <li>지문을 끝까지 읽고 입력 크기와 제한 시간을 적습니다</li>
+            <li>입력 크기로 쓸 수 있는 시간복잡도를 정합니다 (오른쪽 표)</li>
+            <li>예제를 손으로 따라가며 규칙을 확인합니다</li>
+            <li>코드를 쓰기 전에 필요한 변수와 함수 순서를 적습니다</li>
+            <li>제출 전에 입력의 최솟값·최댓값, 같은 값만 있는 경우로 확인합니다</li></ol>
+            <h2 style="margin-top:14px">시험장에서</h2><ul class="plain">
+            <li>시작 10분은 전체 문제를 읽고 푸는 순서를 정합니다</li>
+            <li>30분 넘게 막히면 다음 문제로 넘어갑니다</li>
+            <li>정답이 안 떠오르면 완전탐색으로 부분 점수라도 받습니다</li></ul></div>
+          <div class="block"><h2>입력 크기와 시간복잡도</h2><table class="tbl"><thead><tr><th>N 최대</th><th>쓸 수 있는 복잡도</th><th>예</th></tr></thead><tbody>
+            <tr><td>10</td><td>O(N!)</td><td class="small muted">순열 전부</td></tr>
+            <tr><td>20</td><td>O(2^N)</td><td class="small muted">부분집합 전부</td></tr>
+            <tr><td>500</td><td>O(N³)</td><td class="small muted">플로이드</td></tr>
+            <tr><td>5,000</td><td>O(N²)</td><td class="small muted">이중 반복문</td></tr>
+            <tr><td>1,000,000</td><td>O(N log N)</td><td class="small muted">정렬, 이분탐색, 힙</td></tr>
+            <tr><td>그 이상</td><td>O(N)</td><td class="small muted">투포인터, 누적합</td></tr></tbody></table>
+            <p class="small muted">1초에 약 10⁸번 연산 기준입니다. Python은 5~10배 느리게 잡으세요.</p></div>
+        </div>
+        <div class="block"><h2>사이트별 입출력 형식</h2><div class="files" id="ioFiles"></div></div>
+        <div class="block"><div class="block-h"><h2>외워 둘 코드</h2><span class="small muted">Python · 16주차에 보지 않고 쓸 수 있는지 확인합니다</span></div><div class="files" id="tpls"></div></div>
+        <div class="block"><h2>Python에서 자주 틀리는 것</h2><div class="scroll"><table class="tbl cheat" id="cheatTable"></table></div></div>
+        <div class="block"><h2>흔한 오해</h2><ul class="plain" id="mythList"></ul></div>
+      </section>
+
       <!-- 기업별 정보 -->
       <section class="view" id="v-companies" aria-labelledby="h-co" hidden>
         <div class="head">
@@ -305,21 +357,10 @@ textarea{width:100%;background:var(--input);border:1px solid var(--input-line);b
         </div>
         <div class="block"><h2>시험 형식</h2><div class="scroll"><table class="tbl" id="coTable"></table></div></div>
         <div class="block"><h2>자주 나오는 유형</h2><p class="small muted">●●● 매우 자주 · ●● 자주 · ● 가끔 · 빈칸은 거의 안 나옴</p><div class="scroll"><table class="tbl" id="typeTable"></table></div></div>
-        <div class="cols3">
-          <div class="block"><h2>코딩테스트 면제</h2><ul class="plain">
-            <li>삼성 SW역량테스트 A형 이상 (SW Expert Academy 상시 시험)</li>
-            <li>현대차그룹 HSAT 인증: 2년 동안 현대차·기아·모비스·오토에버 등 SW 코테 면제</li>
-            <li>프로그래머스 PCCP LV.2 이상: 교보생명, 현대캐피탈 등</li></ul></div>
-          <div class="block"><h2>시험장에서</h2><ul class="plain">
-            <li>시작 10분은 전체 문제를 읽고 푸는 순서를 정합니다</li>
-            <li>입력 크기로 쓸 수 있는 시간복잡도를 먼저 적어 둡니다</li>
-            <li>30분 넘게 막히면 다음 문제로 넘어갑니다</li>
-            <li>정답이 안 떠오르면 완전탐색으로 부분 점수라도 받습니다</li>
-            <li>제출 전 입력의 최솟값·최댓값으로 확인합니다</li></ul></div>
-          <div class="block"><h2>입력 크기와 시간복잡도</h2><ul class="plain mono small">
-            <li>N ≤ 10 → O(N!)</li><li>N ≤ 20 → O(2^N)</li><li>N ≤ 500 → O(N³)</li><li>N ≤ 5,000 → O(N²)</li><li>N ≤ 10⁶ → O(N log N)</li><li>그 이상 → O(N)</li></ul>
-            <p class="small muted">1초에 약 10⁸번 연산 기준. Python은 5~10배 느립니다.</p></div>
-        </div>
+        <div class="block"><h2>코딩테스트 면제</h2><ul class="plain">
+          <li>삼성 SW역량테스트 A형 이상 (SW Expert Academy 상시 시험)</li>
+          <li>현대차그룹 HSAT 인증: 2년 동안 현대차·기아·모비스·오토에버 등 SW 코테 면제</li>
+          <li>프로그래머스 PCCP LV.2 이상: 교보생명, 현대캐피탈 등</li></ul></div>
         <p class="small muted">AI 도구는 네이버·카카오를 비롯한 대부분의 기업에서 시험 중 사용이 금지됩니다. 컬리·무신사 등 일부 기업만 AI 활용형 과제를 도입했습니다.</p>
       </section>
 
@@ -327,13 +368,10 @@ textarea{width:100%;background:var(--input);border:1px solid var(--input-line);b
       <section class="view" id="v-resources" aria-labelledby="h-res" hidden>
         <div class="head">
           <h1 id="h-res">자료</h1>
-          <p class="lead">외워 둘 코드, 공부 도구, 참고 영상입니다.</p>
+          <p class="lead">공부에 쓰는 사이트와 강의, 이 페이지를 만든 근거입니다.</p>
         </div>
-        <div class="block"><div class="block-h"><h2>외워 둘 코드</h2><span class="small muted">Python · 16주차에 보지 않고 쓸 수 있는지 확인합니다</span></div><div class="files" id="tpls"></div></div>
         <div class="block"><h2>공부 도구</h2><div class="scroll"><table class="tbl" id="toolTable"></table></div></div>
-        <div class="block"><h2>참고 영상</h2><div class="scroll"><table class="tbl" id="vidTable"></table></div></div>
-        <div class="block"><h2>주의할 정보</h2><p class="small muted">인터넷에 흔하지만 틀렸거나 오래된 정보입니다.</p><ul class="plain" id="dropList"></ul></div>
-        <div class="block"><h2>출처</h2><ul class="plain" id="srcList"></ul></div>
+        <details class="block srcs"><summary><h2 style="display:inline">출처</h2> <span class="small muted">기업 정보와 시험 형식의 근거가 된 글</span></summary><ul class="plain" id="srcList" style="margin-top:10px"></ul></details>
         <div class="foot">
           <span>백준(BOJ)은 2026년 4월 28일 서비스를 종료해 채점이 되지 않습니다. 그래서 모든 문제를 프로그래머스와 코드트리에서 골랐습니다.</span>
           <span>문제 링크는 2026년 9월 26일에 확인했습니다. 문제 저작권은 각 사이트에 있습니다.</span>

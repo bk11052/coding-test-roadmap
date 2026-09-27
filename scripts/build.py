@@ -95,7 +95,7 @@ data = {
     "est_minutes_rule": "LV1 15분, LV2 30분, LV3 50분, LV4 70분, LV5 90분, 코드트리 삼성 기출 150분, HSAT 기출 60분, SQL LV3 20분·LV4 이상 30분",
     "company_formats": static["company_formats"], "frequency_columns": static["frequency_columns"], "type_frequency": static["type_frequency"],
     "curriculum": weeks, "templates_python": static["templates_python"], "tools": static["tools"],
-    "verified_videos": static["verified_videos"], "dropped_claims": static["dropped_claims"], "sources": static["sources"],
+    "signals": [{"clue": s, "method": m, "week": n} for s, m, n in static["signals"]], "io_formats": static["io_formats"], "python_pitfalls": [{"case": a, "code": c, "note": n} for a, c, n in static["cheats"]], "myths": static["myths"], "sources": static["sources"],
 }
 (ROOT / "curriculum.json").write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n")
 
@@ -108,8 +108,9 @@ A(f"**[대시보드 열기]({SITE}/)** — 지원 회사와 시험 날짜를 넣
 A(f"> 백준(BOJ)은 2026년 4월 28일 서비스를 종료해 채점이 되지 않습니다. 그래서 모든 문제를 프로그래머스와 코드트리에서 골랐습니다. 문제 링크는 {CHECKED}에 확인했습니다.\n")
 A("## 목차\n")
 for t_, a in [("사용법", "사용법"), ("AI에게 맡기기", "ai에게-맡기기"), ("16주 계획", "16주-계획"), ("주차별 문제", "주차별-문제"),
-              ("기업별 시험 형식", "기업별-시험-형식"), ("자주 나오는 유형", "자주-나오는-유형"), ("외워 둘 코드", "외워-둘-코드"),
-              ("공부 도구", "공부-도구"), ("참고 영상", "참고-영상"), ("주의할 정보", "주의할-정보"), ("출처", "출처")]:
+              ("기업별 시험 형식", "기업별-시험-형식"), ("자주 나오는 유형", "자주-나오는-유형"), ("문제 보고 방법 고르기", "문제-보고-방법-고르기"),
+              ("사이트별 입출력 형식", "사이트별-입출력-형식"), ("Python에서 자주 틀리는 것", "python에서-자주-틀리는-것"),
+              ("외워 둘 코드", "외워-둘-코드"), ("공부 도구", "공부-도구"), ("흔한 오해", "흔한-오해"), ("출처", "출처")]:
     A(f"- [{t_}](#{a})")
 A("\n## 사용법\n")
 A("1. 한 주에 한 가지 유형을 공부합니다. 강의를 보고, 필수 문제를 모두 풀고, 통과 기준을 확인한 뒤 다음 주로 넘어갑니다.")
@@ -181,6 +182,17 @@ cols = [c.replace(" (SK·한화·LG 등)", "") for c in static["frequency_column
 A("| " + " | ".join(cols) + " |\n|" + "---|" * len(cols))
 for r in static["type_frequency"]:
     A("| " + r[0] + " | " + " | ".join(dot.get(v, v) for v in r[1:]) + " |")
+A("\n## 문제 보고 방법 고르기\n")
+A("| 지문의 단서 | 떠올릴 방법 | 배우는 주차 |\n|---|---|:--:|")
+for sgn, m, n in static["signals"]:
+    A(f"| {sgn} | **{m}** | [{n:02d}주](#week-{n}) |")
+A("\n## 사이트별 입출력 형식\n")
+for f in static["io_formats"]:
+    A(f"**{f['site']}** — {f['how']}\n\n```python\n{f['code']}\n```\n")
+A("## Python에서 자주 틀리는 것\n")
+A("| 상황 | 코드 | 설명 |\n|---|---|---|")
+for a, c, n in static["cheats"]:
+    A(f"| {a} | `{c}` | {n} |")
 A("\n## 외워 둘 코드\n")
 A("Python 기준입니다. 16주차에 보지 않고 쓸 수 있는지 확인합니다.\n")
 for x in static["templates_python"]:
@@ -189,13 +201,8 @@ A("## 공부 도구\n")
 A("| 이름 | 쓰는 곳 |\n|---|---|")
 for x in static["tools"]:
     A(f"| [{x['name']}]({x['url']}) | {x['use']} |")
-A("\n## 참고 영상\n")
-A("| 영상 | 추천 | 내용 |\n|---|---|---|")
-for v in static["verified_videos"]:
-    A(f"| [{v['title']}]({v['url']}) ({v['channel']}) | {v['verdict']} | {v['notes']} |")
-A("\n## 주의할 정보\n")
-A("인터넷에 흔하지만 틀렸거나 오래된 정보입니다.\n")
-for x in static["dropped_claims"]:
+A("\n## 흔한 오해\n")
+for x in static["myths"]:
     A(f"- {x}")
 A("\n## 출처\n")
 for s in static["sources"]:
@@ -225,7 +232,7 @@ index = ("<!doctype html>\n<html lang=\"ko\">\n<head>\n<meta charset=\"utf-8\">\
 ## 문서
 
 - [README.md]({SITE}/README.md): 전체 내용을 Markdown으로 정리 (기업 형식표, 유형 빈도, 16주 요약표, 주차별 문제 표, 템플릿, 출처)
-- [curriculum.json]({SITE}/curriculum.json): 같은 내용을 구조화한 JSON. 주요 필드: company_formats, type_frequency, curriculum[].problem_sets[].problems[] (title, platform, level, est_minutes, url), curriculum[].common_mistakes, templates_python, sources
+- [curriculum.json]({SITE}/curriculum.json): 같은 내용을 구조화한 JSON. 주요 필드: company_formats, type_frequency, curriculum[].problem_sets[].problems[] (title, platform, level, est_minutes, url), curriculum[].common_mistakes, signals (지문 단서 → 알고리즘), io_formats, python_pitfalls, templates_python, sources
 - [index.html]({SITE}/): 사람용 대화형 대시보드 (진행 체크·복습 일정·모의고사 타이머, 기록은 브라우저에 저장)
 
 ## 사용 안내
