@@ -1,0 +1,9 @@
+# 대기업 코테 로드맵
+
+> 국내 대기업 신입 SW 코딩테스트(삼성·카카오·네이버·현대차그룹·SK·LG·한화 등) 준비 가이드. 기업별 시험 형식, 출제 유형 빈도, 16주 커리큘럼(프로그래머스·코드트리 문제 179개, 링크 2026-09-26 확인), Python 핵심 템플릿. 백준(BOJ)은 2026-04-28 종료되어 사용하지 않음.
+
+## 문서
+
+- [README.md](README.md): 전체 내용을 Markdown으로 정리 (기업 형식표, 유형 빈도, 주차별 문제 링크, 템플릿, 출처)
+- [curriculum.json](curriculum.json): 같은 내용을 구조화한 JSON (company_formats, type_frequency, curriculum[].problem_sets[].problems[], templates_python, sources)
+- [index.html](index.html): 사람용 대화형 대시보드 (진행 체크·복습 일정은 브라우저에 저장)
